@@ -1,0 +1,24 @@
+{
+  "local": {
+    "base_dir": "C:/CallboxAgent",
+    "modifier_py": "C:/CallboxAgent/lte_config_modifier.py",
+    "input_cfg": "C:/CallboxAgent/AutoConfig.cfg",
+    "earfcn_json": "C:/CallboxAgent/Earfcn_LTE.json",
+    "output_dir": "C:/CallboxAgent/generated",
+    "output_pattern": "AutoConfig_LTE_B{band}_Cell{cell}.cfg"
+  },
+  "callbox": {
+    "host": "192.168.1.80",
+    "port": 22,
+    "username": "root",
+    "password": "toor",
+    "remote_cfg_path": "/root/enb/config/AutoConfig.cfg",
+    "remote_backup_dir": "/root/enb/config/backup",
+    "restart_commands": [
+      "service lte stop",
+      "cd /root/trx_sdr && lte start"
+    ],
+    "ssh_timeout_sec": 30,
+    "command_timeout_sec": 120
+  }
+}

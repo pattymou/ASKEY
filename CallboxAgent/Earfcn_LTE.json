@@ -1,0 +1,517 @@
+{
+
+  "band": [
+    {
+      "Band": "1",
+      "Earfcn_Low": 0,
+      "Earfcn_Middle": 300,
+      "Earfcn_High": 599,
+      "Mode": "FDD",
+      "Channel_BandWidth": "5,10,15,20"
+    },
+    {
+      "Band": "2",
+      "Earfcn_Low": 600,
+      "Earfcn_Middle": 900,
+      "Earfcn_High": 1199,
+      "Mode": "FDD",
+      "Channel_BandWidth": "1.4,3,5,10,15,20"
+    },
+    {
+      "Band": "3",
+      "Earfcn_Low": 1200,
+      "Earfcn_Middle": 1575,
+      "Earfcn_High": 1949,
+      "Mode": "FDD",
+      "Channel_BandWidth": "1.4,3,5,10,15,20"
+    },
+    {
+      "Band": "4",
+      "Earfcn_Low": 1950,
+      "Earfcn_Middle": 2175,
+      "Earfcn_High": 2399,
+      "Mode": "FDD",
+      "Channel_BandWidth": "1.4,3,5,10,15,20"
+    },
+    {
+      "Band": "5",
+      "Earfcn_Low": 2400,
+      "Earfcn_Middle": 2525,
+      "Earfcn_High": 2649,
+      "Mode": "FDD",
+      "Channel_BandWidth": "1.4,3,5,10"
+    },
+    {
+      "Band": "7",
+      "Earfcn_Low": 2750,
+      "Earfcn_Middle": 3100,
+      "Earfcn_High": 3449,
+      "Mode": "FDD",
+      "Channel_BandWidth": "5,10,15,20"
+    },
+    {
+      "Band": "8",
+      "Earfcn_Low": 3450,
+      "Earfcn_Middle": 3625,
+      "Earfcn_High": 3799,
+      "Mode": "FDD",
+      "Channel_BandWidth": "1.4,3,5,10"
+    },
+    {
+      "Band": "9",
+      "Earfcn_Low": 3800,
+      "Earfcn_Middle": 3975,
+      "Earfcn_High": 4149,
+      "Mode": "FDD",
+      "Channel_BandWidth": "5,10,15,20"
+    },
+    {
+      "Band": "10",
+      "Earfcn_Low": 4150,
+      "Earfcn_Middle": 4450,
+      "Earfcn_High": 4749,
+      "Mode": "FDD",
+      "Channel_BandWidth": "5,10,15,20"
+    },
+    {
+      "Band": "11",
+      "Earfcn_Low": 4750,
+      "Earfcn_Middle": 4850,
+      "Earfcn_High": 4949,
+      "Mode": "FDD",
+      "Channel_BandWidth": "5,10"
+    },
+    {
+      "Band": "12",
+      "Earfcn_Low": 5010,
+      "Earfcn_Middle": 5095,
+      "Earfcn_High": 5179,
+      "Mode": "FDD",
+      "Channel_BandWidth": "1.4,3,5,10"
+    },
+    {
+      "Band": "13",
+      "Earfcn_Low": 5180,
+      "Earfcn_Middle": 5230,
+      "Earfcn_High": 5279,
+      "Mode": "FDD",
+      "Channel_BandWidth": "5,10"
+    },
+    {
+      "Band": "14",
+      "Earfcn_Low": 5280,
+      "Earfcn_Middle": 5330,
+      "Earfcn_High": 5379,
+      "Mode": "FDD",
+      "Channel_BandWidth": "5,10"
+    },
+    {
+      "Band": "17",
+      "Earfcn_Low": 5730,
+      "Earfcn_Middle": 5790,
+      "Earfcn_High": 5849,
+      "Mode": "FDD",
+      "Channel_BandWidth": "5,10"
+    },
+    {
+      "Band": "18",
+      "Earfcn_Low": 5850,
+      "Earfcn_Middle": 5925,
+      "Earfcn_High": 5999,
+      "Mode": "FDD",
+      "Channel_BandWidth": "5,10,15"
+    },
+    {
+      "Band": "19",
+      "Earfcn_Low": 6000,
+      "Earfcn_Middle": 6075,
+      "Earfcn_High": 6149,
+      "Mode": "FDD",
+      "Channel_BandWidth": "5,10,15"
+    },
+    {
+      "Band": "20",
+      "Earfcn_Low": 6150,
+      "Earfcn_Middle": 6300,
+      "Earfcn_High": 6449,
+      "Mode": "FDD",
+      "Channel_BandWidth": "5,10,15,20"
+    },
+    {
+      "Band": "21",
+      "Earfcn_Low": 6450,
+      "Earfcn_Middle": 6525,
+      "Earfcn_High": 6599,
+      "Mode": "FDD",
+      "Channel_BandWidth": "5,10,15"
+    },
+    {
+      "Band": "22",
+      "Earfcn_Low": 6600,
+      "Earfcn_Middle": 7000,
+      "Earfcn_High": 7399,
+      "Mode": "FDD",
+      "Channel_BandWidth": "5,10,15,20"
+    },
+    {
+      "Band": "24",
+      "Earfcn_Low": 7700,
+      "Earfcn_Middle": 7870,
+      "Earfcn_High": 8039,
+      "Mode": "FDD",
+      "Channel_BandWidth": "5,10"
+    },
+    {
+      "Band": "25",
+      "Earfcn_Low": 8040,
+      "Earfcn_Middle": 8365,
+      "Earfcn_High": 8689,
+      "Mode": "FDD",
+      "Channel_BandWidth": "1.4,3,5,10,15,20"
+    },
+    {
+      "Band": "26",
+      "Earfcn_Low": 8690,
+      "Earfcn_Middle": 8865,
+      "Earfcn_High": 9039,
+      "Mode": "FDD",
+      "Channel_BandWidth": "1.4,3,5,10,15"
+    },
+    {
+      "Band": "27",
+      "Earfcn_Low": 9040,
+      "Earfcn_Middle": 9125,
+      "Earfcn_High": 9209,
+      "Mode": "FDD",
+      "Channel_BandWidth": "1.4,3,5,10"
+    },
+    {
+      "Band": "28",
+      "Earfcn_Low": 9210,
+      "Earfcn_Middle": 9435,
+      "Earfcn_High": 9659,
+      "Mode": "FDD",
+      "Channel_BandWidth": "3,5,10,15,20"
+    },
+    {
+      "Band": "29",
+      "Earfcn_Low": 9660,
+      "Earfcn_Middle": 9715,
+      "Earfcn_High": 9769,
+      "Mode": "SDL",
+      "Channel_BandWidth": "3,5,10"
+    },
+    {
+      "Band": "30",
+      "Earfcn_Low": 9770,
+      "Earfcn_Middle": 9820,
+      "Earfcn_High": 9869,
+      "Mode": "FDD",
+      "Channel_BandWidth": "5,10"
+    },
+    {
+      "Band": "31",
+      "Earfcn_Low": 9870,
+      "Earfcn_Middle": 9895,
+      "Earfcn_High": 9919,
+      "Mode": "FDD",
+      "Channel_BandWidth": "1.4,3,5"
+    },
+    {
+      "Band": "32",
+      "Earfcn_Low": 9920,
+      "Earfcn_Middle": 10140,
+      "Earfcn_High": 10359,
+      "Mode": "SDL",
+      "Channel_BandWidth": "5,10,15,20"
+    },
+    {
+      "Band": "33",
+      "Earfcn_Low": 36000,
+      "Earfcn_Middle": 36100,
+      "Earfcn_High": 36199,
+      "Mode": "TDD",
+      "Channel_BandWidth": "5,10,15,20"
+    },
+    {
+      "Band": "34",
+      "Earfcn_Low": 36200,
+      "Earfcn_Middle": 36275,
+      "Earfcn_High": 36349,
+      "Mode": "TDD",
+      "Channel_BandWidth": "5,10,15"
+    },
+    {
+      "Band": "35",
+      "Earfcn_Low": 36350,
+      "Earfcn_Middle": 36650,
+      "Earfcn_High": 36949,
+      "Mode": "TDD",
+      "Channel_BandWidth": "1.4,3,5,10,15,20"
+    },
+    {
+      "Band": "36",
+      "Earfcn_Low": 36950,
+      "Earfcn_Middle": 37250,
+      "Earfcn_High": 37549,
+      "Mode": "TDD",
+      "Channel_BandWidth": "1.4,3,5,10,15,20"
+    },
+    {
+      "Band": "37",
+      "Earfcn_Low": 37550,
+      "Earfcn_Middle": 37650,
+      "Earfcn_High": 37749,
+      "Mode": "TDD",
+      "Channel_BandWidth": "5,10,15,20"
+    },
+    {
+      "Band": "38",
+      "Earfcn_Low": 37750,
+      "Earfcn_Middle": 38000,
+      "Earfcn_High": 38249,
+      "Mode": "TDD",
+      "Channel_BandWidth": "5,10,15,20"
+    },
+    {
+      "Band": "39",
+      "Earfcn_Low": 38250,
+      "Earfcn_Middle": 38450,
+      "Earfcn_High": 38649,
+      "Mode": "TDD",
+      "Channel_BandWidth": "5,10,15,20"
+    },
+    {
+      "Band": "40",
+      "Earfcn_Low": 38650,
+      "Earfcn_Middle": 39150,
+      "Earfcn_High": 39649,
+      "Mode": "TDD",
+      "Channel_BandWidth": "5,10,15,20"
+    },
+    {
+      "Band": "41",
+      "Earfcn_Low": 39650,
+      "Earfcn_Middle": 40620,
+      "Earfcn_High": 41589,
+      "Mode": "TDD",
+      "Channel_BandWidth": "5,10,15,20"
+    },
+    {
+      "Band": "42",
+      "Earfcn_Low": 41590,
+      "Earfcn_Middle": 42590,
+      "Earfcn_High": 43589,
+      "Mode": "TDD",
+      "Channel_BandWidth": "5,10,15,20"
+    },
+    {
+      "Band": "43",
+      "Earfcn_Low": 43590,
+      "Earfcn_Middle": 44590,
+      "Earfcn_High": 45589,
+      "Mode": "TDD",
+      "Channel_BandWidth": "5,10,15,20"
+    },
+    {
+      "Band": "44",
+      "Earfcn_Low": 45590,
+      "Earfcn_Middle": 46090,
+      "Earfcn_High": 46589,
+      "Mode": "TDD",
+      "Channel_BandWidth": "3,5,10,15,20"
+    },
+    {
+      "Band": "45",
+      "Earfcn_Low": 46590,
+      "Earfcn_Middle": 46690,
+      "Earfcn_High": 46789,
+      "Mode": "TDD",
+      "Channel_BandWidth": "5,10,15,20"
+    },
+    {
+      "Band": "46",
+      "Earfcn_Low": 46790,
+      "Earfcn_Middle": 50665,
+      "Earfcn_High": 54539,
+      "Mode": "TDD",
+      "Channel_BandWidth": "10,20"
+    },
+    {
+      "Band": "47",
+      "Earfcn_Low": 54540,
+      "Earfcn_Middle": 54890,
+      "Earfcn_High": 55239,
+      "Mode": "TDD",
+      "Channel_BandWidth": "10,20"
+    },
+    {
+      "Band": "48",
+      "Earfcn_Low": 55240,
+      "Earfcn_Middle": 55990,
+      "Earfcn_High": 56739,
+      "Mode": "TDD",
+      "Channel_BandWidth": "5,10,15,20"
+    },
+    {
+      "Band": "49",
+      "Earfcn_Low": 56740,
+      "Earfcn_Middle": 57490,
+      "Earfcn_High": 58239,
+      "Mode": "TDD",
+      "Channel_BandWidth": "10,20"
+    },
+    {
+      "Band": "50",
+      "Earfcn_Low": 58240,
+      "Earfcn_Middle": 58665,
+      "Earfcn_High": 59089,
+      "Mode": "TDD",
+      "Channel_BandWidth": "3,5,10,15,20"
+    },
+    {
+      "Band": "51",
+      "Earfcn_Low": 59090,
+      "Earfcn_Middle": 59115,
+      "Earfcn_High": 59139,
+      "Mode": "TDD",
+      "Channel_BandWidth": "3,5"
+    },
+    {
+      "Band": "52",
+      "Earfcn_Low": 59140,
+      "Earfcn_Middle": 59640,
+      "Earfcn_High": 60139,
+      "Mode": "TDD",
+      "Channel_BandWidth": "5,10,15,20"
+    },
+    {
+      "Band": "53",
+      "Earfcn_Low": 60140,
+      "Earfcn_Middle": 60197,
+      "Earfcn_High": 60245,
+      "Mode": "TDD",
+      "Channel_BandWidth": "1.4,3,5,10"
+    },
+    {
+      "Band": "65",
+      "Earfcn_Low": 65536,
+      "Earfcn_Middle": 65986,
+      "Earfcn_High": 66435,
+      "Mode": "FDD",
+      "Channel_BandWidth": "1.4,3,5,10,15,20"
+    },
+    {
+      "Band": "66",
+      "Earfcn_Low": 66436,
+      "Earfcn_Middle": 66886,
+      "Earfcn_High": 67335,
+      "Mode": "FDD",
+      "Channel_BandWidth": "1.4,3,5,10,15,20"
+    },
+    {
+      "Band": "67",
+      "Earfcn_Low": 67336,
+      "Earfcn_Middle": 67436,
+      "Earfcn_High": 67535,
+      "Mode": "SDL",
+      "Channel_BandWidth": "5,10,15,20"
+    },
+    {
+      "Band": "68",
+      "Earfcn_Low": 67536,
+      "Earfcn_Middle": 67686,
+      "Earfcn_High": 67835,
+      "Mode": "FDD",
+      "Channel_BandWidth": "5,10,15"
+    },
+    {
+      "Band": "69",
+      "Earfcn_Low": 67836,
+      "Earfcn_Middle": 68086,
+      "Earfcn_High": 68335,
+      "Mode": "SDL",
+      "Channel_BandWidth": "5,10,15,20"
+    },
+    {
+      "Band": "70",
+      "Earfcn_Low": 68336,
+      "Earfcn_Middle": 68461,
+      "Earfcn_High": 68585,
+      "Mode": "FDD",
+      "Channel_BandWidth": "5,10,15,20"
+    },
+    {
+      "Band": "71",
+      "Earfcn_Low": 68586,
+      "Earfcn_Middle": 68761,
+      "Earfcn_High": 68935,
+      "Mode": "FDD",
+      "Channel_BandWidth": "5,10,15,20"
+    },
+    {
+      "Band": "72",
+      "Earfcn_Low": 68936,
+      "Earfcn_Middle": 68961,
+      "Earfcn_High": 68985,
+      "Mode": "FDD",
+      "Channel_BandWidth": "1.4,3,5"
+    },
+    {
+      "Band": "73",
+      "Earfcn_Low": 68986,
+      "Earfcn_Middle": 69011,
+      "Earfcn_High": 69035,
+      "Mode": "FDD",
+      "Channel_BandWidth": "1.4,3,5"
+    },
+    {
+      "Band": "74",
+      "Earfcn_Low": 69036,
+      "Earfcn_Middle": 69251,
+      "Earfcn_High": 69465,
+      "Mode": "FDD",
+      "Channel_BandWidth": "1.4,3,5,10,15,20"
+    },
+    {
+      "Band": "75",
+      "Earfcn_Low": 69466,
+      "Earfcn_Middle": 69891,
+      "Earfcn_High": 70315,
+      "Mode": "SDL",
+      "Channel_BandWidth": "5,10,15,20"
+    },
+    {
+      "Band": "76",
+      "Earfcn_Low": 70316,
+      "Earfcn_Middle": 70341,
+      "Earfcn_High": 70365,
+      "Mode": "SDL",
+      "Channel_BandWidth": "5,10,15,20"
+    },
+    {
+      "Band": "85",
+      "Earfcn_Low": 70366,
+      "Earfcn_Middle": 70456,
+      "Earfcn_High": 70545,
+      "Mode": "FDD",
+      "Channel_BandWidth": "5,10"
+    },
+    {
+      "Band": "87",
+      "Earfcn_Low": 70546,
+      "Earfcn_Middle": 70571,
+      "Earfcn_High": 70595,
+      "Mode": "FDD",
+      "Channel_BandWidth": "1.4,3,5"
+    },
+    {
+      "Band": "88",
+      "Earfcn_Low": 70596,
+      "Earfcn_Middle": 70621,
+      "Earfcn_High": 70645,
+      "Mode": "FDD",
+      "Channel_BandWidth": "1.4,3,5"
+    }
+  ]
+}
