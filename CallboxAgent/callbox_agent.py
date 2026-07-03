@@ -1,20 +1,31 @@
+from controller import CallboxController
+import argparse
+import json
 
-#!/usr/bin/env python3
-import argparse,subprocess,sys
-from pathlib import Path
-BASE=Path(__file__).parent
+controller = CallboxController(".")
+
 def main():
- p=argparse.ArgumentParser()
- sub=p.add_subparsers(dest="cmd",required=True)
- b=sub.add_parser("set-band")
- b.add_argument("--cell",type=int,required=True)
- b.add_argument("--band",type=int,required=True)
- b.add_argument("--bandwidth",type=float,required=True)
- b.add_argument("--dry-run",action="store_true")
- a=p.parse_args()
- if a.cmd=="set-band":
-  cmd=[sys.executable,str(BASE/"apply_lte_to_callbox.py"),"--settings",str(BASE/"callbox_settings.json"),"--cell",str(a.cell),"--band",str(a.band),"--bandwidth",str(a.bandwidth)]
-  if a.dry_run: cmd.append("--dry-run")
-  raise SystemExit(subprocess.call(cmd))
-if __name__=="__main__":
- main()
+
+    parser = argparse.ArgumentParser()
+    sub = parser.add_subparsers(dest="cmd")
+
+    p = sub.add_parser("set-band")
+    p.add_argument("--cell", type=int, required=True)
+    p.add_argument("--band", type=int, required=True)
+    p.add_argument("--bandwidth", type=float, required=True)
+
+    args = parser.parse_args()
+
+    if args.cmd == "set-band":
+
+        result = controller.apply_lte(
+            args.cell,
+            args.band,
+            args.bandwidth
+        )
+
+        print(json.dumps(result, indent=2))
+
+
+if __name__ == "__main__":
+    main()
