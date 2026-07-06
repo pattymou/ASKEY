@@ -5,7 +5,7 @@
     "input_cfg": "plugins/amarisoft/AutoConfig.cfg",
     "earfcn_json": "plugins/amarisoft/Earfcn_LTE.json",
     "output_dir": "generated",
-    "output_pattern": "AutoConfig_LTE_B{band}_Cell{cell}.cfg"
+    "output_pattern": "AutoConfig.cfg"
   },
   "callbox": {
     "host": "192.168.1.80",
@@ -15,8 +15,11 @@
     "remote_cfg_path": "/root/enb/config/AutoConfig.cfg",
     "remote_backup_dir": "/root/enb/config/backup",
     "restart_commands": [
-      "service lte stop",
-      "cd /root/trx_sdr && lte start"
+      "cd /root/enb/config && ln -sfn AutoConfig.cfg enb.cfg",
+      "service lte restart"
+    ],
+    "verify_commands": [
+      "service lte status"
     ],
     "ssh_timeout_sec": 30,
     "command_timeout_sec": 120
