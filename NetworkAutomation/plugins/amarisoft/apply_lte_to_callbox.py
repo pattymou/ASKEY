@@ -6,16 +6,16 @@ apply_lte_to_callbox.py
 Generate an Amarisoft LTE config by calling lte_config_modifier.py, then upload it
 to the Callbox and restart LTE service by SSH.
 
-Important:
-- Callbox IP / username / password / remote paths are read from callbox_settings.json.
-- They are not hardcoded in this Python file.
-- LTE band / EARFCN / bandwidth validation is still handled by lte_config_modifier.py.
+V4 change:
+- SSH/SFTP logic is moved to controller/ssh_controller.py.
+- stdout is reserved for final JSON only, so OpenClaw / MCP can parse it safely.
+- progress logs go to stderr.
 
 Example:
-    python apply_lte_to_callbox.py --settings C:\CallboxAgent\callbox_settings.json --cell 1 --band 5 --bandwidth 10
+    python apply_lte_to_callbox.py --settings C:\\CallboxAgent\\callbox_settings.json --cell 1 --band 5 --bandwidth 10
 
 Dry run only:
-    python apply_lte_to_callbox.py --settings C:\CallboxAgent\callbox_settings.json --cell 1 --band 5 --bandwidth 10 --dry-run
+    python apply_lte_to_callbox.py --settings C:\\CallboxAgent\\callbox_settings.json --cell 1 --band 5 --bandwidth 10 --dry-run
 """
 
 from __future__ import annotations
@@ -23,13 +23,17 @@ from __future__ import annotations
 import argparse
 import json
 import os
-import posixpath
 import subprocess
 import sys
-from dataclasses import dataclass
-from datetime import datetime
 from pathlib import Path
+# Allow this plugin script to be executed directly while importing project core modules.
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+from dataclasses import dataclass
 from typing import Any
+
+from core.ssh import SSHClient as SSHController
 
 
 @dataclass(frozen=True)
@@ -58,6 +62,10 @@ class CallboxSettings:
 class Settings:
     local: LocalSettings
     callbox: CallboxSettings
+
+
+def log(message: str) -> None:
+    print(message, file=sys.stderr)
 
 
 def expand_path(value: str, base_dir: Path | None = None) -> Path:
@@ -153,131 +161,70 @@ def generate_lte_config(
     if dl_earfcn is not None:
         cmd.extend(["--dl-earfcn", str(dl_earfcn)])
 
-    print("[1/4] Generating LTE config...")
-    print("Command:", " ".join(cmd))
+    log("[1/4] Generating LTE config...")
+    log("Command: " + " ".join(cmd))
 
     proc = subprocess.run(cmd, text=True, capture_output=True)
     if proc.stdout.strip():
-        print(proc.stdout.strip())
+        log(proc.stdout.strip())
     if proc.stderr.strip():
-        print(proc.stderr.strip(), file=sys.stderr)
+        log(proc.stderr.strip())
 
     if proc.returncode != 0:
         raise RuntimeError(f"lte_config_modifier.py failed with exit code {proc.returncode}")
 
     try:
-        return json.loads(proc.stdout)
+        result = json.loads(proc.stdout)
     except Exception:
-        return {"success": True, "output_cfg": str(output_path)}
+        result = {"success": True, "output_cfg": str(output_path)}
+
+    result.setdefault("output_cfg", str(output_path))
+    return result
 
 
-def import_paramiko():
-    try:
-        import paramiko  # type: ignore
-        return paramiko
-    except ModuleNotFoundError as exc:
-        raise RuntimeError(
-            "Python package 'paramiko' is required for SSH/SFTP.\n"
-            "Install it on the Callbox control PC with:\n"
-            "    python -m pip install paramiko"
-        ) from exc
-
-
-def connect_ssh(settings: CallboxSettings):
-    paramiko = import_paramiko()
-    client = paramiko.SSHClient()
-    client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-    client.connect(
-        hostname=settings.host,
-        port=settings.port,
-        username=settings.username,
-        password=settings.password,
-        timeout=settings.ssh_timeout_sec,
-        look_for_keys=False,
-        allow_agent=False,
-    )
-    return client
-
-
-def run_remote_command(ssh, command: str, timeout_sec: int) -> tuple[int, str, str]:
-    stdin, stdout, stderr = ssh.exec_command(command, timeout=timeout_sec)
-    exit_code = stdout.channel.recv_exit_status()
-    out = stdout.read().decode("utf-8", errors="replace")
-    err = stderr.read().decode("utf-8", errors="replace")
-    return exit_code, out, err
-
-
-def remote_backup_and_upload(settings: Settings, local_cfg: Path) -> None:
+def remote_backup_and_upload(settings: Settings, local_cfg: Path) -> dict[str, Any]:
     callbox = settings.callbox
-    print("[2/4] Connecting to Callbox...")
-    ssh = connect_ssh(callbox)
+    log("[2/4] Connecting to Callbox...")
 
-    try:
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        remote_name = posixpath.basename(callbox.remote_cfg_path)
-        remote_backup_path = posixpath.join(callbox.remote_backup_dir, f"{remote_name}.{timestamp}.bak")
+    with SSHController.from_callbox_settings(callbox) as ssh:
+        log("[3/4] Backing up remote config...")
+        backup_result = ssh.backup_file(callbox.remote_cfg_path, callbox.remote_backup_dir)
+        if backup_result.get("warning"):
+            log(str(backup_result["warning"]))
+        log(f"Remote backup path: {backup_result['backup_path']}")
 
-        backup_cmd = (
-            f"mkdir -p {shell_quote(callbox.remote_backup_dir)} && "
-            f"if [ -f {shell_quote(callbox.remote_cfg_path)} ]; then "
-            f"cp {shell_quote(callbox.remote_cfg_path)} {shell_quote(remote_backup_path)}; "
-            f"else echo 'WARN: remote cfg not found, skip backup'; fi"
-        )
+        log("Uploading new config...")
+        upload_result = ssh.upload(local_cfg, callbox.remote_cfg_path)
+        log(f"Uploaded: {local_cfg} -> {callbox.username}@{callbox.host}:{callbox.remote_cfg_path}")
 
-        print("[3/4] Backing up remote config...")
-        code, out, err = run_remote_command(ssh, backup_cmd, callbox.command_timeout_sec)
-        if out.strip():
-            print(out.strip())
-        if err.strip():
-            print(err.strip(), file=sys.stderr)
-        if code != 0:
-            raise RuntimeError(f"remote backup failed, exit code {code}")
-
-        print(f"Remote backup path: {remote_backup_path}")
-
-        remote_dir = posixpath.dirname(callbox.remote_cfg_path)
-        mkdir_cmd = f"mkdir -p {shell_quote(remote_dir)}"
-        code, out, err = run_remote_command(ssh, mkdir_cmd, callbox.command_timeout_sec)
-        if code != 0:
-            raise RuntimeError(f"remote mkdir failed, exit code {code}: {err}")
-
-        print("Uploading new config...")
-        sftp = ssh.open_sftp()
-        try:
-            sftp.put(str(local_cfg), callbox.remote_cfg_path)
-        finally:
-            sftp.close()
-
-        print(f"Uploaded: {local_cfg} -> {callbox.username}@{callbox.host}:{callbox.remote_cfg_path}")
-
-    finally:
-        ssh.close()
+    return {
+        "success": True,
+        "backup": backup_result,
+        "upload": upload_result,
+    }
 
 
-def restart_callbox_lte(settings: Settings) -> None:
+def restart_callbox_lte(settings: Settings) -> dict[str, Any]:
     commands = settings.callbox.restart_commands
     if not commands:
-        print("[4/4] No restart commands configured. Skip restart.")
-        return
+        log("[4/4] No restart commands configured. Skip restart.")
+        return {"success": True, "skipped": True, "commands": []}
 
-    print("[4/4] Restarting Callbox LTE...")
-    ssh = connect_ssh(settings.callbox)
-    try:
+    log("[4/4] Restarting Callbox LTE...")
+    with SSHController.from_callbox_settings(settings.callbox) as ssh:
+        command_results = []
         for command in commands:
-            print(f"Remote command: {command}")
-            code, out, err = run_remote_command(ssh, command, settings.callbox.command_timeout_sec)
-            if out.strip():
-                print(out.strip())
-            if err.strip():
-                print(err.strip(), file=sys.stderr)
-            if code != 0:
-                raise RuntimeError(f"restart command failed, exit code {code}: {command}")
-    finally:
-        ssh.close()
+            log(f"Remote command: {command}")
+            result = ssh.execute(command, settings.callbox.command_timeout_sec)
+            command_results.append(result.to_dict())
+            if result.stdout.strip():
+                log(result.stdout.strip())
+            if result.stderr.strip():
+                log(result.stderr.strip())
+            if not result.success:
+                raise RuntimeError(f"restart command failed, exit code {result.exit_code}: {command}")
 
-
-def shell_quote(value: str) -> str:
-    return "'" + value.replace("'", "'\\''") + "'"
+    return {"success": True, "skipped": False, "commands": command_results}
 
 
 def build_arg_parser() -> argparse.ArgumentParser:
@@ -301,7 +248,7 @@ def main() -> int:
         ensure_local_files(settings)
         output_path = build_output_path(settings, args.cell, args.band, args.bandwidth)
 
-        result = generate_lte_config(
+        modifier_result = generate_lte_config(
             settings=settings,
             cell=args.cell,
             band=args.band,
@@ -310,25 +257,41 @@ def main() -> int:
             output_path=output_path,
         )
 
+        result: dict[str, Any] = {
+            "success": True,
+            "action": "apply_lte_to_callbox",
+            "cell": args.cell,
+            "band": args.band,
+            "bandwidth": args.bandwidth,
+            "dl_earfcn": args.dl_earfcn,
+            "generated_cfg": str(output_path),
+            "modifier": modifier_result,
+            "dry_run": bool(args.dry_run),
+            "upload": None,
+            "restart": None,
+        }
+
         if args.dry_run:
-            print("Dry run enabled. Skip upload and restart.")
-            print(f"Generated config: {output_path}")
+            log("Dry run enabled. Skip upload and restart.")
+            print(json.dumps(result, ensure_ascii=False, indent=2))
             return 0
 
-        remote_backup_and_upload(settings, output_path)
+        result["upload"] = remote_backup_and_upload(settings, output_path)
 
         if args.no_restart:
-            print("--no-restart enabled. Skip restart.")
+            log("--no-restart enabled. Skip restart.")
+            result["restart"] = {"success": True, "skipped": True, "reason": "--no-restart"}
+            print(json.dumps(result, ensure_ascii=False, indent=2))
             return 0
 
-        restart_callbox_lte(settings)
+        result["restart"] = restart_callbox_lte(settings)
 
-        print("Done. LTE config was generated, uploaded, and restart commands were executed.")
+        log("Done. LTE config was generated, uploaded, and restart commands were executed.")
         print(json.dumps(result, ensure_ascii=False, indent=2))
         return 0
 
     except Exception as exc:
-        print(json.dumps({"success": False, "error": str(exc)}, ensure_ascii=False, indent=2), file=sys.stderr)
+        print(json.dumps({"success": False, "error": str(exc)}, ensure_ascii=False, indent=2))
         return 1
 
 

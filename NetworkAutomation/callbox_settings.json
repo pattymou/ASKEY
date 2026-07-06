@@ -1,10 +1,10 @@
 {
   "local": {
-    "base_dir": "C:/CallboxAgent",
-    "modifier_py": "C:/CallboxAgent/lte_config_modifier.py",
-    "input_cfg": "C:/CallboxAgent/AutoConfig.cfg",
-    "earfcn_json": "C:/CallboxAgent/Earfcn_LTE.json",
-    "output_dir": "C:/CallboxAgent/generated",
+    "base_dir": ".",
+    "modifier_py": "plugins/amarisoft/lte_config_modifier.py",
+    "input_cfg": "plugins/amarisoft/AutoConfig.cfg",
+    "earfcn_json": "plugins/amarisoft/Earfcn_LTE.json",
+    "output_dir": "generated",
     "output_pattern": "AutoConfig_LTE_B{band}_Cell{cell}.cfg"
   },
   "callbox": {
