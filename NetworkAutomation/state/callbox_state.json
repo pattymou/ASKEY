@@ -1,0 +1,18 @@
+{
+  "success": true,
+  "updated_at": "2026-07-07 15:34:26",
+  "mode": "LTE",
+  "cell": 1,
+  "band": 1,
+  "bandwidth_mhz": 10.0,
+  "dl_earfcn": 300,
+  "rb_dl": 50,
+  "remote_cfg_path": "/root/enb/config/AutoConfig.cfg",
+  "generated_cfg": "D:\\NetworkAutomation\\generated\\AutoConfig.cfg",
+  "verify": {
+    "cfg_exists": true,
+    "symlink": true,
+    "service": true,
+    "service_running": true
+  }
+}
