@@ -1,0 +1,4 @@
+{
+  "returncode": 1,
+  "stderr_tail": "Traceback (most recent call last):\r\n  File \"D:\\NetworkAutomation\\callbox_agent.py\", line 183, in <module>\r\n    raise SystemExit(main())\r\n                     ^^^^^^\r\n  File \"D:\\NetworkAutomation\\callbox_agent.py\", line 144, in main\r\n    machine = run_band_then_iperf(\r\n              ^^^^^^^^^^^^^^^^^^^^\r\n  File \"D:\\NetworkAutomation\\core\\workflow_executor.py\", line 311, in run_band_then_iperf\r\n    ready_stable_sec = workflow_setting(root, \"iperf_ready_stable_sec\")\r\n                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"D:\\NetworkAutomation\\core\\user_settings.py\", line 167, in workflow_setting\r\n    spec = EDITABLE_SETTINGS[key]\r\n           ~~~~~~~~~~~~~~~~~^^^^^\r\nKeyError: 'iperf_ready_stable_sec'"
+}

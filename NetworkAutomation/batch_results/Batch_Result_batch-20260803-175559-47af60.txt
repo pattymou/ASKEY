@@ -1,0 +1,2 @@
+﻿序號	Band	BW	ARFCN	測試類型	iPerf方向	測試秒數	設定開始時間	設定完成時間	UE連線狀態	PHY DL Mbps	PHY UL Mbps	iPerf平均 Mbps	iPerf最低 Mbps	iPerf最高 Mbps	傳輸量 MB	結果	錯誤原因
+1	5A	10	2525	PHY+iPerf	bidirectional	30	2026-08-03T17:56:10+08:00	2026-08-03T17:57:37+08:00	已連線	10.352	5.083					FAIL	iPerf 失敗

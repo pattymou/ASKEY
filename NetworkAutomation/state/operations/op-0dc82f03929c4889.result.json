@@ -1,0 +1,21 @@
+{
+  "success": false,
+  "tool": "amarisoft.set_band",
+  "human_summary": "FAIL｜LTE Band 設定未完整完成\n\nSSH session not active",
+  "machine_result": {
+    "success": false,
+    "error": "SSHException",
+    "message": "SSH session not active",
+    "returncode": 1,
+    "stderr": "Socket exception: 遠端主機已強制關閉一個現存的連線。 (10054)",
+    "operation_metrics": {
+      "operation_id": "op-0dc82f03929c4889",
+      "total_elapsed_sec": 21.5
+    }
+  },
+  "schema_version": "1.0",
+  "timestamp": "2026-08-04T15:14:03+08:00",
+  "result_file": null,
+  "returncode": 1,
+  "telegram_reply": "結果失敗。\n\n• 錯誤：SSH session not active"
+}

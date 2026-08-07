@@ -1,0 +1,20 @@
+{
+  "success": false,
+  "tool": "iperf.run",
+  "human_summary": "FAIL｜iPerf 測試失敗\n\nUE 192.168.3.2 無法從 iPerf Executor Ping 通，停止測試。",
+  "machine_result": {
+    "success": false,
+    "error": "RuntimeError",
+    "message": "UE 192.168.3.2 無法從 iPerf Executor Ping 通，停止測試。",
+    "returncode": 1,
+    "operation_metrics": {
+      "operation_id": "op-37102e492be34bac",
+      "total_elapsed_sec": 3.9
+    }
+  },
+  "schema_version": "1.0",
+  "timestamp": "2026-08-05T20:30:53+08:00",
+  "result_file": null,
+  "returncode": 1,
+  "telegram_reply": "結果失敗。\n\n• 錯誤：UE 192.168.3.2 無法從 iPerf Executor Ping 通，停止測試。"
+}

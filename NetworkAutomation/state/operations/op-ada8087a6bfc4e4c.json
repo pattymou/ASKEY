@@ -1,0 +1,55 @@
+{
+  "success": true,
+  "operation_id": "op-ada8087a6bfc4e4c",
+  "fingerprint": "d145f510602ecf70e51c293e3aa86f4e84ffcfdda25172603ecb1a6859ac9516",
+  "intent": "set_band",
+  "parameters": {
+    "band_config": "3A",
+    "bandwidth_config": "20",
+    "lte_carriers": [
+      {
+        "band": 3,
+        "bandwidth_mhz": 20.0
+      }
+    ]
+  },
+  "cli_args": [
+    "amarisoft",
+    "set-band",
+    "--band-config",
+    "3A",
+    "--bandwidth-config",
+    "20",
+    "--phy-only-ready"
+  ],
+  "status": "failed",
+  "stage": "worker_crashed",
+  "message": "Operation Worker 已意外結束。",
+  "progress_percent": 100,
+  "created_at": "2026-08-05T12:35:51+08:00",
+  "updated_at": "2026-08-05T12:41:03+08:00",
+  "worker_timeout_sec": 900,
+  "attached_existing": false,
+  "owner_batch_id": "batch-20260805-110848-931569",
+  "worker_pid": 662580,
+  "worker_started_at": "2026-08-05T12:35:51+08:00",
+  "child_pid": 801980,
+  "command": [
+    "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "-u",
+    "D:\\NetworkAutomation\\callbox_agent.py",
+    "amarisoft",
+    "set-band",
+    "--band-config",
+    "3A",
+    "--bandwidth-config",
+    "20",
+    "--phy-only-ready"
+  ],
+  "elapsed_sec": 308.9,
+  "worker_heartbeat_at": "2026-08-05T12:40:58+08:00",
+  "returncode": 1,
+  "result_file": "D:\\NetworkAutomation\\state\\operations\\op-ada8087a6bfc4e4c.result.json",
+  "worker_finished_at": "2026-08-05T12:41:00+08:00",
+  "error": "BATCH_INLINE_WORKER_EXITED"
+}

@@ -1,0 +1,14 @@
+{
+  "success": false,
+  "tool": "iperf.run",
+  "human_summary": "FAIL｜iPerf 測試失敗\n\niPerf Server 192.168.3.2:5201 未 Listen，且自動啟動尚未設定。",
+  "machine_result": {
+    "success": false,
+    "error": "RuntimeError",
+    "message": "iPerf Server 192.168.3.2:5201 未 Listen，且自動啟動尚未設定。",
+    "returncode": 1
+  },
+  "schema_version": "1.0",
+  "timestamp": "2026-08-04T12:36:48+08:00",
+  "result_file": null
+}

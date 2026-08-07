@@ -1,0 +1,30 @@
+{
+  "success": false,
+  "tool": "iperf.bidirectional",
+  "human_summary": "FAIL｜雙向 iPerf 測試失敗",
+  "machine_result": {
+    "success": false,
+    "ue_ip": "192.168.3.2",
+    "duration_sec_each": 30,
+    "results": [
+      {
+        "direction": "download",
+        "result": {
+          "success": false,
+          "error": "RuntimeError",
+          "message": "{\n\t\"start\":\t{\n\t\t\"connected\":\t[],\n\t\t\"version\":\t\"iperf 3.10.1\",\n\t\t\"system_info\":\t\"Linux CBA-20240614 6.2.15-100.fc36.x86_64 #1 SMP PREEMPT_DYNAMIC Thu May 11 16:51:53 UTC 2023 x86_64\"\n\t},\n\t\"intervals\":\t[],\n\t\"end\":\t{\n\t},\n\t\"error\":\t\"error - unable to receive control message: Connection reset by peer\"\n}\n",
+          "returncode": 1
+        }
+      }
+    ],
+    "operation_metrics": {
+      "operation_id": "op-dc0fd04863ba4b80",
+      "total_elapsed_sec": 2.0
+    }
+  },
+  "schema_version": "1.0",
+  "timestamp": "2026-08-04T09:52:38+08:00",
+  "result_file": null,
+  "returncode": 1,
+  "telegram_reply": "結果失敗。\n\n• 錯誤：未知錯誤"
+}

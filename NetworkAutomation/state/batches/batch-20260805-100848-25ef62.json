@@ -1,0 +1,566 @@
+{
+  "success": true,
+  "batch_id": "batch-20260805-100848-25ef62",
+  "name": "Patty Lu 批次測試 ×20",
+  "status": "stopped",
+  "pause_requested": false,
+  "stop_requested": true,
+  "continue_on_error": true,
+  "total": 85,
+  "completed": 1,
+  "next_index": 1,
+  "items": [
+    {
+      "band_config": "5A",
+      "action": "bidirectional",
+      "duration_sec": 30
+    },
+    {
+      "band_config": "1A-3A",
+      "bandwidth_config": "20+20",
+      "action": "phy"
+    },
+    {
+      "band_config": "n78C",
+      "bandwidth_config": "100+100",
+      "action": "upload",
+      "duration_sec": 30
+    },
+    {
+      "band_config": "1A_n78A",
+      "bandwidth_config": "20_100",
+      "action": "download",
+      "duration_sec": 30
+    },
+    {
+      "band_config": "3A",
+      "action": "phy"
+    },
+    {
+      "band_config": "5A",
+      "action": "bidirectional",
+      "duration_sec": 30
+    },
+    {
+      "band_config": "1A-3A",
+      "bandwidth_config": "20+20",
+      "action": "phy"
+    },
+    {
+      "band_config": "n78C",
+      "bandwidth_config": "100+100",
+      "action": "upload",
+      "duration_sec": 30
+    },
+    {
+      "band_config": "1A_n78A",
+      "bandwidth_config": "20_100",
+      "action": "download",
+      "duration_sec": 30
+    },
+    {
+      "band_config": "3A",
+      "action": "phy"
+    },
+    {
+      "band_config": "5A",
+      "action": "bidirectional",
+      "duration_sec": 30
+    },
+    {
+      "band_config": "1A-3A",
+      "bandwidth_config": "20+20",
+      "action": "phy"
+    },
+    {
+      "band_config": "n78C",
+      "bandwidth_config": "100+100",
+      "action": "upload",
+      "duration_sec": 30
+    },
+    {
+      "band_config": "1A_n78A",
+      "bandwidth_config": "20_100",
+      "action": "download",
+      "duration_sec": 30
+    },
+    {
+      "band_config": "3A",
+      "action": "phy"
+    },
+    {
+      "band_config": "5A",
+      "action": "bidirectional",
+      "duration_sec": 30
+    },
+    {
+      "band_config": "1A-3A",
+      "bandwidth_config": "20+20",
+      "action": "phy"
+    },
+    {
+      "band_config": "n78C",
+      "bandwidth_config": "100+100",
+      "action": "upload",
+      "duration_sec": 30
+    },
+    {
+      "band_config": "1A_n78A",
+      "bandwidth_config": "20_100",
+      "action": "download",
+      "duration_sec": 30
+    },
+    {
+      "band_config": "3A",
+      "action": "phy"
+    },
+    {
+      "band_config": "5A",
+      "action": "bidirectional",
+      "duration_sec": 30
+    },
+    {
+      "band_config": "1A-3A",
+      "bandwidth_config": "20+20",
+      "action": "phy"
+    },
+    {
+      "band_config": "n78C",
+      "bandwidth_config": "100+100",
+      "action": "upload",
+      "duration_sec": 30
+    },
+    {
+      "band_config": "1A_n78A",
+      "bandwidth_config": "20_100",
+      "action": "download",
+      "duration_sec": 30
+    },
+    {
+      "band_config": "3A",
+      "action": "phy"
+    },
+    {
+      "band_config": "5A",
+      "action": "bidirectional",
+      "duration_sec": 30
+    },
+    {
+      "band_config": "1A-3A",
+      "bandwidth_config": "20+20",
+      "action": "phy"
+    },
+    {
+      "band_config": "n78C",
+      "bandwidth_config": "100+100",
+      "action": "upload",
+      "duration_sec": 30
+    },
+    {
+      "band_config": "1A_n78A",
+      "bandwidth_config": "20_100",
+      "action": "download",
+      "duration_sec": 30
+    },
+    {
+      "band_config": "3A",
+      "action": "phy"
+    },
+    {
+      "band_config": "5A",
+      "action": "bidirectional",
+      "duration_sec": 30
+    },
+    {
+      "band_config": "1A-3A",
+      "bandwidth_config": "20+20",
+      "action": "phy"
+    },
+    {
+      "band_config": "n78C",
+      "bandwidth_config": "100+100",
+      "action": "upload",
+      "duration_sec": 30
+    },
+    {
+      "band_config": "1A_n78A",
+      "bandwidth_config": "20_100",
+      "action": "download",
+      "duration_sec": 30
+    },
+    {
+      "band_config": "3A",
+      "action": "phy"
+    },
+    {
+      "band_config": "5A",
+      "action": "bidirectional",
+      "duration_sec": 30
+    },
+    {
+      "band_config": "1A-3A",
+      "bandwidth_config": "20+20",
+      "action": "phy"
+    },
+    {
+      "band_config": "n78C",
+      "bandwidth_config": "100+100",
+      "action": "upload",
+      "duration_sec": 30
+    },
+    {
+      "band_config": "1A_n78A",
+      "bandwidth_config": "20_100",
+      "action": "download",
+      "duration_sec": 30
+    },
+    {
+      "band_config": "3A",
+      "action": "phy"
+    },
+    {
+      "band_config": "5A",
+      "action": "bidirectional",
+      "duration_sec": 30
+    },
+    {
+      "band_config": "1A-3A",
+      "bandwidth_config": "20+20",
+      "action": "phy"
+    },
+    {
+      "band_config": "n78C",
+      "bandwidth_config": "100+100",
+      "action": "upload",
+      "duration_sec": 30
+    },
+    {
+      "band_config": "1A_n78A",
+      "bandwidth_config": "20_100",
+      "action": "download",
+      "duration_sec": 30
+    },
+    {
+      "band_config": "3A",
+      "action": "phy"
+    },
+    {
+      "band_config": "5A",
+      "action": "bidirectional",
+      "duration_sec": 30
+    },
+    {
+      "band_config": "1A-3A",
+      "bandwidth_config": "20+20",
+      "action": "phy"
+    },
+    {
+      "band_config": "n78C",
+      "bandwidth_config": "100+100",
+      "action": "upload",
+      "duration_sec": 30
+    },
+    {
+      "band_config": "1A_n78A",
+      "bandwidth_config": "20_100",
+      "action": "download",
+      "duration_sec": 30
+    },
+    {
+      "band_config": "3A",
+      "action": "phy"
+    },
+    {
+      "band_config": "5A",
+      "action": "bidirectional",
+      "duration_sec": 30
+    },
+    {
+      "band_config": "1A-3A",
+      "bandwidth_config": "20+20",
+      "action": "phy"
+    },
+    {
+      "band_config": "n78C",
+      "bandwidth_config": "100+100",
+      "action": "upload",
+      "duration_sec": 30
+    },
+    {
+      "band_config": "1A_n78A",
+      "bandwidth_config": "20_100",
+      "action": "download",
+      "duration_sec": 30
+    },
+    {
+      "band_config": "3A",
+      "action": "phy"
+    },
+    {
+      "band_config": "5A",
+      "action": "bidirectional",
+      "duration_sec": 30
+    },
+    {
+      "band_config": "1A-3A",
+      "bandwidth_config": "20+20",
+      "action": "phy"
+    },
+    {
+      "band_config": "n78C",
+      "bandwidth_config": "100+100",
+      "action": "upload",
+      "duration_sec": 30
+    },
+    {
+      "band_config": "1A_n78A",
+      "bandwidth_config": "20_100",
+      "action": "download",
+      "duration_sec": 30
+    },
+    {
+      "band_config": "3A",
+      "action": "phy"
+    },
+    {
+      "band_config": "5A",
+      "action": "bidirectional",
+      "duration_sec": 30
+    },
+    {
+      "band_config": "1A-3A",
+      "bandwidth_config": "20+20",
+      "action": "phy"
+    },
+    {
+      "band_config": "n78C",
+      "bandwidth_config": "100+100",
+      "action": "upload",
+      "duration_sec": 30
+    },
+    {
+      "band_config": "1A_n78A",
+      "bandwidth_config": "20_100",
+      "action": "download",
+      "duration_sec": 30
+    },
+    {
+      "band_config": "3A",
+      "action": "phy"
+    },
+    {
+      "band_config": "5A",
+      "action": "bidirectional",
+      "duration_sec": 30
+    },
+    {
+      "band_config": "1A-3A",
+      "bandwidth_config": "20+20",
+      "action": "phy"
+    },
+    {
+      "band_config": "n78C",
+      "bandwidth_config": "100+100",
+      "action": "upload",
+      "duration_sec": 30
+    },
+    {
+      "band_config": "1A_n78A",
+      "bandwidth_config": "20_100",
+      "action": "download",
+      "duration_sec": 30
+    },
+    {
+      "band_config": "3A",
+      "action": "phy"
+    },
+    {
+      "band_config": "5A",
+      "action": "bidirectional",
+      "duration_sec": 30
+    },
+    {
+      "band_config": "1A-3A",
+      "bandwidth_config": "20+20",
+      "action": "phy"
+    },
+    {
+      "band_config": "n78C",
+      "bandwidth_config": "100+100",
+      "action": "upload",
+      "duration_sec": 30
+    },
+    {
+      "band_config": "1A_n78A",
+      "bandwidth_config": "20_100",
+      "action": "download",
+      "duration_sec": 30
+    },
+    {
+      "band_config": "3A",
+      "action": "phy"
+    },
+    {
+      "band_config": "5A",
+      "action": "bidirectional",
+      "duration_sec": 30
+    },
+    {
+      "band_config": "1A-3A",
+      "bandwidth_config": "20+20",
+      "action": "phy"
+    },
+    {
+      "band_config": "n78C",
+      "bandwidth_config": "100+100",
+      "action": "upload",
+      "duration_sec": 30
+    },
+    {
+      "band_config": "1A_n78A",
+      "bandwidth_config": "20_100",
+      "action": "download",
+      "duration_sec": 30
+    },
+    {
+      "band_config": "3A",
+      "action": "phy"
+    },
+    {
+      "band_config": "5A",
+      "action": "bidirectional",
+      "duration_sec": 30
+    },
+    {
+      "band_config": "1A-3A",
+      "bandwidth_config": "20+20",
+      "action": "phy"
+    },
+    {
+      "band_config": "n78C",
+      "bandwidth_config": "100+100",
+      "action": "upload",
+      "duration_sec": 30
+    },
+    {
+      "band_config": "1A_n78A",
+      "bandwidth_config": "20_100",
+      "action": "download",
+      "duration_sec": 30
+    },
+    {
+      "band_config": "3A",
+      "action": "phy"
+    }
+  ],
+  "results": [
+    {
+      "序號": 1,
+      "Band": "5A",
+      "BW": "10",
+      "ARFCN": "",
+      "測試類型": "PHY+iPerf",
+      "iPerf方向": "bidirectional",
+      "測試秒數": 30,
+      "設定開始時間": "2026-08-05T10:08:58+08:00",
+      "設定完成時間": "2026-08-05T10:09:55+08:00",
+      "UE連線狀態": "未連線",
+      "PHY DL Mbps": null,
+      "PHY UL Mbps": null,
+      "iPerf平均 Mbps": null,
+      "iPerf最低 Mbps": null,
+      "iPerf最高 Mbps": null,
+      "傳輸量 MB": null,
+      "Download 平均 Mbps": null,
+      "Download 最低 Mbps": null,
+      "Download 最高 Mbps": null,
+      "Download 傳輸量 MB": null,
+      "Upload 平均 Mbps": null,
+      "Upload 最低 Mbps": null,
+      "Upload 最高 Mbps": null,
+      "Upload 傳輸量 MB": null,
+      "結果": "FAIL",
+      "錯誤原因": "Band 設定失敗",
+      "_ue_timeout": false,
+      "_wait_ue_timeout_sec": 180,
+      "_iperf_skipped_due_to_ue": false,
+      "_band_success": false,
+      "_iperf_success": null,
+      "_iperf_details": {}
+    }
+  ],
+  "created_at": "2026-08-05T10:08:48+08:00",
+  "reports": {
+    "xlsx": "D:\\NetworkAutomation\\batch_results\\Batch_Result_batch-20260805-100848-25ef62.xlsx",
+    "txt": "D:\\NetworkAutomation\\batch_results\\Batch_Result_batch-20260805-100848-25ef62.txt",
+    "xlsx_url": "http://127.0.0.1:8765/Batch_Result_batch-20260805-100848-25ef62.xlsx",
+    "txt_url": "http://127.0.0.1:8765/Batch_Result_batch-20260805-100848-25ef62.txt"
+  },
+  "notification_target": "8718585771",
+  "updated_at": "2026-08-05T10:12:29+08:00",
+  "launcher_pid": 788284,
+  "worker_pid": 788284,
+  "started_at": "2026-08-05T10:08:58+08:00",
+  "message": "批次測試已停止，報表已產生。",
+  "current_index": 0,
+  "current_item": {
+    "band_config": "5A",
+    "action": "bidirectional",
+    "duration_sec": 30,
+    "bandwidth_config": "10",
+    "_default_bandwidth_applied": true
+  },
+  "current_operation_id": null,
+  "current_operation_status": null,
+  "current_operation_stage": null,
+  "current_operation_message": null,
+  "current_operation_elapsed_sec": 30.9,
+  "finished_at": "2026-08-05T10:10:27+08:00",
+  "last_result": {
+    "序號": 1,
+    "Band": "5A",
+    "BW": "10",
+    "ARFCN": "",
+    "測試類型": "PHY+iPerf",
+    "iPerf方向": "bidirectional",
+    "測試秒數": 30,
+    "設定開始時間": "2026-08-05T10:08:58+08:00",
+    "設定完成時間": "2026-08-05T10:09:55+08:00",
+    "UE連線狀態": "未連線",
+    "PHY DL Mbps": null,
+    "PHY UL Mbps": null,
+    "iPerf平均 Mbps": null,
+    "iPerf最低 Mbps": null,
+    "iPerf最高 Mbps": null,
+    "傳輸量 MB": null,
+    "Download 平均 Mbps": null,
+    "Download 最低 Mbps": null,
+    "Download 最高 Mbps": null,
+    "Download 傳輸量 MB": null,
+    "Upload 平均 Mbps": null,
+    "Upload 最低 Mbps": null,
+    "Upload 最高 Mbps": null,
+    "Upload 傳輸量 MB": null,
+    "結果": "FAIL",
+    "錯誤原因": "Band 設定失敗",
+    "_ue_timeout": false,
+    "_wait_ue_timeout_sec": 180,
+    "_iperf_skipped_due_to_ue": false,
+    "_band_success": false,
+    "_iperf_success": null,
+    "_iperf_details": {}
+  },
+  "report_delivery_status": "partial",
+  "report_delivery": {
+    "xlsx": {
+      "success": false,
+      "error": "Command '['C:\\\\Program Files\\\\nodejs\\\\node.EXE', 'C:\\\\Users\\\\admin\\\\AppData\\\\Roaming\\\\npm\\\\node_modules\\\\openclaw\\\\openclaw.mjs', 'message', 'send', '--channel', 'telegram', '--target', '8718585771', '--message', '批次測試最終：XLSX 報表', '--media', 'D:\\\\NetworkAutomation\\\\batch_results\\\\Batch_Result_batch-20260805-100848-25ef62.xlsx', '--force-document']' timed out after 90 seconds",
+      "path": "D:\\NetworkAutomation\\batch_results\\Batch_Result_batch-20260805-100848-25ef62.xlsx"
+    },
+    "txt": {
+      "success": false,
+      "error": "Command '['C:\\\\Program Files\\\\nodejs\\\\node.EXE', 'C:\\\\Users\\\\admin\\\\AppData\\\\Roaming\\\\npm\\\\node_modules\\\\openclaw\\\\openclaw.mjs', 'message', 'send', '--channel', 'telegram', '--target', '8718585771', '--message', '批次測試最終：TXT 報表', '--media', 'D:\\\\NetworkAutomation\\\\batch_results\\\\Batch_Result_batch-20260805-100848-25ef62.txt', '--force-document']' timed out after 90 seconds",
+      "path": "D:\\NetworkAutomation\\batch_results\\Batch_Result_batch-20260805-100848-25ef62.txt"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "success": false,
+  "tool": "iperf.bidirectional",
+  "human_summary": "FAIL｜雙向 iPerf 測試失敗",
+  "machine_result": {
+    "success": false,
+    "ue_ip": "192.168.2.2",
+    "duration_sec_each": 30,
+    "results": [
+      {
+        "direction": "download",
+        "result": {
+          "success": false,
+          "error": "RuntimeError",
+          "message": "UE 192.168.2.2 無法從 iPerf Executor Ping 通，停止測試。",
+          "returncode": 1
+        }
+      }
+    ],
+    "operation_metrics": {
+      "operation_id": "op-8df4efd649e04d9a",
+      "total_elapsed_sec": 3.6
+    }
+  },
+  "schema_version": "1.0",
+  "timestamp": "2026-08-04T13:10:57+08:00",
+  "result_file": null,
+  "returncode": 1,
+  "telegram_reply": "結果失敗。\n\n• 錯誤：未知錯誤"
+}

@@ -1,0 +1,585 @@
+{
+  "success": false,
+  "tool": "amarisoft.set_nr_band",
+  "human_summary": "ENDC NR config �w�M�ΡA�� UE �|���s�u�C",
+  "machine_result": {
+    "success": false,
+    "mode": "ENDC",
+    "modifier": {
+      "success": true,
+      "mode": "ENDC",
+      "input_cfg": "D:\\NetworkAutomation\\generated\\AutoConfig_ENDC_LTE_B3_Cell1.tmp.cfg",
+      "output_cfg": "D:\\NetworkAutomation\\generated\\AutoConfig_ENDC_NR_n78_Cell1.cfg",
+      "cell": 1,
+      "band": 78,
+      "duplex_type": "TDD",
+      "bandwidth_mhz": 100.0,
+      "nr_arfcn": 623334,
+      "center_frequency_mhz": 3350.01,
+      "mimo_dl": null,
+      "mimo_ul": null,
+      "modulation_dl": null,
+      "modulation_ul": null,
+      "mcs_dl": null,
+      "mcs_ul": null,
+      "time_slot": "DDDSU_DDSUU",
+      "tdd_config": 5,
+      "changes": [
+        {
+          "key": "NR_CELL",
+          "old": "2",
+          "new": "1"
+        },
+        {
+          "key": "NR_TDD_Cell_1",
+          "old": "1",
+          "new": "1"
+        },
+        {
+          "key": "NR_EARFCN_1_DL",
+          "old": "518598",
+          "new": "623334"
+        },
+        {
+          "key": "NR_BANDWIDTH_1",
+          "old": "100",
+          "new": "100"
+        },
+        {
+          "key": "NR_BAND_1",
+          "old": "41",
+          "new": "78"
+        },
+        {
+          "key": "NR_TDD_CONFIG",
+          "old": "5",
+          "new": "5"
+        }
+      ],
+      "subcarrier_spacing_khz": 30,
+      "channel_raster_khz": 30,
+      "bcs_skeleton": "n78A:100"
+    },
+    "lte_anchor": {
+      "success": true,
+      "input_cfg": "D:\\NetworkAutomation\\plugins\\amarisoft\\AutoConfig_ENDC.cfg",
+      "output_cfg": "D:\\NetworkAutomation\\generated\\AutoConfig_ENDC_LTE_B3_Cell1.tmp.cfg",
+      "cell": 1,
+      "band": 3,
+      "mode": "FDD",
+      "dl_earfcn": 1575,
+      "bandwidth_mhz": 20.0,
+      "rb_dl": 100,
+      "mimo_dl": null,
+      "mimo_ul": null,
+      "modulation_dl": null,
+      "modulation_ul": null,
+      "mcs_dl": null,
+      "mcs_ul": null,
+      "changes": [
+        {
+          "key": "LTE_Cell_1_EARFCN_DL",
+          "old": "1575",
+          "new": "1575"
+        },
+        {
+          "key": "LTE_Cell_1_RB_DL",
+          "old": "100",
+          "new": "100"
+        },
+        {
+          "key": "LTE_TDD_Cell_1",
+          "old": "0",
+          "new": "0"
+        }
+      ]
+    },
+    "generated_cfg": "D:\\NetworkAutomation\\generated\\AutoConfig_ENDC_NR_n78_Cell1.cfg",
+    "dry_run": false,
+    "runtime_files": {
+      "apply_nr_to_callbox": "D:\\NetworkAutomation\\plugins\\amarisoft\\apply_nr_to_callbox.py",
+      "nr_config_modifier": "D:\\NetworkAutomation\\plugins\\amarisoft\\nr_config_modifier.py",
+      "nr_spec": "D:\\NetworkAutomation\\plugins\\amarisoft\\nr_spec.json",
+      "nr_config_modifier_sha256": "c51c781d0a7fcd5b3bfc46650d2f650709abc597ab7f210d669c2e86e0aaff8d",
+      "nr_spec_sha256": "766c025cb95c566d6229fd2cc4e464c7e4409c0b3f9a1358480b186d85917af2"
+    },
+    "local_config_verify": {
+      "define": "NR_EARFCN_1_DL",
+      "generated_arfcn": 623334,
+      "calculated_arfcn": 623334,
+      "success": true
+    },
+    "stage_success": {
+      "config_generated": true,
+      "uploaded": true,
+      "lte_service_stable": true,
+      "remote_config_verified": true,
+      "ue_connected": false
+    },
+    "remote_cfg_path": "/root/enb/config/AutoConfig.cfg",
+    "source_template": "D:\\NetworkAutomation\\plugins\\amarisoft\\AutoConfig_ENDC.cfg",
+    "backup": {
+      "success": true,
+      "stdout": "",
+      "stderr": ""
+    },
+    "upload": {
+      "success": true,
+      "local_path": "D:\\NetworkAutomation\\generated\\AutoConfig_ENDC_NR_n78_Cell1.cfg",
+      "remote_path": "/root/enb/config/AutoConfig.cfg"
+    },
+    "restart": {
+      "success": true,
+      "commands": [
+        {
+          "success": true,
+          "command": "cd /root/enb/config && ln -sfn AutoConfig.cfg enb.cfg",
+          "exit_code": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "success": true,
+          "command": "service lte restart",
+          "exit_code": 0,
+          "stdout": "",
+          "stderr": "Redirecting to /bin/systemctl restart lte.service\n"
+        }
+      ]
+    },
+    "lte_service": {
+      "success": true,
+      "elapsed_sec": 2.1,
+      "attempts": [
+        {
+          "elapsed_sec": 0.0,
+          "running": true,
+          "consecutive_success": 1
+        },
+        {
+          "elapsed_sec": 2.1,
+          "running": true,
+          "consecutive_success": 2
+        }
+      ]
+    },
+    "config_verify": {
+      "success": true,
+      "command": "grep -E '^#define (NR_BAND_1|NR_BANDWIDTH_1|NR_EARFCN_1_DL)' /root/enb/config/AutoConfig.cfg",
+      "stdout": "#define NR_EARFCN_1_DL        623334\r\n#define NR_BANDWIDTH_1        100\r\n#define NR_BAND_1            78    \r\n",
+      "stderr": ""
+    },
+    "ue_wait_timeout_sec": 180,
+    "connection": {
+      "success": false,
+      "connected": false,
+      "connection_basis": null,
+      "elapsed_sec": 180.4,
+      "phy_rate": {
+        "success": false,
+        "cells": [],
+        "total_dl_bitrate_bps": 0,
+        "total_ul_bitrate_bps": 0,
+        "error": "[0.002] !!! Error Error: connect ECONNREFUSED 192.168.1.80:9001\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1278:16) {\n  errno: -111,\n  code: 'ECONNREFUSED',\n  syscall: 'connect',\n  address: '192.168.1.80',\n  port: 9001\n}\n",
+        "command": "cd /root/enb && ./ws.js 192.168.1.80:9001 '{\"message\":\"stats\"}'",
+        "raw_stdout": "WebSocket remote API tool version 2024-07-09, Copyright (C) 2012-2024 Amarisoft\n"
+      },
+      "ues": [],
+      "ue": null,
+      "data_ue": null,
+      "data_ue_ip": null,
+      "data_ip_source": "not_available",
+      "ping": null,
+      "attempt_count": 55,
+      "attempts": [
+        {
+          "elapsed_sec": 117.0,
+          "phy_connected": false,
+          "phy_rate": {
+            "success": false,
+            "cells": [],
+            "total_dl_bitrate_bps": 0,
+            "total_ul_bitrate_bps": 0,
+            "error": "[0.002] !!! Error Error: connect ECONNREFUSED 192.168.1.80:9001\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1278:16) {\n  errno: -111,\n  code: 'ECONNREFUSED',\n  syscall: 'connect',\n  address: '192.168.1.80',\n  port: 9001\n}\n",
+            "command": "cd /root/enb && ./ws.js 192.168.1.80:9001 '{\"message\":\"stats\"}'",
+            "raw_stdout": "WebSocket remote API tool version 2024-07-09, Copyright (C) 2012-2024 Amarisoft\n"
+          },
+          "ue_get_success": true,
+          "matched_ues": [],
+          "data_ue": null,
+          "data_ip_source": "not_available",
+          "data_ip_wait_sec": 0.0,
+          "ping": null
+        },
+        {
+          "elapsed_sec": 120.3,
+          "phy_connected": false,
+          "phy_rate": {
+            "success": false,
+            "cells": [],
+            "total_dl_bitrate_bps": 0,
+            "total_ul_bitrate_bps": 0,
+            "error": "[0.002] !!! Error Error: connect ECONNREFUSED 192.168.1.80:9001\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1278:16) {\n  errno: -111,\n  code: 'ECONNREFUSED',\n  syscall: 'connect',\n  address: '192.168.1.80',\n  port: 9001\n}\n",
+            "command": "cd /root/enb && ./ws.js 192.168.1.80:9001 '{\"message\":\"stats\"}'",
+            "raw_stdout": "WebSocket remote API tool version 2024-07-09, Copyright (C) 2012-2024 Amarisoft\n"
+          },
+          "ue_get_success": true,
+          "matched_ues": [],
+          "data_ue": null,
+          "data_ip_source": "not_available",
+          "data_ip_wait_sec": 0.0,
+          "ping": null
+        },
+        {
+          "elapsed_sec": 123.7,
+          "phy_connected": false,
+          "phy_rate": {
+            "success": false,
+            "cells": [],
+            "total_dl_bitrate_bps": 0,
+            "total_ul_bitrate_bps": 0,
+            "error": "[0.002] !!! Error Error: connect ECONNREFUSED 192.168.1.80:9001\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1278:16) {\n  errno: -111,\n  code: 'ECONNREFUSED',\n  syscall: 'connect',\n  address: '192.168.1.80',\n  port: 9001\n}\n",
+            "command": "cd /root/enb && ./ws.js 192.168.1.80:9001 '{\"message\":\"stats\"}'",
+            "raw_stdout": "WebSocket remote API tool version 2024-07-09, Copyright (C) 2012-2024 Amarisoft\n"
+          },
+          "ue_get_success": true,
+          "matched_ues": [],
+          "data_ue": null,
+          "data_ip_source": "not_available",
+          "data_ip_wait_sec": 0.0,
+          "ping": null
+        },
+        {
+          "elapsed_sec": 127.0,
+          "phy_connected": false,
+          "phy_rate": {
+            "success": false,
+            "cells": [],
+            "total_dl_bitrate_bps": 0,
+            "total_ul_bitrate_bps": 0,
+            "error": "[0.002] !!! Error Error: connect ECONNREFUSED 192.168.1.80:9001\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1278:16) {\n  errno: -111,\n  code: 'ECONNREFUSED',\n  syscall: 'connect',\n  address: '192.168.1.80',\n  port: 9001\n}\n",
+            "command": "cd /root/enb && ./ws.js 192.168.1.80:9001 '{\"message\":\"stats\"}'",
+            "raw_stdout": "WebSocket remote API tool version 2024-07-09, Copyright (C) 2012-2024 Amarisoft\n"
+          },
+          "ue_get_success": true,
+          "matched_ues": [],
+          "data_ue": null,
+          "data_ip_source": "not_available",
+          "data_ip_wait_sec": 0.0,
+          "ping": null
+        },
+        {
+          "elapsed_sec": 130.3,
+          "phy_connected": false,
+          "phy_rate": {
+            "success": false,
+            "cells": [],
+            "total_dl_bitrate_bps": 0,
+            "total_ul_bitrate_bps": 0,
+            "error": "[0.002] !!! Error Error: connect ECONNREFUSED 192.168.1.80:9001\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1278:16) {\n  errno: -111,\n  code: 'ECONNREFUSED',\n  syscall: 'connect',\n  address: '192.168.1.80',\n  port: 9001\n}\n",
+            "command": "cd /root/enb && ./ws.js 192.168.1.80:9001 '{\"message\":\"stats\"}'",
+            "raw_stdout": "WebSocket remote API tool version 2024-07-09, Copyright (C) 2012-2024 Amarisoft\n"
+          },
+          "ue_get_success": true,
+          "matched_ues": [],
+          "data_ue": null,
+          "data_ip_source": "not_available",
+          "data_ip_wait_sec": 0.0,
+          "ping": null
+        },
+        {
+          "elapsed_sec": 133.7,
+          "phy_connected": false,
+          "phy_rate": {
+            "success": false,
+            "cells": [],
+            "total_dl_bitrate_bps": 0,
+            "total_ul_bitrate_bps": 0,
+            "error": "[0.002] !!! Error Error: connect ECONNREFUSED 192.168.1.80:9001\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1278:16) {\n  errno: -111,\n  code: 'ECONNREFUSED',\n  syscall: 'connect',\n  address: '192.168.1.80',\n  port: 9001\n}\n",
+            "command": "cd /root/enb && ./ws.js 192.168.1.80:9001 '{\"message\":\"stats\"}'",
+            "raw_stdout": "WebSocket remote API tool version 2024-07-09, Copyright (C) 2012-2024 Amarisoft\n"
+          },
+          "ue_get_success": true,
+          "matched_ues": [],
+          "data_ue": null,
+          "data_ip_source": "not_available",
+          "data_ip_wait_sec": 0.0,
+          "ping": null
+        },
+        {
+          "elapsed_sec": 137.0,
+          "phy_connected": false,
+          "phy_rate": {
+            "success": false,
+            "cells": [],
+            "total_dl_bitrate_bps": 0,
+            "total_ul_bitrate_bps": 0,
+            "error": "[0.002] !!! Error Error: connect ECONNREFUSED 192.168.1.80:9001\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1278:16) {\n  errno: -111,\n  code: 'ECONNREFUSED',\n  syscall: 'connect',\n  address: '192.168.1.80',\n  port: 9001\n}\n",
+            "command": "cd /root/enb && ./ws.js 192.168.1.80:9001 '{\"message\":\"stats\"}'",
+            "raw_stdout": "WebSocket remote API tool version 2024-07-09, Copyright (C) 2012-2024 Amarisoft\n"
+          },
+          "ue_get_success": true,
+          "matched_ues": [],
+          "data_ue": null,
+          "data_ip_source": "not_available",
+          "data_ip_wait_sec": 0.0,
+          "ping": null
+        },
+        {
+          "elapsed_sec": 140.4,
+          "phy_connected": false,
+          "phy_rate": {
+            "success": false,
+            "cells": [],
+            "total_dl_bitrate_bps": 0,
+            "total_ul_bitrate_bps": 0,
+            "error": "[0.002] !!! Error Error: connect ECONNREFUSED 192.168.1.80:9001\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1278:16) {\n  errno: -111,\n  code: 'ECONNREFUSED',\n  syscall: 'connect',\n  address: '192.168.1.80',\n  port: 9001\n}\n",
+            "command": "cd /root/enb && ./ws.js 192.168.1.80:9001 '{\"message\":\"stats\"}'",
+            "raw_stdout": "WebSocket remote API tool version 2024-07-09, Copyright (C) 2012-2024 Amarisoft\n"
+          },
+          "ue_get_success": true,
+          "matched_ues": [],
+          "data_ue": null,
+          "data_ip_source": "not_available",
+          "data_ip_wait_sec": 0.0,
+          "ping": null
+        },
+        {
+          "elapsed_sec": 143.7,
+          "phy_connected": false,
+          "phy_rate": {
+            "success": false,
+            "cells": [],
+            "total_dl_bitrate_bps": 0,
+            "total_ul_bitrate_bps": 0,
+            "error": "[0.002] !!! Error Error: connect ECONNREFUSED 192.168.1.80:9001\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1278:16) {\n  errno: -111,\n  code: 'ECONNREFUSED',\n  syscall: 'connect',\n  address: '192.168.1.80',\n  port: 9001\n}\n",
+            "command": "cd /root/enb && ./ws.js 192.168.1.80:9001 '{\"message\":\"stats\"}'",
+            "raw_stdout": "WebSocket remote API tool version 2024-07-09, Copyright (C) 2012-2024 Amarisoft\n"
+          },
+          "ue_get_success": true,
+          "matched_ues": [],
+          "data_ue": null,
+          "data_ip_source": "not_available",
+          "data_ip_wait_sec": 0.0,
+          "ping": null
+        },
+        {
+          "elapsed_sec": 147.0,
+          "phy_connected": false,
+          "phy_rate": {
+            "success": false,
+            "cells": [],
+            "total_dl_bitrate_bps": 0,
+            "total_ul_bitrate_bps": 0,
+            "error": "[0.003] !!! Error Error: connect ECONNREFUSED 192.168.1.80:9001\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1278:16) {\n  errno: -111,\n  code: 'ECONNREFUSED',\n  syscall: 'connect',\n  address: '192.168.1.80',\n  port: 9001\n}\n",
+            "command": "cd /root/enb && ./ws.js 192.168.1.80:9001 '{\"message\":\"stats\"}'",
+            "raw_stdout": "WebSocket remote API tool version 2024-07-09, Copyright (C) 2012-2024 Amarisoft\n"
+          },
+          "ue_get_success": true,
+          "matched_ues": [],
+          "data_ue": null,
+          "data_ip_source": "not_available",
+          "data_ip_wait_sec": 0.0,
+          "ping": null
+        },
+        {
+          "elapsed_sec": 150.4,
+          "phy_connected": false,
+          "phy_rate": {
+            "success": false,
+            "cells": [],
+            "total_dl_bitrate_bps": 0,
+            "total_ul_bitrate_bps": 0,
+            "error": "[0.002] !!! Error Error: connect ECONNREFUSED 192.168.1.80:9001\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1278:16) {\n  errno: -111,\n  code: 'ECONNREFUSED',\n  syscall: 'connect',\n  address: '192.168.1.80',\n  port: 9001\n}\n",
+            "command": "cd /root/enb && ./ws.js 192.168.1.80:9001 '{\"message\":\"stats\"}'",
+            "raw_stdout": "WebSocket remote API tool version 2024-07-09, Copyright (C) 2012-2024 Amarisoft\n"
+          },
+          "ue_get_success": true,
+          "matched_ues": [],
+          "data_ue": null,
+          "data_ip_source": "not_available",
+          "data_ip_wait_sec": 0.0,
+          "ping": null
+        },
+        {
+          "elapsed_sec": 153.7,
+          "phy_connected": false,
+          "phy_rate": {
+            "success": false,
+            "cells": [],
+            "total_dl_bitrate_bps": 0,
+            "total_ul_bitrate_bps": 0,
+            "error": "[0.002] !!! Error Error: connect ECONNREFUSED 192.168.1.80:9001\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1278:16) {\n  errno: -111,\n  code: 'ECONNREFUSED',\n  syscall: 'connect',\n  address: '192.168.1.80',\n  port: 9001\n}\n",
+            "command": "cd /root/enb && ./ws.js 192.168.1.80:9001 '{\"message\":\"stats\"}'",
+            "raw_stdout": "WebSocket remote API tool version 2024-07-09, Copyright (C) 2012-2024 Amarisoft\n"
+          },
+          "ue_get_success": true,
+          "matched_ues": [],
+          "data_ue": null,
+          "data_ip_source": "not_available",
+          "data_ip_wait_sec": 0.0,
+          "ping": null
+        },
+        {
+          "elapsed_sec": 157.0,
+          "phy_connected": false,
+          "phy_rate": {
+            "success": false,
+            "cells": [],
+            "total_dl_bitrate_bps": 0,
+            "total_ul_bitrate_bps": 0,
+            "error": "[0.002] !!! Error Error: connect ECONNREFUSED 192.168.1.80:9001\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1278:16) {\n  errno: -111,\n  code: 'ECONNREFUSED',\n  syscall: 'connect',\n  address: '192.168.1.80',\n  port: 9001\n}\n",
+            "command": "cd /root/enb && ./ws.js 192.168.1.80:9001 '{\"message\":\"stats\"}'",
+            "raw_stdout": "WebSocket remote API tool version 2024-07-09, Copyright (C) 2012-2024 Amarisoft\n"
+          },
+          "ue_get_success": true,
+          "matched_ues": [],
+          "data_ue": null,
+          "data_ip_source": "not_available",
+          "data_ip_wait_sec": 0.0,
+          "ping": null
+        },
+        {
+          "elapsed_sec": 160.4,
+          "phy_connected": false,
+          "phy_rate": {
+            "success": false,
+            "cells": [],
+            "total_dl_bitrate_bps": 0,
+            "total_ul_bitrate_bps": 0,
+            "error": "[0.002] !!! Error Error: connect ECONNREFUSED 192.168.1.80:9001\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1278:16) {\n  errno: -111,\n  code: 'ECONNREFUSED',\n  syscall: 'connect',\n  address: '192.168.1.80',\n  port: 9001\n}\n",
+            "command": "cd /root/enb && ./ws.js 192.168.1.80:9001 '{\"message\":\"stats\"}'",
+            "raw_stdout": "WebSocket remote API tool version 2024-07-09, Copyright (C) 2012-2024 Amarisoft\n"
+          },
+          "ue_get_success": true,
+          "matched_ues": [],
+          "data_ue": null,
+          "data_ip_source": "not_available",
+          "data_ip_wait_sec": 0.0,
+          "ping": null
+        },
+        {
+          "elapsed_sec": 163.7,
+          "phy_connected": false,
+          "phy_rate": {
+            "success": false,
+            "cells": [],
+            "total_dl_bitrate_bps": 0,
+            "total_ul_bitrate_bps": 0,
+            "error": "[0.003] !!! Error Error: connect ECONNREFUSED 192.168.1.80:9001\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1278:16) {\n  errno: -111,\n  code: 'ECONNREFUSED',\n  syscall: 'connect',\n  address: '192.168.1.80',\n  port: 9001\n}\n",
+            "command": "cd /root/enb && ./ws.js 192.168.1.80:9001 '{\"message\":\"stats\"}'",
+            "raw_stdout": "WebSocket remote API tool version 2024-07-09, Copyright (C) 2012-2024 Amarisoft\n"
+          },
+          "ue_get_success": true,
+          "matched_ues": [],
+          "data_ue": null,
+          "data_ip_source": "not_available",
+          "data_ip_wait_sec": 0.0,
+          "ping": null
+        },
+        {
+          "elapsed_sec": 167.0,
+          "phy_connected": false,
+          "phy_rate": {
+            "success": false,
+            "cells": [],
+            "total_dl_bitrate_bps": 0,
+            "total_ul_bitrate_bps": 0,
+            "error": "[0.002] !!! Error Error: connect ECONNREFUSED 192.168.1.80:9001\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1278:16) {\n  errno: -111,\n  code: 'ECONNREFUSED',\n  syscall: 'connect',\n  address: '192.168.1.80',\n  port: 9001\n}\n",
+            "command": "cd /root/enb && ./ws.js 192.168.1.80:9001 '{\"message\":\"stats\"}'",
+            "raw_stdout": "WebSocket remote API tool version 2024-07-09, Copyright (C) 2012-2024 Amarisoft\n"
+          },
+          "ue_get_success": true,
+          "matched_ues": [],
+          "data_ue": null,
+          "data_ip_source": "not_available",
+          "data_ip_wait_sec": 0.0,
+          "ping": null
+        },
+        {
+          "elapsed_sec": 170.4,
+          "phy_connected": false,
+          "phy_rate": {
+            "success": false,
+            "cells": [],
+            "total_dl_bitrate_bps": 0,
+            "total_ul_bitrate_bps": 0,
+            "error": "[0.002] !!! Error Error: connect ECONNREFUSED 192.168.1.80:9001\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1278:16) {\n  errno: -111,\n  code: 'ECONNREFUSED',\n  syscall: 'connect',\n  address: '192.168.1.80',\n  port: 9001\n}\n",
+            "command": "cd /root/enb && ./ws.js 192.168.1.80:9001 '{\"message\":\"stats\"}'",
+            "raw_stdout": "WebSocket remote API tool version 2024-07-09, Copyright (C) 2012-2024 Amarisoft\n"
+          },
+          "ue_get_success": true,
+          "matched_ues": [],
+          "data_ue": null,
+          "data_ip_source": "not_available",
+          "data_ip_wait_sec": 0.0,
+          "ping": null
+        },
+        {
+          "elapsed_sec": 173.7,
+          "phy_connected": false,
+          "phy_rate": {
+            "success": false,
+            "cells": [],
+            "total_dl_bitrate_bps": 0,
+            "total_ul_bitrate_bps": 0,
+            "error": "[0.002] !!! Error Error: connect ECONNREFUSED 192.168.1.80:9001\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1278:16) {\n  errno: -111,\n  code: 'ECONNREFUSED',\n  syscall: 'connect',\n  address: '192.168.1.80',\n  port: 9001\n}\n",
+            "command": "cd /root/enb && ./ws.js 192.168.1.80:9001 '{\"message\":\"stats\"}'",
+            "raw_stdout": "WebSocket remote API tool version 2024-07-09, Copyright (C) 2012-2024 Amarisoft\n"
+          },
+          "ue_get_success": true,
+          "matched_ues": [],
+          "data_ue": null,
+          "data_ip_source": "not_available",
+          "data_ip_wait_sec": 0.0,
+          "ping": null
+        },
+        {
+          "elapsed_sec": 177.0,
+          "phy_connected": false,
+          "phy_rate": {
+            "success": false,
+            "cells": [],
+            "total_dl_bitrate_bps": 0,
+            "total_ul_bitrate_bps": 0,
+            "error": "[0.002] !!! Error Error: connect ECONNREFUSED 192.168.1.80:9001\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1278:16) {\n  errno: -111,\n  code: 'ECONNREFUSED',\n  syscall: 'connect',\n  address: '192.168.1.80',\n  port: 9001\n}\n",
+            "command": "cd /root/enb && ./ws.js 192.168.1.80:9001 '{\"message\":\"stats\"}'",
+            "raw_stdout": "WebSocket remote API tool version 2024-07-09, Copyright (C) 2012-2024 Amarisoft\n"
+          },
+          "ue_get_success": true,
+          "matched_ues": [],
+          "data_ue": null,
+          "data_ip_source": "not_available",
+          "data_ip_wait_sec": 0.0,
+          "ping": null
+        },
+        {
+          "elapsed_sec": 180.4,
+          "phy_connected": false,
+          "phy_rate": {
+            "success": false,
+            "cells": [],
+            "total_dl_bitrate_bps": 0,
+            "total_ul_bitrate_bps": 0,
+            "error": "[0.002] !!! Error Error: connect ECONNREFUSED 192.168.1.80:9001\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1278:16) {\n  errno: -111,\n  code: 'ECONNREFUSED',\n  syscall: 'connect',\n  address: '192.168.1.80',\n  port: 9001\n}\n",
+            "command": "cd /root/enb && ./ws.js 192.168.1.80:9001 '{\"message\":\"stats\"}'",
+            "raw_stdout": "WebSocket remote API tool version 2024-07-09, Copyright (C) 2012-2024 Amarisoft\n"
+          },
+          "ue_get_success": true,
+          "matched_ues": [],
+          "data_ue": null,
+          "data_ip_source": "not_available",
+          "data_ip_wait_sec": 0.0,
+          "ping": null
+        }
+      ],
+      "error": "UE_CONNECTION_TIMEOUT",
+      "message": "�b 180 ���w���W�����APHY DL/UL bitrate ���� 0�A�|���P�w UE �w�s�u�C"
+    },
+    "message": "ENDC NR config �w�M�ΡA�� UE �|���s�u�C",
+    "returncode": 1
+  },
+  "schema_version": "1.0",
+  "timestamp": "2026-07-30T16:36:43+08:00",
+  "result_file": null
+}

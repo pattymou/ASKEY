@@ -1,0 +1,52 @@
+{
+  "success": true,
+  "operation_id": "op-87119a76d076427a",
+  "fingerprint": "f495469cba2606a318c51927cb920929bb14d35cf9e6fee64bb750b6907b7791",
+  "intent": "set_band",
+  "parameters": {
+    "band_config": "5A",
+    "bandwidth_config": "10",
+    "lte_carriers": [
+      {
+        "band": 5,
+        "bandwidth_mhz": 10.0
+      }
+    ]
+  },
+  "cli_args": [
+    "amarisoft",
+    "set-band",
+    "--band-config",
+    "5A",
+    "--bandwidth-config",
+    "10"
+  ],
+  "status": "failed",
+  "stage": "failed",
+  "message": "FAIL｜LTE Band 設定未完整完成\n\nLTE config 已套用，但 UE 尚未連線。",
+  "progress_percent": 100,
+  "created_at": "2026-08-04T15:45:12+08:00",
+  "updated_at": "2026-08-04T15:50:23+08:00",
+  "worker_timeout_sec": 900,
+  "attached_existing": false,
+  "owner_batch_id": "batch-20260804-122111-af8815",
+  "worker_pid": 676236,
+  "worker_started_at": "2026-08-04T15:45:12+08:00",
+  "child_pid": 698728,
+  "command": [
+    "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "-u",
+    "D:\\NetworkAutomation\\callbox_agent.py",
+    "amarisoft",
+    "set-band",
+    "--band-config",
+    "5A",
+    "--bandwidth-config",
+    "10"
+  ],
+  "elapsed_sec": 310.5,
+  "worker_heartbeat_at": "2026-08-04T15:50:20+08:00",
+  "returncode": 1,
+  "result_file": "D:\\NetworkAutomation\\state\\operations\\op-87119a76d076427a.result.json",
+  "worker_finished_at": "2026-08-04T15:50:23+08:00"
+}

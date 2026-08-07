@@ -1,0 +1,1974 @@
+{
+  "bands": {
+    "==== FDD Sub-3GHz 頻段 (Raster 多為 100 kHz) ====": {},
+    "n1": {
+      "type": "FDD",
+      "start_freq": 2110.0,
+      "raster_khz": 100,
+      "allowed_bws": [
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        40,
+        50
+      ],
+      "default_scs_khz": 15,
+      "bandwidth_scs": {
+        "5": [
+          15
+        ],
+        "10": [
+          15
+        ],
+        "15": [
+          15
+        ],
+        "20": [
+          15
+        ],
+        "25": [
+          15
+        ],
+        "30": [
+          15
+        ],
+        "40": [
+          15
+        ],
+        "50": [
+          15
+        ]
+      },
+      "channel_raster_by_scs_khz": {
+        "15": 100
+      }
+    },
+    "n2": {
+      "type": "FDD",
+      "start_freq": 1930.0,
+      "raster_khz": 100,
+      "allowed_bws": [
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        35,
+        40
+      ],
+      "default_scs_khz": 15,
+      "bandwidth_scs": {
+        "5": [
+          15
+        ],
+        "10": [
+          15
+        ],
+        "15": [
+          15
+        ],
+        "20": [
+          15
+        ],
+        "25": [
+          15
+        ],
+        "30": [
+          15
+        ],
+        "35": [
+          15
+        ],
+        "40": [
+          15
+        ]
+      },
+      "channel_raster_by_scs_khz": {
+        "15": 100
+      }
+    },
+    "n3": {
+      "type": "FDD",
+      "start_freq": 1805.0,
+      "raster_khz": 100,
+      "allowed_bws": [
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        40,
+        50
+      ],
+      "default_scs_khz": 15,
+      "bandwidth_scs": {
+        "5": [
+          15
+        ],
+        "10": [
+          15
+        ],
+        "15": [
+          15
+        ],
+        "20": [
+          15
+        ],
+        "25": [
+          15
+        ],
+        "30": [
+          15
+        ],
+        "40": [
+          15
+        ],
+        "50": [
+          15
+        ]
+      },
+      "channel_raster_by_scs_khz": {
+        "15": 100
+      }
+    },
+    "n5": {
+      "type": "FDD",
+      "start_freq": 869.0,
+      "raster_khz": 100,
+      "allowed_bws": [
+        5,
+        10,
+        15,
+        20
+      ],
+      "default_scs_khz": 15,
+      "bandwidth_scs": {
+        "5": [
+          15
+        ],
+        "10": [
+          15
+        ],
+        "15": [
+          15
+        ],
+        "20": [
+          15
+        ]
+      },
+      "channel_raster_by_scs_khz": {
+        "15": 100
+      }
+    },
+    "n7": {
+      "type": "FDD",
+      "start_freq": 2620.0,
+      "raster_khz": 100,
+      "allowed_bws": [
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        40,
+        50
+      ],
+      "default_scs_khz": 15,
+      "bandwidth_scs": {
+        "5": [
+          15
+        ],
+        "10": [
+          15
+        ],
+        "15": [
+          15
+        ],
+        "20": [
+          15
+        ],
+        "25": [
+          15
+        ],
+        "30": [
+          15
+        ],
+        "40": [
+          15
+        ],
+        "50": [
+          15
+        ]
+      },
+      "channel_raster_by_scs_khz": {
+        "15": 100
+      }
+    },
+    "n8": {
+      "type": "FDD",
+      "start_freq": 925.0,
+      "raster_khz": 100,
+      "allowed_bws": [
+        5,
+        10,
+        15,
+        20
+      ],
+      "default_scs_khz": 15,
+      "bandwidth_scs": {
+        "5": [
+          15
+        ],
+        "10": [
+          15
+        ],
+        "15": [
+          15
+        ],
+        "20": [
+          15
+        ]
+      },
+      "channel_raster_by_scs_khz": {
+        "15": 100
+      }
+    },
+    "n12": {
+      "type": "FDD",
+      "start_freq": 729.0,
+      "raster_khz": 100,
+      "allowed_bws": [
+        5,
+        10,
+        15
+      ],
+      "default_scs_khz": 15,
+      "bandwidth_scs": {
+        "5": [
+          15
+        ],
+        "10": [
+          15
+        ],
+        "15": [
+          15
+        ]
+      },
+      "channel_raster_by_scs_khz": {
+        "15": 100
+      }
+    },
+    "n14": {
+      "type": "FDD",
+      "start_freq": 758.0,
+      "raster_khz": 100,
+      "allowed_bws": [
+        5,
+        10
+      ],
+      "default_scs_khz": 15,
+      "bandwidth_scs": {
+        "5": [
+          15
+        ],
+        "10": [
+          15
+        ]
+      },
+      "channel_raster_by_scs_khz": {
+        "15": 100
+      }
+    },
+    "n18": {
+      "type": "FDD",
+      "start_freq": 860.0,
+      "raster_khz": 100,
+      "allowed_bws": [
+        15
+      ],
+      "default_scs_khz": 15,
+      "bandwidth_scs": {
+        "15": [
+          15
+        ]
+      },
+      "channel_raster_by_scs_khz": {
+        "15": 100
+      }
+    },
+    "n20": {
+      "type": "FDD",
+      "start_freq": 791.0,
+      "raster_khz": 100,
+      "allowed_bws": [
+        5,
+        10,
+        15,
+        20
+      ],
+      "default_scs_khz": 15,
+      "bandwidth_scs": {
+        "5": [
+          15
+        ],
+        "10": [
+          15
+        ],
+        "15": [
+          15
+        ],
+        "20": [
+          15
+        ]
+      },
+      "channel_raster_by_scs_khz": {
+        "15": 100
+      }
+    },
+    "n24": {
+      "type": "FDD",
+      "start_freq": 1626.5,
+      "raster_khz": 100,
+      "allowed_bws": [
+        5,
+        10
+      ],
+      "default_scs_khz": 15,
+      "bandwidth_scs": {
+        "5": [
+          15
+        ],
+        "10": [
+          15
+        ]
+      },
+      "channel_raster_by_scs_khz": {
+        "15": 100
+      }
+    },
+    "n25": {
+      "type": "FDD",
+      "start_freq": 1930.0,
+      "raster_khz": 100,
+      "allowed_bws": [
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        35,
+        40,
+        45,
+        50
+      ],
+      "default_scs_khz": 15,
+      "bandwidth_scs": {
+        "5": [
+          15
+        ],
+        "10": [
+          15
+        ],
+        "15": [
+          15
+        ],
+        "20": [
+          15
+        ],
+        "25": [
+          15
+        ],
+        "30": [
+          15
+        ],
+        "35": [
+          15
+        ],
+        "40": [
+          15
+        ],
+        "45": [
+          15
+        ],
+        "50": [
+          15
+        ]
+      },
+      "channel_raster_by_scs_khz": {
+        "15": 100
+      }
+    },
+    "n26": {
+      "type": "FDD",
+      "start_freq": 859.0,
+      "raster_khz": 100,
+      "allowed_bws": [
+        5,
+        10,
+        15,
+        20
+      ],
+      "default_scs_khz": 15,
+      "bandwidth_scs": {
+        "5": [
+          15
+        ],
+        "10": [
+          15
+        ],
+        "15": [
+          15
+        ],
+        "20": [
+          15
+        ]
+      },
+      "channel_raster_by_scs_khz": {
+        "15": 100
+      }
+    },
+    "n28": {
+      "type": "FDD",
+      "start_freq": 758.0,
+      "raster_khz": 100,
+      "allowed_bws": [
+        5,
+        10,
+        15,
+        20
+      ],
+      "default_scs_khz": 15,
+      "bandwidth_scs": {
+        "5": [
+          15
+        ],
+        "10": [
+          15
+        ],
+        "15": [
+          15
+        ],
+        "20": [
+          15
+        ]
+      },
+      "channel_raster_by_scs_khz": {
+        "15": 100
+      }
+    },
+    "n30": {
+      "type": "FDD",
+      "start_freq": 2350.0,
+      "raster_khz": 100,
+      "allowed_bws": [
+        5,
+        10
+      ],
+      "default_scs_khz": 15,
+      "bandwidth_scs": {
+        "5": [
+          15
+        ],
+        "10": [
+          15
+        ]
+      },
+      "channel_raster_by_scs_khz": {
+        "15": 100
+      }
+    },
+    "n65": {
+      "type": "FDD",
+      "start_freq": 2110.0,
+      "raster_khz": 100,
+      "allowed_bws": [
+        5,
+        10,
+        15,
+        20,
+        50
+      ],
+      "default_scs_khz": 15,
+      "bandwidth_scs": {
+        "5": [
+          15
+        ],
+        "10": [
+          15
+        ],
+        "15": [
+          15
+        ],
+        "20": [
+          15
+        ],
+        "50": [
+          15
+        ]
+      },
+      "channel_raster_by_scs_khz": {
+        "15": 100
+      }
+    },
+    "n66": {
+      "type": "FDD",
+      "start_freq": 2110.0,
+      "raster_khz": 100,
+      "allowed_bws": [
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        40,
+        45,
+        50
+      ],
+      "default_scs_khz": 15,
+      "bandwidth_scs": {
+        "5": [
+          15
+        ],
+        "10": [
+          15
+        ],
+        "15": [
+          15
+        ],
+        "20": [
+          15
+        ],
+        "25": [
+          15
+        ],
+        "30": [
+          15
+        ],
+        "40": [
+          15
+        ],
+        "45": [
+          15
+        ],
+        "50": [
+          15
+        ]
+      },
+      "channel_raster_by_scs_khz": {
+        "15": 100
+      }
+    },
+    "n70": {
+      "type": "FDD",
+      "start_freq": 1995.0,
+      "raster_khz": 100,
+      "allowed_bws": [
+        5,
+        10,
+        15,
+        20,
+        25
+      ],
+      "default_scs_khz": 15,
+      "bandwidth_scs": {
+        "5": [
+          15
+        ],
+        "10": [
+          15
+        ],
+        "15": [
+          15
+        ],
+        "20": [
+          15
+        ],
+        "25": [
+          15
+        ]
+      },
+      "channel_raster_by_scs_khz": {
+        "15": 100
+      }
+    },
+    "n71": {
+      "type": "FDD",
+      "start_freq": 617.0,
+      "raster_khz": 100,
+      "allowed_bws": [
+        5,
+        10,
+        15,
+        20
+      ],
+      "default_scs_khz": 15,
+      "bandwidth_scs": {
+        "5": [
+          15
+        ],
+        "10": [
+          15
+        ],
+        "15": [
+          15
+        ],
+        "20": [
+          15
+        ]
+      },
+      "channel_raster_by_scs_khz": {
+        "15": 100
+      }
+    },
+    "n74": {
+      "type": "FDD",
+      "start_freq": 1475.0,
+      "raster_khz": 100,
+      "allowed_bws": [
+        5,
+        10,
+        15,
+        20
+      ],
+      "default_scs_khz": 15,
+      "bandwidth_scs": {
+        "5": [
+          15
+        ],
+        "10": [
+          15
+        ],
+        "15": [
+          15
+        ],
+        "20": [
+          15
+        ]
+      },
+      "channel_raster_by_scs_khz": {
+        "15": 100
+      }
+    },
+    "n75": {
+      "type": "FDD",
+      "start_freq": 1432.0,
+      "raster_khz": 100,
+      "allowed_bws": [
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        40,
+        50
+      ],
+      "default_scs_khz": 15,
+      "bandwidth_scs": {
+        "5": [
+          15
+        ],
+        "10": [
+          15
+        ],
+        "15": [
+          15
+        ],
+        "20": [
+          15
+        ],
+        "25": [
+          15
+        ],
+        "30": [
+          15
+        ],
+        "40": [
+          15
+        ],
+        "50": [
+          15
+        ]
+      },
+      "channel_raster_by_scs_khz": {
+        "15": 100
+      }
+    },
+    "n76": {
+      "type": "FDD",
+      "start_freq": 1427.0,
+      "raster_khz": 100,
+      "allowed_bws": [
+        5,
+        10,
+        15,
+        20
+      ],
+      "default_scs_khz": 15,
+      "bandwidth_scs": {
+        "5": [
+          15
+        ],
+        "10": [
+          15
+        ],
+        "15": [
+          15
+        ],
+        "20": [
+          15
+        ]
+      },
+      "channel_raster_by_scs_khz": {
+        "15": 100
+      }
+    },
+    "n81": {
+      "type": "FDD",
+      "start_freq": 880.0,
+      "raster_khz": 100,
+      "allowed_bws": [
+        5,
+        10,
+        15,
+        20
+      ],
+      "default_scs_khz": 15,
+      "bandwidth_scs": {
+        "5": [
+          15
+        ],
+        "10": [
+          15
+        ],
+        "15": [
+          15
+        ],
+        "20": [
+          15
+        ]
+      },
+      "channel_raster_by_scs_khz": {
+        "15": 100
+      }
+    },
+    "n82": {
+      "type": "FDD",
+      "start_freq": 832.0,
+      "raster_khz": 100,
+      "allowed_bws": [
+        5,
+        10,
+        15,
+        20
+      ],
+      "default_scs_khz": 15,
+      "bandwidth_scs": {
+        "5": [
+          15
+        ],
+        "10": [
+          15
+        ],
+        "15": [
+          15
+        ],
+        "20": [
+          15
+        ]
+      },
+      "channel_raster_by_scs_khz": {
+        "15": 100
+      }
+    },
+    "n83": {
+      "type": "FDD",
+      "start_freq": 703.0,
+      "raster_khz": 100,
+      "allowed_bws": [
+        5,
+        10,
+        15,
+        20
+      ],
+      "default_scs_khz": 15,
+      "bandwidth_scs": {
+        "5": [
+          15
+        ],
+        "10": [
+          15
+        ],
+        "15": [
+          15
+        ],
+        "20": [
+          15
+        ]
+      },
+      "channel_raster_by_scs_khz": {
+        "15": 100
+      }
+    },
+    "n84": {
+      "type": "FDD",
+      "start_freq": 1920.0,
+      "raster_khz": 100,
+      "allowed_bws": [
+        5,
+        10,
+        15,
+        20
+      ],
+      "default_scs_khz": 15,
+      "bandwidth_scs": {
+        "5": [
+          15
+        ],
+        "10": [
+          15
+        ],
+        "15": [
+          15
+        ],
+        "20": [
+          15
+        ]
+      },
+      "channel_raster_by_scs_khz": {
+        "15": 100
+      }
+    },
+    "n86": {
+      "type": "FDD",
+      "start_freq": 1710.0,
+      "raster_khz": 100,
+      "allowed_bws": [
+        5,
+        10,
+        15,
+        20
+      ],
+      "default_scs_khz": 15,
+      "bandwidth_scs": {
+        "5": [
+          15
+        ],
+        "10": [
+          15
+        ],
+        "15": [
+          15
+        ],
+        "20": [
+          15
+        ]
+      },
+      "channel_raster_by_scs_khz": {
+        "15": 100
+      }
+    },
+    "n89": {
+      "type": "FDD",
+      "start_freq": 824.0,
+      "raster_khz": 100,
+      "allowed_bws": [
+        5,
+        10,
+        15,
+        20
+      ],
+      "default_scs_khz": 15,
+      "bandwidth_scs": {
+        "5": [
+          15
+        ],
+        "10": [
+          15
+        ],
+        "15": [
+          15
+        ],
+        "20": [
+          15
+        ]
+      },
+      "channel_raster_by_scs_khz": {
+        "15": 100
+      }
+    },
+    "n91": {
+      "type": "FDD",
+      "start_freq": 1427.0,
+      "raster_khz": 100,
+      "allowed_bws": [
+        5,
+        10
+      ],
+      "default_scs_khz": 15,
+      "bandwidth_scs": {
+        "5": [
+          15
+        ],
+        "10": [
+          15
+        ]
+      },
+      "channel_raster_by_scs_khz": {
+        "15": 100
+      }
+    },
+    "n92": {
+      "type": "FDD",
+      "start_freq": 832.0,
+      "raster_khz": 100,
+      "allowed_bws": [
+        5,
+        10
+      ],
+      "default_scs_khz": 15,
+      "bandwidth_scs": {
+        "5": [
+          15
+        ],
+        "10": [
+          15
+        ]
+      },
+      "channel_raster_by_scs_khz": {
+        "15": 100
+      }
+    },
+    "n93": {
+      "type": "FDD",
+      "start_freq": 880.0,
+      "raster_khz": 100,
+      "allowed_bws": [
+        5,
+        10
+      ],
+      "default_scs_khz": 15,
+      "bandwidth_scs": {
+        "5": [
+          15
+        ],
+        "10": [
+          15
+        ]
+      },
+      "channel_raster_by_scs_khz": {
+        "15": 100
+      }
+    },
+    "n94": {
+      "type": "FDD",
+      "start_freq": 1427.0,
+      "raster_khz": 100,
+      "allowed_bws": [
+        5,
+        10,
+        15,
+        20
+      ],
+      "default_scs_khz": 15,
+      "bandwidth_scs": {
+        "5": [
+          15
+        ],
+        "10": [
+          15
+        ],
+        "15": [
+          15
+        ],
+        "20": [
+          15
+        ]
+      },
+      "channel_raster_by_scs_khz": {
+        "15": 100
+      }
+    },
+    "n95": {
+      "type": "FDD",
+      "start_freq": 2010.0,
+      "raster_khz": 100,
+      "allowed_bws": [
+        5,
+        10,
+        15
+      ],
+      "default_scs_khz": 15,
+      "bandwidth_scs": {
+        "5": [
+          15
+        ],
+        "10": [
+          15
+        ],
+        "15": [
+          15
+        ]
+      },
+      "channel_raster_by_scs_khz": {
+        "15": 100
+      }
+    },
+    "n97": {
+      "type": "FDD",
+      "start_freq": 2300.0,
+      "raster_khz": 100,
+      "allowed_bws": [
+        5,
+        10,
+        15,
+        20,
+        30,
+        40
+      ],
+      "default_scs_khz": 15,
+      "bandwidth_scs": {
+        "5": [
+          15
+        ],
+        "10": [
+          15
+        ],
+        "15": [
+          15
+        ],
+        "20": [
+          15
+        ],
+        "30": [
+          15
+        ],
+        "40": [
+          15
+        ]
+      },
+      "channel_raster_by_scs_khz": {
+        "15": 100
+      }
+    },
+    "n98": {
+      "type": "FDD",
+      "start_freq": 1880.0,
+      "raster_khz": 100,
+      "allowed_bws": [
+        5,
+        10,
+        15,
+        20,
+        30,
+        40
+      ],
+      "default_scs_khz": 15,
+      "bandwidth_scs": {
+        "5": [
+          15
+        ],
+        "10": [
+          15
+        ],
+        "15": [
+          15
+        ],
+        "20": [
+          15
+        ],
+        "30": [
+          15
+        ],
+        "40": [
+          15
+        ]
+      },
+      "channel_raster_by_scs_khz": {
+        "15": 100
+      }
+    },
+    "n99": {
+      "type": "FDD",
+      "start_freq": 1626.5,
+      "raster_khz": 100,
+      "allowed_bws": [
+        5,
+        10
+      ],
+      "default_scs_khz": 15,
+      "bandwidth_scs": {
+        "5": [
+          15
+        ],
+        "10": [
+          15
+        ]
+      },
+      "channel_raster_by_scs_khz": {
+        "15": 100
+      }
+    },
+    "==== TDD 頻段 (低頻 100 kHz / 高頻 15 kHz ) ====": {},
+    "n34": {
+      "type": "TDD",
+      "start_freq": 2010.0,
+      "raster_khz": 100,
+      "allowed_bws": [
+        5,
+        10,
+        15
+      ],
+      "default_scs_khz": 30,
+      "bandwidth_scs": {
+        "5": [
+          15
+        ],
+        "10": [
+          15,
+          30
+        ],
+        "15": [
+          15,
+          30
+        ]
+      },
+      "channel_raster_by_scs_khz": {
+        "15": 100,
+        "30": 100
+      }
+    },
+    "n38": {
+      "type": "TDD",
+      "start_freq": 2570.0,
+      "raster_khz": 100,
+      "allowed_bws": [
+        5,
+        10,
+        13,
+        15,
+        20,
+        30,
+        40
+      ],
+      "default_scs_khz": 30,
+      "bandwidth_scs": {
+        "5": [
+          15
+        ],
+        "10": [
+          15,
+          30
+        ],
+        "15": [
+          15,
+          30
+        ],
+        "20": [
+          15,
+          30
+        ],
+        "40": [
+          15,
+          30
+        ],
+        "13": [
+          30
+        ],
+        "30": [
+          30
+        ]
+      },
+      "channel_raster_by_scs_khz": {
+        "15": 100,
+        "30": 100
+      }
+    },
+    "n39": {
+      "type": "TDD",
+      "start_freq": 1880.0,
+      "raster_khz": 100,
+      "allowed_bws": [
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        40
+      ],
+      "default_scs_khz": 30,
+      "bandwidth_scs": {
+        "5": [
+          15
+        ],
+        "10": [
+          15,
+          30
+        ],
+        "15": [
+          15,
+          30
+        ],
+        "20": [
+          15,
+          30
+        ],
+        "25": [
+          15,
+          30
+        ],
+        "30": [
+          15,
+          30
+        ],
+        "40": [
+          15,
+          30
+        ]
+      },
+      "channel_raster_by_scs_khz": {
+        "15": 100,
+        "30": 100
+      }
+    },
+    "n40": {
+      "type": "TDD",
+      "start_freq": 2300.0,
+      "raster_khz": 100,
+      "allowed_bws": [
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        40,
+        50,
+        60,
+        80,
+        100
+      ],
+      "default_scs_khz": 30,
+      "bandwidth_scs": {
+        "5": [
+          15
+        ],
+        "10": [
+          15,
+          30
+        ],
+        "15": [
+          15,
+          30
+        ],
+        "20": [
+          15,
+          30
+        ],
+        "25": [
+          15,
+          30
+        ],
+        "30": [
+          15,
+          30
+        ],
+        "40": [
+          15,
+          30
+        ],
+        "50": [
+          15,
+          30
+        ],
+        "60": [
+          30
+        ],
+        "80": [
+          30
+        ],
+        "100": [
+          30
+        ]
+      },
+      "channel_raster_by_scs_khz": {
+        "15": 100,
+        "30": 100
+      }
+    },
+    "n41": {
+      "type": "TDD",
+      "start_freq": 2496.0,
+      "raster_khz": 15,
+      "allowed_bws": [
+        10,
+        15,
+        20,
+        30,
+        40,
+        50,
+        60,
+        70,
+        80,
+        90,
+        100
+      ],
+      "default_scs_khz": 30,
+      "bandwidth_scs": {
+        "10": [
+          15,
+          30
+        ],
+        "15": [
+          15,
+          30
+        ],
+        "20": [
+          15,
+          30
+        ],
+        "30": [
+          15,
+          30
+        ],
+        "40": [
+          15,
+          30
+        ],
+        "50": [
+          15,
+          30
+        ],
+        "60": [
+          30
+        ],
+        "80": [
+          30
+        ],
+        "90": [
+          30
+        ],
+        "100": [
+          30
+        ],
+        "70": [
+          30
+        ]
+      },
+      "channel_raster_by_scs_khz": {
+        "15": 15,
+        "30": 30
+      }
+    },
+    "n48": {
+      "type": "TDD",
+      "start_freq": 3550.0,
+      "raster_khz": 15,
+      "allowed_bws": [
+        5,
+        10,
+        15,
+        20,
+        30,
+        40,
+        50,
+        60,
+        70,
+        80,
+        90,
+        100
+      ],
+      "default_scs_khz": 30,
+      "bandwidth_scs": {
+        "5": [
+          15
+        ],
+        "10": [
+          15,
+          30
+        ],
+        "15": [
+          15,
+          30
+        ],
+        "20": [
+          15,
+          30
+        ],
+        "40": [
+          15,
+          30
+        ],
+        "50": [
+          15
+        ],
+        "60": [
+          30
+        ],
+        "80": [
+          30
+        ],
+        "90": [
+          30
+        ],
+        "100": [
+          30
+        ],
+        "30": [
+          30
+        ],
+        "70": [
+          30
+        ]
+      },
+      "channel_raster_by_scs_khz": {
+        "15": 15,
+        "30": 30
+      }
+    },
+    "n50": {
+      "type": "TDD",
+      "start_freq": 1432.0,
+      "raster_khz": 100,
+      "allowed_bws": [
+        5,
+        10,
+        15,
+        20,
+        30,
+        40,
+        50,
+        60,
+        80
+      ],
+      "default_scs_khz": 30,
+      "bandwidth_scs": {
+        "5": [
+          15
+        ],
+        "10": [
+          15,
+          30
+        ],
+        "15": [
+          15,
+          30
+        ],
+        "20": [
+          15,
+          30
+        ],
+        "40": [
+          15,
+          30
+        ],
+        "50": [
+          15,
+          30
+        ],
+        "60": [
+          30
+        ],
+        "80": [
+          30
+        ],
+        "30": [
+          30
+        ]
+      },
+      "channel_raster_by_scs_khz": {
+        "15": 100,
+        "30": 100
+      }
+    },
+    "n51": {
+      "type": "TDD",
+      "start_freq": 1427.0,
+      "raster_khz": 100,
+      "allowed_bws": [
+        5
+      ],
+      "default_scs_khz": 30,
+      "bandwidth_scs": {
+        "5": [
+          15
+        ]
+      },
+      "channel_raster_by_scs_khz": {
+        "15": 100
+      }
+    },
+    "n53": {
+      "type": "TDD",
+      "start_freq": 2483.5,
+      "raster_khz": 100,
+      "allowed_bws": [
+        5,
+        10
+      ],
+      "default_scs_khz": 30,
+      "bandwidth_scs": {
+        "5": [
+          15
+        ],
+        "10": [
+          15,
+          30
+        ]
+      },
+      "channel_raster_by_scs_khz": {
+        "15": 100,
+        "30": 100
+      }
+    },
+    "n77": {
+      "type": "TDD",
+      "start_freq": 3300.0,
+      "raster_khz": 15,
+      "allowed_bws": [
+        10,
+        15,
+        20,
+        25,
+        30,
+        40,
+        50,
+        60,
+        70,
+        80,
+        90,
+        100
+      ],
+      "default_scs_khz": 30,
+      "bandwidth_scs": {
+        "10": [
+          15,
+          30
+        ],
+        "15": [
+          15,
+          30
+        ],
+        "20": [
+          15,
+          30
+        ],
+        "25": [
+          15,
+          30
+        ],
+        "30": [
+          15,
+          30
+        ],
+        "40": [
+          15,
+          30
+        ],
+        "50": [
+          15,
+          30
+        ],
+        "60": [
+          30
+        ],
+        "80": [
+          30
+        ],
+        "90": [
+          30
+        ],
+        "100": [
+          30
+        ],
+        "70": [
+          30
+        ]
+      },
+      "channel_raster_by_scs_khz": {
+        "15": 15,
+        "30": 30
+      }
+    },
+    "n78": {
+      "type": "TDD",
+      "start_freq": 3300.0,
+      "raster_khz": 15,
+      "allowed_bws": [
+        10,
+        15,
+        20,
+        25,
+        30,
+        40,
+        50,
+        60,
+        70,
+        80,
+        90,
+        100
+      ],
+      "default_scs_khz": 30,
+      "bandwidth_scs": {
+        "10": [
+          15,
+          30
+        ],
+        "15": [
+          15,
+          30
+        ],
+        "20": [
+          15,
+          30
+        ],
+        "25": [
+          15,
+          30
+        ],
+        "30": [
+          15,
+          30
+        ],
+        "40": [
+          15,
+          30
+        ],
+        "50": [
+          15,
+          30
+        ],
+        "60": [
+          30
+        ],
+        "70": [
+          30
+        ],
+        "80": [
+          30
+        ],
+        "90": [
+          30
+        ],
+        "100": [
+          30
+        ]
+      },
+      "channel_raster_by_scs_khz": {
+        "15": 15,
+        "30": 30
+      }
+    },
+    "n79": {
+      "type": "TDD",
+      "start_freq": 4400.0,
+      "raster_khz": 15,
+      "allowed_bws": [
+        40,
+        50,
+        60,
+        80,
+        100
+      ],
+      "default_scs_khz": 30,
+      "bandwidth_scs": {
+        "40": [
+          15,
+          30
+        ],
+        "50": [
+          15,
+          30
+        ],
+        "60": [
+          30
+        ],
+        "80": [
+          30
+        ],
+        "100": [
+          30
+        ]
+      },
+      "channel_raster_by_scs_khz": {
+        "15": 15,
+        "30": 30
+      }
+    },
+    "n90": {
+      "type": "TDD",
+      "start_freq": 2496.0,
+      "raster_khz": 15,
+      "allowed_bws": [
+        10,
+        15,
+        20,
+        30,
+        40,
+        50,
+        60,
+        70,
+        80,
+        90,
+        100
+      ],
+      "default_scs_khz": 30,
+      "bandwidth_scs": {
+        "10": [
+          30
+        ],
+        "15": [
+          30
+        ],
+        "20": [
+          30
+        ],
+        "30": [
+          30
+        ],
+        "40": [
+          30
+        ],
+        "50": [
+          30
+        ],
+        "60": [
+          30
+        ],
+        "70": [
+          30
+        ],
+        "80": [
+          30
+        ],
+        "90": [
+          30
+        ],
+        "100": [
+          30
+        ]
+      },
+      "channel_raster_by_scs_khz": {
+        "30": 30
+      }
+    },
+    "n96": {
+      "type": "TDD",
+      "start_freq": 5925.0,
+      "raster_khz": 15,
+      "allowed_bws": [
+        20,
+        40,
+        60,
+        80
+      ],
+      "default_scs_khz": 30,
+      "bandwidth_scs": {
+        "20": [
+          30
+        ],
+        "40": [
+          30
+        ],
+        "60": [
+          30
+        ],
+        "80": [
+          30
+        ]
+      },
+      "channel_raster_by_scs_khz": {
+        "30": 30
+      }
+    },
+    "n101": {
+      "type": "TDD",
+      "start_freq": 1900.0,
+      "raster_khz": 100,
+      "allowed_bws": [
+        5,
+        10,
+        15,
+        20
+      ],
+      "default_scs_khz": 30,
+      "bandwidth_scs": {
+        "5": [
+          30
+        ],
+        "10": [
+          30
+        ],
+        "15": [
+          30
+        ],
+        "20": [
+          30
+        ]
+      },
+      "channel_raster_by_scs_khz": {
+        "30": 100
+      }
+    },
+    "n102": {
+      "type": "TDD",
+      "start_freq": 5925.0,
+      "raster_khz": 15,
+      "allowed_bws": [
+        20,
+        40,
+        50,
+        60,
+        80,
+        100
+      ],
+      "default_scs_khz": 30,
+      "bandwidth_scs": {
+        "20": [
+          30
+        ],
+        "40": [
+          30
+        ],
+        "50": [
+          30
+        ],
+        "60": [
+          30
+        ],
+        "80": [
+          30
+        ],
+        "100": [
+          30
+        ]
+      },
+      "channel_raster_by_scs_khz": {
+        "30": 30
+      }
+    },
+    "n104": {
+      "type": "TDD",
+      "start_freq": 6425.0,
+      "raster_khz": 15,
+      "allowed_bws": [
+        20,
+        40,
+        50,
+        60,
+        80,
+        100
+      ],
+      "default_scs_khz": 30,
+      "bandwidth_scs": {
+        "20": [
+          30
+        ],
+        "40": [
+          30
+        ],
+        "50": [
+          30
+        ],
+        "60": [
+          30
+        ],
+        "80": [
+          30
+        ],
+        "100": [
+          30
+        ]
+      },
+      "channel_raster_by_scs_khz": {
+        "30": 30
+      }
+    },
+    "n105": {
+      "type": "TDD",
+      "start_freq": 3300.0,
+      "raster_khz": 15,
+      "allowed_bws": [
+        10,
+        15,
+        20,
+        30,
+        40,
+        50,
+        60,
+        70,
+        80,
+        90,
+        100
+      ],
+      "default_scs_khz": 30,
+      "bandwidth_scs": {
+        "10": [
+          30
+        ],
+        "15": [
+          30
+        ],
+        "20": [
+          30
+        ],
+        "30": [
+          30
+        ],
+        "40": [
+          30
+        ],
+        "50": [
+          30
+        ],
+        "60": [
+          30
+        ],
+        "70": [
+          30
+        ],
+        "80": [
+          30
+        ],
+        "90": [
+          30
+        ],
+        "100": [
+          30
+        ]
+      },
+      "channel_raster_by_scs_khz": {
+        "30": 30
+      }
+    }
+  },
+  "bcs_allowed": [
+    "n1A:20",
+    "n3A:20",
+    "n28A:20",
+    "n78A:100",
+    "n41A:100",
+    "n78C:40+100",
+    "n78C:100+100",
+    "n78C:20+80",
+    "n78C:60+100",
+    "n78C:80+80",
+    "n41C:100+100",
+    "n41C:60+100",
+    "n41C:80+80",
+    "n28A-n78A:20+100",
+    "n28A-n78C:20+100+100",
+    "n3A-n78A:20+100",
+    "n1A-n78A:20+100",
+    "n1A-n3A-n78A:20+20+100"
+  ]
+}

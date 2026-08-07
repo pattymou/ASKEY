@@ -1,0 +1,4888 @@
+{
+  "success": false,
+  "tool": "workflow.band_iperf",
+  "human_summary": "FAIL｜Band + iPerf 流程失敗\n\nStage：wait_ue_timeout\n等待 UE 連線與可用資料 APN IP 超過 180 秒；iPerf 未執行。",
+  "machine_result": {
+    "success": false,
+    "workflow": "band_then_iperf",
+    "stage": "wait_ue_timeout",
+    "band_result": {
+      "success": true,
+      "tool": "amarisoft.set_band",
+      "human_summary": "PASS｜LTE Band 設定完成\n\n【Band】\nCell：1\nBand：B5\n頻寬：10.0 MHz\nDL EARFCN：2525\n\n【Connection】\nLTE Service：Stable\nUE 連線：未連線\n判定依據：N/A\nUE Data IP：等待資料 APN\nIP 來源：not_available\nPHY DL：N/A Mbps\nPHY UL：N/A Mbps\n\n【Timing】\nLTE Service 穩定：2.1 秒\n\n結果：PASS",
+      "machine_result": {
+        "success": true,
+        "stage_success": {
+          "config_generated": true,
+          "uploaded": true,
+          "lte_service_stable": true,
+          "remote_config_verified": true,
+          "ue_connected": false
+        },
+        "modifier": {
+          "success": true,
+          "input_cfg": "D:\\NetworkAutomation\\plugins\\amarisoft\\AutoConfig.cfg",
+          "output_cfg": "D:\\NetworkAutomation\\generated\\AutoConfig_LTE_B5_Cell1.cfg",
+          "cell": 1,
+          "band": 5,
+          "mode": "FDD",
+          "dl_earfcn": 2525,
+          "bandwidth_mhz": 10.0,
+          "rb_dl": 50,
+          "changes": [
+            {
+              "key": "LTE_Cell_1_EARFCN_DL",
+              "old": "2525",
+              "new": "2525"
+            },
+            {
+              "key": "LTE_Cell_1_RB_DL",
+              "old": "50",
+              "new": "50"
+            },
+            {
+              "key": "LTE_TDD_Cell_1",
+              "old": "0",
+              "new": "0"
+            }
+          ]
+        },
+        "generated_cfg": "D:\\NetworkAutomation\\generated\\AutoConfig_LTE_B5_Cell1.cfg",
+        "dry_run": false,
+        "backup": {
+          "success": true,
+          "stdout": "",
+          "stderr": ""
+        },
+        "upload": {
+          "success": true,
+          "local_path": "D:\\NetworkAutomation\\generated\\AutoConfig_LTE_B5_Cell1.cfg",
+          "remote_path": "/root/enb/config/AutoConfig.cfg"
+        },
+        "restart": {
+          "success": true,
+          "commands": [
+            {
+              "success": true,
+              "command": "cd /root/enb/config && ln -sfn AutoConfig.cfg enb.cfg",
+              "exit_code": 0,
+              "stdout": "",
+              "stderr": ""
+            },
+            {
+              "success": true,
+              "command": "service lte restart",
+              "exit_code": 0,
+              "stdout": "",
+              "stderr": "Redirecting to /bin/systemctl restart lte.service\n"
+            }
+          ]
+        },
+        "lte_service": {
+          "success": true,
+          "elapsed_sec": 2.1,
+          "attempts": [
+            {
+              "elapsed_sec": 0.0,
+              "running": true,
+              "consecutive_success": 1
+            },
+            {
+              "elapsed_sec": 2.1,
+              "running": true,
+              "consecutive_success": 2
+            }
+          ]
+        },
+        "config_verify": {
+          "success": true,
+          "command": "grep -E '^#define LTE_Cell_1_(EARFCN_DL|RB_DL)' /root/enb/config/AutoConfig.cfg",
+          "earfcn_ok": true,
+          "rb_ok": true,
+          "stdout": "#define LTE_Cell_1_RB_DL 50\r\n#define LTE_Cell_1_EARFCN_DL 2525\r\n",
+          "stderr": ""
+        },
+        "connection": {
+          "success": true,
+          "connected": false,
+          "skipped": true,
+          "message": "�w���L UE �s�u���ݡC"
+        },
+        "state": {
+          "mode": "LTE",
+          "cell": 1,
+          "band": 5,
+          "bandwidth_mhz": 10.0,
+          "dl_earfcn": 2525,
+          "rb_dl": 50,
+          "service_stable": true,
+          "remote_config_verified": true,
+          "ue_connected": false,
+          "connection_basis": null,
+          "phy_rate": null,
+          "ue": null,
+          "data_ue_ip": null,
+          "data_ip_source": null
+        },
+        "message": "Band ���������GCell1, B5, 10.0MHz�FLTE service í�w�B���� config ���T�BUE �w�s�u�FPHY DL=0 Mbps�APHY UL=0 Mbps�C",
+        "returncode": 0
+      },
+      "schema_version": "1.0",
+      "timestamp": "2026-07-21T16:09:58+08:00",
+      "result_file": null,
+      "returncode": 0
+    },
+    "ip_wait_attempts": [
+      {
+        "elapsed_sec": 1.8,
+        "success": false,
+        "connected": false,
+        "connection_basis": null,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "data_ue_ip": null,
+        "data_ip_source": "not_available",
+        "phy_rate": {
+          "success": false,
+          "cells": [],
+          "total_dl_bitrate_bps": 0,
+          "total_ul_bitrate_bps": 0,
+          "error": "[0.002] !!! Error Error: connect ECONNREFUSED 192.168.1.80:9001\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1278:16) {\n  errno: -111,\n  code: 'ECONNREFUSED',\n  syscall: 'connect',\n  address: '192.168.1.80',\n  port: 9001\n}\n",
+          "command": "cd /root/enb && ./ws.js 192.168.1.80:9001 '{\"message\":\"stats\"}'",
+          "raw_stdout": "WebSocket remote API tool version 2024-07-09, Copyright (C) 2012-2024 Amarisoft\n"
+        },
+        "ues": [],
+        "error": null
+      },
+      {
+        "elapsed_sec": 24.4,
+        "success": true,
+        "connected": false,
+        "connection_basis": null,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "data_ue_ip": null,
+        "data_ip_source": "not_available",
+        "phy_rate": {
+          "success": true,
+          "cells": [
+            {
+              "cell_id": "1",
+              "dl_bitrate_bps": 0,
+              "ul_bitrate_bps": 0,
+              "dl_bitrate_mbps": 0.0,
+              "ul_bitrate_mbps": 0.0,
+              "active": false
+            }
+          ],
+          "total_dl_bitrate_bps": 0,
+          "total_ul_bitrate_bps": 0,
+          "total_dl_bitrate_mbps": 0.0,
+          "total_ul_bitrate_mbps": 0.0,
+          "active_cell_count": 0,
+          "command": "cd /root/enb && ./ws.js 192.168.1.80:9001 '{\"message\":\"stats\"}'",
+          "payload": {
+            "message": "stats",
+            "message_id": "id#1",
+            "instance_id": "6a5f2777",
+            "cpu": {},
+            "cells": {
+              "1": {
+                "dl_bitrate": 0,
+                "ul_bitrate": 0,
+                "dl_tx": 0,
+                "ul_tx": 0,
+                "dl_err": 0,
+                "ul_err": 0,
+                "dl_retx": 0,
+                "ul_retx": 0,
+                "dl_use_min": 0,
+                "dl_use_max": 0.14,
+                "dl_use_avg": 0.007,
+                "dl_data_use_min": 0,
+                "dl_data_use_max": 0,
+                "dl_data_use_avg": 0,
+                "ul_use_min": 0.12,
+                "ul_use_max": 0.24,
+                "ul_use_avg": 0.132,
+                "ul_data_use_min": 0,
+                "ul_data_use_max": 0,
+                "ul_data_use_avg": 0,
+                "ctrl_use_min": 0,
+                "ctrl_use_max": 0.5,
+                "ctrl_use_avg": 0.036,
+                "dl_sched_users_min": 0,
+                "dl_sched_users_max": 0,
+                "dl_sched_users_avg": 0,
+                "ul_sched_users_min": 0,
+                "ul_sched_users_max": 0,
+                "ul_sched_users_avg": 0,
+                "ue_count_min": 0,
+                "ue_count_max": 0,
+                "ue_count_avg": 0,
+                "ue_active_count_min": 0,
+                "ue_active_count_max": 0,
+                "ue_active_count_avg": 0,
+                "ue_inactive_count_min": 0,
+                "ue_inactive_count_max": 0,
+                "ue_inactive_count_avg": 0,
+                "erab_count_min": 0,
+                "erab_count_max": 0,
+                "erab_count_avg": 0,
+                "dl_gbr_use_min": 0,
+                "dl_gbr_use_max": 0,
+                "dl_gbr_use_avg": 0,
+                "ul_gbr_use_min": 0,
+                "ul_gbr_use_max": 0,
+                "ul_gbr_use_avg": 0,
+                "counters": {
+                  "messages": {},
+                  "errors": {}
+                }
+              }
+            },
+            "rf_ports": {
+              "0": {
+                "rxtx_delay": {
+                  "min": 2.532,
+                  "max": 3.594,
+                  "avg": 3.064,
+                  "sd": 0.265
+                }
+              }
+            },
+            "counters": {
+              "messages": {
+                "s1_setup_request": 1,
+                "s1_setup_response": 1
+              },
+              "errors": {}
+            },
+            "duration": 0.4,
+            "time": 0.425,
+            "utc": 1784620940.83
+          }
+        },
+        "ues": [],
+        "error": null
+      },
+      {
+        "elapsed_sec": 29.0,
+        "success": true,
+        "connected": false,
+        "connection_basis": null,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "data_ue_ip": null,
+        "data_ip_source": "not_available",
+        "phy_rate": {
+          "success": true,
+          "cells": [
+            {
+              "cell_id": "1",
+              "dl_bitrate_bps": 0,
+              "ul_bitrate_bps": 0,
+              "dl_bitrate_mbps": 0.0,
+              "ul_bitrate_mbps": 0.0,
+              "active": false
+            }
+          ],
+          "total_dl_bitrate_bps": 0,
+          "total_ul_bitrate_bps": 0,
+          "total_dl_bitrate_mbps": 0.0,
+          "total_ul_bitrate_mbps": 0.0,
+          "active_cell_count": 0,
+          "command": "cd /root/enb && ./ws.js 192.168.1.80:9001 '{\"message\":\"stats\"}'",
+          "payload": {
+            "message": "stats",
+            "message_id": "id#1",
+            "instance_id": "6a5f2777",
+            "cpu": {},
+            "cells": {
+              "1": {
+                "dl_bitrate": 0,
+                "ul_bitrate": 0,
+                "dl_tx": 0,
+                "ul_tx": 0,
+                "dl_err": 0,
+                "ul_err": 0,
+                "dl_retx": 0,
+                "ul_retx": 0,
+                "dl_use_min": 0,
+                "dl_use_max": 0.14,
+                "dl_use_avg": 0.008,
+                "dl_data_use_min": 0,
+                "dl_data_use_max": 0,
+                "dl_data_use_avg": 0,
+                "ul_use_min": 0.12,
+                "ul_use_max": 0.24,
+                "ul_use_avg": 0.132,
+                "ul_data_use_min": 0,
+                "ul_data_use_max": 0,
+                "ul_data_use_avg": 0,
+                "ctrl_use_min": 0,
+                "ctrl_use_max": 0.5,
+                "ctrl_use_avg": 0.04,
+                "dl_sched_users_min": 0,
+                "dl_sched_users_max": 0,
+                "dl_sched_users_avg": 0,
+                "ul_sched_users_min": 0,
+                "ul_sched_users_max": 0,
+                "ul_sched_users_avg": 0,
+                "ue_count_min": 0,
+                "ue_count_max": 0,
+                "ue_count_avg": 0,
+                "ue_active_count_min": 0,
+                "ue_active_count_max": 0,
+                "ue_active_count_avg": 0,
+                "ue_inactive_count_min": 0,
+                "ue_inactive_count_max": 0,
+                "ue_inactive_count_avg": 0,
+                "erab_count_min": 0,
+                "erab_count_max": 0,
+                "erab_count_avg": 0,
+                "dl_gbr_use_min": 0,
+                "dl_gbr_use_max": 0,
+                "dl_gbr_use_avg": 0,
+                "ul_gbr_use_min": 0,
+                "ul_gbr_use_max": 0,
+                "ul_gbr_use_avg": 0,
+                "counters": {
+                  "messages": {},
+                  "errors": {}
+                }
+              }
+            },
+            "rf_ports": {
+              "0": {
+                "rxtx_delay": {
+                  "min": 2.532,
+                  "max": 3.594,
+                  "avg": 3.067,
+                  "sd": 0.264
+                }
+              }
+            },
+            "counters": {
+              "messages": {
+                "s1_setup_request": 1,
+                "s1_setup_response": 1
+              },
+              "errors": {}
+            },
+            "duration": 0.4,
+            "time": 5.192,
+            "utc": 1784620945.595
+          }
+        },
+        "ues": [],
+        "error": null
+      },
+      {
+        "elapsed_sec": 34.0,
+        "success": true,
+        "connected": false,
+        "connection_basis": null,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "data_ue_ip": null,
+        "data_ip_source": "not_available",
+        "phy_rate": {
+          "success": true,
+          "cells": [
+            {
+              "cell_id": "1",
+              "dl_bitrate_bps": 0,
+              "ul_bitrate_bps": 0,
+              "dl_bitrate_mbps": 0.0,
+              "ul_bitrate_mbps": 0.0,
+              "active": false
+            }
+          ],
+          "total_dl_bitrate_bps": 0,
+          "total_ul_bitrate_bps": 0,
+          "total_dl_bitrate_mbps": 0.0,
+          "total_ul_bitrate_mbps": 0.0,
+          "active_cell_count": 0,
+          "command": "cd /root/enb && ./ws.js 192.168.1.80:9001 '{\"message\":\"stats\"}'",
+          "payload": {
+            "message": "stats",
+            "message_id": "id#1",
+            "instance_id": "6a5f2777",
+            "cpu": {},
+            "cells": {
+              "1": {
+                "dl_bitrate": 0,
+                "ul_bitrate": 0,
+                "dl_tx": 0,
+                "ul_tx": 0,
+                "dl_err": 0,
+                "ul_err": 0,
+                "dl_retx": 0,
+                "ul_retx": 0,
+                "dl_use_min": 0,
+                "dl_use_max": 0.14,
+                "dl_use_avg": 0.008,
+                "dl_data_use_min": 0,
+                "dl_data_use_max": 0,
+                "dl_data_use_avg": 0,
+                "ul_use_min": 0.12,
+                "ul_use_max": 0.24,
+                "ul_use_avg": 0.132,
+                "ul_data_use_min": 0,
+                "ul_data_use_max": 0,
+                "ul_data_use_avg": 0,
+                "ctrl_use_min": 0,
+                "ctrl_use_max": 0.5,
+                "ctrl_use_avg": 0.04,
+                "dl_sched_users_min": 0,
+                "dl_sched_users_max": 0,
+                "dl_sched_users_avg": 0,
+                "ul_sched_users_min": 0,
+                "ul_sched_users_max": 0,
+                "ul_sched_users_avg": 0,
+                "ue_count_min": 0,
+                "ue_count_max": 0,
+                "ue_count_avg": 0,
+                "ue_active_count_min": 0,
+                "ue_active_count_max": 0,
+                "ue_active_count_avg": 0,
+                "ue_inactive_count_min": 0,
+                "ue_inactive_count_max": 0,
+                "ue_inactive_count_avg": 0,
+                "erab_count_min": 0,
+                "erab_count_max": 0,
+                "erab_count_avg": 0,
+                "dl_gbr_use_min": 0,
+                "dl_gbr_use_max": 0,
+                "dl_gbr_use_avg": 0,
+                "ul_gbr_use_min": 0,
+                "ul_gbr_use_max": 0,
+                "ul_gbr_use_avg": 0,
+                "counters": {
+                  "messages": {},
+                  "errors": {}
+                }
+              }
+            },
+            "rf_ports": {
+              "0": {
+                "rxtx_delay": {
+                  "min": 2.532,
+                  "max": 3.527,
+                  "avg": 3.067,
+                  "sd": 0.264
+                }
+              }
+            },
+            "counters": {
+              "messages": {
+                "s1_setup_request": 1,
+                "s1_setup_response": 1
+              },
+              "errors": {}
+            },
+            "duration": 0.4,
+            "time": 10.13,
+            "utc": 1784620950.533
+          }
+        },
+        "ues": [],
+        "error": null
+      },
+      {
+        "elapsed_sec": 39.0,
+        "success": true,
+        "connected": false,
+        "connection_basis": null,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "data_ue_ip": null,
+        "data_ip_source": "not_available",
+        "phy_rate": {
+          "success": true,
+          "cells": [
+            {
+              "cell_id": "1",
+              "dl_bitrate_bps": 0,
+              "ul_bitrate_bps": 0,
+              "dl_bitrate_mbps": 0.0,
+              "ul_bitrate_mbps": 0.0,
+              "active": false
+            }
+          ],
+          "total_dl_bitrate_bps": 0,
+          "total_ul_bitrate_bps": 0,
+          "total_dl_bitrate_mbps": 0.0,
+          "total_ul_bitrate_mbps": 0.0,
+          "active_cell_count": 0,
+          "command": "cd /root/enb && ./ws.js 192.168.1.80:9001 '{\"message\":\"stats\"}'",
+          "payload": {
+            "message": "stats",
+            "message_id": "id#1",
+            "instance_id": "6a5f2777",
+            "cpu": {},
+            "cells": {
+              "1": {
+                "dl_bitrate": 0,
+                "ul_bitrate": 0,
+                "dl_tx": 0,
+                "ul_tx": 0,
+                "dl_err": 0,
+                "ul_err": 0,
+                "dl_retx": 0,
+                "ul_retx": 0,
+                "dl_use_min": 0,
+                "dl_use_max": 0.14,
+                "dl_use_avg": 0.007,
+                "dl_data_use_min": 0,
+                "dl_data_use_max": 0,
+                "dl_data_use_avg": 0,
+                "ul_use_min": 0.12,
+                "ul_use_max": 0.24,
+                "ul_use_avg": 0.132,
+                "ul_data_use_min": 0,
+                "ul_data_use_max": 0,
+                "ul_data_use_avg": 0,
+                "ctrl_use_min": 0,
+                "ctrl_use_max": 0.5,
+                "ctrl_use_avg": 0.036,
+                "dl_sched_users_min": 0,
+                "dl_sched_users_max": 0,
+                "dl_sched_users_avg": 0,
+                "ul_sched_users_min": 0,
+                "ul_sched_users_max": 0,
+                "ul_sched_users_avg": 0,
+                "ue_count_min": 0,
+                "ue_count_max": 0,
+                "ue_count_avg": 0,
+                "ue_active_count_min": 0,
+                "ue_active_count_max": 0,
+                "ue_active_count_avg": 0,
+                "ue_inactive_count_min": 0,
+                "ue_inactive_count_max": 0,
+                "ue_inactive_count_avg": 0,
+                "erab_count_min": 0,
+                "erab_count_max": 0,
+                "erab_count_avg": 0,
+                "dl_gbr_use_min": 0,
+                "dl_gbr_use_max": 0,
+                "dl_gbr_use_avg": 0,
+                "ul_gbr_use_min": 0,
+                "ul_gbr_use_max": 0,
+                "ul_gbr_use_avg": 0,
+                "counters": {
+                  "messages": {},
+                  "errors": {}
+                }
+              }
+            },
+            "rf_ports": {
+              "0": {
+                "rxtx_delay": {
+                  "min": 2.532,
+                  "max": 3.594,
+                  "avg": 3.067,
+                  "sd": 0.264
+                }
+              }
+            },
+            "counters": {
+              "messages": {
+                "s1_setup_request": 1,
+                "s1_setup_response": 1
+              },
+              "errors": {}
+            },
+            "duration": 0.4,
+            "time": 15.202,
+            "utc": 1784620955.605
+          }
+        },
+        "ues": [],
+        "error": null
+      },
+      {
+        "elapsed_sec": 44.0,
+        "success": true,
+        "connected": false,
+        "connection_basis": null,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "data_ue_ip": null,
+        "data_ip_source": "not_available",
+        "phy_rate": {
+          "success": true,
+          "cells": [
+            {
+              "cell_id": "1",
+              "dl_bitrate_bps": 0,
+              "ul_bitrate_bps": 0,
+              "dl_bitrate_mbps": 0.0,
+              "ul_bitrate_mbps": 0.0,
+              "active": false
+            }
+          ],
+          "total_dl_bitrate_bps": 0,
+          "total_ul_bitrate_bps": 0,
+          "total_dl_bitrate_mbps": 0.0,
+          "total_ul_bitrate_mbps": 0.0,
+          "active_cell_count": 0,
+          "command": "cd /root/enb && ./ws.js 192.168.1.80:9001 '{\"message\":\"stats\"}'",
+          "payload": {
+            "message": "stats",
+            "message_id": "id#1",
+            "instance_id": "6a5f2777",
+            "cpu": {},
+            "cells": {
+              "1": {
+                "dl_bitrate": 0,
+                "ul_bitrate": 0,
+                "dl_tx": 0,
+                "ul_tx": 0,
+                "dl_err": 0,
+                "ul_err": 0,
+                "dl_retx": 0,
+                "ul_retx": 0,
+                "dl_use_min": 0,
+                "dl_use_max": 0.14,
+                "dl_use_avg": 0.008,
+                "dl_data_use_min": 0,
+                "dl_data_use_max": 0,
+                "dl_data_use_avg": 0,
+                "ul_use_min": 0.12,
+                "ul_use_max": 0.24,
+                "ul_use_avg": 0.132,
+                "ul_data_use_min": 0,
+                "ul_data_use_max": 0,
+                "ul_data_use_avg": 0,
+                "ctrl_use_min": 0,
+                "ctrl_use_max": 0.5,
+                "ctrl_use_avg": 0.039,
+                "dl_sched_users_min": 0,
+                "dl_sched_users_max": 0,
+                "dl_sched_users_avg": 0,
+                "ul_sched_users_min": 0,
+                "ul_sched_users_max": 0,
+                "ul_sched_users_avg": 0,
+                "ue_count_min": 0,
+                "ue_count_max": 0,
+                "ue_count_avg": 0,
+                "ue_active_count_min": 0,
+                "ue_active_count_max": 0,
+                "ue_active_count_avg": 0,
+                "ue_inactive_count_min": 0,
+                "ue_inactive_count_max": 0,
+                "ue_inactive_count_avg": 0,
+                "erab_count_min": 0,
+                "erab_count_max": 0,
+                "erab_count_avg": 0,
+                "dl_gbr_use_min": 0,
+                "dl_gbr_use_max": 0,
+                "dl_gbr_use_avg": 0,
+                "ul_gbr_use_min": 0,
+                "ul_gbr_use_max": 0,
+                "ul_gbr_use_avg": 0,
+                "counters": {
+                  "messages": {},
+                  "errors": {}
+                }
+              }
+            },
+            "rf_ports": {
+              "0": {
+                "rxtx_delay": {
+                  "min": 2.532,
+                  "max": 3.594,
+                  "avg": 3.07,
+                  "sd": 0.264
+                }
+              }
+            },
+            "counters": {
+              "messages": {
+                "s1_setup_request": 1,
+                "s1_setup_response": 1
+              },
+              "errors": {}
+            },
+            "duration": 0.4,
+            "time": 20.181,
+            "utc": 1784620960.587
+          }
+        },
+        "ues": [],
+        "error": null
+      },
+      {
+        "elapsed_sec": 49.1,
+        "success": true,
+        "connected": true,
+        "connection_basis": "phy_rate",
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "data_ue_ip": null,
+        "data_ip_source": "not_available",
+        "phy_rate": {
+          "success": true,
+          "cells": [
+            {
+              "cell_id": "1",
+              "dl_bitrate_bps": 62154520,
+              "ul_bitrate_bps": 8715000,
+              "dl_bitrate_mbps": 62.155,
+              "ul_bitrate_mbps": 8.715,
+              "active": true
+            }
+          ],
+          "total_dl_bitrate_bps": 62154520,
+          "total_ul_bitrate_bps": 8715000,
+          "total_dl_bitrate_mbps": 62.155,
+          "total_ul_bitrate_mbps": 8.715,
+          "active_cell_count": 1,
+          "command": "cd /root/enb && ./ws.js 192.168.1.80:9001 '{\"message\":\"stats\"}'",
+          "payload": {
+            "message": "stats",
+            "message_id": "id#1",
+            "instance_id": "6a5f2777",
+            "cpu": {},
+            "cells": {
+              "1": {
+                "dl_bitrate": 62154520,
+                "ul_bitrate": 8715000,
+                "dl_tx": 792,
+                "ul_tx": 350,
+                "dl_err": 0,
+                "ul_err": 0,
+                "dl_retx": 0,
+                "ul_retx": 41,
+                "dl_use_min": 0.14,
+                "dl_use_max": 1,
+                "dl_use_avg": 0.99,
+                "dl_data_use_min": 0,
+                "dl_data_use_max": 1,
+                "dl_data_use_avg": 0.983,
+                "ul_use_min": 0.24,
+                "ul_use_max": 0.96,
+                "ul_use_avg": 0.908,
+                "ul_data_use_min": 0,
+                "ul_data_use_max": 0.8,
+                "ul_data_use_avg": 0.708,
+                "ctrl_use_min": 0.211,
+                "ctrl_use_max": 0.421,
+                "ctrl_use_avg": 0.392,
+                "dl_sched_users_min": 0,
+                "dl_sched_users_max": 1,
+                "dl_sched_users_avg": 0.99,
+                "ul_sched_users_min": 0,
+                "ul_sched_users_max": 1,
+                "ul_sched_users_avg": 0.892,
+                "ue_count_min": 1,
+                "ue_count_max": 1,
+                "ue_count_avg": 1,
+                "ue_active_count_min": 1,
+                "ue_active_count_max": 1,
+                "ue_active_count_avg": 1,
+                "ue_inactive_count_min": 0,
+                "ue_inactive_count_max": 0,
+                "ue_inactive_count_avg": 0,
+                "erab_count_min": 1,
+                "erab_count_max": 1,
+                "erab_count_avg": 1,
+                "dl_gbr_use_min": 0,
+                "dl_gbr_use_max": 0,
+                "dl_gbr_use_avg": 0,
+                "ul_gbr_use_min": 0,
+                "ul_gbr_use_max": 0,
+                "ul_gbr_use_avg": 0,
+                "counters": {
+                  "messages": {
+                    "prach": 2,
+                    "rrc_connection_request": 2,
+                    "rrc_connection_setup": 2,
+                    "rrc_connection_setup_complete": 2,
+                    "rrc_ul_information_transfer": 3,
+                    "rrc_dl_information_transfer": 4,
+                    "rrc_security_mode_command": 1,
+                    "rrc_security_mode_complete": 1,
+                    "rrc_ue_capability_enquiry": 1,
+                    "rrc_ue_capability_information": 1,
+                    "rrc_connection_reconfiguration": 1,
+                    "rrc_connection_reconfiguration_complete": 1,
+                    "rrc_connection_release": 1
+                  },
+                  "errors": {}
+                }
+              }
+            },
+            "rf_ports": {
+              "0": {
+                "rxtx_delay": {
+                  "min": 2.199,
+                  "max": 3.461,
+                  "avg": 2.946,
+                  "sd": 0.269
+                }
+              }
+            },
+            "counters": {
+              "messages": {
+                "s1_initial_context_setup_request": 1,
+                "s1_initial_context_setup_response": 1,
+                "s1_downlink_nas_transport": 4,
+                "s1_initial_ue_message": 2,
+                "s1_uplink_nas_transport": 3,
+                "s1_setup_request": 1,
+                "s1_setup_response": 1,
+                "s1_ue_capability_info_indication": 1,
+                "s1_ue_context_release_command": 1,
+                "s1_ue_context_release_complete": 1,
+                "s1_nas_delivery_indication": 1
+              },
+              "errors": {}
+            },
+            "duration": 0.4,
+            "time": 25.249,
+            "utc": 1784620965.65
+          }
+        },
+        "ues": [
+          {
+            "ip": null,
+            "imsi": "001010123888888",
+            "imei": "8668870400991301",
+            "apn": null,
+            "enb_ue_id": 2,
+            "mme_ue_id": 101,
+            "rnti": null
+          },
+          {
+            "ip": "192.168.2.2",
+            "imsi": null,
+            "imei": null,
+            "apn": "TestPLMN",
+            "enb_ue_id": null,
+            "mme_ue_id": null,
+            "rnti": null
+          }
+        ],
+        "error": null
+      },
+      {
+        "elapsed_sec": 54.0,
+        "success": true,
+        "connected": true,
+        "connection_basis": "phy_rate",
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "data_ue_ip": null,
+        "data_ip_source": "not_available",
+        "phy_rate": {
+          "success": true,
+          "cells": [
+            {
+              "cell_id": "1",
+              "dl_bitrate_bps": 61888560,
+              "ul_bitrate_bps": 7794360,
+              "dl_bitrate_mbps": 61.889,
+              "ul_bitrate_mbps": 7.794,
+              "active": true
+            }
+          ],
+          "total_dl_bitrate_bps": 61888560,
+          "total_ul_bitrate_bps": 7794360,
+          "total_dl_bitrate_mbps": 61.889,
+          "total_ul_bitrate_mbps": 7.794,
+          "active_cell_count": 1,
+          "command": "cd /root/enb && ./ws.js 192.168.1.80:9001 '{\"message\":\"stats\"}'",
+          "payload": {
+            "message": "stats",
+            "message_id": "id#1",
+            "instance_id": "6a5f2777",
+            "cpu": {},
+            "cells": {
+              "1": {
+                "dl_bitrate": 61888560,
+                "ul_bitrate": 7794360,
+                "dl_tx": 790,
+                "ul_tx": 342,
+                "dl_err": 0,
+                "ul_err": 0,
+                "dl_retx": 0,
+                "ul_retx": 45,
+                "dl_use_min": 0.14,
+                "dl_use_max": 1,
+                "dl_use_avg": 0.985,
+                "dl_data_use_min": 0,
+                "dl_data_use_max": 1,
+                "dl_data_use_avg": 0.977,
+                "ul_use_min": 0.24,
+                "ul_use_max": 0.96,
+                "ul_use_avg": 0.901,
+                "ul_data_use_min": 0,
+                "ul_data_use_max": 0.8,
+                "ul_data_use_avg": 0.699,
+                "ctrl_use_min": 0.211,
+                "ctrl_use_max": 0.421,
+                "ctrl_use_avg": 0.389,
+                "dl_sched_users_min": 0,
+                "dl_sched_users_max": 1,
+                "dl_sched_users_avg": 0.985,
+                "ul_sched_users_min": 0,
+                "ul_sched_users_max": 1,
+                "ul_sched_users_avg": 0.88,
+                "ue_count_min": 1,
+                "ue_count_max": 1,
+                "ue_count_avg": 1,
+                "ue_active_count_min": 1,
+                "ue_active_count_max": 1,
+                "ue_active_count_avg": 1,
+                "ue_inactive_count_min": 0,
+                "ue_inactive_count_max": 0,
+                "ue_inactive_count_avg": 0,
+                "erab_count_min": 1,
+                "erab_count_max": 1,
+                "erab_count_avg": 1,
+                "dl_gbr_use_min": 0,
+                "dl_gbr_use_max": 0,
+                "dl_gbr_use_avg": 0,
+                "ul_gbr_use_min": 0,
+                "ul_gbr_use_max": 0,
+                "ul_gbr_use_avg": 0,
+                "counters": {
+                  "messages": {
+                    "prach": 2,
+                    "rrc_connection_request": 2,
+                    "rrc_connection_setup": 2,
+                    "rrc_connection_setup_complete": 2,
+                    "rrc_ul_information_transfer": 3,
+                    "rrc_dl_information_transfer": 4,
+                    "rrc_security_mode_command": 1,
+                    "rrc_security_mode_complete": 1,
+                    "rrc_ue_capability_enquiry": 1,
+                    "rrc_ue_capability_information": 1,
+                    "rrc_connection_reconfiguration": 1,
+                    "rrc_connection_reconfiguration_complete": 1,
+                    "rrc_connection_release": 1
+                  },
+                  "errors": {}
+                }
+              }
+            },
+            "rf_ports": {
+              "0": {
+                "rxtx_delay": {
+                  "min": 2.199,
+                  "max": 3.527,
+                  "avg": 2.95,
+                  "sd": 0.27
+                }
+              }
+            },
+            "counters": {
+              "messages": {
+                "s1_initial_context_setup_request": 1,
+                "s1_initial_context_setup_response": 1,
+                "s1_downlink_nas_transport": 4,
+                "s1_initial_ue_message": 2,
+                "s1_uplink_nas_transport": 3,
+                "s1_setup_request": 1,
+                "s1_setup_response": 1,
+                "s1_ue_capability_info_indication": 1,
+                "s1_ue_context_release_command": 1,
+                "s1_ue_context_release_complete": 1,
+                "s1_nas_delivery_indication": 1
+              },
+              "errors": {}
+            },
+            "duration": 0.4,
+            "time": 30.113,
+            "utc": 1784620970.523
+          }
+        },
+        "ues": [
+          {
+            "ip": null,
+            "imsi": "001010123888888",
+            "imei": "8668870400991301",
+            "apn": null,
+            "enb_ue_id": 2,
+            "mme_ue_id": 101,
+            "rnti": null
+          },
+          {
+            "ip": "192.168.2.2",
+            "imsi": null,
+            "imei": null,
+            "apn": "TestPLMN",
+            "enb_ue_id": null,
+            "mme_ue_id": null,
+            "rnti": null
+          }
+        ],
+        "error": null
+      },
+      {
+        "elapsed_sec": 58.9,
+        "success": true,
+        "connected": true,
+        "connection_basis": "phy_rate",
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "data_ue_ip": null,
+        "data_ip_source": "not_available",
+        "phy_rate": {
+          "success": true,
+          "cells": [
+            {
+              "cell_id": "1",
+              "dl_bitrate_bps": 61804640,
+              "ul_bitrate_bps": 8104580,
+              "dl_bitrate_mbps": 61.805,
+              "ul_bitrate_mbps": 8.105,
+              "active": true
+            }
+          ],
+          "total_dl_bitrate_bps": 61804640,
+          "total_ul_bitrate_bps": 8104580,
+          "total_dl_bitrate_mbps": 61.805,
+          "total_ul_bitrate_mbps": 8.105,
+          "active_cell_count": 1,
+          "command": "cd /root/enb && ./ws.js 192.168.1.80:9001 '{\"message\":\"stats\"}'",
+          "payload": {
+            "message": "stats",
+            "message_id": "id#1",
+            "instance_id": "6a5f2777",
+            "cpu": {},
+            "cells": {
+              "1": {
+                "dl_bitrate": 61804640,
+                "ul_bitrate": 8104580,
+                "dl_tx": 788,
+                "ul_tx": 339,
+                "dl_err": 0,
+                "ul_err": 0,
+                "dl_retx": 0,
+                "ul_retx": 48,
+                "dl_use_min": 0.14,
+                "dl_use_max": 1,
+                "dl_use_avg": 0.985,
+                "dl_data_use_min": 0,
+                "dl_data_use_max": 1,
+                "dl_data_use_avg": 0.977,
+                "ul_use_min": 0.24,
+                "ul_use_max": 0.96,
+                "ul_use_avg": 0.9,
+                "ul_data_use_min": 0,
+                "ul_data_use_max": 0.8,
+                "ul_data_use_avg": 0.697,
+                "ctrl_use_min": 0.211,
+                "ctrl_use_max": 0.421,
+                "ctrl_use_avg": 0.388,
+                "dl_sched_users_min": 0,
+                "dl_sched_users_max": 1,
+                "dl_sched_users_avg": 0.985,
+                "ul_sched_users_min": 0,
+                "ul_sched_users_max": 1,
+                "ul_sched_users_avg": 0.877,
+                "ue_count_min": 1,
+                "ue_count_max": 1,
+                "ue_count_avg": 1,
+                "ue_active_count_min": 1,
+                "ue_active_count_max": 1,
+                "ue_active_count_avg": 1,
+                "ue_inactive_count_min": 0,
+                "ue_inactive_count_max": 0,
+                "ue_inactive_count_avg": 0,
+                "erab_count_min": 1,
+                "erab_count_max": 1,
+                "erab_count_avg": 1,
+                "dl_gbr_use_min": 0,
+                "dl_gbr_use_max": 0,
+                "dl_gbr_use_avg": 0,
+                "ul_gbr_use_min": 0,
+                "ul_gbr_use_max": 0,
+                "ul_gbr_use_avg": 0,
+                "counters": {
+                  "messages": {
+                    "prach": 2,
+                    "rrc_connection_request": 2,
+                    "rrc_connection_setup": 2,
+                    "rrc_connection_setup_complete": 2,
+                    "rrc_ul_information_transfer": 3,
+                    "rrc_dl_information_transfer": 4,
+                    "rrc_security_mode_command": 1,
+                    "rrc_security_mode_complete": 1,
+                    "rrc_ue_capability_enquiry": 1,
+                    "rrc_ue_capability_information": 1,
+                    "rrc_connection_reconfiguration": 1,
+                    "rrc_connection_reconfiguration_complete": 1,
+                    "rrc_connection_release": 1
+                  },
+                  "errors": {}
+                }
+              }
+            },
+            "rf_ports": {
+              "0": {
+                "rxtx_delay": {
+                  "min": 2.199,
+                  "max": 3.461,
+                  "avg": 2.945,
+                  "sd": 0.272
+                }
+              }
+            },
+            "counters": {
+              "messages": {
+                "s1_initial_context_setup_request": 1,
+                "s1_initial_context_setup_response": 1,
+                "s1_downlink_nas_transport": 4,
+                "s1_initial_ue_message": 2,
+                "s1_uplink_nas_transport": 3,
+                "s1_setup_request": 1,
+                "s1_setup_response": 1,
+                "s1_ue_capability_info_indication": 1,
+                "s1_ue_context_release_command": 1,
+                "s1_ue_context_release_complete": 1,
+                "s1_nas_delivery_indication": 1
+              },
+              "errors": {}
+            },
+            "duration": 0.4,
+            "time": 35.058,
+            "utc": 1784620975.461
+          }
+        },
+        "ues": [
+          {
+            "ip": null,
+            "imsi": "001010123888888",
+            "imei": "8668870400991301",
+            "apn": null,
+            "enb_ue_id": 2,
+            "mme_ue_id": 101,
+            "rnti": null
+          },
+          {
+            "ip": "192.168.2.2",
+            "imsi": null,
+            "imei": null,
+            "apn": "TestPLMN",
+            "enb_ue_id": null,
+            "mme_ue_id": null,
+            "rnti": null
+          }
+        ],
+        "error": null
+      },
+      {
+        "elapsed_sec": 63.8,
+        "success": true,
+        "connected": true,
+        "connection_basis": "phy_rate",
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "data_ue_ip": null,
+        "data_ip_source": "not_available",
+        "phy_rate": {
+          "success": true,
+          "cells": [
+            {
+              "cell_id": "1",
+              "dl_bitrate_bps": 61967960,
+              "ul_bitrate_bps": 8227820,
+              "dl_bitrate_mbps": 61.968,
+              "ul_bitrate_mbps": 8.228,
+              "active": true
+            }
+          ],
+          "total_dl_bitrate_bps": 61967960,
+          "total_ul_bitrate_bps": 8227820,
+          "total_dl_bitrate_mbps": 61.968,
+          "total_ul_bitrate_mbps": 8.228,
+          "active_cell_count": 1,
+          "command": "cd /root/enb && ./ws.js 192.168.1.80:9001 '{\"message\":\"stats\"}'",
+          "payload": {
+            "message": "stats",
+            "message_id": "id#1",
+            "instance_id": "6a5f2777",
+            "cpu": {},
+            "cells": {
+              "1": {
+                "dl_bitrate": 61967960,
+                "ul_bitrate": 8227820,
+                "dl_tx": 790,
+                "ul_tx": 347,
+                "dl_err": 0,
+                "ul_err": 0,
+                "dl_retx": 0,
+                "ul_retx": 42,
+                "dl_use_min": 0.14,
+                "dl_use_max": 1,
+                "dl_use_avg": 0.987,
+                "dl_data_use_min": 0,
+                "dl_data_use_max": 1,
+                "dl_data_use_avg": 0.98,
+                "ul_use_min": 0.24,
+                "ul_use_max": 0.96,
+                "ul_use_avg": 0.902,
+                "ul_data_use_min": 0,
+                "ul_data_use_max": 0.8,
+                "ul_data_use_avg": 0.704,
+                "ctrl_use_min": 0.211,
+                "ctrl_use_max": 0.421,
+                "ctrl_use_avg": 0.391,
+                "dl_sched_users_min": 0,
+                "dl_sched_users_max": 1,
+                "dl_sched_users_avg": 0.988,
+                "ul_sched_users_min": 0,
+                "ul_sched_users_max": 1,
+                "ul_sched_users_avg": 0.887,
+                "ue_count_min": 1,
+                "ue_count_max": 1,
+                "ue_count_avg": 1,
+                "ue_active_count_min": 1,
+                "ue_active_count_max": 1,
+                "ue_active_count_avg": 1,
+                "ue_inactive_count_min": 0,
+                "ue_inactive_count_max": 0,
+                "ue_inactive_count_avg": 0,
+                "erab_count_min": 1,
+                "erab_count_max": 1,
+                "erab_count_avg": 1,
+                "dl_gbr_use_min": 0,
+                "dl_gbr_use_max": 0,
+                "dl_gbr_use_avg": 0,
+                "ul_gbr_use_min": 0,
+                "ul_gbr_use_max": 0,
+                "ul_gbr_use_avg": 0,
+                "counters": {
+                  "messages": {
+                    "prach": 2,
+                    "rrc_connection_request": 2,
+                    "rrc_connection_setup": 2,
+                    "rrc_connection_setup_complete": 2,
+                    "rrc_ul_information_transfer": 3,
+                    "rrc_dl_information_transfer": 4,
+                    "rrc_security_mode_command": 1,
+                    "rrc_security_mode_complete": 1,
+                    "rrc_ue_capability_enquiry": 1,
+                    "rrc_ue_capability_information": 1,
+                    "rrc_connection_reconfiguration": 1,
+                    "rrc_connection_reconfiguration_complete": 1,
+                    "rrc_connection_release": 1
+                  },
+                  "errors": {}
+                }
+              }
+            },
+            "rf_ports": {
+              "0": {
+                "rxtx_delay": {
+                  "min": 2.132,
+                  "max": 3.461,
+                  "avg": 2.941,
+                  "sd": 0.275
+                }
+              }
+            },
+            "counters": {
+              "messages": {
+                "s1_initial_context_setup_request": 1,
+                "s1_initial_context_setup_response": 1,
+                "s1_downlink_nas_transport": 4,
+                "s1_initial_ue_message": 2,
+                "s1_uplink_nas_transport": 3,
+                "s1_setup_request": 1,
+                "s1_setup_response": 1,
+                "s1_ue_capability_info_indication": 1,
+                "s1_ue_context_release_command": 1,
+                "s1_ue_context_release_complete": 1,
+                "s1_nas_delivery_indication": 1
+              },
+              "errors": {}
+            },
+            "duration": 0.4,
+            "time": 40.006,
+            "utc": 1784620980.409
+          }
+        },
+        "ues": [
+          {
+            "ip": null,
+            "imsi": "001010123888888",
+            "imei": "8668870400991301",
+            "apn": null,
+            "enb_ue_id": 2,
+            "mme_ue_id": 101,
+            "rnti": null
+          },
+          {
+            "ip": "192.168.2.2",
+            "imsi": null,
+            "imei": null,
+            "apn": "TestPLMN",
+            "enb_ue_id": null,
+            "mme_ue_id": null,
+            "rnti": null
+          }
+        ],
+        "error": null
+      },
+      {
+        "elapsed_sec": 68.8,
+        "success": true,
+        "connected": true,
+        "connection_basis": "phy_rate",
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "data_ue_ip": null,
+        "data_ip_source": "not_available",
+        "phy_rate": {
+          "success": true,
+          "cells": [
+            {
+              "cell_id": "1",
+              "dl_bitrate_bps": 62008800,
+              "ul_bitrate_bps": 8142120,
+              "dl_bitrate_mbps": 62.009,
+              "ul_bitrate_mbps": 8.142,
+              "active": true
+            }
+          ],
+          "total_dl_bitrate_bps": 62008800,
+          "total_ul_bitrate_bps": 8142120,
+          "total_dl_bitrate_mbps": 62.009,
+          "total_ul_bitrate_mbps": 8.142,
+          "active_cell_count": 1,
+          "command": "cd /root/enb && ./ws.js 192.168.1.80:9001 '{\"message\":\"stats\"}'",
+          "payload": {
+            "message": "stats",
+            "message_id": "id#1",
+            "instance_id": "6a5f2777",
+            "cpu": {},
+            "cells": {
+              "1": {
+                "dl_bitrate": 62008800,
+                "ul_bitrate": 8142120,
+                "dl_tx": 790,
+                "ul_tx": 348,
+                "dl_err": 0,
+                "ul_err": 0,
+                "dl_retx": 0,
+                "ul_retx": 42,
+                "dl_use_min": 0.14,
+                "dl_use_max": 1,
+                "dl_use_avg": 0.987,
+                "dl_data_use_min": 0,
+                "dl_data_use_max": 1,
+                "dl_data_use_avg": 0.981,
+                "ul_use_min": 0.24,
+                "ul_use_max": 0.96,
+                "ul_use_avg": 0.906,
+                "ul_data_use_min": 0,
+                "ul_data_use_max": 0.8,
+                "ul_data_use_avg": 0.71,
+                "ctrl_use_min": 0.211,
+                "ctrl_use_max": 0.421,
+                "ctrl_use_avg": 0.393,
+                "dl_sched_users_min": 0,
+                "dl_sched_users_max": 1,
+                "dl_sched_users_avg": 0.988,
+                "ul_sched_users_min": 0,
+                "ul_sched_users_max": 1,
+                "ul_sched_users_avg": 0.895,
+                "ue_count_min": 1,
+                "ue_count_max": 1,
+                "ue_count_avg": 1,
+                "ue_active_count_min": 1,
+                "ue_active_count_max": 1,
+                "ue_active_count_avg": 1,
+                "ue_inactive_count_min": 0,
+                "ue_inactive_count_max": 0,
+                "ue_inactive_count_avg": 0,
+                "erab_count_min": 1,
+                "erab_count_max": 1,
+                "erab_count_avg": 1,
+                "dl_gbr_use_min": 0,
+                "dl_gbr_use_max": 0,
+                "dl_gbr_use_avg": 0,
+                "ul_gbr_use_min": 0,
+                "ul_gbr_use_max": 0,
+                "ul_gbr_use_avg": 0,
+                "counters": {
+                  "messages": {
+                    "prach": 2,
+                    "rrc_connection_request": 2,
+                    "rrc_connection_setup": 2,
+                    "rrc_connection_setup_complete": 2,
+                    "rrc_ul_information_transfer": 3,
+                    "rrc_dl_information_transfer": 4,
+                    "rrc_security_mode_command": 1,
+                    "rrc_security_mode_complete": 1,
+                    "rrc_ue_capability_enquiry": 1,
+                    "rrc_ue_capability_information": 1,
+                    "rrc_connection_reconfiguration": 1,
+                    "rrc_connection_reconfiguration_complete": 1,
+                    "rrc_connection_release": 1
+                  },
+                  "errors": {}
+                }
+              }
+            },
+            "rf_ports": {
+              "0": {
+                "rxtx_delay": {
+                  "min": 2.199,
+                  "max": 3.461,
+                  "avg": 2.946,
+                  "sd": 0.272
+                }
+              }
+            },
+            "counters": {
+              "messages": {
+                "s1_initial_context_setup_request": 1,
+                "s1_initial_context_setup_response": 1,
+                "s1_downlink_nas_transport": 4,
+                "s1_initial_ue_message": 2,
+                "s1_uplink_nas_transport": 3,
+                "s1_setup_request": 1,
+                "s1_setup_response": 1,
+                "s1_ue_capability_info_indication": 1,
+                "s1_ue_context_release_command": 1,
+                "s1_ue_context_release_complete": 1,
+                "s1_nas_delivery_indication": 1
+              },
+              "errors": {}
+            },
+            "duration": 0.4,
+            "time": 44.936,
+            "utc": 1784620985.339
+          }
+        },
+        "ues": [
+          {
+            "ip": null,
+            "imsi": "001010123888888",
+            "imei": "8668870400991301",
+            "apn": null,
+            "enb_ue_id": 2,
+            "mme_ue_id": 101,
+            "rnti": null
+          },
+          {
+            "ip": "192.168.2.2",
+            "imsi": null,
+            "imei": null,
+            "apn": "TestPLMN",
+            "enb_ue_id": null,
+            "mme_ue_id": null,
+            "rnti": null
+          }
+        ],
+        "error": null
+      },
+      {
+        "elapsed_sec": 73.7,
+        "success": true,
+        "connected": true,
+        "connection_basis": "phy_rate",
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "data_ue_ip": null,
+        "data_ip_source": "not_available",
+        "phy_rate": {
+          "success": true,
+          "cells": [
+            {
+              "cell_id": "1",
+              "dl_bitrate_bps": 62126480,
+              "ul_bitrate_bps": 8273400,
+              "dl_bitrate_mbps": 62.126,
+              "ul_bitrate_mbps": 8.273,
+              "active": true
+            }
+          ],
+          "total_dl_bitrate_bps": 62126480,
+          "total_ul_bitrate_bps": 8273400,
+          "total_dl_bitrate_mbps": 62.126,
+          "total_ul_bitrate_mbps": 8.273,
+          "active_cell_count": 1,
+          "command": "cd /root/enb && ./ws.js 192.168.1.80:9001 '{\"message\":\"stats\"}'",
+          "payload": {
+            "message": "stats",
+            "message_id": "id#1",
+            "instance_id": "6a5f2777",
+            "cpu": {},
+            "cells": {
+              "1": {
+                "dl_bitrate": 62126480,
+                "ul_bitrate": 8273400,
+                "dl_tx": 792,
+                "ul_tx": 351,
+                "dl_err": 0,
+                "ul_err": 0,
+                "dl_retx": 0,
+                "ul_retx": 38,
+                "dl_use_min": 0.14,
+                "dl_use_max": 1,
+                "dl_use_avg": 0.989,
+                "dl_data_use_min": 0,
+                "dl_data_use_max": 1,
+                "dl_data_use_avg": 0.983,
+                "ul_use_min": 0.24,
+                "ul_use_max": 0.96,
+                "ul_use_avg": 0.904,
+                "ul_data_use_min": 0,
+                "ul_data_use_max": 0.8,
+                "ul_data_use_avg": 0.714,
+                "ctrl_use_min": 0.211,
+                "ctrl_use_max": 0.421,
+                "ctrl_use_avg": 0.394,
+                "dl_sched_users_min": 0,
+                "dl_sched_users_max": 1,
+                "dl_sched_users_avg": 0.99,
+                "ul_sched_users_min": 0,
+                "ul_sched_users_max": 1,
+                "ul_sched_users_avg": 0.9,
+                "ue_count_min": 1,
+                "ue_count_max": 1,
+                "ue_count_avg": 1,
+                "ue_active_count_min": 1,
+                "ue_active_count_max": 1,
+                "ue_active_count_avg": 1,
+                "ue_inactive_count_min": 0,
+                "ue_inactive_count_max": 0,
+                "ue_inactive_count_avg": 0,
+                "erab_count_min": 1,
+                "erab_count_max": 1,
+                "erab_count_avg": 1,
+                "dl_gbr_use_min": 0,
+                "dl_gbr_use_max": 0,
+                "dl_gbr_use_avg": 0,
+                "ul_gbr_use_min": 0,
+                "ul_gbr_use_max": 0,
+                "ul_gbr_use_avg": 0,
+                "counters": {
+                  "messages": {
+                    "prach": 2,
+                    "rrc_connection_request": 2,
+                    "rrc_connection_setup": 2,
+                    "rrc_connection_setup_complete": 2,
+                    "rrc_ul_information_transfer": 3,
+                    "rrc_dl_information_transfer": 4,
+                    "rrc_security_mode_command": 1,
+                    "rrc_security_mode_complete": 1,
+                    "rrc_ue_capability_enquiry": 1,
+                    "rrc_ue_capability_information": 1,
+                    "rrc_connection_reconfiguration": 1,
+                    "rrc_connection_reconfiguration_complete": 1,
+                    "rrc_connection_release": 1
+                  },
+                  "errors": {}
+                }
+              }
+            },
+            "rf_ports": {
+              "0": {
+                "rxtx_delay": {
+                  "min": 2.199,
+                  "max": 3.527,
+                  "avg": 2.948,
+                  "sd": 0.272
+                }
+              }
+            },
+            "counters": {
+              "messages": {
+                "s1_initial_context_setup_request": 1,
+                "s1_initial_context_setup_response": 1,
+                "s1_downlink_nas_transport": 4,
+                "s1_initial_ue_message": 2,
+                "s1_uplink_nas_transport": 3,
+                "s1_setup_request": 1,
+                "s1_setup_response": 1,
+                "s1_ue_capability_info_indication": 1,
+                "s1_ue_context_release_command": 1,
+                "s1_ue_context_release_complete": 1,
+                "s1_nas_delivery_indication": 1
+              },
+              "errors": {}
+            },
+            "duration": 0.4,
+            "time": 49.895,
+            "utc": 1784620990.298
+          }
+        },
+        "ues": [
+          {
+            "ip": null,
+            "imsi": "001010123888888",
+            "imei": "8668870400991301",
+            "apn": null,
+            "enb_ue_id": 2,
+            "mme_ue_id": 101,
+            "rnti": null
+          },
+          {
+            "ip": "192.168.2.2",
+            "imsi": null,
+            "imei": null,
+            "apn": "TestPLMN",
+            "enb_ue_id": null,
+            "mme_ue_id": null,
+            "rnti": null
+          }
+        ],
+        "error": null
+      },
+      {
+        "elapsed_sec": 78.8,
+        "success": true,
+        "connected": true,
+        "connection_basis": "phy_rate",
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "data_ue_ip": null,
+        "data_ip_source": "not_available",
+        "phy_rate": {
+          "success": true,
+          "cells": [
+            {
+              "cell_id": "1",
+              "dl_bitrate_bps": 61751000,
+              "ul_bitrate_bps": 8432740,
+              "dl_bitrate_mbps": 61.751,
+              "ul_bitrate_mbps": 8.433,
+              "active": true
+            }
+          ],
+          "total_dl_bitrate_bps": 61751000,
+          "total_ul_bitrate_bps": 8432740,
+          "total_dl_bitrate_mbps": 61.751,
+          "total_ul_bitrate_mbps": 8.433,
+          "active_cell_count": 1,
+          "command": "cd /root/enb && ./ws.js 192.168.1.80:9001 '{\"message\":\"stats\"}'",
+          "payload": {
+            "message": "stats",
+            "message_id": "id#1",
+            "instance_id": "6a5f2777",
+            "cpu": {},
+            "cells": {
+              "1": {
+                "dl_bitrate": 61751000,
+                "ul_bitrate": 8432740,
+                "dl_tx": 788,
+                "ul_tx": 348,
+                "dl_err": 0,
+                "ul_err": 0,
+                "dl_retx": 0,
+                "ul_retx": 40,
+                "dl_use_min": 0.14,
+                "dl_use_max": 1,
+                "dl_use_avg": 0.985,
+                "dl_data_use_min": 0,
+                "dl_data_use_max": 1,
+                "dl_data_use_avg": 0.977,
+                "ul_use_min": 0.24,
+                "ul_use_max": 0.96,
+                "ul_use_avg": 0.902,
+                "ul_data_use_min": 0,
+                "ul_data_use_max": 0.8,
+                "ul_data_use_avg": 0.706,
+                "ctrl_use_min": 0.211,
+                "ctrl_use_max": 0.421,
+                "ctrl_use_avg": 0.391,
+                "dl_sched_users_min": 0,
+                "dl_sched_users_max": 1,
+                "dl_sched_users_avg": 0.985,
+                "ul_sched_users_min": 0,
+                "ul_sched_users_max": 1,
+                "ul_sched_users_avg": 0.89,
+                "ue_count_min": 1,
+                "ue_count_max": 1,
+                "ue_count_avg": 1,
+                "ue_active_count_min": 1,
+                "ue_active_count_max": 1,
+                "ue_active_count_avg": 1,
+                "ue_inactive_count_min": 0,
+                "ue_inactive_count_max": 0,
+                "ue_inactive_count_avg": 0,
+                "erab_count_min": 1,
+                "erab_count_max": 1,
+                "erab_count_avg": 1,
+                "dl_gbr_use_min": 0,
+                "dl_gbr_use_max": 0,
+                "dl_gbr_use_avg": 0,
+                "ul_gbr_use_min": 0,
+                "ul_gbr_use_max": 0,
+                "ul_gbr_use_avg": 0,
+                "counters": {
+                  "messages": {
+                    "prach": 2,
+                    "rrc_connection_request": 2,
+                    "rrc_connection_setup": 2,
+                    "rrc_connection_setup_complete": 2,
+                    "rrc_ul_information_transfer": 3,
+                    "rrc_dl_information_transfer": 4,
+                    "rrc_security_mode_command": 1,
+                    "rrc_security_mode_complete": 1,
+                    "rrc_ue_capability_enquiry": 1,
+                    "rrc_ue_capability_information": 1,
+                    "rrc_connection_reconfiguration": 1,
+                    "rrc_connection_reconfiguration_complete": 1,
+                    "rrc_connection_release": 1
+                  },
+                  "errors": {}
+                }
+              }
+            },
+            "rf_ports": {
+              "0": {
+                "rxtx_delay": {
+                  "min": 2.132,
+                  "max": 3.527,
+                  "avg": 2.95,
+                  "sd": 0.272
+                }
+              }
+            },
+            "counters": {
+              "messages": {
+                "s1_initial_context_setup_request": 1,
+                "s1_initial_context_setup_response": 1,
+                "s1_downlink_nas_transport": 4,
+                "s1_initial_ue_message": 2,
+                "s1_uplink_nas_transport": 3,
+                "s1_setup_request": 1,
+                "s1_setup_response": 1,
+                "s1_ue_capability_info_indication": 1,
+                "s1_ue_context_release_command": 1,
+                "s1_ue_context_release_complete": 1,
+                "s1_nas_delivery_indication": 1
+              },
+              "errors": {}
+            },
+            "duration": 0.4,
+            "time": 54.944,
+            "utc": 1784620995.347
+          }
+        },
+        "ues": [
+          {
+            "ip": null,
+            "imsi": "001010123888888",
+            "imei": "8668870400991301",
+            "apn": null,
+            "enb_ue_id": 2,
+            "mme_ue_id": 101,
+            "rnti": null
+          },
+          {
+            "ip": "192.168.2.2",
+            "imsi": null,
+            "imei": null,
+            "apn": "TestPLMN",
+            "enb_ue_id": null,
+            "mme_ue_id": null,
+            "rnti": null
+          }
+        ],
+        "error": null
+      },
+      {
+        "elapsed_sec": 83.9,
+        "success": true,
+        "connected": true,
+        "connection_basis": "phy_rate",
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "data_ue_ip": null,
+        "data_ip_source": "not_available",
+        "phy_rate": {
+          "success": true,
+          "cells": [
+            {
+              "cell_id": "1",
+              "dl_bitrate_bps": 61623720,
+              "ul_bitrate_bps": 8176720,
+              "dl_bitrate_mbps": 61.624,
+              "ul_bitrate_mbps": 8.177,
+              "active": true
+            }
+          ],
+          "total_dl_bitrate_bps": 61623720,
+          "total_ul_bitrate_bps": 8176720,
+          "total_dl_bitrate_mbps": 61.624,
+          "total_ul_bitrate_mbps": 8.177,
+          "active_cell_count": 1,
+          "command": "cd /root/enb && ./ws.js 192.168.1.80:9001 '{\"message\":\"stats\"}'",
+          "payload": {
+            "message": "stats",
+            "message_id": "id#1",
+            "instance_id": "6a5f2777",
+            "cpu": {},
+            "cells": {
+              "1": {
+                "dl_bitrate": 61623720,
+                "ul_bitrate": 8176720,
+                "dl_tx": 786,
+                "ul_tx": 341,
+                "dl_err": 0,
+                "ul_err": 0,
+                "dl_retx": 0,
+                "ul_retx": 47,
+                "dl_use_min": 0.14,
+                "dl_use_max": 1,
+                "dl_use_avg": 0.983,
+                "dl_data_use_min": 0,
+                "dl_data_use_max": 1,
+                "dl_data_use_avg": 0.975,
+                "ul_use_min": 0.24,
+                "ul_use_max": 0.96,
+                "ul_use_avg": 0.902,
+                "ul_data_use_min": 0,
+                "ul_data_use_max": 0.8,
+                "ul_data_use_avg": 0.698,
+                "ctrl_use_min": 0.211,
+                "ctrl_use_max": 0.421,
+                "ctrl_use_avg": 0.388,
+                "dl_sched_users_min": 0,
+                "dl_sched_users_max": 1,
+                "dl_sched_users_avg": 0.983,
+                "ul_sched_users_min": 0,
+                "ul_sched_users_max": 1,
+                "ul_sched_users_avg": 0.88,
+                "ue_count_min": 1,
+                "ue_count_max": 1,
+                "ue_count_avg": 1,
+                "ue_active_count_min": 1,
+                "ue_active_count_max": 1,
+                "ue_active_count_avg": 1,
+                "ue_inactive_count_min": 0,
+                "ue_inactive_count_max": 0,
+                "ue_inactive_count_avg": 0,
+                "erab_count_min": 1,
+                "erab_count_max": 1,
+                "erab_count_avg": 1,
+                "dl_gbr_use_min": 0,
+                "dl_gbr_use_max": 0,
+                "dl_gbr_use_avg": 0,
+                "ul_gbr_use_min": 0,
+                "ul_gbr_use_max": 0,
+                "ul_gbr_use_avg": 0,
+                "counters": {
+                  "messages": {
+                    "prach": 2,
+                    "rrc_connection_request": 2,
+                    "rrc_connection_setup": 2,
+                    "rrc_connection_setup_complete": 2,
+                    "rrc_ul_information_transfer": 3,
+                    "rrc_dl_information_transfer": 4,
+                    "rrc_security_mode_command": 1,
+                    "rrc_security_mode_complete": 1,
+                    "rrc_ue_capability_enquiry": 1,
+                    "rrc_ue_capability_information": 1,
+                    "rrc_connection_reconfiguration": 1,
+                    "rrc_connection_reconfiguration_complete": 1,
+                    "rrc_connection_release": 1
+                  },
+                  "errors": {}
+                }
+              }
+            },
+            "rf_ports": {
+              "0": {
+                "rxtx_delay": {
+                  "min": 2.065,
+                  "max": 3.527,
+                  "avg": 2.95,
+                  "sd": 0.272
+                }
+              }
+            },
+            "counters": {
+              "messages": {
+                "s1_initial_context_setup_request": 1,
+                "s1_initial_context_setup_response": 1,
+                "s1_downlink_nas_transport": 4,
+                "s1_initial_ue_message": 2,
+                "s1_uplink_nas_transport": 3,
+                "s1_setup_request": 1,
+                "s1_setup_response": 1,
+                "s1_ue_capability_info_indication": 1,
+                "s1_ue_context_release_command": 1,
+                "s1_ue_context_release_complete": 1,
+                "s1_nas_delivery_indication": 1
+              },
+              "errors": {}
+            },
+            "duration": 0.4,
+            "time": 60.065,
+            "utc": 1784621000.468
+          }
+        },
+        "ues": [
+          {
+            "ip": null,
+            "imsi": "001010123888888",
+            "imei": "8668870400991301",
+            "apn": null,
+            "enb_ue_id": 2,
+            "mme_ue_id": 101,
+            "rnti": null
+          },
+          {
+            "ip": "192.168.2.2",
+            "imsi": null,
+            "imei": null,
+            "apn": "TestPLMN",
+            "enb_ue_id": null,
+            "mme_ue_id": null,
+            "rnti": null
+          }
+        ],
+        "error": null
+      },
+      {
+        "elapsed_sec": 88.8,
+        "success": true,
+        "connected": true,
+        "connection_basis": "phy_rate",
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "data_ue_ip": null,
+        "data_ip_source": "not_available",
+        "phy_rate": {
+          "success": true,
+          "cells": [
+            {
+              "cell_id": "1",
+              "dl_bitrate_bps": 61629280,
+              "ul_bitrate_bps": 8213260,
+              "dl_bitrate_mbps": 61.629,
+              "ul_bitrate_mbps": 8.213,
+              "active": true
+            }
+          ],
+          "total_dl_bitrate_bps": 61629280,
+          "total_ul_bitrate_bps": 8213260,
+          "total_dl_bitrate_mbps": 61.629,
+          "total_ul_bitrate_mbps": 8.213,
+          "active_cell_count": 1,
+          "command": "cd /root/enb && ./ws.js 192.168.1.80:9001 '{\"message\":\"stats\"}'",
+          "payload": {
+            "message": "stats",
+            "message_id": "id#1",
+            "instance_id": "6a5f2777",
+            "cpu": {},
+            "cells": {
+              "1": {
+                "dl_bitrate": 61629280,
+                "ul_bitrate": 8213260,
+                "dl_tx": 786,
+                "ul_tx": 350,
+                "dl_err": 0,
+                "ul_err": 0,
+                "dl_retx": 0,
+                "ul_retx": 41,
+                "dl_use_min": 0.14,
+                "dl_use_max": 1,
+                "dl_use_avg": 0.983,
+                "dl_data_use_min": 0,
+                "dl_data_use_max": 1,
+                "dl_data_use_avg": 0.975,
+                "ul_use_min": 0.24,
+                "ul_use_max": 0.96,
+                "ul_use_avg": 0.908,
+                "ul_data_use_min": 0,
+                "ul_data_use_max": 0.8,
+                "ul_data_use_avg": 0.708,
+                "ctrl_use_min": 0.211,
+                "ctrl_use_max": 0.421,
+                "ctrl_use_avg": 0.391,
+                "dl_sched_users_min": 0,
+                "dl_sched_users_max": 1,
+                "dl_sched_users_avg": 0.983,
+                "ul_sched_users_min": 0,
+                "ul_sched_users_max": 1,
+                "ul_sched_users_avg": 0.892,
+                "ue_count_min": 1,
+                "ue_count_max": 1,
+                "ue_count_avg": 1,
+                "ue_active_count_min": 1,
+                "ue_active_count_max": 1,
+                "ue_active_count_avg": 1,
+                "ue_inactive_count_min": 0,
+                "ue_inactive_count_max": 0,
+                "ue_inactive_count_avg": 0,
+                "erab_count_min": 1,
+                "erab_count_max": 1,
+                "erab_count_avg": 1,
+                "dl_gbr_use_min": 0,
+                "dl_gbr_use_max": 0,
+                "dl_gbr_use_avg": 0,
+                "ul_gbr_use_min": 0,
+                "ul_gbr_use_max": 0,
+                "ul_gbr_use_avg": 0,
+                "counters": {
+                  "messages": {
+                    "prach": 2,
+                    "rrc_connection_request": 2,
+                    "rrc_connection_setup": 2,
+                    "rrc_connection_setup_complete": 2,
+                    "rrc_ul_information_transfer": 3,
+                    "rrc_dl_information_transfer": 4,
+                    "rrc_security_mode_command": 1,
+                    "rrc_security_mode_complete": 1,
+                    "rrc_ue_capability_enquiry": 1,
+                    "rrc_ue_capability_information": 1,
+                    "rrc_connection_reconfiguration": 1,
+                    "rrc_connection_reconfiguration_complete": 1,
+                    "rrc_connection_release": 1
+                  },
+                  "errors": {}
+                }
+              }
+            },
+            "rf_ports": {
+              "0": {
+                "rxtx_delay": {
+                  "min": 2.265,
+                  "max": 3.461,
+                  "avg": 2.95,
+                  "sd": 0.269
+                }
+              }
+            },
+            "counters": {
+              "messages": {
+                "s1_initial_context_setup_request": 1,
+                "s1_initial_context_setup_response": 1,
+                "s1_downlink_nas_transport": 4,
+                "s1_initial_ue_message": 2,
+                "s1_uplink_nas_transport": 3,
+                "s1_setup_request": 1,
+                "s1_setup_response": 1,
+                "s1_ue_capability_info_indication": 1,
+                "s1_ue_context_release_command": 1,
+                "s1_ue_context_release_complete": 1,
+                "s1_nas_delivery_indication": 1
+              },
+              "errors": {}
+            },
+            "duration": 0.4,
+            "time": 65,
+            "utc": 1784621005.409
+          }
+        },
+        "ues": [
+          {
+            "ip": null,
+            "imsi": "001010123888888",
+            "imei": "8668870400991301",
+            "apn": null,
+            "enb_ue_id": 2,
+            "mme_ue_id": 101,
+            "rnti": null
+          },
+          {
+            "ip": "192.168.2.2",
+            "imsi": null,
+            "imei": null,
+            "apn": "TestPLMN",
+            "enb_ue_id": null,
+            "mme_ue_id": null,
+            "rnti": null
+          }
+        ],
+        "error": null
+      },
+      {
+        "elapsed_sec": 93.9,
+        "success": true,
+        "connected": true,
+        "connection_basis": "phy_rate",
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "data_ue_ip": null,
+        "data_ip_source": "not_available",
+        "phy_rate": {
+          "success": true,
+          "cells": [
+            {
+              "cell_id": "1",
+              "dl_bitrate_bps": 62023960,
+              "ul_bitrate_bps": 8624860,
+              "dl_bitrate_mbps": 62.024,
+              "ul_bitrate_mbps": 8.625,
+              "active": true
+            }
+          ],
+          "total_dl_bitrate_bps": 62023960,
+          "total_ul_bitrate_bps": 8624860,
+          "total_dl_bitrate_mbps": 62.024,
+          "total_ul_bitrate_mbps": 8.625,
+          "active_cell_count": 1,
+          "command": "cd /root/enb && ./ws.js 192.168.1.80:9001 '{\"message\":\"stats\"}'",
+          "payload": {
+            "message": "stats",
+            "message_id": "id#1",
+            "instance_id": "6a5f2777",
+            "cpu": {},
+            "cells": {
+              "1": {
+                "dl_bitrate": 62023960,
+                "ul_bitrate": 8624860,
+                "dl_tx": 790,
+                "ul_tx": 346,
+                "dl_err": 0,
+                "ul_err": 0,
+                "dl_retx": 0,
+                "ul_retx": 43,
+                "dl_use_min": 0.14,
+                "dl_use_max": 1,
+                "dl_use_avg": 0.988,
+                "dl_data_use_min": 0,
+                "dl_data_use_max": 1,
+                "dl_data_use_avg": 0.981,
+                "ul_use_min": 0.24,
+                "ul_use_max": 0.96,
+                "ul_use_avg": 0.904,
+                "ul_data_use_min": 0,
+                "ul_data_use_max": 0.8,
+                "ul_data_use_avg": 0.706,
+                "ctrl_use_min": 0.211,
+                "ctrl_use_max": 0.421,
+                "ctrl_use_avg": 0.392,
+                "dl_sched_users_min": 0,
+                "dl_sched_users_max": 1,
+                "dl_sched_users_avg": 0.988,
+                "ul_sched_users_min": 0,
+                "ul_sched_users_max": 1,
+                "ul_sched_users_avg": 0.89,
+                "ue_count_min": 1,
+                "ue_count_max": 1,
+                "ue_count_avg": 1,
+                "ue_active_count_min": 1,
+                "ue_active_count_max": 1,
+                "ue_active_count_avg": 1,
+                "ue_inactive_count_min": 0,
+                "ue_inactive_count_max": 0,
+                "ue_inactive_count_avg": 0,
+                "erab_count_min": 1,
+                "erab_count_max": 1,
+                "erab_count_avg": 1,
+                "dl_gbr_use_min": 0,
+                "dl_gbr_use_max": 0,
+                "dl_gbr_use_avg": 0,
+                "ul_gbr_use_min": 0,
+                "ul_gbr_use_max": 0,
+                "ul_gbr_use_avg": 0,
+                "counters": {
+                  "messages": {
+                    "prach": 2,
+                    "rrc_connection_request": 2,
+                    "rrc_connection_setup": 2,
+                    "rrc_connection_setup_complete": 2,
+                    "rrc_ul_information_transfer": 3,
+                    "rrc_dl_information_transfer": 4,
+                    "rrc_security_mode_command": 1,
+                    "rrc_security_mode_complete": 1,
+                    "rrc_ue_capability_enquiry": 1,
+                    "rrc_ue_capability_information": 1,
+                    "rrc_connection_reconfiguration": 1,
+                    "rrc_connection_reconfiguration_complete": 1,
+                    "rrc_connection_release": 1
+                  },
+                  "errors": {}
+                }
+              }
+            },
+            "rf_ports": {
+              "0": {
+                "rxtx_delay": {
+                  "min": 2.132,
+                  "max": 3.461,
+                  "avg": 2.949,
+                  "sd": 0.273
+                }
+              }
+            },
+            "counters": {
+              "messages": {
+                "s1_initial_context_setup_request": 1,
+                "s1_initial_context_setup_response": 1,
+                "s1_downlink_nas_transport": 4,
+                "s1_initial_ue_message": 2,
+                "s1_uplink_nas_transport": 3,
+                "s1_setup_request": 1,
+                "s1_setup_response": 1,
+                "s1_ue_capability_info_indication": 1,
+                "s1_ue_context_release_command": 1,
+                "s1_ue_context_release_complete": 1,
+                "s1_nas_delivery_indication": 1
+              },
+              "errors": {}
+            },
+            "duration": 0.4,
+            "time": 70.071,
+            "utc": 1784621010.481
+          }
+        },
+        "ues": [
+          {
+            "ip": null,
+            "imsi": "001010123888888",
+            "imei": "8668870400991301",
+            "apn": null,
+            "enb_ue_id": 2,
+            "mme_ue_id": 101,
+            "rnti": null
+          },
+          {
+            "ip": "192.168.2.2",
+            "imsi": null,
+            "imei": null,
+            "apn": "TestPLMN",
+            "enb_ue_id": null,
+            "mme_ue_id": null,
+            "rnti": null
+          }
+        ],
+        "error": null
+      },
+      {
+        "elapsed_sec": 98.8,
+        "success": true,
+        "connected": true,
+        "connection_basis": "phy_rate",
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "data_ue_ip": null,
+        "data_ip_source": "not_available",
+        "phy_rate": {
+          "success": true,
+          "cells": [
+            {
+              "cell_id": "1",
+              "dl_bitrate_bps": 61506800,
+              "ul_bitrate_bps": 8083500,
+              "dl_bitrate_mbps": 61.507,
+              "ul_bitrate_mbps": 8.084,
+              "active": true
+            }
+          ],
+          "total_dl_bitrate_bps": 61506800,
+          "total_ul_bitrate_bps": 8083500,
+          "total_dl_bitrate_mbps": 61.507,
+          "total_ul_bitrate_mbps": 8.084,
+          "active_cell_count": 1,
+          "command": "cd /root/enb && ./ws.js 192.168.1.80:9001 '{\"message\":\"stats\"}'",
+          "payload": {
+            "message": "stats",
+            "message_id": "id#1",
+            "instance_id": "6a5f2777",
+            "cpu": {},
+            "cells": {
+              "1": {
+                "dl_bitrate": 61506800,
+                "ul_bitrate": 8083500,
+                "dl_tx": 784,
+                "ul_tx": 347,
+                "dl_err": 0,
+                "ul_err": 0,
+                "dl_retx": 0,
+                "ul_retx": 43,
+                "dl_use_min": 0.14,
+                "dl_use_max": 1,
+                "dl_use_avg": 0.981,
+                "dl_data_use_min": 0,
+                "dl_data_use_max": 1,
+                "dl_data_use_avg": 0.973,
+                "ul_use_min": 0.24,
+                "ul_use_max": 0.96,
+                "ul_use_avg": 0.906,
+                "ul_data_use_min": 0,
+                "ul_data_use_max": 0.8,
+                "ul_data_use_avg": 0.706,
+                "ctrl_use_min": 0.211,
+                "ctrl_use_max": 0.421,
+                "ctrl_use_avg": 0.39,
+                "dl_sched_users_min": 0,
+                "dl_sched_users_max": 1,
+                "dl_sched_users_avg": 0.98,
+                "ul_sched_users_min": 0,
+                "ul_sched_users_max": 1,
+                "ul_sched_users_avg": 0.89,
+                "ue_count_min": 1,
+                "ue_count_max": 1,
+                "ue_count_avg": 1,
+                "ue_active_count_min": 1,
+                "ue_active_count_max": 1,
+                "ue_active_count_avg": 1,
+                "ue_inactive_count_min": 0,
+                "ue_inactive_count_max": 0,
+                "ue_inactive_count_avg": 0,
+                "erab_count_min": 1,
+                "erab_count_max": 1,
+                "erab_count_avg": 1,
+                "dl_gbr_use_min": 0,
+                "dl_gbr_use_max": 0,
+                "dl_gbr_use_avg": 0,
+                "ul_gbr_use_min": 0,
+                "ul_gbr_use_max": 0,
+                "ul_gbr_use_avg": 0,
+                "counters": {
+                  "messages": {
+                    "prach": 2,
+                    "rrc_connection_request": 2,
+                    "rrc_connection_setup": 2,
+                    "rrc_connection_setup_complete": 2,
+                    "rrc_ul_information_transfer": 3,
+                    "rrc_dl_information_transfer": 4,
+                    "rrc_security_mode_command": 1,
+                    "rrc_security_mode_complete": 1,
+                    "rrc_ue_capability_enquiry": 1,
+                    "rrc_ue_capability_information": 1,
+                    "rrc_connection_reconfiguration": 1,
+                    "rrc_connection_reconfiguration_complete": 1,
+                    "rrc_connection_release": 1
+                  },
+                  "errors": {}
+                }
+              }
+            },
+            "rf_ports": {
+              "0": {
+                "rxtx_delay": {
+                  "min": 2.132,
+                  "max": 3.527,
+                  "avg": 2.946,
+                  "sd": 0.274
+                }
+              }
+            },
+            "counters": {
+              "messages": {
+                "s1_initial_context_setup_request": 1,
+                "s1_initial_context_setup_response": 1,
+                "s1_downlink_nas_transport": 4,
+                "s1_initial_ue_message": 2,
+                "s1_uplink_nas_transport": 3,
+                "s1_setup_request": 1,
+                "s1_setup_response": 1,
+                "s1_ue_capability_info_indication": 1,
+                "s1_ue_context_release_command": 1,
+                "s1_ue_context_release_complete": 1,
+                "s1_nas_delivery_indication": 1
+              },
+              "errors": {}
+            },
+            "duration": 0.4,
+            "time": 74.943,
+            "utc": 1784621015.345
+          }
+        },
+        "ues": [
+          {
+            "ip": null,
+            "imsi": "001010123888888",
+            "imei": "8668870400991301",
+            "apn": null,
+            "enb_ue_id": 2,
+            "mme_ue_id": 101,
+            "rnti": null
+          },
+          {
+            "ip": "192.168.2.2",
+            "imsi": null,
+            "imei": null,
+            "apn": "TestPLMN",
+            "enb_ue_id": null,
+            "mme_ue_id": null,
+            "rnti": null
+          }
+        ],
+        "error": null
+      },
+      {
+        "elapsed_sec": 104.0,
+        "success": true,
+        "connected": true,
+        "connection_basis": "phy_rate",
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "data_ue_ip": null,
+        "data_ip_source": "not_available",
+        "phy_rate": {
+          "success": true,
+          "cells": [
+            {
+              "cell_id": "1",
+              "dl_bitrate_bps": 62140880,
+              "ul_bitrate_bps": 8537780,
+              "dl_bitrate_mbps": 62.141,
+              "ul_bitrate_mbps": 8.538,
+              "active": true
+            }
+          ],
+          "total_dl_bitrate_bps": 62140880,
+          "total_ul_bitrate_bps": 8537780,
+          "total_dl_bitrate_mbps": 62.141,
+          "total_ul_bitrate_mbps": 8.538,
+          "active_cell_count": 1,
+          "command": "cd /root/enb && ./ws.js 192.168.1.80:9001 '{\"message\":\"stats\"}'",
+          "payload": {
+            "message": "stats",
+            "message_id": "id#1",
+            "instance_id": "6a5f2777",
+            "cpu": {},
+            "cells": {
+              "1": {
+                "dl_bitrate": 62140880,
+                "ul_bitrate": 8537780,
+                "dl_tx": 792,
+                "ul_tx": 349,
+                "dl_err": 0,
+                "ul_err": 0,
+                "dl_retx": 0,
+                "ul_retx": 40,
+                "dl_use_min": 0.14,
+                "dl_use_max": 1,
+                "dl_use_avg": 0.99,
+                "dl_data_use_min": 0,
+                "dl_data_use_max": 1,
+                "dl_data_use_avg": 0.983,
+                "ul_use_min": 0.24,
+                "ul_use_max": 0.96,
+                "ul_use_avg": 0.904,
+                "ul_data_use_min": 0,
+                "ul_data_use_max": 0.8,
+                "ul_data_use_avg": 0.71,
+                "ctrl_use_min": 0.211,
+                "ctrl_use_max": 0.421,
+                "ctrl_use_avg": 0.393,
+                "dl_sched_users_min": 0,
+                "dl_sched_users_max": 1,
+                "dl_sched_users_avg": 0.99,
+                "ul_sched_users_min": 0,
+                "ul_sched_users_max": 1,
+                "ul_sched_users_avg": 0.895,
+                "ue_count_min": 1,
+                "ue_count_max": 1,
+                "ue_count_avg": 1,
+                "ue_active_count_min": 1,
+                "ue_active_count_max": 1,
+                "ue_active_count_avg": 1,
+                "ue_inactive_count_min": 0,
+                "ue_inactive_count_max": 0,
+                "ue_inactive_count_avg": 0,
+                "erab_count_min": 1,
+                "erab_count_max": 1,
+                "erab_count_avg": 1,
+                "dl_gbr_use_min": 0,
+                "dl_gbr_use_max": 0,
+                "dl_gbr_use_avg": 0,
+                "ul_gbr_use_min": 0,
+                "ul_gbr_use_max": 0,
+                "ul_gbr_use_avg": 0,
+                "counters": {
+                  "messages": {
+                    "prach": 2,
+                    "rrc_connection_request": 2,
+                    "rrc_connection_setup": 2,
+                    "rrc_connection_setup_complete": 2,
+                    "rrc_ul_information_transfer": 3,
+                    "rrc_dl_information_transfer": 4,
+                    "rrc_security_mode_command": 1,
+                    "rrc_security_mode_complete": 1,
+                    "rrc_ue_capability_enquiry": 1,
+                    "rrc_ue_capability_information": 1,
+                    "rrc_connection_reconfiguration": 1,
+                    "rrc_connection_reconfiguration_complete": 1,
+                    "rrc_connection_release": 1
+                  },
+                  "errors": {}
+                }
+              }
+            },
+            "rf_ports": {
+              "0": {
+                "rxtx_delay": {
+                  "min": 2.132,
+                  "max": 3.461,
+                  "avg": 2.945,
+                  "sd": 0.272
+                }
+              }
+            },
+            "counters": {
+              "messages": {
+                "s1_initial_context_setup_request": 1,
+                "s1_initial_context_setup_response": 1,
+                "s1_downlink_nas_transport": 4,
+                "s1_initial_ue_message": 2,
+                "s1_uplink_nas_transport": 3,
+                "s1_setup_request": 1,
+                "s1_setup_response": 1,
+                "s1_ue_capability_info_indication": 1,
+                "s1_ue_context_release_command": 1,
+                "s1_ue_context_release_complete": 1,
+                "s1_nas_delivery_indication": 1
+              },
+              "errors": {}
+            },
+            "duration": 0.4,
+            "time": 80.126,
+            "utc": 1784621020.536
+          }
+        },
+        "ues": [
+          {
+            "ip": null,
+            "imsi": "001010123888888",
+            "imei": "8668870400991301",
+            "apn": null,
+            "enb_ue_id": 2,
+            "mme_ue_id": 101,
+            "rnti": null
+          },
+          {
+            "ip": "192.168.2.2",
+            "imsi": null,
+            "imei": null,
+            "apn": "TestPLMN",
+            "enb_ue_id": null,
+            "mme_ue_id": null,
+            "rnti": null
+          }
+        ],
+        "error": null
+      },
+      {
+        "elapsed_sec": 108.8,
+        "success": true,
+        "connected": true,
+        "connection_basis": "phy_rate",
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "data_ue_ip": null,
+        "data_ip_source": "not_available",
+        "phy_rate": {
+          "success": true,
+          "cells": [
+            {
+              "cell_id": "1",
+              "dl_bitrate_bps": 61779720,
+              "ul_bitrate_bps": 8063760,
+              "dl_bitrate_mbps": 61.78,
+              "ul_bitrate_mbps": 8.064,
+              "active": true
+            }
+          ],
+          "total_dl_bitrate_bps": 61779720,
+          "total_ul_bitrate_bps": 8063760,
+          "total_dl_bitrate_mbps": 61.78,
+          "total_ul_bitrate_mbps": 8.064,
+          "active_cell_count": 1,
+          "command": "cd /root/enb && ./ws.js 192.168.1.80:9001 '{\"message\":\"stats\"}'",
+          "payload": {
+            "message": "stats",
+            "message_id": "id#1",
+            "instance_id": "6a5f2777",
+            "cpu": {},
+            "cells": {
+              "1": {
+                "dl_bitrate": 61779720,
+                "ul_bitrate": 8063760,
+                "dl_tx": 788,
+                "ul_tx": 347,
+                "dl_err": 0,
+                "ul_err": 0,
+                "dl_retx": 0,
+                "ul_retx": 41,
+                "dl_use_min": 0.14,
+                "dl_use_max": 1,
+                "dl_use_avg": 0.985,
+                "dl_data_use_min": 0,
+                "dl_data_use_max": 1,
+                "dl_data_use_avg": 0.977,
+                "ul_use_min": 0.24,
+                "ul_use_max": 0.96,
+                "ul_use_avg": 0.902,
+                "ul_data_use_min": 0,
+                "ul_data_use_max": 0.8,
+                "ul_data_use_avg": 0.708,
+                "ctrl_use_min": 0.211,
+                "ctrl_use_max": 0.421,
+                "ctrl_use_avg": 0.392,
+                "dl_sched_users_min": 0,
+                "dl_sched_users_max": 1,
+                "dl_sched_users_avg": 0.985,
+                "ul_sched_users_min": 0,
+                "ul_sched_users_max": 1,
+                "ul_sched_users_avg": 0.892,
+                "ue_count_min": 1,
+                "ue_count_max": 1,
+                "ue_count_avg": 1,
+                "ue_active_count_min": 1,
+                "ue_active_count_max": 1,
+                "ue_active_count_avg": 1,
+                "ue_inactive_count_min": 0,
+                "ue_inactive_count_max": 0,
+                "ue_inactive_count_avg": 0,
+                "erab_count_min": 1,
+                "erab_count_max": 1,
+                "erab_count_avg": 1,
+                "dl_gbr_use_min": 0,
+                "dl_gbr_use_max": 0,
+                "dl_gbr_use_avg": 0,
+                "ul_gbr_use_min": 0,
+                "ul_gbr_use_max": 0,
+                "ul_gbr_use_avg": 0,
+                "counters": {
+                  "messages": {
+                    "prach": 2,
+                    "rrc_connection_request": 2,
+                    "rrc_connection_setup": 2,
+                    "rrc_connection_setup_complete": 2,
+                    "rrc_ul_information_transfer": 3,
+                    "rrc_dl_information_transfer": 4,
+                    "rrc_security_mode_command": 1,
+                    "rrc_security_mode_complete": 1,
+                    "rrc_ue_capability_enquiry": 1,
+                    "rrc_ue_capability_information": 1,
+                    "rrc_connection_reconfiguration": 1,
+                    "rrc_connection_reconfiguration_complete": 1,
+                    "rrc_connection_release": 1
+                  },
+                  "errors": {}
+                }
+              }
+            },
+            "rf_ports": {
+              "0": {
+                "rxtx_delay": {
+                  "min": 2.199,
+                  "max": 3.527,
+                  "avg": 2.946,
+                  "sd": 0.272
+                }
+              }
+            },
+            "counters": {
+              "messages": {
+                "s1_initial_context_setup_request": 1,
+                "s1_initial_context_setup_response": 1,
+                "s1_downlink_nas_transport": 4,
+                "s1_initial_ue_message": 2,
+                "s1_uplink_nas_transport": 3,
+                "s1_setup_request": 1,
+                "s1_setup_response": 1,
+                "s1_ue_capability_info_indication": 1,
+                "s1_ue_context_release_command": 1,
+                "s1_ue_context_release_complete": 1,
+                "s1_nas_delivery_indication": 1
+              },
+              "errors": {}
+            },
+            "duration": 0.4,
+            "time": 84.984,
+            "utc": 1784621025.387
+          }
+        },
+        "ues": [
+          {
+            "ip": null,
+            "imsi": "001010123888888",
+            "imei": "8668870400991301",
+            "apn": null,
+            "enb_ue_id": 2,
+            "mme_ue_id": 101,
+            "rnti": null
+          },
+          {
+            "ip": "192.168.2.2",
+            "imsi": null,
+            "imei": null,
+            "apn": "TestPLMN",
+            "enb_ue_id": null,
+            "mme_ue_id": null,
+            "rnti": null
+          }
+        ],
+        "error": null
+      },
+      {
+        "elapsed_sec": 113.8,
+        "success": true,
+        "connected": true,
+        "connection_basis": "phy_rate",
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "data_ue_ip": null,
+        "data_ip_source": "not_available",
+        "phy_rate": {
+          "success": true,
+          "cells": [
+            {
+              "cell_id": "1",
+              "dl_bitrate_bps": 62050480,
+              "ul_bitrate_bps": 8553840,
+              "dl_bitrate_mbps": 62.05,
+              "ul_bitrate_mbps": 8.554,
+              "active": true
+            }
+          ],
+          "total_dl_bitrate_bps": 62050480,
+          "total_ul_bitrate_bps": 8553840,
+          "total_dl_bitrate_mbps": 62.05,
+          "total_ul_bitrate_mbps": 8.554,
+          "active_cell_count": 1,
+          "command": "cd /root/enb && ./ws.js 192.168.1.80:9001 '{\"message\":\"stats\"}'",
+          "payload": {
+            "message": "stats",
+            "message_id": "id#1",
+            "instance_id": "6a5f2777",
+            "cpu": {},
+            "cells": {
+              "1": {
+                "dl_bitrate": 62050480,
+                "ul_bitrate": 8553840,
+                "dl_tx": 790,
+                "ul_tx": 352,
+                "dl_err": 0,
+                "ul_err": 0,
+                "dl_retx": 0,
+                "ul_retx": 38,
+                "dl_use_min": 0.14,
+                "dl_use_max": 1,
+                "dl_use_avg": 0.988,
+                "dl_data_use_min": 0,
+                "dl_data_use_max": 1,
+                "dl_data_use_avg": 0.981,
+                "ul_use_min": 0.24,
+                "ul_use_max": 0.96,
+                "ul_use_avg": 0.904,
+                "ul_data_use_min": 0,
+                "ul_data_use_max": 0.8,
+                "ul_data_use_avg": 0.714,
+                "ctrl_use_min": 0.211,
+                "ctrl_use_max": 0.421,
+                "ctrl_use_avg": 0.394,
+                "dl_sched_users_min": 0,
+                "dl_sched_users_max": 1,
+                "dl_sched_users_avg": 0.988,
+                "ul_sched_users_min": 0,
+                "ul_sched_users_max": 1,
+                "ul_sched_users_avg": 0.9,
+                "ue_count_min": 1,
+                "ue_count_max": 1,
+                "ue_count_avg": 1,
+                "ue_active_count_min": 1,
+                "ue_active_count_max": 1,
+                "ue_active_count_avg": 1,
+                "ue_inactive_count_min": 0,
+                "ue_inactive_count_max": 0,
+                "ue_inactive_count_avg": 0,
+                "erab_count_min": 1,
+                "erab_count_max": 1,
+                "erab_count_avg": 1,
+                "dl_gbr_use_min": 0,
+                "dl_gbr_use_max": 0,
+                "dl_gbr_use_avg": 0,
+                "ul_gbr_use_min": 0,
+                "ul_gbr_use_max": 0,
+                "ul_gbr_use_avg": 0,
+                "counters": {
+                  "messages": {
+                    "prach": 2,
+                    "rrc_connection_request": 2,
+                    "rrc_connection_setup": 2,
+                    "rrc_connection_setup_complete": 2,
+                    "rrc_ul_information_transfer": 3,
+                    "rrc_dl_information_transfer": 4,
+                    "rrc_security_mode_command": 1,
+                    "rrc_security_mode_complete": 1,
+                    "rrc_ue_capability_enquiry": 1,
+                    "rrc_ue_capability_information": 1,
+                    "rrc_connection_reconfiguration": 1,
+                    "rrc_connection_reconfiguration_complete": 1,
+                    "rrc_connection_release": 1
+                  },
+                  "errors": {}
+                }
+              }
+            },
+            "rf_ports": {
+              "0": {
+                "rxtx_delay": {
+                  "min": 2.132,
+                  "max": 3.527,
+                  "avg": 2.946,
+                  "sd": 0.273
+                }
+              }
+            },
+            "counters": {
+              "messages": {
+                "s1_initial_context_setup_request": 1,
+                "s1_initial_context_setup_response": 1,
+                "s1_downlink_nas_transport": 4,
+                "s1_initial_ue_message": 2,
+                "s1_uplink_nas_transport": 3,
+                "s1_setup_request": 1,
+                "s1_setup_response": 1,
+                "s1_ue_capability_info_indication": 1,
+                "s1_ue_context_release_command": 1,
+                "s1_ue_context_release_complete": 1,
+                "s1_nas_delivery_indication": 1
+              },
+              "errors": {}
+            },
+            "duration": 0.4,
+            "time": 89.907,
+            "utc": 1784621030.31
+          }
+        },
+        "ues": [
+          {
+            "ip": null,
+            "imsi": "001010123888888",
+            "imei": "8668870400991301",
+            "apn": null,
+            "enb_ue_id": 2,
+            "mme_ue_id": 101,
+            "rnti": null
+          },
+          {
+            "ip": "192.168.2.2",
+            "imsi": null,
+            "imei": null,
+            "apn": "TestPLMN",
+            "enb_ue_id": null,
+            "mme_ue_id": null,
+            "rnti": null
+          }
+        ],
+        "error": null
+      },
+      {
+        "elapsed_sec": 118.9,
+        "success": true,
+        "connected": true,
+        "connection_basis": "phy_rate",
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "data_ue_ip": null,
+        "data_ip_source": "not_available",
+        "phy_rate": {
+          "success": true,
+          "cells": [
+            {
+              "cell_id": "1",
+              "dl_bitrate_bps": 61625240,
+              "ul_bitrate_bps": 8385460,
+              "dl_bitrate_mbps": 61.625,
+              "ul_bitrate_mbps": 8.385,
+              "active": true
+            }
+          ],
+          "total_dl_bitrate_bps": 61625240,
+          "total_ul_bitrate_bps": 8385460,
+          "total_dl_bitrate_mbps": 61.625,
+          "total_ul_bitrate_mbps": 8.385,
+          "active_cell_count": 1,
+          "command": "cd /root/enb && ./ws.js 192.168.1.80:9001 '{\"message\":\"stats\"}'",
+          "payload": {
+            "message": "stats",
+            "message_id": "id#1",
+            "instance_id": "6a5f2777",
+            "cpu": {},
+            "cells": {
+              "1": {
+                "dl_bitrate": 61625240,
+                "ul_bitrate": 8385460,
+                "dl_tx": 786,
+                "ul_tx": 348,
+                "dl_err": 0,
+                "ul_err": 0,
+                "dl_retx": 0,
+                "ul_retx": 41,
+                "dl_use_min": 0.14,
+                "dl_use_max": 1,
+                "dl_use_avg": 0.983,
+                "dl_data_use_min": 0,
+                "dl_data_use_max": 1,
+                "dl_data_use_avg": 0.975,
+                "ul_use_min": 0.24,
+                "ul_use_max": 0.96,
+                "ul_use_avg": 0.904,
+                "ul_data_use_min": 0,
+                "ul_data_use_max": 0.8,
+                "ul_data_use_avg": 0.708,
+                "ctrl_use_min": 0.211,
+                "ctrl_use_max": 0.421,
+                "ctrl_use_avg": 0.391,
+                "dl_sched_users_min": 0,
+                "dl_sched_users_max": 1,
+                "dl_sched_users_avg": 0.983,
+                "ul_sched_users_min": 0,
+                "ul_sched_users_max": 1,
+                "ul_sched_users_avg": 0.892,
+                "ue_count_min": 1,
+                "ue_count_max": 1,
+                "ue_count_avg": 1,
+                "ue_active_count_min": 1,
+                "ue_active_count_max": 1,
+                "ue_active_count_avg": 1,
+                "ue_inactive_count_min": 0,
+                "ue_inactive_count_max": 0,
+                "ue_inactive_count_avg": 0,
+                "erab_count_min": 1,
+                "erab_count_max": 1,
+                "erab_count_avg": 1,
+                "dl_gbr_use_min": 0,
+                "dl_gbr_use_max": 0,
+                "dl_gbr_use_avg": 0,
+                "ul_gbr_use_min": 0,
+                "ul_gbr_use_max": 0,
+                "ul_gbr_use_avg": 0,
+                "counters": {
+                  "messages": {
+                    "prach": 2,
+                    "rrc_connection_request": 2,
+                    "rrc_connection_setup": 2,
+                    "rrc_connection_setup_complete": 2,
+                    "rrc_ul_information_transfer": 3,
+                    "rrc_dl_information_transfer": 4,
+                    "rrc_security_mode_command": 1,
+                    "rrc_security_mode_complete": 1,
+                    "rrc_ue_capability_enquiry": 1,
+                    "rrc_ue_capability_information": 1,
+                    "rrc_connection_reconfiguration": 1,
+                    "rrc_connection_reconfiguration_complete": 1,
+                    "rrc_connection_release": 1
+                  },
+                  "errors": {}
+                }
+              }
+            },
+            "rf_ports": {
+              "0": {
+                "rxtx_delay": {
+                  "min": 2.065,
+                  "max": 3.461,
+                  "avg": 2.946,
+                  "sd": 0.272
+                }
+              }
+            },
+            "counters": {
+              "messages": {
+                "s1_initial_context_setup_request": 1,
+                "s1_initial_context_setup_response": 1,
+                "s1_downlink_nas_transport": 4,
+                "s1_initial_ue_message": 2,
+                "s1_uplink_nas_transport": 3,
+                "s1_setup_request": 1,
+                "s1_setup_response": 1,
+                "s1_ue_capability_info_indication": 1,
+                "s1_ue_context_release_command": 1,
+                "s1_ue_context_release_complete": 1,
+                "s1_nas_delivery_indication": 1
+              },
+              "errors": {}
+            },
+            "duration": 0.4,
+            "time": 95.088,
+            "utc": 1784621035.491
+          }
+        },
+        "ues": [
+          {
+            "ip": null,
+            "imsi": "001010123888888",
+            "imei": "8668870400991301",
+            "apn": null,
+            "enb_ue_id": 2,
+            "mme_ue_id": 101,
+            "rnti": null
+          },
+          {
+            "ip": "192.168.2.2",
+            "imsi": null,
+            "imei": null,
+            "apn": "TestPLMN",
+            "enb_ue_id": null,
+            "mme_ue_id": null,
+            "rnti": null
+          }
+        ],
+        "error": null
+      },
+      {
+        "elapsed_sec": 124.0,
+        "success": true,
+        "connected": true,
+        "connection_basis": "phy_rate",
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "data_ue_ip": null,
+        "data_ip_source": "not_available",
+        "phy_rate": {
+          "success": true,
+          "cells": [
+            {
+              "cell_id": "1",
+              "dl_bitrate_bps": 61882360,
+              "ul_bitrate_bps": 8476060,
+              "dl_bitrate_mbps": 61.882,
+              "ul_bitrate_mbps": 8.476,
+              "active": true
+            }
+          ],
+          "total_dl_bitrate_bps": 61882360,
+          "total_ul_bitrate_bps": 8476060,
+          "total_dl_bitrate_mbps": 61.882,
+          "total_ul_bitrate_mbps": 8.476,
+          "active_cell_count": 1,
+          "command": "cd /root/enb && ./ws.js 192.168.1.80:9001 '{\"message\":\"stats\"}'",
+          "payload": {
+            "message": "stats",
+            "message_id": "id#1",
+            "instance_id": "6a5f2777",
+            "cpu": {},
+            "cells": {
+              "1": {
+                "dl_bitrate": 61882360,
+                "ul_bitrate": 8476060,
+                "dl_tx": 788,
+                "ul_tx": 349,
+                "dl_err": 0,
+                "ul_err": 0,
+                "dl_retx": 0,
+                "ul_retx": 42,
+                "dl_use_min": 0.14,
+                "dl_use_max": 1,
+                "dl_use_avg": 0.988,
+                "dl_data_use_min": 0,
+                "dl_data_use_max": 1,
+                "dl_data_use_avg": 0.981,
+                "ul_use_min": 0.24,
+                "ul_use_max": 0.96,
+                "ul_use_avg": 0.908,
+                "ul_data_use_min": 0,
+                "ul_data_use_max": 0.8,
+                "ul_data_use_avg": 0.708,
+                "ctrl_use_min": 0.211,
+                "ctrl_use_max": 0.421,
+                "ctrl_use_avg": 0.392,
+                "dl_sched_users_min": 0,
+                "dl_sched_users_max": 1,
+                "dl_sched_users_avg": 0.988,
+                "ul_sched_users_min": 0,
+                "ul_sched_users_max": 1,
+                "ul_sched_users_avg": 0.892,
+                "ue_count_min": 1,
+                "ue_count_max": 1,
+                "ue_count_avg": 1,
+                "ue_active_count_min": 1,
+                "ue_active_count_max": 1,
+                "ue_active_count_avg": 1,
+                "ue_inactive_count_min": 0,
+                "ue_inactive_count_max": 0,
+                "ue_inactive_count_avg": 0,
+                "erab_count_min": 1,
+                "erab_count_max": 1,
+                "erab_count_avg": 1,
+                "dl_gbr_use_min": 0,
+                "dl_gbr_use_max": 0,
+                "dl_gbr_use_avg": 0,
+                "ul_gbr_use_min": 0,
+                "ul_gbr_use_max": 0,
+                "ul_gbr_use_avg": 0,
+                "counters": {
+                  "messages": {
+                    "prach": 2,
+                    "rrc_connection_request": 2,
+                    "rrc_connection_setup": 2,
+                    "rrc_connection_setup_complete": 2,
+                    "rrc_ul_information_transfer": 3,
+                    "rrc_dl_information_transfer": 4,
+                    "rrc_security_mode_command": 1,
+                    "rrc_security_mode_complete": 1,
+                    "rrc_ue_capability_enquiry": 1,
+                    "rrc_ue_capability_information": 1,
+                    "rrc_connection_reconfiguration": 1,
+                    "rrc_connection_reconfiguration_complete": 1,
+                    "rrc_connection_release": 1
+                  },
+                  "errors": {}
+                }
+              }
+            },
+            "rf_ports": {
+              "0": {
+                "rxtx_delay": {
+                  "min": 2.132,
+                  "max": 3.461,
+                  "avg": 2.947,
+                  "sd": 0.273
+                }
+              }
+            },
+            "counters": {
+              "messages": {
+                "s1_initial_context_setup_request": 1,
+                "s1_initial_context_setup_response": 1,
+                "s1_downlink_nas_transport": 4,
+                "s1_initial_ue_message": 2,
+                "s1_uplink_nas_transport": 3,
+                "s1_setup_request": 1,
+                "s1_setup_response": 1,
+                "s1_ue_capability_info_indication": 1,
+                "s1_ue_context_release_command": 1,
+                "s1_ue_context_release_complete": 1,
+                "s1_nas_delivery_indication": 1
+              },
+              "errors": {}
+            },
+            "duration": 0.4,
+            "time": 100.109,
+            "utc": 1784621040.512
+          }
+        },
+        "ues": [
+          {
+            "ip": null,
+            "imsi": "001010123888888",
+            "imei": "8668870400991301",
+            "apn": null,
+            "enb_ue_id": 2,
+            "mme_ue_id": 101,
+            "rnti": null
+          },
+          {
+            "ip": "192.168.2.2",
+            "imsi": null,
+            "imei": null,
+            "apn": "TestPLMN",
+            "enb_ue_id": null,
+            "mme_ue_id": null,
+            "rnti": null
+          }
+        ],
+        "error": null
+      },
+      {
+        "elapsed_sec": 129.0,
+        "success": true,
+        "connected": true,
+        "connection_basis": "phy_rate",
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "data_ue_ip": null,
+        "data_ip_source": "not_available",
+        "phy_rate": {
+          "success": true,
+          "cells": [
+            {
+              "cell_id": "1",
+              "dl_bitrate_bps": 62018400,
+              "ul_bitrate_bps": 7968660,
+              "dl_bitrate_mbps": 62.018,
+              "ul_bitrate_mbps": 7.969,
+              "active": true
+            }
+          ],
+          "total_dl_bitrate_bps": 62018400,
+          "total_ul_bitrate_bps": 7968660,
+          "total_dl_bitrate_mbps": 62.018,
+          "total_ul_bitrate_mbps": 7.969,
+          "active_cell_count": 1,
+          "command": "cd /root/enb && ./ws.js 192.168.1.80:9001 '{\"message\":\"stats\"}'",
+          "payload": {
+            "message": "stats",
+            "message_id": "id#1",
+            "instance_id": "6a5f2777",
+            "cpu": {},
+            "cells": {
+              "1": {
+                "dl_bitrate": 62018400,
+                "ul_bitrate": 7968660,
+                "dl_tx": 790,
+                "ul_tx": 347,
+                "dl_err": 0,
+                "ul_err": 0,
+                "dl_retx": 0,
+                "ul_retx": 42,
+                "dl_use_min": 0.14,
+                "dl_use_max": 1,
+                "dl_use_avg": 0.988,
+                "dl_data_use_min": 0,
+                "dl_data_use_max": 1,
+                "dl_data_use_avg": 0.981,
+                "ul_use_min": 0.24,
+                "ul_use_max": 0.96,
+                "ul_use_avg": 0.904,
+                "ul_data_use_min": 0,
+                "ul_data_use_max": 0.8,
+                "ul_data_use_avg": 0.71,
+                "ctrl_use_min": 0.211,
+                "ctrl_use_max": 0.421,
+                "ctrl_use_avg": 0.392,
+                "dl_sched_users_min": 0,
+                "dl_sched_users_max": 1,
+                "dl_sched_users_avg": 0.988,
+                "ul_sched_users_min": 0,
+                "ul_sched_users_max": 1,
+                "ul_sched_users_avg": 0.895,
+                "ue_count_min": 1,
+                "ue_count_max": 1,
+                "ue_count_avg": 1,
+                "ue_active_count_min": 1,
+                "ue_active_count_max": 1,
+                "ue_active_count_avg": 1,
+                "ue_inactive_count_min": 0,
+                "ue_inactive_count_max": 0,
+                "ue_inactive_count_avg": 0,
+                "erab_count_min": 1,
+                "erab_count_max": 1,
+                "erab_count_avg": 1,
+                "dl_gbr_use_min": 0,
+                "dl_gbr_use_max": 0,
+                "dl_gbr_use_avg": 0,
+                "ul_gbr_use_min": 0,
+                "ul_gbr_use_max": 0,
+                "ul_gbr_use_avg": 0,
+                "counters": {
+                  "messages": {
+                    "prach": 2,
+                    "rrc_connection_request": 2,
+                    "rrc_connection_setup": 2,
+                    "rrc_connection_setup_complete": 2,
+                    "rrc_ul_information_transfer": 3,
+                    "rrc_dl_information_transfer": 4,
+                    "rrc_security_mode_command": 1,
+                    "rrc_security_mode_complete": 1,
+                    "rrc_ue_capability_enquiry": 1,
+                    "rrc_ue_capability_information": 1,
+                    "rrc_connection_reconfiguration": 1,
+                    "rrc_connection_reconfiguration_complete": 1,
+                    "rrc_connection_release": 1
+                  },
+                  "errors": {}
+                }
+              }
+            },
+            "rf_ports": {
+              "0": {
+                "rxtx_delay": {
+                  "min": 2.132,
+                  "max": 3.527,
+                  "avg": 2.952,
+                  "sd": 0.271
+                }
+              }
+            },
+            "counters": {
+              "messages": {
+                "s1_initial_context_setup_request": 1,
+                "s1_initial_context_setup_response": 1,
+                "s1_downlink_nas_transport": 4,
+                "s1_initial_ue_message": 2,
+                "s1_uplink_nas_transport": 3,
+                "s1_setup_request": 1,
+                "s1_setup_response": 1,
+                "s1_ue_capability_info_indication": 1,
+                "s1_ue_context_release_command": 1,
+                "s1_ue_context_release_complete": 1,
+                "s1_nas_delivery_indication": 1
+              },
+              "errors": {}
+            },
+            "duration": 0.4,
+            "time": 105.11,
+            "utc": 1784621045.513
+          }
+        },
+        "ues": [
+          {
+            "ip": null,
+            "imsi": "001010123888888",
+            "imei": "8668870400991301",
+            "apn": null,
+            "enb_ue_id": 2,
+            "mme_ue_id": 101,
+            "rnti": null
+          },
+          {
+            "ip": "192.168.2.2",
+            "imsi": null,
+            "imei": null,
+            "apn": "TestPLMN",
+            "enb_ue_id": null,
+            "mme_ue_id": null,
+            "rnti": null
+          }
+        ],
+        "error": null
+      },
+      {
+        "elapsed_sec": 133.9,
+        "success": true,
+        "connected": true,
+        "connection_basis": "phy_rate",
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "data_ue_ip": null,
+        "data_ip_source": "not_available",
+        "phy_rate": {
+          "success": true,
+          "cells": [
+            {
+              "cell_id": "1",
+              "dl_bitrate_bps": 62022440,
+              "ul_bitrate_bps": 8714460,
+              "dl_bitrate_mbps": 62.022,
+              "ul_bitrate_mbps": 8.714,
+              "active": true
+            }
+          ],
+          "total_dl_bitrate_bps": 62022440,
+          "total_ul_bitrate_bps": 8714460,
+          "total_dl_bitrate_mbps": 62.022,
+          "total_ul_bitrate_mbps": 8.714,
+          "active_cell_count": 1,
+          "command": "cd /root/enb && ./ws.js 192.168.1.80:9001 '{\"message\":\"stats\"}'",
+          "payload": {
+            "message": "stats",
+            "message_id": "id#1",
+            "instance_id": "6a5f2777",
+            "cpu": {},
+            "cells": {
+              "1": {
+                "dl_bitrate": 62022440,
+                "ul_bitrate": 8714460,
+                "dl_tx": 790,
+                "ul_tx": 351,
+                "dl_err": 0,
+                "ul_err": 0,
+                "dl_retx": 0,
+                "ul_retx": 39,
+                "dl_use_min": 0.14,
+                "dl_use_max": 1,
+                "dl_use_avg": 0.985,
+                "dl_data_use_min": 0,
+                "dl_data_use_max": 1,
+                "dl_data_use_avg": 0.978,
+                "ul_use_min": 0.24,
+                "ul_use_max": 0.96,
+                "ul_use_avg": 0.906,
+                "ul_data_use_min": 0,
+                "ul_data_use_max": 0.8,
+                "ul_data_use_avg": 0.714,
+                "ctrl_use_min": 0.211,
+                "ctrl_use_max": 0.421,
+                "ctrl_use_avg": 0.393,
+                "dl_sched_users_min": 0,
+                "dl_sched_users_max": 1,
+                "dl_sched_users_avg": 0.985,
+                "ul_sched_users_min": 0,
+                "ul_sched_users_max": 1,
+                "ul_sched_users_avg": 0.9,
+                "ue_count_min": 1,
+                "ue_count_max": 1,
+                "ue_count_avg": 1,
+                "ue_active_count_min": 1,
+                "ue_active_count_max": 1,
+                "ue_active_count_avg": 1,
+                "ue_inactive_count_min": 0,
+                "ue_inactive_count_max": 0,
+                "ue_inactive_count_avg": 0,
+                "erab_count_min": 1,
+                "erab_count_max": 1,
+                "erab_count_avg": 1,
+                "dl_gbr_use_min": 0,
+                "dl_gbr_use_max": 0,
+                "dl_gbr_use_avg": 0,
+                "ul_gbr_use_min": 0,
+                "ul_gbr_use_max": 0,
+                "ul_gbr_use_avg": 0,
+                "counters": {
+                  "messages": {
+                    "prach": 2,
+                    "rrc_connection_request": 2,
+                    "rrc_connection_setup": 2,
+                    "rrc_connection_setup_complete": 2,
+                    "rrc_ul_information_transfer": 3,
+                    "rrc_dl_information_transfer": 4,
+                    "rrc_security_mode_command": 1,
+                    "rrc_security_mode_complete": 1,
+                    "rrc_ue_capability_enquiry": 1,
+                    "rrc_ue_capability_information": 1,
+                    "rrc_connection_reconfiguration": 1,
+                    "rrc_connection_reconfiguration_complete": 1,
+                    "rrc_connection_release": 1
+                  },
+                  "errors": {}
+                }
+              }
+            },
+            "rf_ports": {
+              "0": {
+                "rxtx_delay": {
+                  "min": 2.065,
+                  "max": 3.461,
+                  "avg": 2.947,
+                  "sd": 0.27
+                }
+              }
+            },
+            "counters": {
+              "messages": {
+                "s1_initial_context_setup_request": 1,
+                "s1_initial_context_setup_response": 1,
+                "s1_downlink_nas_transport": 4,
+                "s1_initial_ue_message": 2,
+                "s1_uplink_nas_transport": 3,
+                "s1_setup_request": 1,
+                "s1_setup_response": 1,
+                "s1_ue_capability_info_indication": 1,
+                "s1_ue_context_release_command": 1,
+                "s1_ue_context_release_complete": 1,
+                "s1_nas_delivery_indication": 1
+              },
+              "errors": {}
+            },
+            "duration": 0.4,
+            "time": 110.079,
+            "utc": 1784621050.482
+          }
+        },
+        "ues": [
+          {
+            "ip": null,
+            "imsi": "001010123888888",
+            "imei": "8668870400991301",
+            "apn": null,
+            "enb_ue_id": 2,
+            "mme_ue_id": 101,
+            "rnti": null
+          },
+          {
+            "ip": "192.168.2.2",
+            "imsi": null,
+            "imei": null,
+            "apn": "TestPLMN",
+            "enb_ue_id": null,
+            "mme_ue_id": null,
+            "rnti": null
+          }
+        ],
+        "error": null
+      },
+      {
+        "elapsed_sec": 139.0,
+        "success": true,
+        "connected": true,
+        "connection_basis": "phy_rate",
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "data_ue_ip": null,
+        "data_ip_source": "not_available",
+        "phy_rate": {
+          "success": true,
+          "cells": [
+            {
+              "cell_id": "1",
+              "dl_bitrate_bps": 62149720,
+              "ul_bitrate_bps": 8636880,
+              "dl_bitrate_mbps": 62.15,
+              "ul_bitrate_mbps": 8.637,
+              "active": true
+            }
+          ],
+          "total_dl_bitrate_bps": 62149720,
+          "total_ul_bitrate_bps": 8636880,
+          "total_dl_bitrate_mbps": 62.15,
+          "total_ul_bitrate_mbps": 8.637,
+          "active_cell_count": 1,
+          "command": "cd /root/enb && ./ws.js 192.168.1.80:9001 '{\"message\":\"stats\"}'",
+          "payload": {
+            "message": "stats",
+            "message_id": "id#1",
+            "instance_id": "6a5f2777",
+            "cpu": {},
+            "cells": {
+              "1": {
+                "dl_bitrate": 62149720,
+                "ul_bitrate": 8636880,
+                "dl_tx": 792,
+                "ul_tx": 346,
+                "dl_err": 0,
+                "ul_err": 0,
+                "dl_retx": 0,
+                "ul_retx": 41,
+                "dl_use_min": 0.14,
+                "dl_use_max": 1,
+                "dl_use_avg": 0.99,
+                "dl_data_use_min": 0,
+                "dl_data_use_max": 1,
+                "dl_data_use_avg": 0.983,
+                "ul_use_min": 0.24,
+                "ul_use_max": 0.96,
+                "ul_use_avg": 0.901,
+                "ul_data_use_min": 0,
+                "ul_data_use_max": 0.8,
+                "ul_data_use_avg": 0.711,
+                "ctrl_use_min": 0.211,
+                "ctrl_use_max": 0.421,
+                "ctrl_use_avg": 0.393,
+                "dl_sched_users_min": 0,
+                "dl_sched_users_max": 1,
+                "dl_sched_users_avg": 0.99,
+                "ul_sched_users_min": 0,
+                "ul_sched_users_max": 1,
+                "ul_sched_users_avg": 0.895,
+                "ue_count_min": 1,
+                "ue_count_max": 1,
+                "ue_count_avg": 1,
+                "ue_active_count_min": 1,
+                "ue_active_count_max": 1,
+                "ue_active_count_avg": 1,
+                "ue_inactive_count_min": 0,
+                "ue_inactive_count_max": 0,
+                "ue_inactive_count_avg": 0,
+                "erab_count_min": 1,
+                "erab_count_max": 1,
+                "erab_count_avg": 1,
+                "dl_gbr_use_min": 0,
+                "dl_gbr_use_max": 0,
+                "dl_gbr_use_avg": 0,
+                "ul_gbr_use_min": 0,
+                "ul_gbr_use_max": 0,
+                "ul_gbr_use_avg": 0,
+                "counters": {
+                  "messages": {
+                    "prach": 2,
+                    "rrc_connection_request": 2,
+                    "rrc_connection_setup": 2,
+                    "rrc_connection_setup_complete": 2,
+                    "rrc_ul_information_transfer": 3,
+                    "rrc_dl_information_transfer": 4,
+                    "rrc_security_mode_command": 1,
+                    "rrc_security_mode_complete": 1,
+                    "rrc_ue_capability_enquiry": 1,
+                    "rrc_ue_capability_information": 1,
+                    "rrc_connection_reconfiguration": 1,
+                    "rrc_connection_reconfiguration_complete": 1,
+                    "rrc_connection_release": 1
+                  },
+                  "errors": {}
+                }
+              }
+            },
+            "rf_ports": {
+              "0": {
+                "rxtx_delay": {
+                  "min": 2.132,
+                  "max": 3.527,
+                  "avg": 2.945,
+                  "sd": 0.273
+                }
+              }
+            },
+            "counters": {
+              "messages": {
+                "s1_initial_context_setup_request": 1,
+                "s1_initial_context_setup_response": 1,
+                "s1_downlink_nas_transport": 4,
+                "s1_initial_ue_message": 2,
+                "s1_uplink_nas_transport": 3,
+                "s1_setup_request": 1,
+                "s1_setup_response": 1,
+                "s1_ue_capability_info_indication": 1,
+                "s1_ue_context_release_command": 1,
+                "s1_ue_context_release_complete": 1,
+                "s1_nas_delivery_indication": 1
+              },
+              "errors": {}
+            },
+            "duration": 0.4,
+            "time": 115.155,
+            "utc": 1784621055.557
+          }
+        },
+        "ues": [
+          {
+            "ip": null,
+            "imsi": "001010123888888",
+            "imei": "8668870400991301",
+            "apn": null,
+            "enb_ue_id": 2,
+            "mme_ue_id": 101,
+            "rnti": null
+          },
+          {
+            "ip": "192.168.2.2",
+            "imsi": null,
+            "imei": null,
+            "apn": "TestPLMN",
+            "enb_ue_id": null,
+            "mme_ue_id": null,
+            "rnti": null
+          }
+        ],
+        "error": null
+      },
+      {
+        "elapsed_sec": 143.9,
+        "success": true,
+        "connected": true,
+        "connection_basis": "phy_rate",
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "data_ue_ip": null,
+        "data_ip_source": "not_available",
+        "phy_rate": {
+          "success": true,
+          "cells": [
+            {
+              "cell_id": "1",
+              "dl_bitrate_bps": 61520440,
+              "ul_bitrate_bps": 8365860,
+              "dl_bitrate_mbps": 61.52,
+              "ul_bitrate_mbps": 8.366,
+              "active": true
+            }
+          ],
+          "total_dl_bitrate_bps": 61520440,
+          "total_ul_bitrate_bps": 8365860,
+          "total_dl_bitrate_mbps": 61.52,
+          "total_ul_bitrate_mbps": 8.366,
+          "active_cell_count": 1,
+          "command": "cd /root/enb && ./ws.js 192.168.1.80:9001 '{\"message\":\"stats\"}'",
+          "payload": {
+            "message": "stats",
+            "message_id": "id#1",
+            "instance_id": "6a5f2777",
+            "cpu": {},
+            "cells": {
+              "1": {
+                "dl_bitrate": 61520440,
+                "ul_bitrate": 8365860,
+                "dl_tx": 784,
+                "ul_tx": 347,
+                "dl_err": 0,
+                "ul_err": 0,
+                "dl_retx": 0,
+                "ul_retx": 44,
+                "dl_use_min": 0.14,
+                "dl_use_max": 1,
+                "dl_use_avg": 0.981,
+                "dl_data_use_min": 0,
+                "dl_data_use_max": 1,
+                "dl_data_use_avg": 0.973,
+                "ul_use_min": 0.24,
+                "ul_use_max": 0.96,
+                "ul_use_avg": 0.908,
+                "ul_data_use_min": 0,
+                "ul_data_use_max": 0.8,
+                "ul_data_use_avg": 0.704,
+                "ctrl_use_min": 0.211,
+                "ctrl_use_max": 0.421,
+                "ctrl_use_avg": 0.39,
+                "dl_sched_users_min": 0,
+                "dl_sched_users_max": 1,
+                "dl_sched_users_avg": 0.98,
+                "ul_sched_users_min": 0,
+                "ul_sched_users_max": 1,
+                "ul_sched_users_avg": 0.887,
+                "ue_count_min": 1,
+                "ue_count_max": 1,
+                "ue_count_avg": 1,
+                "ue_active_count_min": 1,
+                "ue_active_count_max": 1,
+                "ue_active_count_avg": 1,
+                "ue_inactive_count_min": 0,
+                "ue_inactive_count_max": 0,
+                "ue_inactive_count_avg": 0,
+                "erab_count_min": 1,
+                "erab_count_max": 1,
+                "erab_count_avg": 1,
+                "dl_gbr_use_min": 0,
+                "dl_gbr_use_max": 0,
+                "dl_gbr_use_avg": 0,
+                "ul_gbr_use_min": 0,
+                "ul_gbr_use_max": 0,
+                "ul_gbr_use_avg": 0,
+                "counters": {
+                  "messages": {
+                    "prach": 2,
+                    "rrc_connection_request": 2,
+                    "rrc_connection_setup": 2,
+                    "rrc_connection_setup_complete": 2,
+                    "rrc_ul_information_transfer": 3,
+                    "rrc_dl_information_transfer": 4,
+                    "rrc_security_mode_command": 1,
+                    "rrc_security_mode_complete": 1,
+                    "rrc_ue_capability_enquiry": 1,
+                    "rrc_ue_capability_information": 1,
+                    "rrc_connection_reconfiguration": 1,
+                    "rrc_connection_reconfiguration_complete": 1,
+                    "rrc_connection_release": 1
+                  },
+                  "errors": {}
+                }
+              }
+            },
+            "rf_ports": {
+              "0": {
+                "rxtx_delay": {
+                  "min": 2.132,
+                  "max": 3.461,
+                  "avg": 2.947,
+                  "sd": 0.272
+                }
+              }
+            },
+            "counters": {
+              "messages": {
+                "s1_initial_context_setup_request": 1,
+                "s1_initial_context_setup_response": 1,
+                "s1_downlink_nas_transport": 4,
+                "s1_initial_ue_message": 2,
+                "s1_uplink_nas_transport": 3,
+                "s1_setup_request": 1,
+                "s1_setup_response": 1,
+                "s1_ue_capability_info_indication": 1,
+                "s1_ue_context_release_command": 1,
+                "s1_ue_context_release_complete": 1,
+                "s1_nas_delivery_indication": 1
+              },
+              "errors": {}
+            },
+            "duration": 0.4,
+            "time": 120.075,
+            "utc": 1784621060.477
+          }
+        },
+        "ues": [
+          {
+            "ip": null,
+            "imsi": "001010123888888",
+            "imei": "8668870400991301",
+            "apn": null,
+            "enb_ue_id": 2,
+            "mme_ue_id": 101,
+            "rnti": null
+          },
+          {
+            "ip": "192.168.2.2",
+            "imsi": null,
+            "imei": null,
+            "apn": "TestPLMN",
+            "enb_ue_id": null,
+            "mme_ue_id": null,
+            "rnti": null
+          }
+        ],
+        "error": null
+      },
+      {
+        "elapsed_sec": 148.6,
+        "success": true,
+        "connected": true,
+        "connection_basis": "phy_rate",
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "data_ue_ip": null,
+        "data_ip_source": "not_available",
+        "phy_rate": {
+          "success": true,
+          "cells": [
+            {
+              "cell_id": "1",
+              "dl_bitrate_bps": 62132040,
+              "ul_bitrate_bps": 8307320,
+              "dl_bitrate_mbps": 62.132,
+              "ul_bitrate_mbps": 8.307,
+              "active": true
+            }
+          ],
+          "total_dl_bitrate_bps": 62132040,
+          "total_ul_bitrate_bps": 8307320,
+          "total_dl_bitrate_mbps": 62.132,
+          "total_ul_bitrate_mbps": 8.307,
+          "active_cell_count": 1,
+          "command": "cd /root/enb && ./ws.js 192.168.1.80:9001 '{\"message\":\"stats\"}'",
+          "payload": {
+            "message": "stats",
+            "message_id": "id#1",
+            "instance_id": "6a5f2777",
+            "cpu": {},
+            "cells": {
+              "1": {
+                "dl_bitrate": 62132040,
+                "ul_bitrate": 8307320,
+                "dl_tx": 792,
+                "ul_tx": 350,
+                "dl_err": 0,
+                "ul_err": 0,
+                "dl_retx": 0,
+                "ul_retx": 40,
+                "dl_use_min": 0.14,
+                "dl_use_max": 1,
+                "dl_use_avg": 0.989,
+                "dl_data_use_min": 0,
+                "dl_data_use_max": 1,
+                "dl_data_use_avg": 0.983,
+                "ul_use_min": 0.24,
+                "ul_use_max": 0.96,
+                "ul_use_avg": 0.906,
+                "ul_data_use_min": 0,
+                "ul_data_use_max": 0.8,
+                "ul_data_use_avg": 0.71,
+                "ctrl_use_min": 0.211,
+                "ctrl_use_max": 0.421,
+                "ctrl_use_avg": 0.393,
+                "dl_sched_users_min": 0,
+                "dl_sched_users_max": 1,
+                "dl_sched_users_avg": 0.99,
+                "ul_sched_users_min": 0,
+                "ul_sched_users_max": 1,
+                "ul_sched_users_avg": 0.895,
+                "ue_count_min": 1,
+                "ue_count_max": 1,
+                "ue_count_avg": 1,
+                "ue_active_count_min": 1,
+                "ue_active_count_max": 1,
+                "ue_active_count_avg": 1,
+                "ue_inactive_count_min": 0,
+                "ue_inactive_count_max": 0,
+                "ue_inactive_count_avg": 0,
+                "erab_count_min": 1,
+                "erab_count_max": 1,
+                "erab_count_avg": 1,
+                "dl_gbr_use_min": 0,
+                "dl_gbr_use_max": 0,
+                "dl_gbr_use_avg": 0,
+                "ul_gbr_use_min": 0,
+                "ul_gbr_use_max": 0,
+                "ul_gbr_use_avg": 0,
+                "counters": {
+                  "messages": {
+                    "prach": 2,
+                    "rrc_connection_request": 2,
+                    "rrc_connection_setup": 2,
+                    "rrc_connection_setup_complete": 2,
+                    "rrc_ul_information_transfer": 3,
+                    "rrc_dl_information_transfer": 4,
+                    "rrc_security_mode_command": 1,
+                    "rrc_security_mode_complete": 1,
+                    "rrc_ue_capability_enquiry": 1,
+                    "rrc_ue_capability_information": 1,
+                    "rrc_connection_reconfiguration": 1,
+                    "rrc_connection_reconfiguration_complete": 1,
+                    "rrc_connection_release": 1
+                  },
+                  "errors": {}
+                }
+              }
+            },
+            "rf_ports": {
+              "0": {
+                "rxtx_delay": {
+                  "min": 2.199,
+                  "max": 3.461,
+                  "avg": 2.947,
+                  "sd": 0.272
+                }
+              }
+            },
+            "counters": {
+              "messages": {
+                "s1_initial_context_setup_request": 1,
+                "s1_initial_context_setup_response": 1,
+                "s1_downlink_nas_transport": 4,
+                "s1_initial_ue_message": 2,
+                "s1_uplink_nas_transport": 3,
+                "s1_setup_request": 1,
+                "s1_setup_response": 1,
+                "s1_ue_capability_info_indication": 1,
+                "s1_ue_context_release_command": 1,
+                "s1_ue_context_release_complete": 1,
+                "s1_nas_delivery_indication": 1
+              },
+              "errors": {}
+            },
+            "duration": 0.4,
+            "time": 124.779,
+            "utc": 1784621065.19
+          }
+        },
+        "ues": [
+          {
+            "ip": null,
+            "imsi": "001010123888888",
+            "imei": "8668870400991301",
+            "apn": null,
+            "enb_ue_id": 2,
+            "mme_ue_id": 101,
+            "rnti": null
+          },
+          {
+            "ip": "192.168.2.2",
+            "imsi": null,
+            "imei": null,
+            "apn": "TestPLMN",
+            "enb_ue_id": null,
+            "mme_ue_id": null,
+            "rnti": null
+          }
+        ],
+        "error": null
+      },
+      {
+        "elapsed_sec": 153.6,
+        "success": true,
+        "connected": true,
+        "connection_basis": "phy_rate",
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "data_ue_ip": null,
+        "data_ip_source": "not_available",
+        "phy_rate": {
+          "success": true,
+          "cells": [
+            {
+              "cell_id": "1",
+              "dl_bitrate_bps": 62121680,
+              "ul_bitrate_bps": 8296180,
+              "dl_bitrate_mbps": 62.122,
+              "ul_bitrate_mbps": 8.296,
+              "active": true
+            }
+          ],
+          "total_dl_bitrate_bps": 62121680,
+          "total_ul_bitrate_bps": 8296180,
+          "total_dl_bitrate_mbps": 62.122,
+          "total_ul_bitrate_mbps": 8.296,
+          "active_cell_count": 1,
+          "command": "cd /root/enb && ./ws.js 192.168.1.80:9001 '{\"message\":\"stats\"}'",
+          "payload": {
+            "message": "stats",
+            "message_id": "id#1",
+            "instance_id": "6a5f2777",
+            "cpu": {},
+            "cells": {
+              "1": {
+                "dl_bitrate": 62121680,
+                "ul_bitrate": 8296180,
+                "dl_tx": 792,
+                "ul_tx": 346,
+                "dl_err": 0,
+                "ul_err": 0,
+                "dl_retx": 0,
+                "ul_retx": 42,
+                "dl_use_min": 0.14,
+                "dl_use_max": 1,
+                "dl_use_avg": 0.989,
+                "dl_data_use_min": 0,
+                "dl_data_use_max": 1,
+                "dl_data_use_avg": 0.983,
+                "ul_use_min": 0.24,
+                "ul_use_max": 0.96,
+                "ul_use_avg": 0.902,
+                "ul_data_use_min": 0,
+                "ul_data_use_max": 0.8,
+                "ul_data_use_avg": 0.708,
+                "ctrl_use_min": 0.211,
+                "ctrl_use_max": 0.421,
+                "ctrl_use_avg": 0.392,
+                "dl_sched_users_min": 0,
+                "dl_sched_users_max": 1,
+                "dl_sched_users_avg": 0.99,
+                "ul_sched_users_min": 0,
+                "ul_sched_users_max": 1,
+                "ul_sched_users_avg": 0.892,
+                "ue_count_min": 1,
+                "ue_count_max": 1,
+                "ue_count_avg": 1,
+                "ue_active_count_min": 1,
+                "ue_active_count_max": 1,
+                "ue_active_count_avg": 1,
+                "ue_inactive_count_min": 0,
+                "ue_inactive_count_max": 0,
+                "ue_inactive_count_avg": 0,
+                "erab_count_min": 1,
+                "erab_count_max": 1,
+                "erab_count_avg": 1,
+                "dl_gbr_use_min": 0,
+                "dl_gbr_use_max": 0,
+                "dl_gbr_use_avg": 0,
+                "ul_gbr_use_min": 0,
+                "ul_gbr_use_max": 0,
+                "ul_gbr_use_avg": 0,
+                "counters": {
+                  "messages": {
+                    "prach": 2,
+                    "rrc_connection_request": 2,
+                    "rrc_connection_setup": 2,
+                    "rrc_connection_setup_complete": 2,
+                    "rrc_ul_information_transfer": 3,
+                    "rrc_dl_information_transfer": 4,
+                    "rrc_security_mode_command": 1,
+                    "rrc_security_mode_complete": 1,
+                    "rrc_ue_capability_enquiry": 1,
+                    "rrc_ue_capability_information": 1,
+                    "rrc_connection_reconfiguration": 1,
+                    "rrc_connection_reconfiguration_complete": 1,
+                    "rrc_connection_release": 1
+                  },
+                  "errors": {}
+                }
+              }
+            },
+            "rf_ports": {
+              "0": {
+                "rxtx_delay": {
+                  "min": 2.199,
+                  "max": 3.461,
+                  "avg": 2.946,
+                  "sd": 0.272
+                }
+              }
+            },
+            "counters": {
+              "messages": {
+                "s1_initial_context_setup_request": 1,
+                "s1_initial_context_setup_response": 1,
+                "s1_downlink_nas_transport": 4,
+                "s1_initial_ue_message": 2,
+                "s1_uplink_nas_transport": 3,
+                "s1_setup_request": 1,
+                "s1_setup_response": 1,
+                "s1_ue_capability_info_indication": 1,
+                "s1_ue_context_release_command": 1,
+                "s1_ue_context_release_complete": 1,
+                "s1_nas_delivery_indication": 1
+              },
+              "errors": {}
+            },
+            "duration": 0.4,
+            "time": 129.719,
+            "utc": 1784621070.122
+          }
+        },
+        "ues": [
+          {
+            "ip": null,
+            "imsi": "001010123888888",
+            "imei": "8668870400991301",
+            "apn": null,
+            "enb_ue_id": 2,
+            "mme_ue_id": 101,
+            "rnti": null
+          },
+          {
+            "ip": "192.168.2.2",
+            "imsi": null,
+            "imei": null,
+            "apn": "TestPLMN",
+            "enb_ue_id": null,
+            "mme_ue_id": null,
+            "rnti": null
+          }
+        ],
+        "error": null
+      },
+      {
+        "elapsed_sec": 158.6,
+        "success": true,
+        "connected": true,
+        "connection_basis": "phy_rate",
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "data_ue_ip": null,
+        "data_ip_source": "not_available",
+        "phy_rate": {
+          "success": true,
+          "cells": [
+            {
+              "cell_id": "1",
+              "dl_bitrate_bps": 61820560,
+              "ul_bitrate_bps": 8542900,
+              "dl_bitrate_mbps": 61.821,
+              "ul_bitrate_mbps": 8.543,
+              "active": true
+            }
+          ],
+          "total_dl_bitrate_bps": 61820560,
+          "total_ul_bitrate_bps": 8542900,
+          "total_dl_bitrate_mbps": 61.821,
+          "total_ul_bitrate_mbps": 8.543,
+          "active_cell_count": 1,
+          "command": "cd /root/enb && ./ws.js 192.168.1.80:9001 '{\"message\":\"stats\"}'",
+          "payload": {
+            "message": "stats",
+            "message_id": "id#1",
+            "instance_id": "6a5f2777",
+            "cpu": {},
+            "cells": {
+              "1": {
+                "dl_bitrate": 61820560,
+                "ul_bitrate": 8542900,
+                "dl_tx": 788,
+                "ul_tx": 348,
+                "dl_err": 0,
+                "ul_err": 0,
+                "dl_retx": 0,
+                "ul_retx": 42,
+                "dl_use_min": 0.14,
+                "dl_use_max": 1,
+                "dl_use_avg": 0.985,
+                "dl_data_use_min": 0,
+                "dl_data_use_max": 1,
+                "dl_data_use_avg": 0.977,
+                "ul_use_min": 0.24,
+                "ul_use_max": 0.96,
+                "ul_use_avg": 0.906,
+                "ul_data_use_min": 0,
+                "ul_data_use_max": 0.8,
+                "ul_data_use_avg": 0.706,
+                "ctrl_use_min": 0.211,
+                "ctrl_use_max": 0.421,
+                "ctrl_use_avg": 0.391,
+                "dl_sched_users_min": 0,
+                "dl_sched_users_max": 1,
+                "dl_sched_users_avg": 0.985,
+                "ul_sched_users_min": 0,
+                "ul_sched_users_max": 1,
+                "ul_sched_users_avg": 0.89,
+                "ue_count_min": 1,
+                "ue_count_max": 1,
+                "ue_count_avg": 1,
+                "ue_active_count_min": 1,
+                "ue_active_count_max": 1,
+                "ue_active_count_avg": 1,
+                "ue_inactive_count_min": 0,
+                "ue_inactive_count_max": 0,
+                "ue_inactive_count_avg": 0,
+                "erab_count_min": 1,
+                "erab_count_max": 1,
+                "erab_count_avg": 1,
+                "dl_gbr_use_min": 0,
+                "dl_gbr_use_max": 0,
+                "dl_gbr_use_avg": 0,
+                "ul_gbr_use_min": 0,
+                "ul_gbr_use_max": 0,
+                "ul_gbr_use_avg": 0,
+                "counters": {
+                  "messages": {
+                    "prach": 2,
+                    "rrc_connection_request": 2,
+                    "rrc_connection_setup": 2,
+                    "rrc_connection_setup_complete": 2,
+                    "rrc_ul_information_transfer": 3,
+                    "rrc_dl_information_transfer": 4,
+                    "rrc_security_mode_command": 1,
+                    "rrc_security_mode_complete": 1,
+                    "rrc_ue_capability_enquiry": 1,
+                    "rrc_ue_capability_information": 1,
+                    "rrc_connection_reconfiguration": 1,
+                    "rrc_connection_reconfiguration_complete": 1,
+                    "rrc_connection_release": 1
+                  },
+                  "errors": {}
+                }
+              }
+            },
+            "rf_ports": {
+              "0": {
+                "rxtx_delay": {
+                  "min": 2.199,
+                  "max": 3.461,
+                  "avg": 2.944,
+                  "sd": 0.272
+                }
+              }
+            },
+            "counters": {
+              "messages": {
+                "s1_initial_context_setup_request": 1,
+                "s1_initial_context_setup_response": 1,
+                "s1_downlink_nas_transport": 4,
+                "s1_initial_ue_message": 2,
+                "s1_uplink_nas_transport": 3,
+                "s1_setup_request": 1,
+                "s1_setup_response": 1,
+                "s1_ue_capability_info_indication": 1,
+                "s1_ue_context_release_command": 1,
+                "s1_ue_context_release_complete": 1,
+                "s1_nas_delivery_indication": 1
+              },
+              "errors": {}
+            },
+            "duration": 0.4,
+            "time": 134.742,
+            "utc": 1784621075.145
+          }
+        },
+        "ues": [
+          {
+            "ip": null,
+            "imsi": "001010123888888",
+            "imei": "8668870400991301",
+            "apn": null,
+            "enb_ue_id": 2,
+            "mme_ue_id": 101,
+            "rnti": null
+          },
+          {
+            "ip": "192.168.2.2",
+            "imsi": null,
+            "imei": null,
+            "apn": "TestPLMN",
+            "enb_ue_id": null,
+            "mme_ue_id": null,
+            "rnti": null
+          }
+        ],
+        "error": null
+      },
+      {
+        "elapsed_sec": 163.7,
+        "success": true,
+        "connected": true,
+        "connection_basis": "phy_rate",
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "data_ue_ip": null,
+        "data_ip_source": "not_available",
+        "phy_rate": {
+          "success": true,
+          "cells": [
+            {
+              "cell_id": "1",
+              "dl_bitrate_bps": 62004760,
+              "ul_bitrate_bps": 8541520,
+              "dl_bitrate_mbps": 62.005,
+              "ul_bitrate_mbps": 8.542,
+              "active": true
+            }
+          ],
+          "total_dl_bitrate_bps": 62004760,
+          "total_ul_bitrate_bps": 8541520,
+          "total_dl_bitrate_mbps": 62.005,
+          "total_ul_bitrate_mbps": 8.542,
+          "active_cell_count": 1,
+          "command": "cd /root/enb && ./ws.js 192.168.1.80:9001 '{\"message\":\"stats\"}'",
+          "payload": {
+            "message": "stats",
+            "message_id": "id#1",
+            "instance_id": "6a5f2777",
+            "cpu": {},
+            "cells": {
+              "1": {
+                "dl_bitrate": 62004760,
+                "ul_bitrate": 8541520,
+                "dl_tx": 790,
+                "ul_tx": 348,
+                "dl_err": 0,
+                "ul_err": 0,
+                "dl_retx": 0,
+                "ul_retx": 41,
+                "dl_use_min": 0.14,
+                "dl_use_max": 1,
+                "dl_use_avg": 0.987,
+                "dl_data_use_min": 0,
+                "dl_data_use_max": 1,
+                "dl_data_use_avg": 0.981,
+                "ul_use_min": 0.24,
+                "ul_use_max": 0.96,
+                "ul_use_avg": 0.904,
+                "ul_data_use_min": 0,
+                "ul_data_use_max": 0.8,
+                "ul_data_use_avg": 0.71,
+                "ctrl_use_min": 0.211,
+                "ctrl_use_max": 0.421,
+                "ctrl_use_avg": 0.393,
+                "dl_sched_users_min": 0,
+                "dl_sched_users_max": 1,
+                "dl_sched_users_avg": 0.988,
+                "ul_sched_users_min": 0,
+                "ul_sched_users_max": 1,
+                "ul_sched_users_avg": 0.895,
+                "ue_count_min": 1,
+                "ue_count_max": 1,
+                "ue_count_avg": 1,
+                "ue_active_count_min": 1,
+                "ue_active_count_max": 1,
+                "ue_active_count_avg": 1,
+                "ue_inactive_count_min": 0,
+                "ue_inactive_count_max": 0,
+                "ue_inactive_count_avg": 0,
+                "erab_count_min": 1,
+                "erab_count_max": 1,
+                "erab_count_avg": 1,
+                "dl_gbr_use_min": 0,
+                "dl_gbr_use_max": 0,
+                "dl_gbr_use_avg": 0,
+                "ul_gbr_use_min": 0,
+                "ul_gbr_use_max": 0,
+                "ul_gbr_use_avg": 0,
+                "counters": {
+                  "messages": {
+                    "prach": 2,
+                    "rrc_connection_request": 2,
+                    "rrc_connection_setup": 2,
+                    "rrc_connection_setup_complete": 2,
+                    "rrc_ul_information_transfer": 3,
+                    "rrc_dl_information_transfer": 4,
+                    "rrc_security_mode_command": 1,
+                    "rrc_security_mode_complete": 1,
+                    "rrc_ue_capability_enquiry": 1,
+                    "rrc_ue_capability_information": 1,
+                    "rrc_connection_reconfiguration": 1,
+                    "rrc_connection_reconfiguration_complete": 1,
+                    "rrc_connection_release": 1
+                  },
+                  "errors": {}
+                }
+              }
+            },
+            "rf_ports": {
+              "0": {
+                "rxtx_delay": {
+                  "min": 2.199,
+                  "max": 3.527,
+                  "avg": 2.947,
+                  "sd": 0.27
+                }
+              }
+            },
+            "counters": {
+              "messages": {
+                "s1_initial_context_setup_request": 1,
+                "s1_initial_context_setup_response": 1,
+                "s1_downlink_nas_transport": 4,
+                "s1_initial_ue_message": 2,
+                "s1_uplink_nas_transport": 3,
+                "s1_setup_request": 1,
+                "s1_setup_response": 1,
+                "s1_ue_capability_info_indication": 1,
+                "s1_ue_context_release_command": 1,
+                "s1_ue_context_release_complete": 1,
+                "s1_nas_delivery_indication": 1
+              },
+              "errors": {}
+            },
+            "duration": 0.4,
+            "time": 139.813,
+            "utc": 1784621080.216
+          }
+        },
+        "ues": [
+          {
+            "ip": null,
+            "imsi": "001010123888888",
+            "imei": "8668870400991301",
+            "apn": null,
+            "enb_ue_id": 2,
+            "mme_ue_id": 101,
+            "rnti": null
+          },
+          {
+            "ip": "192.168.2.2",
+            "imsi": null,
+            "imei": null,
+            "apn": "TestPLMN",
+            "enb_ue_id": null,
+            "mme_ue_id": null,
+            "rnti": null
+          }
+        ],
+        "error": null
+      },
+      {
+        "elapsed_sec": 168.6,
+        "success": true,
+        "connected": true,
+        "connection_basis": "phy_rate",
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "data_ue_ip": null,
+        "data_ip_source": "not_available",
+        "phy_rate": {
+          "success": true,
+          "cells": [
+            {
+              "cell_id": "1",
+              "dl_bitrate_bps": 61931160,
+              "ul_bitrate_bps": 8069100,
+              "dl_bitrate_mbps": 61.931,
+              "ul_bitrate_mbps": 8.069,
+              "active": true
+            }
+          ],
+          "total_dl_bitrate_bps": 61931160,
+          "total_ul_bitrate_bps": 8069100,
+          "total_dl_bitrate_mbps": 61.931,
+          "total_ul_bitrate_mbps": 8.069,
+          "active_cell_count": 1,
+          "command": "cd /root/enb && ./ws.js 192.168.1.80:9001 '{\"message\":\"stats\"}'",
+          "payload": {
+            "message": "stats",
+            "message_id": "id#1",
+            "instance_id": "6a5f2777",
+            "cpu": {},
+            "cells": {
+              "1": {
+                "dl_bitrate": 61931160,
+                "ul_bitrate": 8069100,
+                "dl_tx": 790,
+                "ul_tx": 349,
+                "dl_err": 0,
+                "ul_err": 0,
+                "dl_retx": 0,
+                "ul_retx": 42,
+                "dl_use_min": 0.14,
+                "dl_use_max": 1,
+                "dl_use_avg": 0.987,
+                "dl_data_use_min": 0,
+                "dl_data_use_max": 1,
+                "dl_data_use_avg": 0.98,
+                "ul_use_min": 0.24,
+                "ul_use_max": 0.96,
+                "ul_use_avg": 0.908,
+                "ul_data_use_min": 0,
+                "ul_data_use_max": 0.8,
+                "ul_data_use_avg": 0.706,
+                "ctrl_use_min": 0.211,
+                "ctrl_use_max": 0.421,
+                "ctrl_use_avg": 0.392,
+                "dl_sched_users_min": 0,
+                "dl_sched_users_max": 1,
+                "dl_sched_users_avg": 0.988,
+                "ul_sched_users_min": 0,
+                "ul_sched_users_max": 1,
+                "ul_sched_users_avg": 0.89,
+                "ue_count_min": 1,
+                "ue_count_max": 1,
+                "ue_count_avg": 1,
+                "ue_active_count_min": 1,
+                "ue_active_count_max": 1,
+                "ue_active_count_avg": 1,
+                "ue_inactive_count_min": 0,
+                "ue_inactive_count_max": 0,
+                "ue_inactive_count_avg": 0,
+                "erab_count_min": 1,
+                "erab_count_max": 1,
+                "erab_count_avg": 1,
+                "dl_gbr_use_min": 0,
+                "dl_gbr_use_max": 0,
+                "dl_gbr_use_avg": 0,
+                "ul_gbr_use_min": 0,
+                "ul_gbr_use_max": 0,
+                "ul_gbr_use_avg": 0,
+                "counters": {
+                  "messages": {
+                    "prach": 2,
+                    "rrc_connection_request": 2,
+                    "rrc_connection_setup": 2,
+                    "rrc_connection_setup_complete": 2,
+                    "rrc_ul_information_transfer": 3,
+                    "rrc_dl_information_transfer": 4,
+                    "rrc_security_mode_command": 1,
+                    "rrc_security_mode_complete": 1,
+                    "rrc_ue_capability_enquiry": 1,
+                    "rrc_ue_capability_information": 1,
+                    "rrc_connection_reconfiguration": 1,
+                    "rrc_connection_reconfiguration_complete": 1,
+                    "rrc_connection_release": 1
+                  },
+                  "errors": {}
+                }
+              }
+            },
+            "rf_ports": {
+              "0": {
+                "rxtx_delay": {
+                  "min": 2.132,
+                  "max": 3.461,
+                  "avg": 2.947,
+                  "sd": 0.272
+                }
+              }
+            },
+            "counters": {
+              "messages": {
+                "s1_initial_context_setup_request": 1,
+                "s1_initial_context_setup_response": 1,
+                "s1_downlink_nas_transport": 4,
+                "s1_initial_ue_message": 2,
+                "s1_uplink_nas_transport": 3,
+                "s1_setup_request": 1,
+                "s1_setup_response": 1,
+                "s1_ue_capability_info_indication": 1,
+                "s1_ue_context_release_command": 1,
+                "s1_ue_context_release_complete": 1,
+                "s1_nas_delivery_indication": 1
+              },
+              "errors": {}
+            },
+            "duration": 0.4,
+            "time": 144.735,
+            "utc": 1784621085.138
+          }
+        },
+        "ues": [
+          {
+            "ip": null,
+            "imsi": "001010123888888",
+            "imei": "8668870400991301",
+            "apn": null,
+            "enb_ue_id": 2,
+            "mme_ue_id": 101,
+            "rnti": null
+          },
+          {
+            "ip": "192.168.2.2",
+            "imsi": null,
+            "imei": null,
+            "apn": "TestPLMN",
+            "enb_ue_id": null,
+            "mme_ue_id": null,
+            "rnti": null
+          }
+        ],
+        "error": null
+      },
+      {
+        "elapsed_sec": 173.6,
+        "success": true,
+        "connected": true,
+        "connection_basis": "phy_rate",
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "data_ue_ip": null,
+        "data_ip_source": "not_available",
+        "phy_rate": {
+          "success": true,
+          "cells": [
+            {
+              "cell_id": "1",
+              "dl_bitrate_bps": 62116880,
+              "ul_bitrate_bps": 8301520,
+              "dl_bitrate_mbps": 62.117,
+              "ul_bitrate_mbps": 8.302,
+              "active": true
+            }
+          ],
+          "total_dl_bitrate_bps": 62116880,
+          "total_ul_bitrate_bps": 8301520,
+          "total_dl_bitrate_mbps": 62.117,
+          "total_ul_bitrate_mbps": 8.302,
+          "active_cell_count": 1,
+          "command": "cd /root/enb && ./ws.js 192.168.1.80:9001 '{\"message\":\"stats\"}'",
+          "payload": {
+            "message": "stats",
+            "message_id": "id#1",
+            "instance_id": "6a5f2777",
+            "cpu": {},
+            "cells": {
+              "1": {
+                "dl_bitrate": 62116880,
+                "ul_bitrate": 8301520,
+                "dl_tx": 792,
+                "ul_tx": 354,
+                "dl_err": 0,
+                "ul_err": 0,
+                "dl_retx": 0,
+                "ul_retx": 37,
+                "dl_use_min": 0.14,
+                "dl_use_max": 1,
+                "dl_use_avg": 0.987,
+                "dl_data_use_min": 0,
+                "dl_data_use_max": 1,
+                "dl_data_use_avg": 0.98,
+                "ul_use_min": 0.24,
+                "ul_use_max": 0.96,
+                "ul_use_avg": 0.908,
+                "ul_data_use_min": 0,
+                "ul_data_use_max": 0.8,
+                "ul_data_use_avg": 0.714,
+                "ctrl_use_min": 0.211,
+                "ctrl_use_max": 0.421,
+                "ctrl_use_avg": 0.393,
+                "dl_sched_users_min": 0,
+                "dl_sched_users_max": 1,
+                "dl_sched_users_avg": 0.988,
+                "ul_sched_users_min": 0,
+                "ul_sched_users_max": 1,
+                "ul_sched_users_avg": 0.9,
+                "ue_count_min": 1,
+                "ue_count_max": 1,
+                "ue_count_avg": 1,
+                "ue_active_count_min": 1,
+                "ue_active_count_max": 1,
+                "ue_active_count_avg": 1,
+                "ue_inactive_count_min": 0,
+                "ue_inactive_count_max": 0,
+                "ue_inactive_count_avg": 0,
+                "erab_count_min": 1,
+                "erab_count_max": 1,
+                "erab_count_avg": 1,
+                "dl_gbr_use_min": 0,
+                "dl_gbr_use_max": 0,
+                "dl_gbr_use_avg": 0,
+                "ul_gbr_use_min": 0,
+                "ul_gbr_use_max": 0,
+                "ul_gbr_use_avg": 0,
+                "counters": {
+                  "messages": {
+                    "prach": 2,
+                    "rrc_connection_request": 2,
+                    "rrc_connection_setup": 2,
+                    "rrc_connection_setup_complete": 2,
+                    "rrc_ul_information_transfer": 3,
+                    "rrc_dl_information_transfer": 4,
+                    "rrc_security_mode_command": 1,
+                    "rrc_security_mode_complete": 1,
+                    "rrc_ue_capability_enquiry": 1,
+                    "rrc_ue_capability_information": 1,
+                    "rrc_connection_reconfiguration": 1,
+                    "rrc_connection_reconfiguration_complete": 1,
+                    "rrc_connection_release": 1
+                  },
+                  "errors": {}
+                }
+              }
+            },
+            "rf_ports": {
+              "0": {
+                "rxtx_delay": {
+                  "min": 2.199,
+                  "max": 3.461,
+                  "avg": 2.95,
+                  "sd": 0.271
+                }
+              }
+            },
+            "counters": {
+              "messages": {
+                "s1_initial_context_setup_request": 1,
+                "s1_initial_context_setup_response": 1,
+                "s1_downlink_nas_transport": 4,
+                "s1_initial_ue_message": 2,
+                "s1_uplink_nas_transport": 3,
+                "s1_setup_request": 1,
+                "s1_setup_response": 1,
+                "s1_ue_capability_info_indication": 1,
+                "s1_ue_context_release_command": 1,
+                "s1_ue_context_release_complete": 1,
+                "s1_nas_delivery_indication": 1
+              },
+              "errors": {}
+            },
+            "duration": 0.4,
+            "time": 149.761,
+            "utc": 1784621090.164
+          }
+        },
+        "ues": [
+          {
+            "ip": null,
+            "imsi": "001010123888888",
+            "imei": "8668870400991301",
+            "apn": null,
+            "enb_ue_id": 2,
+            "mme_ue_id": 101,
+            "rnti": null
+          },
+          {
+            "ip": "192.168.2.2",
+            "imsi": null,
+            "imei": null,
+            "apn": "TestPLMN",
+            "enb_ue_id": null,
+            "mme_ue_id": null,
+            "rnti": null
+          }
+        ],
+        "error": null
+      },
+      {
+        "elapsed_sec": 178.6,
+        "success": true,
+        "connected": true,
+        "connection_basis": "phy_rate",
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "data_ue_ip": null,
+        "data_ip_source": "not_available",
+        "phy_rate": {
+          "success": true,
+          "cells": [
+            {
+              "cell_id": "1",
+              "dl_bitrate_bps": 62144920,
+              "ul_bitrate_bps": 8707940,
+              "dl_bitrate_mbps": 62.145,
+              "ul_bitrate_mbps": 8.708,
+              "active": true
+            }
+          ],
+          "total_dl_bitrate_bps": 62144920,
+          "total_ul_bitrate_bps": 8707940,
+          "total_dl_bitrate_mbps": 62.145,
+          "total_ul_bitrate_mbps": 8.708,
+          "active_cell_count": 1,
+          "command": "cd /root/enb && ./ws.js 192.168.1.80:9001 '{\"message\":\"stats\"}'",
+          "payload": {
+            "message": "stats",
+            "message_id": "id#1",
+            "instance_id": "6a5f2777",
+            "cpu": {},
+            "cells": {
+              "1": {
+                "dl_bitrate": 62144920,
+                "ul_bitrate": 8707940,
+                "dl_tx": 792,
+                "ul_tx": 350,
+                "dl_err": 0,
+                "ul_err": 0,
+                "dl_retx": 0,
+                "ul_retx": 41,
+                "dl_use_min": 0.14,
+                "dl_use_max": 1,
+                "dl_use_avg": 0.987,
+                "dl_data_use_min": 0,
+                "dl_data_use_max": 1,
+                "dl_data_use_avg": 0.98,
+                "ul_use_min": 0.24,
+                "ul_use_max": 0.96,
+                "ul_use_avg": 0.908,
+                "ul_data_use_min": 0,
+                "ul_data_use_max": 0.8,
+                "ul_data_use_avg": 0.708,
+                "ctrl_use_min": 0.211,
+                "ctrl_use_max": 0.421,
+                "ctrl_use_avg": 0.392,
+                "dl_sched_users_min": 0,
+                "dl_sched_users_max": 1,
+                "dl_sched_users_avg": 0.988,
+                "ul_sched_users_min": 0,
+                "ul_sched_users_max": 1,
+                "ul_sched_users_avg": 0.892,
+                "ue_count_min": 1,
+                "ue_count_max": 1,
+                "ue_count_avg": 1,
+                "ue_active_count_min": 1,
+                "ue_active_count_max": 1,
+                "ue_active_count_avg": 1,
+                "ue_inactive_count_min": 0,
+                "ue_inactive_count_max": 0,
+                "ue_inactive_count_avg": 0,
+                "erab_count_min": 1,
+                "erab_count_max": 1,
+                "erab_count_avg": 1,
+                "dl_gbr_use_min": 0,
+                "dl_gbr_use_max": 0,
+                "dl_gbr_use_avg": 0,
+                "ul_gbr_use_min": 0,
+                "ul_gbr_use_max": 0,
+                "ul_gbr_use_avg": 0,
+                "counters": {
+                  "messages": {
+                    "prach": 2,
+                    "rrc_connection_request": 2,
+                    "rrc_connection_setup": 2,
+                    "rrc_connection_setup_complete": 2,
+                    "rrc_ul_information_transfer": 3,
+                    "rrc_dl_information_transfer": 4,
+                    "rrc_security_mode_command": 1,
+                    "rrc_security_mode_complete": 1,
+                    "rrc_ue_capability_enquiry": 1,
+                    "rrc_ue_capability_information": 1,
+                    "rrc_connection_reconfiguration": 1,
+                    "rrc_connection_reconfiguration_complete": 1,
+                    "rrc_connection_release": 1
+                  },
+                  "errors": {}
+                }
+              }
+            },
+            "rf_ports": {
+              "0": {
+                "rxtx_delay": {
+                  "min": 2.199,
+                  "max": 3.527,
+                  "avg": 2.951,
+                  "sd": 0.27
+                }
+              }
+            },
+            "counters": {
+              "messages": {
+                "s1_initial_context_setup_request": 1,
+                "s1_initial_context_setup_response": 1,
+                "s1_downlink_nas_transport": 4,
+                "s1_initial_ue_message": 2,
+                "s1_uplink_nas_transport": 3,
+                "s1_setup_request": 1,
+                "s1_setup_response": 1,
+                "s1_ue_capability_info_indication": 1,
+                "s1_ue_context_release_command": 1,
+                "s1_ue_context_release_complete": 1,
+                "s1_nas_delivery_indication": 1
+              },
+              "errors": {}
+            },
+            "duration": 0.4,
+            "time": 154.718,
+            "utc": 1784621095.121
+          }
+        },
+        "ues": [
+          {
+            "ip": null,
+            "imsi": "001010123888888",
+            "imei": "8668870400991301",
+            "apn": null,
+            "enb_ue_id": 2,
+            "mme_ue_id": 101,
+            "rnti": null
+          },
+          {
+            "ip": "192.168.2.2",
+            "imsi": null,
+            "imei": null,
+            "apn": "TestPLMN",
+            "enb_ue_id": null,
+            "mme_ue_id": null,
+            "rnti": null
+          }
+        ],
+        "error": null
+      }
+    ],
+    "wait_ue_timeout_sec": 180,
+    "message": "等待 UE 連線與可用資料 APN IP 超過 180 秒；iPerf 未執行。",
+    "operation_metrics": {
+      "operation_id": "op-cb83956294cf4446",
+      "total_elapsed_sec": 189.3
+    }
+  },
+  "schema_version": "1.0",
+  "timestamp": "2026-07-21T16:12:59+08:00",
+  "result_file": null,
+  "returncode": 1,
+  "telegram_reply": "❌ Workflow Failed\n\n• Band：B5（10MHz，EARFCN：2525）\n• 等待 UE 連線逾時：180 秒\n• Result：FAIL\n• iPerf：未執行\n\n請確認 UE 是否 Attach、PHY 是否正常，以及資料 APN 是否取得 IP。"
+}

@@ -1,0 +1,387 @@
+{
+  "success": false,
+  "tool": "workflow.band_iperf",
+  "human_summary": "FAIL｜Band + iPerf 流程失敗\n\nStage：wait_ue_timeout\n等待 UE 連線與可用資料 APN IP 超過 180 秒；iPerf 未執行。",
+  "machine_result": {
+    "success": false,
+    "workflow": "band_then_iperf",
+    "stage": "wait_ue_timeout",
+    "band_result": {
+      "success": true,
+      "tool": "amarisoft.set_band",
+      "human_summary": "PASS｜LTE Band 設定完成\n\n【Band】\nCell：1\nBand：B3\n頻寬：10.0 MHz\nDL EARFCN：1575\n\n【Connection】\nLTE Service：Stable\nUE 連線：未連線\n判定依據：N/A\nUE Data IP：等待資料 APN\nIP 來源：not_available\nPHY DL：N/A Mbps\nPHY UL：N/A Mbps\n\n【Timing】\nLTE Service 穩定：2.1 秒\n\n結果：PASS",
+      "machine_result": {
+        "success": true,
+        "stage_success": {
+          "config_generated": true,
+          "uploaded": true,
+          "lte_service_stable": true,
+          "remote_config_verified": true,
+          "ue_connected": false
+        },
+        "modifier": {
+          "success": true,
+          "input_cfg": "D:\\NetworkAutomation\\plugins\\amarisoft\\AutoConfig.cfg",
+          "output_cfg": "D:\\NetworkAutomation\\generated\\AutoConfig_LTE_B3_Cell1.cfg",
+          "cell": 1,
+          "band": 3,
+          "mode": "FDD",
+          "dl_earfcn": 1575,
+          "bandwidth_mhz": 10.0,
+          "rb_dl": 50,
+          "changes": [
+            {
+              "key": "LTE_Cell_1_EARFCN_DL",
+              "old": "2525",
+              "new": "1575"
+            },
+            {
+              "key": "LTE_Cell_1_RB_DL",
+              "old": "50",
+              "new": "50"
+            },
+            {
+              "key": "LTE_TDD_Cell_1",
+              "old": "0",
+              "new": "0"
+            }
+          ]
+        },
+        "generated_cfg": "D:\\NetworkAutomation\\generated\\AutoConfig_LTE_B3_Cell1.cfg",
+        "dry_run": false,
+        "backup": {
+          "success": true,
+          "stdout": "",
+          "stderr": ""
+        },
+        "upload": {
+          "success": true,
+          "local_path": "D:\\NetworkAutomation\\generated\\AutoConfig_LTE_B3_Cell1.cfg",
+          "remote_path": "/root/enb/config/AutoConfig.cfg"
+        },
+        "restart": {
+          "success": true,
+          "commands": [
+            {
+              "success": true,
+              "command": "cd /root/enb/config && ln -sfn AutoConfig.cfg enb.cfg",
+              "exit_code": 0,
+              "stdout": "",
+              "stderr": ""
+            },
+            {
+              "success": true,
+              "command": "service lte restart",
+              "exit_code": 0,
+              "stdout": "",
+              "stderr": "Redirecting to /bin/systemctl restart lte.service\n"
+            }
+          ]
+        },
+        "lte_service": {
+          "success": true,
+          "elapsed_sec": 2.1,
+          "attempts": [
+            {
+              "elapsed_sec": 0.0,
+              "running": true,
+              "consecutive_success": 1
+            },
+            {
+              "elapsed_sec": 2.1,
+              "running": true,
+              "consecutive_success": 2
+            }
+          ]
+        },
+        "config_verify": {
+          "success": true,
+          "command": "grep -E '^#define LTE_Cell_1_(EARFCN_DL|RB_DL)' /root/enb/config/AutoConfig.cfg",
+          "earfcn_ok": true,
+          "rb_ok": true,
+          "stdout": "#define LTE_Cell_1_RB_DL 50\r\n#define LTE_Cell_1_EARFCN_DL 1575\r\n",
+          "stderr": ""
+        },
+        "connection": {
+          "success": true,
+          "connected": false,
+          "skipped": true,
+          "message": "�w���L UE �s�u���ݡC"
+        },
+        "state": {
+          "mode": "LTE",
+          "cell": 1,
+          "band": 3,
+          "bandwidth_mhz": 10.0,
+          "dl_earfcn": 1575,
+          "rb_dl": 50,
+          "service_stable": true,
+          "remote_config_verified": true,
+          "ue_connected": false,
+          "connection_basis": null,
+          "phy_rate": null,
+          "ue": null,
+          "data_ue_ip": null,
+          "data_ip_source": null
+        },
+        "message": "Band ���������GCell1, B3, 10.0MHz�FLTE service í�w�B���� config ���T�BUE �w�s�u�FPHY DL=0 Mbps�APHY UL=0 Mbps�C",
+        "returncode": 0
+      },
+      "schema_version": "1.0",
+      "timestamp": "2026-07-21T10:42:32+08:00",
+      "result_file": null,
+      "returncode": 0
+    },
+    "ip_wait_attempts": [
+      {
+        "elapsed_sec": 1.2,
+        "success": false,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": []
+      },
+      {
+        "elapsed_sec": 24.2,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": []
+      },
+      {
+        "elapsed_sec": 28.8,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": []
+      },
+      {
+        "elapsed_sec": 33.4,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": []
+      },
+      {
+        "elapsed_sec": 38.2,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": []
+      },
+      {
+        "elapsed_sec": 43.2,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": []
+      },
+      {
+        "elapsed_sec": 48.0,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": []
+      },
+      {
+        "elapsed_sec": 52.7,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": []
+      },
+      {
+        "elapsed_sec": 57.4,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": []
+      },
+      {
+        "elapsed_sec": 62.2,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": []
+      },
+      {
+        "elapsed_sec": 67.1,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": []
+      },
+      {
+        "elapsed_sec": 72.0,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": []
+      },
+      {
+        "elapsed_sec": 76.6,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": []
+      },
+      {
+        "elapsed_sec": 81.6,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": []
+      },
+      {
+        "elapsed_sec": 86.5,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": []
+      },
+      {
+        "elapsed_sec": 91.4,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": []
+      },
+      {
+        "elapsed_sec": 96.0,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": []
+      },
+      {
+        "elapsed_sec": 100.9,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": []
+      },
+      {
+        "elapsed_sec": 105.7,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": []
+      },
+      {
+        "elapsed_sec": 110.6,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": []
+      },
+      {
+        "elapsed_sec": 115.6,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": []
+      },
+      {
+        "elapsed_sec": 120.6,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": []
+      },
+      {
+        "elapsed_sec": 125.6,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": []
+      },
+      {
+        "elapsed_sec": 130.4,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": []
+      },
+      {
+        "elapsed_sec": 135.3,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": []
+      },
+      {
+        "elapsed_sec": 140.0,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": []
+      },
+      {
+        "elapsed_sec": 144.9,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": []
+      },
+      {
+        "elapsed_sec": 149.5,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": []
+      },
+      {
+        "elapsed_sec": 154.3,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": []
+      },
+      {
+        "elapsed_sec": 159.2,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": []
+      },
+      {
+        "elapsed_sec": 164.0,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": []
+      },
+      {
+        "elapsed_sec": 169.2,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": []
+      },
+      {
+        "elapsed_sec": 174.0,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": []
+      },
+      {
+        "elapsed_sec": 179.1,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": []
+      }
+    ],
+    "wait_ue_timeout_sec": 180,
+    "message": "等待 UE 連線與可用資料 APN IP 超過 180 秒；iPerf 未執行。",
+    "operation_metrics": {
+      "operation_id": "op-e2d9f70c55c84785",
+      "total_elapsed_sec": 189.9
+    }
+  },
+  "schema_version": "1.0",
+  "timestamp": "2026-07-21T10:45:34+08:00",
+  "result_file": null,
+  "returncode": 1,
+  "telegram_reply": "❌ Workflow Failed\n\n• Band：B3（10MHz，EARFCN：1575）\n• 等待 UE 連線逾時：180 秒\n• Result：FAIL\n• iPerf：未執行\n\n請確認 UE 是否 Attach、PHY 是否正常，以及資料 APN 是否取得 IP。"
+}

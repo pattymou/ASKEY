@@ -1,0 +1,75 @@
+﻿NetworkAutomation Complete iPerf Log
+========================================================================
+
+[Test Information]
+Test ID           : iperf-20260731-114643-d17784
+Schema Version    : 2.0
+Test Type         : iperf3
+Timestamp End     : 2026-07-31T11:46:43+08:00
+Result            : PASS
+
+[Parameters]
+UE Data IP        : 192.168.3.2
+LTE Band          : B5
+Bandwidth         : 10.000 MHz
+Cell              : 1
+EARFCN            : 2525
+Direction         : upload
+Duration          : 30 sec
+Port              : 5201
+Parallel Streams  : 1
+Interval          : 1 sec
+Reverse (-R)      : True
+
+[Precheck]
+UE Ping           : PASS
+Ping Command      : ping -c 1 -W 2 192.168.3.2
+Server Ready      : True
+Server Action     : already_listening
+Server Message    : iPerf Server 192.168.3.2:5201 已在 Listen。
+
+[Summary]
+Average           : 50.683 Mbps
+Minimum           : 47.093 Mbps
+Maximum           : 53.929 Mbps
+Total Transfer    : 190.062 MB
+Retransmissions   : N/A
+Packet Loss       : N/A %
+Sample Count      : 30
+
+[Interval Samples]
+No.  Start    End      Mbps       MB         Retrans  Loss(%)  Omitted
+---  -------  -------  ---------  ---------  -------  -------  -------
+  1        0    1.000     48.510      6.064      N/A      N/A    False
+  2    1.000    2.000     47.093      5.887      N/A      N/A    False
+  3    2.000    3.000     50.517      6.315      N/A      N/A    False
+  4    3.000    4.000     53.929      6.741      N/A      N/A    False
+  5    4.000    5.000     52.429      6.554      N/A      N/A    False
+  6    5.000    6.000     51.664      6.458      N/A      N/A    False
+  7    6.000    7.000     49.631      6.204      N/A      N/A    False
+  8    7.000    8.000     49.132      6.142      N/A      N/A    False
+  9    8.000    9.000     51.820      6.478      N/A      N/A    False
+ 10    9.000   10.000     49.972      6.247      N/A      N/A    False
+ 11   10.000   11.000     52.533      6.567      N/A      N/A    False
+ 12   11.000   12.000     50.940      6.368      N/A      N/A    False
+ 13   12.000   13.000     49.151      6.144      N/A      N/A    False
+ 14   13.000   14.000     49.937      6.242      N/A      N/A    False
+ 15   14.000   15.000     52.475      6.559      N/A      N/A    False
+ 16   15.000   16.000     51.438      6.430      N/A      N/A    False
+ 17   16.000   17.000     52.500      6.562      N/A      N/A    False
+ 18   17.000   18.000     49.467      6.184      N/A      N/A    False
+ 19   18.000   19.000     49.341      6.168      N/A      N/A    False
+ 20   19.000   20.000     50.054      6.257      N/A      N/A    False
+ 21   20.000   21.000     50.424      6.303      N/A      N/A    False
+ 22   21.000   22.000     49.764      6.221      N/A      N/A    False
+ 23   22.000   23.000     51.345      6.418      N/A      N/A    False
+ 24   23.000   24.000     48.837      6.105      N/A      N/A    False
+ 25   24.000   25.000     52.782      6.598      N/A      N/A    False
+ 26   25.000   26.000     50.586      6.323      N/A      N/A    False
+ 27   26.000   27.000     52.006      6.501      N/A      N/A    False
+ 28   27.000   28.000     51.218      6.402      N/A      N/A    False
+ 29   28.000   29.000     52.466      6.558      N/A      N/A    False
+ 30   29.000   30.000     48.528      6.066      N/A      N/A    False
+
+========================================================================
+End of Log

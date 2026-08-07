@@ -1,0 +1,6 @@
+{
+  "success": false,
+  "error": "TimeoutError",
+  "message": "Worker 超過安全上限 420 秒，已停止子程序。",
+  "traceback": "Traceback (most recent call last):\n  File \"D:\\NetworkAutomation\\core\\operation_worker.py\", line 151, in run\n    returncode = process.wait(timeout=timeout_sec)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\subprocess.py\", line 1264, in wait\n    return self._wait(timeout=timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\subprocess.py\", line 1593, in _wait\n    raise TimeoutExpired(self.args, timeout)\nsubprocess.TimeoutExpired: Command '['C:\\\\Users\\\\admin\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python312\\\\python.exe', '-u', 'D:\\\\NetworkAutomation\\\\callbox_agent.py', 'amarisoft', 'set-band', '--cell', '1', '--band', '5', '--bandwidth', '10.0']' timed out after 420 seconds\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"D:\\NetworkAutomation\\core\\operation_worker.py\", line 155, in run\n    raise TimeoutError(\nTimeoutError: Worker 超過安全上限 420 秒，已停止子程序。\n"
+}

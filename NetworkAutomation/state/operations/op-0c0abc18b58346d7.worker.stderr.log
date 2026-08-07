@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "D:\NetworkAutomation\core\operation_worker.py", line 226, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "D:\NetworkAutomation\core\operation_worker.py", line 222, in main
+    return run(sys.argv[1])
+           ^^^^^^^^^^^^^^^^
+  File "D:\NetworkAutomation\core\operation_worker.py", line 103, in run
+    store.update(
+  File "D:\NetworkAutomation\core\operation_store.py", line 87, in update
+    self.write(state)
+  File "D:\NetworkAutomation\core\operation_store.py", line 74, in write
+    os.replace(temp_name, target)
+PermissionError: [WinError 5] ¦s¨ú³Q©Ú¡C: 'D:\\NetworkAutomation\\state\\operations\\op-0c0abc18b58346d7.ylxn3cuk.tmp' -> 'D:\\NetworkAutomation\\state\\operations\\op-0c0abc18b58346d7.json'

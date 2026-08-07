@@ -1,0 +1,52 @@
+{
+  "success": true,
+  "operation_id": "op-df7d771cdd97497a",
+  "fingerprint": "f495469cba2606a318c51927cb920929bb14d35cf9e6fee64bb750b6907b7791",
+  "intent": "set_band",
+  "parameters": {
+    "band_config": "5A",
+    "bandwidth_config": "10",
+    "lte_carriers": [
+      {
+        "band": 5,
+        "bandwidth_mhz": 10.0
+      }
+    ]
+  },
+  "cli_args": [
+    "amarisoft",
+    "set-band",
+    "--band-config",
+    "5A",
+    "--bandwidth-config",
+    "10"
+  ],
+  "status": "completed",
+  "stage": "completed",
+  "message": "PASS｜LTE Band 設定完成\n\n【Band】\nCell：N/A\nBand：BN/A\n頻寬：N/A MHz\nDL EARFCN：N/A\n\n【Connection】\nLTE Service：Stable\nUE 連線：已連線\n判定依據：phy_rate\nUE Data IP：192.168.3.2\nIP 來源：apn:internet\nPHY DL：11.3 Mbps\nPHY UL：4.767 Mbps\n\n【Timing】\nLTE Service 穩定：2.1 秒\nUE/PHY/Data IP：113.9 秒\n總耗時：122.2 秒\n\n結果：PASS",
+  "progress_percent": 100,
+  "created_at": "2026-08-04T14:34:26+08:00",
+  "updated_at": "2026-08-04T14:36:28+08:00",
+  "worker_timeout_sec": 900,
+  "attached_existing": false,
+  "owner_batch_id": "batch-20260804-122111-af8815",
+  "worker_pid": 676236,
+  "worker_started_at": "2026-08-04T14:34:26+08:00",
+  "child_pid": 689812,
+  "command": [
+    "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "-u",
+    "D:\\NetworkAutomation\\callbox_agent.py",
+    "amarisoft",
+    "set-band",
+    "--band-config",
+    "5A",
+    "--bandwidth-config",
+    "10"
+  ],
+  "elapsed_sec": 122.2,
+  "worker_heartbeat_at": "2026-08-04T14:36:27+08:00",
+  "returncode": 0,
+  "result_file": "D:\\NetworkAutomation\\state\\operations\\op-df7d771cdd97497a.result.json",
+  "worker_finished_at": "2026-08-04T14:36:28+08:00"
+}

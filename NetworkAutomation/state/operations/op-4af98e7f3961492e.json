@@ -1,0 +1,41 @@
+{
+  "success": true,
+  "operation_id": "op-4af98e7f3961492e",
+  "fingerprint": "5ddab6b52801925aa995472327877802834867e1a8affdab9595981b0c4744dd",
+  "intent": "connection_status",
+  "parameters": {},
+  "cli_args": [
+    "amarisoft",
+    "connection"
+  ],
+  "status": "failed",
+  "stage": "failed",
+  "message": "WARNING｜UE 尚未連線\n\n�ثe PHY DL/UL bitrate �Ҭ� 0�C",
+  "progress_percent": 100,
+  "created_at": "2026-07-29T10:42:31+08:00",
+  "updated_at": "2026-07-29T10:42:33+08:00",
+  "worker_timeout_sec": 420,
+  "attached_existing": false,
+  "launcher_pid": 1096480,
+  "worker_launch_command": [
+    "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "-u",
+    "-m",
+    "core.operation_worker",
+    "op-4af98e7f3961492e"
+  ],
+  "worker_pid": 1096480,
+  "worker_started_at": "2026-07-29T10:42:31+08:00",
+  "child_pid": 1094612,
+  "command": [
+    "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "-u",
+    "D:\\NetworkAutomation\\callbox_agent.py",
+    "amarisoft",
+    "connection"
+  ],
+  "elapsed_sec": 1.6,
+  "returncode": 1,
+  "result_file": "D:\\NetworkAutomation\\state\\operations\\op-4af98e7f3961492e.result.json",
+  "worker_finished_at": "2026-07-29T10:42:33+08:00"
+}

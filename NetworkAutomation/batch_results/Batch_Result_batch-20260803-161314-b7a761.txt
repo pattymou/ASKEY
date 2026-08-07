@@ -1,0 +1,2 @@
+﻿序號	Band	BW	ARFCN	測試類型	iPerf方向	測試秒數	設定開始時間	設定完成時間	UE連線狀態	PHY DL Mbps	PHY UL Mbps	iPerf平均 Mbps	iPerf最低 Mbps	iPerf最高 Mbps	傳輸量 MB	結果	錯誤原因
+1	1A-3A	20+20	300+1575	PHY			2026-08-03T16:13:20+08:00	2026-08-03T16:19:16+08:00	未連線	0.0	0.0					FAIL	FAIL｜LTE Band 設定未完整完成  LTE config 已套用，但 UE 尚未連線。

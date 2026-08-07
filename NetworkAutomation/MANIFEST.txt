@@ -1,0 +1,20 @@
+NetworkAutomation batch detail final fix
+
+ZIP root is the NetworkAutomation project root. There is NO extra NetworkAutomation folder.
+
+Files to replace:
+- core/batch_notifier.py
+- core/batch_worker.py
+
+Files added for verification:
+- verify_batch_multiline.py
+- VERIFY_BATCH_FIX.bat
+- README_請直接覆蓋.txt
+
+Not modified:
+- N_CELL / NR_CELL logic
+- Config templates
+- Band/BW defaults
+- ARFCN calculation
+- lte_config_modifier.py
+- apply_nr_to_callbox.py

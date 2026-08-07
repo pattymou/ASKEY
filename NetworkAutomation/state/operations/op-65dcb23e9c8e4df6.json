@@ -1,0 +1,41 @@
+{
+  "success": true,
+  "operation_id": "op-65dcb23e9c8e4df6",
+  "fingerprint": "5ddab6b52801925aa995472327877802834867e1a8affdab9595981b0c4744dd",
+  "intent": "connection_status",
+  "parameters": {},
+  "cli_args": [
+    "amarisoft",
+    "connection"
+  ],
+  "status": "completed",
+  "stage": "completed",
+  "message": "PASS｜UE 已連線\n\n判定依據：phy_rate\nUE Data IP：192.168.3.2\nIP 來源：apn:internet\nPHY DL：14.128 Mbps\nPHY UL：5.475 Mbps\n\n結果：PASS",
+  "progress_percent": 100,
+  "created_at": "2026-07-28T16:22:57+08:00",
+  "updated_at": "2026-07-28T16:23:00+08:00",
+  "worker_timeout_sec": 420,
+  "attached_existing": false,
+  "launcher_pid": 1010944,
+  "worker_launch_command": [
+    "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "-u",
+    "-m",
+    "core.operation_worker",
+    "op-65dcb23e9c8e4df6"
+  ],
+  "worker_pid": 1010944,
+  "worker_started_at": "2026-07-28T16:22:57+08:00",
+  "child_pid": 1002100,
+  "command": [
+    "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "-u",
+    "D:\\NetworkAutomation\\callbox_agent.py",
+    "amarisoft",
+    "connection"
+  ],
+  "elapsed_sec": 2.5,
+  "returncode": 0,
+  "result_file": "D:\\NetworkAutomation\\state\\operations\\op-65dcb23e9c8e4df6.result.json",
+  "worker_finished_at": "2026-07-28T16:23:00+08:00"
+}

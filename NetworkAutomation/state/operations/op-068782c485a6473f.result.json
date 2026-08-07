@@ -1,0 +1,19 @@
+{
+  "success": false,
+  "tool": "amarisoft.set_band",
+  "human_summary": "FAIL｜LTE Band 設定未完整完成\n\n未知錯誤",
+  "machine_result": {
+    "success": false,
+    "returncode": 2,
+    "stderr": "usage: apply_lte_to_callbox.py [-h] --settings SETTINGS [--cell CELL] --band\n                               BAND [--bandwidth BANDWIDTH]\n                               [--dl-earfcn DL_EARFCN] [--dry-run]\n                               [--no-restart] [--skip-ue-wait]\n                               [--expected-imsi EXPECTED_IMSI]\n                               [--expected-imei EXPECTED_IMEI] [--apn APN]\napply_lte_to_callbox.py: error: unrecognized arguments: --mimo-dl 4x4 --mimo-ul 2x2 --modulation-dl qam256 --modulation-ul qam256 --mcs-dl Best --mcs-ul Best",
+    "operation_metrics": {
+      "operation_id": "op-068782c485a6473f",
+      "total_elapsed_sec": 1.2
+    }
+  },
+  "schema_version": "1.0",
+  "timestamp": "2026-07-28T16:22:42+08:00",
+  "result_file": null,
+  "returncode": 1,
+  "telegram_reply": "結果失敗。\n\n• 錯誤：未知錯誤"
+}

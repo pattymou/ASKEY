@@ -1,0 +1,4 @@
+{
+  "returncode": 2,
+  "stderr_tail": "usage: callbox_agent.py [-h] {amarisoft,iperf,workflow} ...\r\ncallbox_agent.py: error: unrecognized arguments: --phy-only-ready"
+}

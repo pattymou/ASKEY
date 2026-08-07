@@ -1,0 +1,6 @@
+﻿序號	Band	BW	ARFCN	測試類型	iPerf方向	測試秒數	設定開始時間	設定完成時間	UE連線狀態	PHY DL Mbps	PHY UL Mbps	iPerf平均 Mbps	iPerf最低 Mbps	iPerf最高 Mbps	傳輸量 MB	Download 平均 Mbps	Download 最低 Mbps	Download 最高 Mbps	Download 傳輸量 MB	Upload 平均 Mbps	Upload 最低 Mbps	Upload 最高 Mbps	Upload 傳輸量 MB	結果	錯誤原因
+1	5A	10	2525	PHY+iPerf	bidirectional	30	2026-08-03T18:11:51+08:00	2026-08-03T18:14:32+08:00	已連線	13.293	4.932	DL 13.631 / UL 4.821	DL 9.903 / UL 4.438	DL 19.631 / UL 5.185	DL 51.117 / UL 18.078	13.631	9.903	19.631	51.117	4.821	4.438	5.185	18.078	PASS	
+2	1A-3A	20+20		PHY			2026-08-03T18:14:57+08:00	2026-08-03T18:15:50+08:00	未連線															FAIL	Band 設定失敗
+3	n78C	100+100	623334+630000	PHY+iPerf	upload	30	2026-08-03T18:16:16+08:00	2026-08-03T18:21:53+08:00	未連線	0.0	0.0													FAIL	SA config 已套用，但 UE 尚未連線。
+4	1A_n78A	20_100	623334+300	PHY+iPerf	download	30	2026-08-03T18:22:19+08:00	2026-08-03T18:25:34+08:00	已連線	1.477	15.603													FAIL	FAIL｜iPerf 測試失敗  UE 192.168.3.2 無法從 iPerf Executor Ping 通，停止測試。
+5	3A	20		PHY			2026-08-03T18:26:00+08:00	2026-08-03T18:26:52+08:00	未連線															FAIL	Band 設定失敗

@@ -1,0 +1,41 @@
+{
+  "success": true,
+  "operation_id": "op-d5190efd49094e9d",
+  "fingerprint": "61fe6f688e505ffb21ddeeaf4ae22d1907fa410d65640fe065ab382677ff0b56",
+  "intent": "status",
+  "parameters": {},
+  "cli_args": [
+    "amarisoft",
+    "status"
+  ],
+  "status": "completed",
+  "stage": "completed",
+  "message": "PASS｜Callbox 狀態\n\nLTE Service：Running",
+  "progress_percent": 100,
+  "created_at": "2026-07-29T10:42:19+08:00",
+  "updated_at": "2026-07-29T10:42:20+08:00",
+  "worker_timeout_sec": 240,
+  "attached_existing": false,
+  "launcher_pid": 1096936,
+  "worker_launch_command": [
+    "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "-u",
+    "-m",
+    "core.operation_worker",
+    "op-d5190efd49094e9d"
+  ],
+  "worker_pid": 1096936,
+  "worker_started_at": "2026-07-29T10:42:19+08:00",
+  "child_pid": 1094660,
+  "command": [
+    "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "-u",
+    "D:\\NetworkAutomation\\callbox_agent.py",
+    "amarisoft",
+    "status"
+  ],
+  "elapsed_sec": 1.4,
+  "returncode": 0,
+  "result_file": "D:\\NetworkAutomation\\state\\operations\\op-d5190efd49094e9d.result.json",
+  "worker_finished_at": "2026-07-29T10:42:20+08:00"
+}

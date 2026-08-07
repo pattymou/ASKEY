@@ -1,0 +1,37 @@
+{
+  "success": true,
+  "operation_id": "op-0c0abc18b58346d7",
+  "fingerprint": "0ce669733fa4880ae558a86bc31375eb9915638a209c4160e7b2f2f0b4398ed9",
+  "intent": "set_band",
+  "parameters": {
+    "cell": 1,
+    "band": 3,
+    "bandwidth_mhz": 10.0
+  },
+  "cli_args": [
+    "amarisoft",
+    "set-band",
+    "--cell",
+    "1",
+    "--band",
+    "3",
+    "--bandwidth",
+    "10.0"
+  ],
+  "status": "cancelled",
+  "stage": "cancelled",
+  "message": "Operation 已取消",
+  "progress_percent": 100,
+  "created_at": "2026-07-13T15:25:50+08:00",
+  "updated_at": "2026-07-13T15:56:33+08:00",
+  "worker_timeout_sec": 420,
+  "attached_existing": false,
+  "launcher_pid": 34828,
+  "worker_launch_command": [
+    "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "-u",
+    "-m",
+    "core.operation_worker",
+    "op-0c0abc18b58346d7"
+  ]
+}

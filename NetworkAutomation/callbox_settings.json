@@ -5,7 +5,7 @@
     "input_cfg": "plugins/amarisoft/AutoConfig.cfg",
     "earfcn_json": "plugins/amarisoft/Earfcn_LTE.json",
     "output_dir": "generated",
-    "output_pattern": "AutoConfig.cfg"
+    "output_pattern": "AutoConfig_LTE_B{band}_Cell{cell}.cfg"
   },
   "callbox": {
     "host": "192.168.1.80",
@@ -18,10 +18,57 @@
       "cd /root/enb/config && ln -sfn AutoConfig.cfg enb.cfg",
       "service lte restart"
     ],
-    "verify_commands": [
-      "service lte status"
-    ],
     "ssh_timeout_sec": 30,
-    "command_timeout_sec": 120
+    "command_timeout_sec": 120,
+    "wait_after_restart_sec": 8,
+    "stable_check_retries": 8,
+    "stable_check_interval_sec": 3,
+    "stable_required_success_count": 2,
+    "stable_poll_interval_sec": 2,
+    "stable_max_wait_sec": 300,
+    "connection_check": {
+      "websocket_port": 9000,
+      "poll_interval_sec": 3,
+      "max_wait_sec": 600,
+      "ping_count": 1,
+      "ping_timeout_sec": 2,
+      "require_ping": true
+    },
+    "amarisoft_model": "100M"
+  },
+  "iperf": {
+    "binary": "iperf3",
+    "result_dir": "results/iperf",
+    "executor": {
+      "host": "192.168.1.80",
+      "port": 22,
+      "username": "root",
+      "password": "toor",
+      "ssh_timeout_sec": 30,
+      "command_timeout_sec": 120
+    },
+    "server_control": {
+      "enabled": false,
+      "method": "check_only",
+      "username": "",
+      "password": "",
+      "ssh_port": 22,
+      "ssh_timeout_sec": 20,
+      "command_timeout_sec": 30,
+      "binary": "iperf3",
+      "start_command": "nohup {binary} -s -p {port} -D >/tmp/networkautomation_iperf3.log 2>&1",
+      "stop_command": "pkill -f '{binary} -s -p {port}' || true",
+      "retry_count": 2,
+      "retry_interval_sec": 2,
+      "listen_wait_sec": 15
+    }
+  },
+  "workflow": {
+    "wait_ue_timeout_sec": 300,
+    "wait_ue_poll_interval_sec": 3,
+    "iperf_default_duration_sec": 30,
+    "iperf_default_port": 5201,
+    "iperf_default_parallel_streams": 1,
+    "iperf_default_interval_sec": 1
   }
 }

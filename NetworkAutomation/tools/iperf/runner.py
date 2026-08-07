@@ -1,317 +1,358 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-tools/iperf/runner.py
-
-Generic iperf3 tool for NetworkAutomation.
-
-Goals:
-- Not tied to Amarisoft.
-- Can run locally or on a remote SSH host.
-- stdout returns JSON only.
-- stderr is for debug/progress logs.
-"""
-
 from __future__ import annotations
 
 import argparse
+import ipaddress
 import json
-import shutil
-import subprocess
+import shlex
 import sys
-import time
-from dataclasses import dataclass
+import uuid
+from datetime import datetime
+from pathlib import Path
 from typing import Any
 
+ROOT = Path(__file__).resolve().parents[2]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 
-def print_json(data: dict[str, Any]) -> None:
-    print(json.dumps(data, ensure_ascii=False, indent=2))
-
-
-def now_ms() -> int:
-    return int(time.time() * 1000)
-
-
-@dataclass(frozen=True)
-class CommandResult:
-    success: bool
-    command: str
-    returncode: int
-    stdout: str
-    stderr: str
-    elapsed_ms: int
+from core.ssh import SSHClient
+from tools.iperf.server_manager import ensure_iperf_server
 
 
-def run_local_command(cmd: list[str], timeout_sec: int | None = None) -> CommandResult:
-    start = now_ms()
-    p = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout_sec)
-    elapsed = now_ms() - start
-    return CommandResult(
-        success=p.returncode == 0,
-        command=" ".join(cmd),
-        returncode=p.returncode,
-        stdout=p.stdout or "",
-        stderr=p.stderr or "",
-        elapsed_ms=elapsed,
-    )
-
-
-def shell_quote(value: str) -> str:
-    return "'" + value.replace("'", "'\\''") + "'"
-
-
-def run_remote_command(
-    command: str,
-    host: str,
-    port: int,
-    username: str,
-    password: str,
-    timeout_sec: int | None = None,
-) -> CommandResult:
+def mbps(value: Any) -> float | None:
     try:
-        import paramiko  # type: ignore
-    except ModuleNotFoundError as exc:
-        raise RuntimeError("Remote iperf requires paramiko: python -m pip install paramiko") from exc
+        return round(float(value) / 1_000_000.0, 3)
+    except (TypeError, ValueError):
+        return None
 
-    start = now_ms()
-    client = paramiko.SSHClient()
-    client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 
+def mbytes(value: Any) -> float | None:
     try:
-        client.connect(
-            hostname=host,
-            port=int(port),
-            username=username,
-            password=password,
-            timeout=30,
-            look_for_keys=False,
-            allow_agent=False,
-        )
-        _, stdout, stderr = client.exec_command(command, timeout=timeout_sec)
-        returncode = stdout.channel.recv_exit_status()
-        out = stdout.read().decode("utf-8", errors="replace")
-        err = stderr.read().decode("utf-8", errors="replace")
-    finally:
-        client.close()
-
-    elapsed = now_ms() - start
-    return CommandResult(
-        success=returncode == 0,
-        command=command,
-        returncode=returncode,
-        stdout=out,
-        stderr=err,
-        elapsed_ms=elapsed,
-    )
+        return round(float(value) / 1_000_000.0, 3)
+    except (TypeError, ValueError):
+        return None
 
 
-def build_iperf_client_command(args: argparse.Namespace) -> list[str]:
-    cmd = [
-        "iperf3",
-        "-c", args.server,
-        "-p", str(args.port),
-        "-t", str(args.time),
-        "-P", str(args.parallel),
-        "-J",
+def parse_json(stdout: str) -> dict[str, Any]:
+    data = json.loads(stdout)
+    if data.get("error"):
+        raise RuntimeError(str(data["error"]))
+
+    samples = []
+    for interval in data.get("intervals", []):
+        item = interval.get("sum") or interval.get("sum_received") or interval.get("sum_sent")
+        if not isinstance(item, dict):
+            continue
+        samples.append({
+            "second_start": item.get("start"),
+            "second_end": item.get("end"),
+            "throughput_mbps": mbps(item.get("bits_per_second")),
+            "transfer_mbytes": mbytes(item.get("bytes")),
+            "retransmissions": item.get("retransmits"),
+            "packet_loss_percent": item.get("lost_percent"),
+            "omitted": bool(item.get("omitted", False)),
+        })
+
+    valid = [
+        s for s in samples
+        if not s["omitted"] and s["throughput_mbps"] is not None
+    ]
+    rates = [s["throughput_mbps"] for s in valid]
+
+    end = data.get("end", {})
+    received = end.get("sum_received") or {}
+    sent = end.get("sum_sent") or {}
+    average = mbps(received.get("bits_per_second"))
+    if average is None:
+        average = mbps(sent.get("bits_per_second"))
+
+    return {
+        "summary": {
+            "average_mbps": average,
+            "minimum_mbps": min(rates) if rates else average,
+            "maximum_mbps": max(rates) if rates else average,
+            "total_transfer_mbytes": (
+                mbytes(received.get("bytes"))
+                if received.get("bytes") is not None
+                else mbytes(sent.get("bytes"))
+            ),
+            "retransmissions": sent.get("retransmits"),
+            "packet_loss_percent": (
+                (end.get("sum") or {}).get("lost_percent")
+            ),
+            "sample_count": len(valid),
+        },
+        "samples": samples,
+        "iperf_json": data,
+    }
+
+
+
+def _display(value: Any, digits: int = 3) -> str:
+    if value is None:
+        return "N/A"
+    if isinstance(value, float):
+        return f"{value:.{digits}f}"
+    return str(value)
+
+
+def load_radio_context(root: Path) -> dict[str, Any]:
+    """Load the most recently confirmed LTE radio context, if available."""
+    context_file = root / "state" / "last_radio_context.json"
+    try:
+        data = json.loads(context_file.read_text(encoding="utf-8"))
+        return data if isinstance(data, dict) else {}
+    except (OSError, json.JSONDecodeError):
+        return {}
+
+
+def build_complete_text_log(output: dict[str, Any]) -> str:
+    """
+    Build a complete, human-readable iPerf log.
+
+    The text file contains:
+    - Test identity and parameters
+    - Precheck and iPerf server status
+    - Summary statistics
+    - Every interval sample
+    - Raw command, stdout, stderr and exit code
+    - Full normalized JSON result
+    """
+    parameters = output.get("parameters") or {}
+    precheck = output.get("precheck") or {}
+    server = precheck.get("iperf_server") or {}
+    summary = output.get("summary") or {}
+    samples = output.get("samples") or []
+    raw = output.get("raw") or {}
+
+    lines = [
+        "NetworkAutomation Complete iPerf Log",
+        "=" * 72,
+        "",
+        "[Test Information]",
+        f"Test ID           : {output.get('test_id', 'N/A')}",
+        f"Schema Version    : {output.get('schema_version', 'N/A')}",
+        f"Test Type         : {output.get('test_type', 'N/A')}",
+        f"Timestamp End     : {output.get('timestamp_end', 'N/A')}",
+        f"Result            : {'PASS' if output.get('success') else 'FAIL'}",
+        "",
+        "[Parameters]",
+        f"UE Data IP        : {parameters.get('ue_ip', 'N/A')}",
+        f"LTE Band          : {'B' + str(parameters.get('band')) if parameters.get('band') is not None else 'N/A'}",
+        f"Bandwidth         : {_display(parameters.get('bandwidth_mhz'))} MHz",
+        f"Cell              : {parameters.get('cell', 'N/A')}",
+        f"EARFCN            : {parameters.get('dl_earfcn', 'N/A')}",
+        f"Direction         : {parameters.get('direction', 'N/A')}",
+        f"Duration          : {parameters.get('duration_sec', 'N/A')} sec",
+        f"Port              : {parameters.get('port', 'N/A')}",
+        f"Parallel Streams  : {parameters.get('parallel_streams', 'N/A')}",
+        f"Interval          : {parameters.get('interval_sec', 'N/A')} sec",
+        f"Reverse (-R)      : {parameters.get('reverse', False)}",
+        "",
+        "[Precheck]",
+        f"UE Ping           : {'PASS' if precheck.get('ue_ping') else 'FAIL'}",
+        f"Ping Command      : {precheck.get('ping_command', 'N/A')}",
+        f"Server Ready      : {server.get('ready', 'N/A')}",
+        f"Server Action     : {server.get('action', 'N/A')}",
+        f"Server Message    : {server.get('message', 'N/A')}",
+        "",
+        "[Summary]",
+        f"Average           : {_display(summary.get('average_mbps'))} Mbps",
+        f"Minimum           : {_display(summary.get('minimum_mbps'))} Mbps",
+        f"Maximum           : {_display(summary.get('maximum_mbps'))} Mbps",
+        f"Total Transfer    : {_display(summary.get('total_transfer_mbytes'))} MB",
+        f"Retransmissions   : {_display(summary.get('retransmissions'), 0)}",
+        f"Packet Loss       : {_display(summary.get('packet_loss_percent'))} %",
+        f"Sample Count      : {summary.get('sample_count', 0)}",
+        "",
+        "[Interval Samples]",
+        "No.  Start    End      Mbps       MB         Retrans  Loss(%)  Omitted",
+        "---  -------  -------  ---------  ---------  -------  -------  -------",
     ]
 
-    if args.protocol == "udp":
-        cmd.append("-u")
-        if args.bandwidth:
-            cmd.extend(["-b", args.bandwidth])
-        if args.udp_length is not None:
-            cmd.extend(["-l", str(args.udp_length)])
-
-    if args.reverse:
-        cmd.append("-R")
-
-    return cmd
-
-
-def check_iperf() -> dict[str, Any]:
-    path = shutil.which("iperf3")
-    if not path:
-        return {
-            "success": False,
-            "tool": "iperf3",
-            "error": "IPERF3_NOT_FOUND",
-            "message": "iperf3 was not found in PATH.",
-            "hint": "Install iperf3 and make sure iperf3.exe is in PATH.",
-        }
-
-    result = run_local_command(["iperf3", "--version"], timeout_sec=10)
-    first_line = result.stdout.splitlines()[0] if result.stdout.splitlines() else ""
-    return {
-        "success": result.success,
-        "tool": "iperf3",
-        "path": path,
-        "version": first_line,
-        "command": result.command,
-        "returncode": result.returncode,
-        "stderr": result.stderr.strip() or None,
-    }
-
-
-def parse_iperf_json(raw: dict[str, Any], protocol: str) -> dict[str, Any]:
-    end = raw.get("end", {})
-
-    if protocol == "udp":
-        summary = end.get("sum", {}) or end.get("sum_received", {}) or {}
-        bps = summary.get("bits_per_second")
-        return {
-            "throughput_mbps": round(float(bps) / 1_000_000, 3) if bps is not None else None,
-            "jitter_ms": summary.get("jitter_ms"),
-            "lost_packets": summary.get("lost_packets"),
-            "packets": summary.get("packets"),
-            "lost_percent": summary.get("lost_percent"),
-            "retransmits": None,
-        }
-
-    # TCP: prefer receiver side if available.
-    summary = end.get("sum_received") or end.get("sum_sent") or {}
-    bps = summary.get("bits_per_second")
-    retransmits = None
-    if end.get("sum_sent"):
-        retransmits = end["sum_sent"].get("retransmits")
-
-    return {
-        "throughput_mbps": round(float(bps) / 1_000_000, 3) if bps is not None else None,
-        "retransmits": retransmits,
-        "jitter_ms": None,
-        "lost_packets": None,
-        "packets": None,
-        "lost_percent": None,
-    }
-
-
-def client(args: argparse.Namespace) -> dict[str, Any]:
-    cmd_list = build_iperf_client_command(args)
-
-    timeout_sec = int(args.time) + 30
-
-    if args.ssh_host:
-        if not args.ssh_user or args.ssh_password is None:
-            return {
-                "success": False,
-                "tool": "iperf3",
-                "error": "MISSING_SSH_CREDENTIALS",
-                "message": "--ssh-user and --ssh-password are required when --ssh-host is used.",
-            }
-
-        remote_command = " ".join(shell_quote(x) for x in cmd_list)
-        cmd_result = run_remote_command(
-            command=remote_command,
-            host=args.ssh_host,
-            port=args.ssh_port,
-            username=args.ssh_user,
-            password=args.ssh_password,
-            timeout_sec=timeout_sec,
+    for index, sample in enumerate(samples, start=1):
+        lines.append(
+            f"{index:>3}  "
+            f"{_display(sample.get('second_start')):>7}  "
+            f"{_display(sample.get('second_end')):>7}  "
+            f"{_display(sample.get('throughput_mbps')):>9}  "
+            f"{_display(sample.get('transfer_mbytes')):>9}  "
+            f"{_display(sample.get('retransmissions'), 0):>7}  "
+            f"{_display(sample.get('packet_loss_percent')):>7}  "
+            f"{str(sample.get('omitted', False)):>7}"
         )
-        execution = {
-            "mode": "remote_ssh",
-            "ssh_host": args.ssh_host,
-            "ssh_port": args.ssh_port,
-            "ssh_user": args.ssh_user,
-        }
-    else:
-        cmd_result = run_local_command(cmd_list, timeout_sec=timeout_sec)
-        execution = {"mode": "local"}
 
-    if not cmd_result.success:
-        return {
-            "success": False,
-            "tool": "iperf3",
-            "role": "client",
-            "execution": execution,
-            "command": cmd_result.command,
-            "returncode": cmd_result.returncode,
-            "stderr": cmd_result.stderr.strip(),
-            "stdout": cmd_result.stdout.strip(),
-            "elapsed_ms": cmd_result.elapsed_ms,
-        }
+    if not samples:
+        lines.append("(No interval samples)")
 
-    try:
-        raw = json.loads(cmd_result.stdout)
-    except Exception:
-        return {
-            "success": False,
-            "tool": "iperf3",
-            "role": "client",
-            "error": "INVALID_IPERF_JSON",
-            "execution": execution,
-            "command": cmd_result.command,
-            "stdout": cmd_result.stdout.strip(),
-            "stderr": cmd_result.stderr.strip(),
-            "elapsed_ms": cmd_result.elapsed_ms,
-        }
+    lines.extend([
+        "",
+        "=" * 72,
+        "End of Log",
+    ])
 
-    summary = parse_iperf_json(raw, args.protocol)
-
-    return {
-        "success": True,
-        "tool": "iperf3",
-        "role": "client",
-        "execution": execution,
-        "server": args.server,
-        "port": args.port,
-        "duration_sec": args.time,
-        "parallel": args.parallel,
-        "protocol": args.protocol,
-        "reverse": bool(args.reverse),
-        "bandwidth": args.bandwidth,
-        "summary": summary,
-        "command": cmd_result.command,
-        "elapsed_ms": cmd_result.elapsed_ms,
-    }
-
-
-def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="Generic iperf3 runner")
-    sub = parser.add_subparsers(dest="cmd")
-
-    sub.add_parser("check", help="Check iperf3 availability")
-
-    c = sub.add_parser("client", help="Run iperf3 client")
-    c.add_argument("--server", required=True)
-    c.add_argument("--port", type=int, default=5201)
-    c.add_argument("--time", type=int, default=10)
-    c.add_argument("--parallel", type=int, default=1)
-    c.add_argument("--protocol", choices=["tcp", "udp"], default="tcp")
-    c.add_argument("--reverse", action="store_true")
-    c.add_argument("--bandwidth", default=None)
-    c.add_argument("--udp-length", type=int, default=None)
-
-    c.add_argument("--ssh-host", default=None)
-    c.add_argument("--ssh-port", type=int, default=22)
-    c.add_argument("--ssh-user", default=None)
-    c.add_argument("--ssh-password", default=None)
-
-    return parser
+    return "\n".join(lines) + "\n"
 
 
 def main() -> int:
-    parser = build_parser()
-    args = parser.parse_args()
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--settings", required=True)
+    ap.add_argument("--ue-ip", required=True)
+    ap.add_argument("--direction", required=True, choices=["download", "upload"])
+    ap.add_argument("--duration", required=True, type=int)
+    ap.add_argument("--port", type=int, default=5201)
+    ap.add_argument("--parallel", type=int, default=1)
+    ap.add_argument("--interval", type=int, default=1)
+    ap.add_argument("--band", type=int)
+    ap.add_argument("--bandwidth", type=float)
+    ap.add_argument("--cell", type=int)
+    ap.add_argument("--dl-earfcn", type=int)
+    args = ap.parse_args()
 
     try:
-        if args.cmd == "check":
-            result = check_iperf()
-        elif args.cmd == "client":
-            result = client(args)
-        else:
-            parser.print_help()
-            return 2
+        ipaddress.ip_address(args.ue_ip)
+        raw = json.loads(Path(args.settings).read_text(encoding="utf-8"))
+        cfg = raw["iperf"]
+        ex = cfg["executor"]
+        settings = type("IperfSettings", (), {})()
+        for key, value in {
+            "host": ex["host"],
+            "port": ex.get("port", 22),
+            "username": ex["username"],
+            "password": ex.get("password", ""),
+            "ssh_timeout_sec": ex.get("ssh_timeout_sec", 30),
+            "command_timeout_sec": ex.get("command_timeout_sec", 120),
+        }.items():
+            setattr(settings, key, value)
 
-        print_json(result)
-        return 0 if result.get("success") else 1
+        command = [
+            cfg.get("binary", "iperf3"),
+            "-c", args.ue_ip,
+            "-p", str(args.port),
+            "-P", str(args.parallel),
+            "-t", str(args.duration),
+            "-i", str(args.interval),
+            "-J",
+        ]
+        if args.direction == "upload":
+            command.append("-R")
+
+        command_text = " ".join(shlex.quote(item) for item in command)
+        ping_command = f"ping -c 1 -W 2 {shlex.quote(args.ue_ip)}"
+
+        with SSHClient.from_callbox_settings(settings) as ssh:
+            ping = ssh.execute(ping_command, 10)
+            if not ping.success:
+                raise RuntimeError(
+                    f"UE {args.ue_ip} 無法從 iPerf Executor Ping 通，停止測試。"
+                )
+
+            server = ensure_iperf_server(
+                Path(args.settings),
+                ssh,
+                args.ue_ip,
+                args.port,
+            )
+            if not server.get("ready"):
+                raise RuntimeError(server.get("message") or "iPerf Server 未就緒。")
+
+            result = ssh.execute(
+                command_text,
+                max(settings.command_timeout_sec, args.duration + 180),
+            )
+
+        if not result.success:
+            raise RuntimeError(result.stderr or result.stdout or "iperf3 failed")
+
+        parsed = parse_json(result.stdout)
+        test_id = (
+            f"iperf-{datetime.now().strftime('%Y%m%d-%H%M%S')}-"
+            f"{uuid.uuid4().hex[:6]}"
+        )
+        saved_radio = load_radio_context(ROOT)
+        radio_context = {
+            "band": args.band if args.band is not None else saved_radio.get("band"),
+            "bandwidth_mhz": (
+                args.bandwidth
+                if args.bandwidth is not None
+                else saved_radio.get("bandwidth_mhz")
+            ),
+            "cell": args.cell if args.cell is not None else saved_radio.get("cell"),
+            "dl_earfcn": (
+                args.dl_earfcn
+                if args.dl_earfcn is not None
+                else saved_radio.get("dl_earfcn")
+            ),
+        }
+
+        output = {
+            "success": True,
+            "schema_version": "2.0",
+            "test_id": test_id,
+            "test_type": "iperf3",
+            "timestamp_end": datetime.now().astimezone().isoformat(timespec="seconds"),
+            "parameters": {
+                "ue_ip": args.ue_ip,
+                **radio_context,
+                "direction": args.direction,
+                "duration_sec": args.duration,
+                "port": args.port,
+                "parallel_streams": args.parallel,
+                "interval_sec": args.interval,
+                "reverse": args.direction == "upload",
+            },
+            "precheck": {
+                "ue_ping": True,
+                "ping_command": ping_command,
+                "iperf_server": server,
+            },
+            "summary": parsed["summary"],
+            "samples": parsed["samples"],
+            "raw": {
+                "command": command_text,
+                "stdout": result.stdout,
+                "stderr": result.stderr,
+                "exit_code": result.exit_code,
+                "iperf_json": parsed["iperf_json"],
+            },
+            "storage_targets": {
+                "timeseries": "samples",
+                "neo4j": "parameters + context + test relationship",
+                "qdrant": "summary + future notes/log analysis",
+            },
+        }
+
+        out_dir = (
+            ROOT
+            / cfg.get("result_dir", "results/iperf")
+            / datetime.now().strftime("%Y-%m-%d")
+        )
+        out_dir.mkdir(parents=True, exist_ok=True)
+        result_file = out_dir / f"{test_id}.json"
+        text_log_file = out_dir / f"{test_id}.txt"
+
+        output["result_file"] = str(result_file)
+        output["text_log_file"] = str(text_log_file)
+
+        result_file.write_text(
+            json.dumps(output, ensure_ascii=False, indent=2),
+            encoding="utf-8",
+        )
+
+        # UTF-8 with BOM keeps Traditional Chinese readable in Windows Notepad.
+        text_log_file.write_text(
+            build_complete_text_log(output),
+            encoding="utf-8-sig",
+        )
+
+        print(json.dumps(output, ensure_ascii=False, indent=2))
+        return 0
 
     except Exception as exc:
-        print_json({
+        print(json.dumps({
             "success": False,
-            "tool": "iperf3",
             "error": type(exc).__name__,
             "message": str(exc),
-        })
+        }, ensure_ascii=False, indent=2))
         return 1
 
 

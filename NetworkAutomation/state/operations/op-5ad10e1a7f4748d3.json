@@ -1,0 +1,57 @@
+{
+  "success": true,
+  "operation_id": "op-5ad10e1a7f4748d3",
+  "fingerprint": "842fe7a8b153a0dd75996e2d7d5eb5a9b2516e3b07d713c15327577e975741cf",
+  "intent": "set_band",
+  "parameters": {
+    "cell": 1,
+    "band": 5,
+    "bandwidth_mhz": 10.0
+  },
+  "cli_args": [
+    "amarisoft",
+    "set-band",
+    "--cell",
+    "1",
+    "--band",
+    "5",
+    "--bandwidth",
+    "10.0"
+  ],
+  "status": "failed",
+  "stage": "failed",
+  "message": "Worker 超過安全上限 420 秒，已停止子程序。",
+  "progress_percent": 100,
+  "created_at": "2026-07-21T09:55:09+08:00",
+  "updated_at": "2026-07-21T10:02:09+08:00",
+  "worker_timeout_sec": 420,
+  "attached_existing": false,
+  "launcher_pid": 205104,
+  "worker_launch_command": [
+    "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "-u",
+    "-m",
+    "core.operation_worker",
+    "op-5ad10e1a7f4748d3"
+  ],
+  "worker_pid": 205104,
+  "worker_started_at": "2026-07-21T09:55:09+08:00",
+  "child_pid": 202636,
+  "command": [
+    "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "-u",
+    "D:\\NetworkAutomation\\callbox_agent.py",
+    "amarisoft",
+    "set-band",
+    "--cell",
+    "1",
+    "--band",
+    "5",
+    "--bandwidth",
+    "10.0"
+  ],
+  "elapsed_sec": 420.1,
+  "worker_heartbeat_at": "2026-07-21T10:02:07+08:00",
+  "result_file": "D:\\NetworkAutomation\\state\\operations\\op-5ad10e1a7f4748d3.result.json",
+  "worker_finished_at": "2026-07-21T10:02:09+08:00"
+}

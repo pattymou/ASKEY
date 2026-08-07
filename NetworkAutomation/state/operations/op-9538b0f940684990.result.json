@@ -1,0 +1,836 @@
+{
+  "success": false,
+  "tool": "workflow.band_iperf",
+  "human_summary": "FAIL｜Band + iPerf 流程失敗\n\nStage：wait_ue_timeout\n等待 UE 連線與可用資料 APN IP 超過 180 秒；iPerf 未執行。",
+  "machine_result": {
+    "success": false,
+    "workflow": "band_then_iperf",
+    "stage": "wait_ue_timeout",
+    "band_result": {
+      "success": true,
+      "tool": "amarisoft.set_band",
+      "human_summary": "PASS｜LTE Band 設定完成\n\n【Band】\nCell：1\nBand：B5\n頻寬：10.0 MHz\nDL EARFCN：2525\n\n【Connection】\nLTE Service：Stable\nUE 連線：未連線\n判定依據：N/A\nUE Data IP：等待資料 APN\nIP 來源：not_available\nPHY DL：N/A Mbps\nPHY UL：N/A Mbps\n\n【Timing】\nLTE Service 穩定：2.1 秒\n\n結果：PASS",
+      "machine_result": {
+        "success": true,
+        "stage_success": {
+          "config_generated": true,
+          "uploaded": true,
+          "lte_service_stable": true,
+          "remote_config_verified": true,
+          "ue_connected": false
+        },
+        "modifier": {
+          "success": true,
+          "input_cfg": "D:\\NetworkAutomation\\plugins\\amarisoft\\AutoConfig.cfg",
+          "output_cfg": "D:\\NetworkAutomation\\generated\\AutoConfig_LTE_B5_Cell1.cfg",
+          "cell": 1,
+          "band": 5,
+          "mode": "FDD",
+          "dl_earfcn": 2525,
+          "bandwidth_mhz": 10.0,
+          "rb_dl": 50,
+          "changes": [
+            {
+              "key": "LTE_Cell_1_EARFCN_DL",
+              "old": "2525",
+              "new": "2525"
+            },
+            {
+              "key": "LTE_Cell_1_RB_DL",
+              "old": "50",
+              "new": "50"
+            },
+            {
+              "key": "LTE_TDD_Cell_1",
+              "old": "0",
+              "new": "0"
+            }
+          ]
+        },
+        "generated_cfg": "D:\\NetworkAutomation\\generated\\AutoConfig_LTE_B5_Cell1.cfg",
+        "dry_run": false,
+        "backup": {
+          "success": true,
+          "stdout": "",
+          "stderr": ""
+        },
+        "upload": {
+          "success": true,
+          "local_path": "D:\\NetworkAutomation\\generated\\AutoConfig_LTE_B5_Cell1.cfg",
+          "remote_path": "/root/enb/config/AutoConfig.cfg"
+        },
+        "restart": {
+          "success": true,
+          "commands": [
+            {
+              "success": true,
+              "command": "cd /root/enb/config && ln -sfn AutoConfig.cfg enb.cfg",
+              "exit_code": 0,
+              "stdout": "",
+              "stderr": ""
+            },
+            {
+              "success": true,
+              "command": "service lte restart",
+              "exit_code": 0,
+              "stdout": "",
+              "stderr": "Redirecting to /bin/systemctl restart lte.service\n"
+            }
+          ]
+        },
+        "lte_service": {
+          "success": true,
+          "elapsed_sec": 2.1,
+          "attempts": [
+            {
+              "elapsed_sec": 0.0,
+              "running": true,
+              "consecutive_success": 1
+            },
+            {
+              "elapsed_sec": 2.1,
+              "running": true,
+              "consecutive_success": 2
+            }
+          ]
+        },
+        "config_verify": {
+          "success": true,
+          "command": "grep -E '^#define LTE_Cell_1_(EARFCN_DL|RB_DL)' /root/enb/config/AutoConfig.cfg",
+          "earfcn_ok": true,
+          "rb_ok": true,
+          "stdout": "#define LTE_Cell_1_RB_DL 50\r\n#define LTE_Cell_1_EARFCN_DL 2525\r\n",
+          "stderr": ""
+        },
+        "connection": {
+          "success": true,
+          "connected": false,
+          "skipped": true,
+          "message": "�w���L UE �s�u���ݡC"
+        },
+        "state": {
+          "mode": "LTE",
+          "cell": 1,
+          "band": 5,
+          "bandwidth_mhz": 10.0,
+          "dl_earfcn": 2525,
+          "rb_dl": 50,
+          "service_stable": true,
+          "remote_config_verified": true,
+          "ue_connected": false,
+          "connection_basis": null,
+          "phy_rate": null,
+          "ue": null,
+          "data_ue_ip": null,
+          "data_ip_source": null
+        },
+        "message": "Band ���������GCell1, B5, 10.0MHz�FLTE service í�w�B���� config ���T�BUE �w�s�u�FPHY DL=0 Mbps�APHY UL=0 Mbps�C",
+        "returncode": 0
+      },
+      "schema_version": "1.0",
+      "timestamp": "2026-07-21T15:58:37+08:00",
+      "result_file": null,
+      "returncode": 0
+    },
+    "ip_wait_attempts": [
+      {
+        "elapsed_sec": 1.5,
+        "success": false,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": []
+      },
+      {
+        "elapsed_sec": 24.1,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": []
+      },
+      {
+        "elapsed_sec": 29.0,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": []
+      },
+      {
+        "elapsed_sec": 34.0,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": []
+      },
+      {
+        "elapsed_sec": 39.0,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": []
+      },
+      {
+        "elapsed_sec": 43.8,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": []
+      },
+      {
+        "elapsed_sec": 48.6,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": []
+      },
+      {
+        "elapsed_sec": 53.5,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": []
+      },
+      {
+        "elapsed_sec": 58.7,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": []
+      },
+      {
+        "elapsed_sec": 63.6,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": [
+          {
+            "ip": null,
+            "imsi": "001010123888888",
+            "imei": "8668870400991301",
+            "apn": null,
+            "enb_ue_id": 1,
+            "mme_ue_id": 100,
+            "rnti": null
+          },
+          {
+            "ip": "192.168.2.2",
+            "imsi": null,
+            "imei": null,
+            "apn": "TestPLMN",
+            "enb_ue_id": null,
+            "mme_ue_id": null,
+            "rnti": null
+          }
+        ]
+      },
+      {
+        "elapsed_sec": 68.6,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": [
+          {
+            "ip": null,
+            "imsi": "001010123888888",
+            "imei": "8668870400991301",
+            "apn": null,
+            "enb_ue_id": 1,
+            "mme_ue_id": 100,
+            "rnti": null
+          },
+          {
+            "ip": "192.168.2.2",
+            "imsi": null,
+            "imei": null,
+            "apn": "TestPLMN",
+            "enb_ue_id": null,
+            "mme_ue_id": null,
+            "rnti": null
+          }
+        ]
+      },
+      {
+        "elapsed_sec": 73.8,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": [
+          {
+            "ip": null,
+            "imsi": "001010123888888",
+            "imei": "8668870400991301",
+            "apn": null,
+            "enb_ue_id": 1,
+            "mme_ue_id": 100,
+            "rnti": null
+          },
+          {
+            "ip": "192.168.2.2",
+            "imsi": null,
+            "imei": null,
+            "apn": "TestPLMN",
+            "enb_ue_id": null,
+            "mme_ue_id": null,
+            "rnti": null
+          }
+        ]
+      },
+      {
+        "elapsed_sec": 78.7,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": [
+          {
+            "ip": null,
+            "imsi": "001010123888888",
+            "imei": "8668870400991301",
+            "apn": null,
+            "enb_ue_id": 1,
+            "mme_ue_id": 100,
+            "rnti": null
+          },
+          {
+            "ip": "192.168.2.2",
+            "imsi": null,
+            "imei": null,
+            "apn": "TestPLMN",
+            "enb_ue_id": null,
+            "mme_ue_id": null,
+            "rnti": null
+          }
+        ]
+      },
+      {
+        "elapsed_sec": 83.6,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": [
+          {
+            "ip": null,
+            "imsi": "001010123888888",
+            "imei": "8668870400991301",
+            "apn": null,
+            "enb_ue_id": 1,
+            "mme_ue_id": 100,
+            "rnti": null
+          },
+          {
+            "ip": "192.168.2.2",
+            "imsi": null,
+            "imei": null,
+            "apn": "TestPLMN",
+            "enb_ue_id": null,
+            "mme_ue_id": null,
+            "rnti": null
+          }
+        ]
+      },
+      {
+        "elapsed_sec": 88.6,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": [
+          {
+            "ip": null,
+            "imsi": "001010123888888",
+            "imei": "8668870400991301",
+            "apn": null,
+            "enb_ue_id": 1,
+            "mme_ue_id": 100,
+            "rnti": null
+          },
+          {
+            "ip": "192.168.2.2",
+            "imsi": null,
+            "imei": null,
+            "apn": "TestPLMN",
+            "enb_ue_id": null,
+            "mme_ue_id": null,
+            "rnti": null
+          }
+        ]
+      },
+      {
+        "elapsed_sec": 93.6,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": [
+          {
+            "ip": null,
+            "imsi": "001010123888888",
+            "imei": "8668870400991301",
+            "apn": null,
+            "enb_ue_id": 1,
+            "mme_ue_id": 100,
+            "rnti": null
+          },
+          {
+            "ip": "192.168.2.2",
+            "imsi": null,
+            "imei": null,
+            "apn": "TestPLMN",
+            "enb_ue_id": null,
+            "mme_ue_id": null,
+            "rnti": null
+          }
+        ]
+      },
+      {
+        "elapsed_sec": 98.4,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": [
+          {
+            "ip": null,
+            "imsi": "001010123888888",
+            "imei": "8668870400991301",
+            "apn": null,
+            "enb_ue_id": 1,
+            "mme_ue_id": 100,
+            "rnti": null
+          },
+          {
+            "ip": "192.168.2.2",
+            "imsi": null,
+            "imei": null,
+            "apn": "TestPLMN",
+            "enb_ue_id": null,
+            "mme_ue_id": null,
+            "rnti": null
+          }
+        ]
+      },
+      {
+        "elapsed_sec": 103.3,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": [
+          {
+            "ip": null,
+            "imsi": "001010123888888",
+            "imei": "8668870400991301",
+            "apn": null,
+            "enb_ue_id": 1,
+            "mme_ue_id": 100,
+            "rnti": null
+          },
+          {
+            "ip": "192.168.2.2",
+            "imsi": null,
+            "imei": null,
+            "apn": "TestPLMN",
+            "enb_ue_id": null,
+            "mme_ue_id": null,
+            "rnti": null
+          }
+        ]
+      },
+      {
+        "elapsed_sec": 108.0,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": [
+          {
+            "ip": null,
+            "imsi": "001010123888888",
+            "imei": "8668870400991301",
+            "apn": null,
+            "enb_ue_id": 1,
+            "mme_ue_id": 100,
+            "rnti": null
+          },
+          {
+            "ip": "192.168.2.2",
+            "imsi": null,
+            "imei": null,
+            "apn": "TestPLMN",
+            "enb_ue_id": null,
+            "mme_ue_id": null,
+            "rnti": null
+          }
+        ]
+      },
+      {
+        "elapsed_sec": 112.5,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": [
+          {
+            "ip": null,
+            "imsi": "001010123888888",
+            "imei": "8668870400991301",
+            "apn": null,
+            "enb_ue_id": 1,
+            "mme_ue_id": 100,
+            "rnti": null
+          },
+          {
+            "ip": "192.168.2.2",
+            "imsi": null,
+            "imei": null,
+            "apn": "TestPLMN",
+            "enb_ue_id": null,
+            "mme_ue_id": null,
+            "rnti": null
+          }
+        ]
+      },
+      {
+        "elapsed_sec": 117.7,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": [
+          {
+            "ip": null,
+            "imsi": "001010123888888",
+            "imei": "8668870400991301",
+            "apn": null,
+            "enb_ue_id": 1,
+            "mme_ue_id": 100,
+            "rnti": null
+          },
+          {
+            "ip": "192.168.2.2",
+            "imsi": null,
+            "imei": null,
+            "apn": "TestPLMN",
+            "enb_ue_id": null,
+            "mme_ue_id": null,
+            "rnti": null
+          }
+        ]
+      },
+      {
+        "elapsed_sec": 122.7,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": [
+          {
+            "ip": null,
+            "imsi": "001010123888888",
+            "imei": "8668870400991301",
+            "apn": null,
+            "enb_ue_id": 1,
+            "mme_ue_id": 100,
+            "rnti": null
+          },
+          {
+            "ip": "192.168.2.2",
+            "imsi": null,
+            "imei": null,
+            "apn": "TestPLMN",
+            "enb_ue_id": null,
+            "mme_ue_id": null,
+            "rnti": null
+          }
+        ]
+      },
+      {
+        "elapsed_sec": 127.6,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": [
+          {
+            "ip": null,
+            "imsi": "001010123888888",
+            "imei": "8668870400991301",
+            "apn": null,
+            "enb_ue_id": 1,
+            "mme_ue_id": 100,
+            "rnti": null
+          },
+          {
+            "ip": "192.168.2.2",
+            "imsi": null,
+            "imei": null,
+            "apn": "TestPLMN",
+            "enb_ue_id": null,
+            "mme_ue_id": null,
+            "rnti": null
+          }
+        ]
+      },
+      {
+        "elapsed_sec": 132.8,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": [
+          {
+            "ip": null,
+            "imsi": "001010123888888",
+            "imei": "8668870400991301",
+            "apn": null,
+            "enb_ue_id": 1,
+            "mme_ue_id": 100,
+            "rnti": null
+          },
+          {
+            "ip": "192.168.2.2",
+            "imsi": null,
+            "imei": null,
+            "apn": "TestPLMN",
+            "enb_ue_id": null,
+            "mme_ue_id": null,
+            "rnti": null
+          }
+        ]
+      },
+      {
+        "elapsed_sec": 137.6,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": [
+          {
+            "ip": null,
+            "imsi": "001010123888888",
+            "imei": "8668870400991301",
+            "apn": null,
+            "enb_ue_id": 1,
+            "mme_ue_id": 100,
+            "rnti": null
+          },
+          {
+            "ip": "192.168.2.2",
+            "imsi": null,
+            "imei": null,
+            "apn": "TestPLMN",
+            "enb_ue_id": null,
+            "mme_ue_id": null,
+            "rnti": null
+          }
+        ]
+      },
+      {
+        "elapsed_sec": 142.3,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": [
+          {
+            "ip": null,
+            "imsi": "001010123888888",
+            "imei": "8668870400991301",
+            "apn": null,
+            "enb_ue_id": 1,
+            "mme_ue_id": 100,
+            "rnti": null
+          },
+          {
+            "ip": "192.168.2.2",
+            "imsi": null,
+            "imei": null,
+            "apn": "TestPLMN",
+            "enb_ue_id": null,
+            "mme_ue_id": null,
+            "rnti": null
+          }
+        ]
+      },
+      {
+        "elapsed_sec": 147.3,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": [
+          {
+            "ip": null,
+            "imsi": "001010123888888",
+            "imei": "8668870400991301",
+            "apn": null,
+            "enb_ue_id": 1,
+            "mme_ue_id": 100,
+            "rnti": null
+          },
+          {
+            "ip": "192.168.2.2",
+            "imsi": null,
+            "imei": null,
+            "apn": "TestPLMN",
+            "enb_ue_id": null,
+            "mme_ue_id": null,
+            "rnti": null
+          }
+        ]
+      },
+      {
+        "elapsed_sec": 152.5,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": [
+          {
+            "ip": null,
+            "imsi": "001010123888888",
+            "imei": "8668870400991301",
+            "apn": null,
+            "enb_ue_id": 1,
+            "mme_ue_id": 100,
+            "rnti": null
+          },
+          {
+            "ip": "192.168.2.2",
+            "imsi": null,
+            "imei": null,
+            "apn": "TestPLMN",
+            "enb_ue_id": null,
+            "mme_ue_id": null,
+            "rnti": null
+          }
+        ]
+      },
+      {
+        "elapsed_sec": 157.5,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": [
+          {
+            "ip": null,
+            "imsi": "001010123888888",
+            "imei": "8668870400991301",
+            "apn": null,
+            "enb_ue_id": 1,
+            "mme_ue_id": 100,
+            "rnti": null
+          },
+          {
+            "ip": "192.168.2.2",
+            "imsi": null,
+            "imei": null,
+            "apn": "TestPLMN",
+            "enb_ue_id": null,
+            "mme_ue_id": null,
+            "rnti": null
+          }
+        ]
+      },
+      {
+        "elapsed_sec": 162.6,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": [
+          {
+            "ip": null,
+            "imsi": "001010123888888",
+            "imei": "8668870400991301",
+            "apn": null,
+            "enb_ue_id": 1,
+            "mme_ue_id": 100,
+            "rnti": null
+          },
+          {
+            "ip": "192.168.2.2",
+            "imsi": null,
+            "imei": null,
+            "apn": "TestPLMN",
+            "enb_ue_id": null,
+            "mme_ue_id": null,
+            "rnti": null
+          }
+        ]
+      },
+      {
+        "elapsed_sec": 167.6,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": [
+          {
+            "ip": null,
+            "imsi": "001010123888888",
+            "imei": "8668870400991301",
+            "apn": null,
+            "enb_ue_id": 1,
+            "mme_ue_id": 100,
+            "rnti": null
+          },
+          {
+            "ip": "192.168.2.2",
+            "imsi": null,
+            "imei": null,
+            "apn": "TestPLMN",
+            "enb_ue_id": null,
+            "mme_ue_id": null,
+            "rnti": null
+          }
+        ]
+      },
+      {
+        "elapsed_sec": 172.4,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": [
+          {
+            "ip": null,
+            "imsi": "001010123888888",
+            "imei": "8668870400991301",
+            "apn": null,
+            "enb_ue_id": 1,
+            "mme_ue_id": 100,
+            "rnti": null
+          },
+          {
+            "ip": "192.168.2.2",
+            "imsi": null,
+            "imei": null,
+            "apn": "TestPLMN",
+            "enb_ue_id": null,
+            "mme_ue_id": null,
+            "rnti": null
+          }
+        ]
+      },
+      {
+        "elapsed_sec": 177.4,
+        "success": true,
+        "selected_ip": null,
+        "source": "no_usable_data_apn",
+        "ues": [
+          {
+            "ip": null,
+            "imsi": "001010123888888",
+            "imei": "8668870400991301",
+            "apn": null,
+            "enb_ue_id": 1,
+            "mme_ue_id": 100,
+            "rnti": null
+          },
+          {
+            "ip": "192.168.2.2",
+            "imsi": null,
+            "imei": null,
+            "apn": "TestPLMN",
+            "enb_ue_id": null,
+            "mme_ue_id": null,
+            "rnti": null
+          }
+        ]
+      }
+    ],
+    "wait_ue_timeout_sec": 180,
+    "message": "等待 UE 連線與可用資料 APN IP 超過 180 秒；iPerf 未執行。",
+    "operation_metrics": {
+      "operation_id": "op-9538b0f940684990",
+      "total_elapsed_sec": 188.1
+    }
+  },
+  "schema_version": "1.0",
+  "timestamp": "2026-07-21T16:01:37+08:00",
+  "result_file": null,
+  "returncode": 1,
+  "telegram_reply": "❌ Workflow Failed\n\n• Band：B5（10MHz，EARFCN：2525）\n• 等待 UE 連線逾時：180 秒\n• Result：FAIL\n• iPerf：未執行\n\n請確認 UE 是否 Attach、PHY 是否正常，以及資料 APN 是否取得 IP。"
+}

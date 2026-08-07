@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 from __future__ import annotations
 
 import argparse
@@ -7,17 +5,20 @@ import json
 import os
 import subprocess
 import sys
+import time
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any
 
-PROJECT_ROOT = Path(__file__).resolve().parents[2]
-if str(PROJECT_ROOT) not in sys.path:
-    sys.path.insert(0, str(PROJECT_ROOT))
+try:
+    sys.stdout.reconfigure(encoding="utf-8", errors="strict")
+    sys.stderr.reconfigure(encoding="utf-8", errors="strict")
+except Exception:
+    pass
 
-from core.ssh import SSHClient as SSHController
-from plugins.amarisoft.verify import verify_remote_cfg_exists, verify_service, verify_symlink
-from plugins.amarisoft.state import save_callbox_state
+ROOT = Path(__file__).resolve().parents[2]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
 
 
 @dataclass(frozen=True)
@@ -38,9 +39,12 @@ class CallboxSettings:
     remote_cfg_path: str
     remote_backup_dir: str
     restart_commands: list[str]
-    verify_commands: list[str]
     ssh_timeout_sec: int
     command_timeout_sec: int
+    stable_poll_interval_sec: float
+    stable_max_wait_sec: int
+    stable_required_success_count: int
+    amarisoft_model: str
 
 
 @dataclass(frozen=True)
@@ -49,299 +53,308 @@ class Settings:
     callbox: CallboxSettings
 
 
-def log(msg: str) -> None:
-    print(msg, file=sys.stderr)
-
-
-def expand_path(value: str, base_dir: Path | None = None) -> Path:
+def pth(value: str, base: Path) -> Path:
     p = Path(os.path.expandvars(os.path.expanduser(value)))
-    if not p.is_absolute() and base_dir is not None:
-        p = base_dir / p
-    return p
+    return p if p.is_absolute() else base / p
 
 
-def default_restart_commands() -> list[str]:
-    return [
-        "cd /root/enb/config && ln -sfn AutoConfig.cfg enb.cfg",
-        "service lte restart",
-    ]
-
-
-def load_settings(path: str | Path) -> Settings:
-    settings_path = Path(path)
-    raw = json.loads(settings_path.read_text(encoding="utf-8"))
-    lr = raw.get("local", {})
-    cr = raw.get("callbox", {})
-
-    base_dir = expand_path(lr.get("base_dir"), settings_path.parent) if lr.get("base_dir") else settings_path.parent
-
-    local = LocalSettings(
-        modifier_py=expand_path(lr["modifier_py"], base_dir),
-        input_cfg=expand_path(lr["input_cfg"], base_dir),
-        earfcn_json=expand_path(lr["earfcn_json"], base_dir),
-        output_dir=expand_path(lr.get("output_dir", "generated"), base_dir),
-        output_pattern=str(lr.get("output_pattern", "AutoConfig.cfg")),
-    )
-
-    callbox = CallboxSettings(
-        host=str(cr["host"]),
-        port=int(cr.get("port", 22)),
-        username=str(cr["username"]),
-        password=str(cr.get("password", "")),
-        remote_cfg_path=str(cr.get("remote_cfg_path", "/root/enb/config/AutoConfig.cfg")),
-        remote_backup_dir=str(cr.get("remote_backup_dir", "/root/enb/config/backup")),
-        restart_commands=[str(x) for x in cr.get("restart_commands", [])] or default_restart_commands(),
-        verify_commands=[str(x) for x in cr.get("verify_commands", ["service lte status"])],
-        ssh_timeout_sec=int(cr.get("ssh_timeout_sec", 30)),
-        command_timeout_sec=int(cr.get("command_timeout_sec", 120)),
-    )
-
-    return Settings(local=local, callbox=callbox)
-
-
-def ensure_local_files(settings: Settings) -> None:
-    missing = []
-    for label, path in [
-        ("modifier_py", settings.local.modifier_py),
-        ("input_cfg", settings.local.input_cfg),
-        ("earfcn_json", settings.local.earfcn_json),
-    ]:
-        if not path.exists():
-            missing.append(f"{label}: {path}")
-
-    if missing:
-        raise FileNotFoundError("Missing required local files:\n" + "\n".join(missing))
-
-
-def build_output_path(settings: Settings, cell: int, band: int, bandwidth: float | None) -> Path:
-    return settings.local.output_dir / settings.local.output_pattern.format(
-        cell=cell,
-        band=band,
-        bandwidth=bandwidth or "auto",
+def load(path: Path) -> Settings:
+    raw = json.loads(path.read_text(encoding="utf-8"))
+    l, c = raw["local"], raw["callbox"]
+    base = pth(l.get("base_dir", "."), path.parent)
+    return Settings(
+        LocalSettings(
+            pth(l["modifier_py"], base),
+            pth(l["input_cfg"], base),
+            pth(l["earfcn_json"], base),
+            pth(l.get("output_dir", "generated"), base),
+            l.get("output_pattern", "AutoConfig_LTE_B{band}_Cell{cell}.cfg"),
+        ),
+        CallboxSettings(
+            str(c["host"]),
+            int(c.get("port", 22)),
+            str(c["username"]),
+            str(c.get("password", "")),
+            str(c.get("remote_cfg_path", "/root/enb/config/AutoConfig.cfg")),
+            str(c.get("remote_backup_dir", "/root/enb/config/backup")),
+            list(c.get("restart_commands", [
+                "cd /root/enb/config && ln -sfn AutoConfig.cfg enb.cfg",
+                "service lte restart",
+            ])),
+            int(c.get("ssh_timeout_sec", 30)),
+            int(c.get("command_timeout_sec", 120)),
+            float(c.get("stable_poll_interval_sec", 2)),
+            int(c.get("stable_max_wait_sec", 300)),
+            int(c.get("stable_required_success_count", 2)),
+            str(c.get("amarisoft_model", "100M")),
+        ),
     )
 
 
-def generate_lte_config(
-    settings: Settings,
+def wait_lte_service(ssh, c: CallboxSettings) -> dict:
+    started = time.monotonic()
+    consecutive = 0
+    attempts = []
+    while True:
+        elapsed = round(time.monotonic() - started, 1)
+        r = ssh.execute("service lte status", c.command_timeout_sec)
+        running = r.success and "active (running)" in (r.stdout + r.stderr)
+        consecutive = consecutive + 1 if running else 0
+        attempts.append({
+            "elapsed_sec": elapsed,
+            "running": running,
+            "consecutive_success": consecutive,
+        })
+        if consecutive >= c.stable_required_success_count:
+            return {
+                "success": True,
+                "elapsed_sec": elapsed,
+                "attempts": attempts[-20:],
+            }
+        if elapsed >= c.stable_max_wait_sec:
+            return {
+                "success": False,
+                "elapsed_sec": elapsed,
+                "attempts": attempts[-20:],
+                "message": "LTE service 未在安全上限內穩定。",
+            }
+        time.sleep(c.stable_poll_interval_sec)
+
+
+def verify_remote_cfg(
+    ssh,
+    remote_path: str,
     cell: int,
-    band: int,
-    bandwidth: float | None,
-    dl_earfcn: int | None,
-    output_path: Path,
-) -> dict[str, Any]:
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-
-    cmd = [
-        sys.executable,
-        str(settings.local.modifier_py),
-        "--cfg", str(settings.local.input_cfg),
-        "--earfcn-json", str(settings.local.earfcn_json),
-        "--cell", str(cell),
-        "--band", str(band),
-        "--output", str(output_path),
-    ]
-
-    if bandwidth is not None:
-        cmd += ["--bandwidth", str(bandwidth)]
-
-    if dl_earfcn is not None:
-        cmd += ["--dl-earfcn", str(dl_earfcn)]
-
-    log("[1/6] Generating LTE config...")
-    p = subprocess.run(cmd, capture_output=True, text=True)
-
-    if p.stderr.strip():
-        log(p.stderr.strip())
-
-    if p.returncode != 0:
-        if p.stdout.strip():
-            log(p.stdout.strip())
-        raise RuntimeError(f"lte_config_modifier.py failed with exit code {p.returncode}")
-
-    try:
-        result = json.loads(p.stdout)
-    except Exception:
-        result = {
-            "success": True,
-            "output_cfg": str(output_path),
-        }
-
-    result.setdefault("output_cfg", str(output_path))
-    return result
-
-
-def remote_apply_and_verify(
-    settings: Settings,
-    local_cfg: Path,
-    no_restart: bool,
-) -> dict[str, Any]:
-    cb = settings.callbox
-
-    with SSHController.from_callbox_settings(cb) as ssh:
-        log("[2/6] Backing up remote AutoConfig.cfg...")
-        backup = ssh.backup_file(cb.remote_cfg_path, cb.remote_backup_dir)
-
-        log("[3/6] Uploading generated cfg as remote AutoConfig.cfg...")
-        upload = ssh.upload(local_cfg, cb.remote_cfg_path)
-
-        if no_restart:
-            restart = {
-                "success": True,
-                "skipped": True,
-                "reason": "--no-restart",
-            }
-        else:
-            log("[4/6] Applying enb.cfg link and restarting LTE...")
-            command_results = []
-            for command in cb.restart_commands:
-                r = ssh.execute(command, cb.command_timeout_sec)
-                command_results.append(r.to_dict())
-                if not r.success:
-                    raise RuntimeError(f"restart command failed, exit code {r.exit_code}: {command}")
-            restart = {
-                "success": True,
-                "skipped": False,
-                "commands": command_results,
-            }
-
-        log("[5/6] Verifying cfg exists, symlink, and service...")
-        cfg_verify = verify_remote_cfg_exists(ssh, cb.remote_cfg_path)
-        symlink_verify = verify_symlink(ssh, "/root/enb/config/enb.cfg", "AutoConfig.cfg")
-        service_verify = verify_service(ssh, cb.verify_commands, cb.command_timeout_sec)
-
-    verify_success = (
-        bool(cfg_verify.get("success"))
-        and bool(symlink_verify.get("success"))
-        and bool(service_verify.get("success"))
+    dl_earfcn: int,
+    rb_dl: int,
+) -> dict:
+    command = (
+        f"grep -E '^#define LTE_Cell_{cell}_(EARFCN_DL|RB_DL)' "
+        f"{remote_path}"
     )
-
+    result = ssh.execute(command, 30)
+    text = result.stdout
+    earfcn_ok = str(dl_earfcn) in text
+    rb_ok = str(rb_dl) in text
     return {
-        "success": bool(restart.get("success")) and verify_success,
-        "backup": backup,
-        "upload": upload,
-        "restart": restart,
-        "verify": {
-            "success": verify_success,
-            "cfg_exists": cfg_verify,
-            "symlink": symlink_verify,
-            "service": service_verify,
-        },
+        "success": result.success and earfcn_ok and rb_ok,
+        "command": command,
+        "earfcn_ok": earfcn_ok,
+        "rb_ok": rb_ok,
+        "stdout": text,
+        "stderr": result.stderr,
     }
 
 
-def build_message(result: dict[str, Any]) -> str:
-    m = result.get("modifier", {})
-    cell = result.get("cell")
-    band = result.get("band")
-    bandwidth = m.get("bandwidth_mhz", result.get("bandwidth"))
-    earfcn = m.get("dl_earfcn", result.get("dl_earfcn"))
-    rb = m.get("rb_dl")
-
-    if result.get("dry_run"):
-        return f"Dry-run 完成：已產生 Cell{cell} Band{band} 設定檔，尚未上傳與重啟。"
-
-    if result.get("success"):
-        return (
-            f"切 Band 完成，已確認設定已套用："
-            f"Cell{cell}, Band{band}, Bandwidth={bandwidth}MHz, "
-            f"DL_EARFCN={earfcn}, RB_DL={rb}；"
-            f"AutoConfig.cfg 已上傳，enb.cfg 已指向 AutoConfig.cfg，LTE service 已啟動。"
-        )
-
-    return "切 Band 流程未完全成功，請查看 error / verify 欄位。"
-
-
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Apply Amarisoft LTE config, verify, and update state")
-    parser.add_argument("--settings", default="callbox_settings.json")
-    parser.add_argument("--cell", type=int, default=1)
-    parser.add_argument("--band", type=int, required=True)
-    parser.add_argument("--bandwidth", type=float, default=None)
-    parser.add_argument("--dl-earfcn", type=int, default=None)
-    parser.add_argument("--dry-run", action="store_true")
-    parser.add_argument("--no-restart", action="store_true")
-    args = parser.parse_args()
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--settings", required=True)
+    ap.add_argument("--cell", type=int, default=1)
+    ap.add_argument("--band", type=int, required=True)
+    ap.add_argument("--bandwidth", type=float)
+    ap.add_argument("--dl-earfcn", type=int)
+    ap.add_argument("--mimo-dl")
+    ap.add_argument("--mimo-ul")
+    ap.add_argument("--modulation-dl")
+    ap.add_argument("--modulation-ul")
+    ap.add_argument("--mcs-dl")
+    ap.add_argument("--mcs-ul")
+    ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--no-restart", action="store_true")
+    ap.add_argument("--skip-ue-wait", action="store_true")
+    ap.add_argument("--phy-only-ready", action="store_true", help="PHY Rate 一出現就完成，不等待 Data IP")
+    ap.add_argument("--expected-imsi")
+    ap.add_argument("--expected-imei")
+    ap.add_argument("--apn")
+    args = ap.parse_args()
 
     try:
-        settings = load_settings(args.settings)
-        ensure_local_files(settings)
-
-        output_path = build_output_path(settings, args.cell, args.band, args.bandwidth)
-
-        modifier = generate_lte_config(
-            settings=settings,
+        settings_path = Path(args.settings)
+        s = load(settings_path)
+        out = s.local.output_dir / s.local.output_pattern.format(
             cell=args.cell,
             band=args.band,
-            bandwidth=args.bandwidth,
-            dl_earfcn=args.dl_earfcn,
-            output_path=output_path,
+            bandwidth=args.bandwidth or "auto",
         )
+        out.parent.mkdir(parents=True, exist_ok=True)
 
-        result: dict[str, Any] = {
+        cmd = [
+            sys.executable,
+            str(s.local.modifier_py),
+            "--cfg", str(s.local.input_cfg),
+            "--earfcn-json", str(s.local.earfcn_json),
+            "--cell", str(args.cell),
+            "--band", str(args.band),
+            "--output", str(out),
+            "--amarisoft-model", s.callbox.amarisoft_model,
+        ]
+        if args.bandwidth is not None:
+            cmd += ["--bandwidth", str(args.bandwidth)]
+        if args.dl_earfcn is not None:
+            cmd += ["--dl-earfcn", str(args.dl_earfcn)]
+        for value, flag in (
+            (args.mimo_dl, "--mimo-dl"),
+            (args.mimo_ul, "--mimo-ul"),
+            (args.modulation_dl, "--modulation-dl"),
+            (args.modulation_ul, "--modulation-ul"),
+            (args.mcs_dl, "--mcs-dl"),
+            (args.mcs_ul, "--mcs-ul"),
+        ):
+            if value is not None:
+                cmd += [flag, str(value)]
+
+        modifier_process = subprocess.run(cmd, capture_output=True, text=True)
+        if modifier_process.returncode != 0:
+            raise RuntimeError(modifier_process.stdout or modifier_process.stderr)
+        modifier = json.loads(modifier_process.stdout)
+
+        result = {
             "success": True,
-            "action": "apply_lte_to_callbox",
-            "mode": "LTE",
-            "cell": args.cell,
-            "band": args.band,
-            "bandwidth": args.bandwidth,
-            "dl_earfcn": args.dl_earfcn,
-            "generated_cfg": str(output_path),
-            "remote_cfg_path": settings.callbox.remote_cfg_path,
+            "stage_success": {
+                "config_generated": True,
+                "uploaded": False,
+                "lte_service_stable": False,
+                "remote_config_verified": False,
+                "ue_connected": False,
+            },
             "modifier": modifier,
-            "dry_run": bool(args.dry_run),
-            "upload": None,
-            "restart": None,
-            "verify": None,
-            "state": None,
-            "message": "",
+            "generated_cfg": str(out),
+            "dry_run": args.dry_run,
         }
 
         if args.dry_run:
-            result["message"] = build_message(result)
+            result["message"] = "Dry-run 完成，未操作 Callbox。"
             print(json.dumps(result, ensure_ascii=False, indent=2))
             return 0
 
-        remote = remote_apply_and_verify(settings, output_path, bool(args.no_restart))
+        from core.ssh import SSHClient
+        with SSHClient.from_callbox_settings(s.callbox) as ssh:
+            result["backup"] = ssh.backup_file(
+                s.callbox.remote_cfg_path,
+                s.callbox.remote_backup_dir,
+            )
+            result["upload"] = ssh.upload(out, s.callbox.remote_cfg_path)
+            result["stage_success"]["uploaded"] = bool(result["upload"].get("success"))
 
-        result["upload"] = {
-            "success": bool(remote["upload"].get("success")),
-            "backup": remote["backup"],
-            "upload": remote["upload"],
+            if args.no_restart:
+                result["restart"] = {"success": True, "skipped": True}
+                result["lte_service"] = {"success": True, "skipped": True}
+                result["stage_success"]["lte_service_stable"] = True
+            else:
+                commands = []
+                for command in s.callbox.restart_commands:
+                    r = ssh.execute(command, s.callbox.command_timeout_sec)
+                    commands.append(r.to_dict())
+                    if not r.success:
+                        raise RuntimeError(f"restart failed: {command}")
+                result["restart"] = {"success": True, "commands": commands}
+                result["lte_service"] = wait_lte_service(ssh, s.callbox)
+                result["stage_success"]["lte_service_stable"] = bool(
+                    result["lte_service"].get("success")
+                )
+                if not result["stage_success"]["lte_service_stable"]:
+                    raise RuntimeError(result["lte_service"].get("message"))
+
+            result["config_verify"] = verify_remote_cfg(
+                ssh,
+                s.callbox.remote_cfg_path,
+                args.cell,
+                int(modifier.get("dl_earfcn")),
+                int(modifier.get("rb_dl")),
+            )
+            result["stage_success"]["remote_config_verified"] = bool(
+                result["config_verify"].get("success")
+            )
+            if not result["stage_success"]["remote_config_verified"]:
+                raise RuntimeError("遠端 AutoConfig.cfg 驗證失敗。")
+
+        if args.skip_ue_wait:
+            result["connection"] = {
+                "success": True,
+                "connected": False,
+                "skipped": True,
+                "message": "已略過 UE 連線等待。",
+            }
+        else:
+            from plugins.amarisoft.ue_connection import wait_for_connection
+            result["connection"] = wait_for_connection(
+                settings_path,
+                expected_imsi=args.expected_imsi,
+                expected_imei=args.expected_imei,
+                apn=args.apn,
+                return_on_phy=args.phy_only_ready,
+            )
+            result["stage_success"]["ue_connected"] = bool(
+                result["connection"].get("connected")
+            )
+
+        state = {
+            "mode": "LTE",
+            "cell": args.cell,
+            "band": args.band,
+            "bandwidth_mhz": modifier.get("bandwidth_mhz"),
+            "dl_earfcn": modifier.get("dl_earfcn"),
+            "rb_dl": modifier.get("rb_dl"),
+            "mimo_dl": modifier.get("mimo_dl"),
+            "mimo_ul": modifier.get("mimo_ul"),
+            "modulation_dl": modifier.get("modulation_dl"),
+            "modulation_ul": modifier.get("modulation_ul"),
+            "mcs_dl": modifier.get("mcs_dl"),
+            "mcs_ul": modifier.get("mcs_ul"),
+            "service_stable": result["stage_success"]["lte_service_stable"],
+            "remote_config_verified": result["stage_success"]["remote_config_verified"],
+            "ue_connected": result["stage_success"]["ue_connected"],
+            "connection_basis": result["connection"].get("connection_basis"),
+            "phy_rate": result["connection"].get("phy_rate"),
+            "ue": result["connection"].get("data_ue") or result["connection"].get("ue"),
+            "data_ue_ip": result["connection"].get("data_ue_ip"),
+            "data_ip_source": result["connection"].get("data_ip_source"),
         }
-        result["restart"] = remote["restart"]
-        result["verify"] = remote["verify"]
-        result["success"] = bool(remote["success"])
+        state_path = ROOT / "state/callbox_state.json"
+        state_path.write_text(
+            json.dumps(state, ensure_ascii=False, indent=2),
+            encoding="utf-8",
+        )
+        result["state"] = state
+
+        # Band apply and remote verification are successful even if UE has not attached.
+        # Overall success requires UE connection unless explicitly skipped.
+        result["success"] = (
+            result["stage_success"]["config_generated"]
+            and result["stage_success"]["uploaded"]
+            and result["stage_success"]["lte_service_stable"]
+            and result["stage_success"]["remote_config_verified"]
+            and (
+                args.skip_ue_wait
+                or result["stage_success"]["ue_connected"]
+            )
+        )
 
         if result["success"]:
-            log("[6/6] Saving callbox state...")
-            state_result = save_callbox_state({
-                "mode": "LTE",
-                "cell": args.cell,
-                "band": args.band,
-                "bandwidth_mhz": modifier.get("bandwidth_mhz", args.bandwidth),
-                "dl_earfcn": modifier.get("dl_earfcn", args.dl_earfcn),
-                "rb_dl": modifier.get("rb_dl"),
-                "remote_cfg_path": settings.callbox.remote_cfg_path,
-                "generated_cfg": str(output_path),
-                "verify": {
-                    "cfg_exists": remote["verify"]["cfg_exists"].get("success"),
-                    "symlink": remote["verify"]["symlink"].get("success"),
-                    "service": remote["verify"]["service"].get("success"),
-                    "service_running": remote["verify"]["service"].get("active_running"),
-                },
-            })
-            result["state"] = state_result
-
-        result["message"] = build_message(result)
+            ue_ip = result["connection"].get("data_ue_ip")
+            result["message"] = (
+                f"Band 切換完成：Cell{args.cell}, B{args.band}, "
+                f"{modifier.get('bandwidth_mhz')}MHz；"
+                f"LTE service 穩定、遠端 config 正確、UE 已連線；"
+                f"PHY DL={result['connection'].get('phy_rate', {}).get('total_dl_bitrate_mbps', 0)} Mbps，"
+                f"PHY UL={result['connection'].get('phy_rate', {}).get('total_ul_bitrate_mbps', 0)} Mbps"
+                f"{f'，IP {ue_ip}' if ue_ip else ''}。"
+            )
+            code = 0
+        else:
+            result["message"] = (
+                "Band 與 LTE service 已完成，但 UE 尚未在安全上限內恢復連線。"
+            )
+            code = 1
 
         print(json.dumps(result, ensure_ascii=False, indent=2))
-        return 0 if result["success"] else 1
+        return code
 
     except Exception as exc:
         print(json.dumps({
             "success": False,
-            "error": str(exc),
-            "message": "切 Band 失敗，請查看 error。"
+            "error": type(exc).__name__,
+            "message": str(exc),
         }, ensure_ascii=False, indent=2))
         return 1
 

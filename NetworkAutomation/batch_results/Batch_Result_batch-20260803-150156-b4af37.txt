@@ -1,0 +1,4 @@
+﻿序號	Band	BW	ARFCN	測試類型	iPerf方向	測試秒數	設定開始時間	設定完成時間	UE連線狀態	PHY DL Mbps	PHY UL Mbps	iPerf平均 Mbps	iPerf最低 Mbps	iPerf最高 Mbps	傳輸量 MB	結果	錯誤原因
+1	1A-3A	20+20	300+1575	PHY			2026-08-03T15:01:56+08:00	2026-08-03T15:02:36+08:00	已連線	14.049	60.267					PASS	
+2	n78C	100+100	623334+630000	PHY+iPerf	upload	30	2026-08-03T15:02:36+08:00	2026-08-03T15:07:47+08:00	未連線	0.0	0.0					FAIL	SA config 已套用，但 UE 尚未連線。
+3	1A_n78A	20_100	623334+300	PHY+iPerf	download	30	2026-08-03T15:07:47+08:00	2026-08-03T15:12:57+08:00	未連線	0.0	0.0					FAIL	ENDC config 已套用，但 UE 尚未連線。
