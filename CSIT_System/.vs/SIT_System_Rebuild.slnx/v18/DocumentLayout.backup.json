@@ -1,0 +1,342 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\CSIT_System\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CC3D53BC-8129-557F-D9DB-1DA2498C6C0F}|SIT.DepartmentSystem.Web\\SIT.DepartmentSystem.Web.csproj|c:\\csit_system\\sit.departmentsystem.web\\components\\pages\\moduletaskedit.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CC3D53BC-8129-557F-D9DB-1DA2498C6C0F}|SIT.DepartmentSystem.Web\\SIT.DepartmentSystem.Web.csproj|solutionrelative:sit.departmentsystem.web\\components\\pages\\moduletaskedit.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC3D53BC-8129-557F-D9DB-1DA2498C6C0F}|SIT.DepartmentSystem.Web\\SIT.DepartmentSystem.Web.csproj|c:\\csit_system\\sit.departmentsystem.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC3D53BC-8129-557F-D9DB-1DA2498C6C0F}|SIT.DepartmentSystem.Web\\SIT.DepartmentSystem.Web.csproj|solutionrelative:sit.departmentsystem.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC3D53BC-8129-557F-D9DB-1DA2498C6C0F}|SIT.DepartmentSystem.Web\\SIT.DepartmentSystem.Web.csproj|c:\\csit_system\\sit.departmentsystem.web\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CC3D53BC-8129-557F-D9DB-1DA2498C6C0F}|SIT.DepartmentSystem.Web\\SIT.DepartmentSystem.Web.csproj|solutionrelative:sit.departmentsystem.web\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC3D53BC-8129-557F-D9DB-1DA2498C6C0F}|SIT.DepartmentSystem.Web\\SIT.DepartmentSystem.Web.csproj|c:\\csit_system\\sit.departmentsystem.web\\services\\implementations\\casefileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC3D53BC-8129-557F-D9DB-1DA2498C6C0F}|SIT.DepartmentSystem.Web\\SIT.DepartmentSystem.Web.csproj|solutionrelative:sit.departmentsystem.web\\services\\implementations\\casefileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC3D53BC-8129-557F-D9DB-1DA2498C6C0F}|SIT.DepartmentSystem.Web\\SIT.DepartmentSystem.Web.csproj|c:\\csit_system\\sit.departmentsystem.web\\services\\implementations\\rawdataexportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC3D53BC-8129-557F-D9DB-1DA2498C6C0F}|SIT.DepartmentSystem.Web\\SIT.DepartmentSystem.Web.csproj|solutionrelative:sit.departmentsystem.web\\services\\implementations\\rawdataexportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC3D53BC-8129-557F-D9DB-1DA2498C6C0F}|SIT.DepartmentSystem.Web\\SIT.DepartmentSystem.Web.csproj|c:\\csit_system\\sit.departmentsystem.web\\models\\api\\rawdataexportmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC3D53BC-8129-557F-D9DB-1DA2498C6C0F}|SIT.DepartmentSystem.Web\\SIT.DepartmentSystem.Web.csproj|solutionrelative:sit.departmentsystem.web\\models\\api\\rawdataexportmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC3D53BC-8129-557F-D9DB-1DA2498C6C0F}|SIT.DepartmentSystem.Web\\SIT.DepartmentSystem.Web.csproj|c:\\csit_system\\sit.departmentsystem.web\\controllers\\moduletaskfilescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC3D53BC-8129-557F-D9DB-1DA2498C6C0F}|SIT.DepartmentSystem.Web\\SIT.DepartmentSystem.Web.csproj|solutionrelative:sit.departmentsystem.web\\controllers\\moduletaskfilescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC3D53BC-8129-557F-D9DB-1DA2498C6C0F}|SIT.DepartmentSystem.Web\\SIT.DepartmentSystem.Web.csproj|c:\\csit_system\\sit.departmentsystem.web\\services\\interfaces\\icasefileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC3D53BC-8129-557F-D9DB-1DA2498C6C0F}|SIT.DepartmentSystem.Web\\SIT.DepartmentSystem.Web.csproj|solutionrelative:sit.departmentsystem.web\\services\\interfaces\\icasefileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC3D53BC-8129-557F-D9DB-1DA2498C6C0F}|SIT.DepartmentSystem.Web\\SIT.DepartmentSystem.Web.csproj|c:\\csit_system\\sit.departmentsystem.web\\services\\implementations\\apparatusservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC3D53BC-8129-557F-D9DB-1DA2498C6C0F}|SIT.DepartmentSystem.Web\\SIT.DepartmentSystem.Web.csproj|solutionrelative:sit.departmentsystem.web\\services\\implementations\\apparatusservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC3D53BC-8129-557F-D9DB-1DA2498C6C0F}|SIT.DepartmentSystem.Web\\SIT.DepartmentSystem.Web.csproj|c:\\csit_system\\sit.departmentsystem.web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{CC3D53BC-8129-557F-D9DB-1DA2498C6C0F}|SIT.DepartmentSystem.Web\\SIT.DepartmentSystem.Web.csproj|solutionrelative:sit.departmentsystem.web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC3D53BC-8129-557F-D9DB-1DA2498C6C0F}|SIT.DepartmentSystem.Web\\SIT.DepartmentSystem.Web.csproj|c:\\csit_system\\sit.departmentsystem.web\\services\\interfaces\\irawdataexportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC3D53BC-8129-557F-D9DB-1DA2498C6C0F}|SIT.DepartmentSystem.Web\\SIT.DepartmentSystem.Web.csproj|solutionrelative:sit.departmentsystem.web\\services\\interfaces\\irawdataexportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC3D53BC-8129-557F-D9DB-1DA2498C6C0F}|SIT.DepartmentSystem.Web\\SIT.DepartmentSystem.Web.csproj|c:\\csit_system\\sit.departmentsystem.web\\components\\pages\\systemoptions.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CC3D53BC-8129-557F-D9DB-1DA2498C6C0F}|SIT.DepartmentSystem.Web\\SIT.DepartmentSystem.Web.csproj|solutionrelative:sit.departmentsystem.web\\components\\pages\\systemoptions.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC3D53BC-8129-557F-D9DB-1DA2498C6C0F}|SIT.DepartmentSystem.Web\\SIT.DepartmentSystem.Web.csproj|c:\\csit_system\\sit.departmentsystem.web\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{CC3D53BC-8129-557F-D9DB-1DA2498C6C0F}|SIT.DepartmentSystem.Web\\SIT.DepartmentSystem.Web.csproj|solutionrelative:sit.departmentsystem.web\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC3D53BC-8129-557F-D9DB-1DA2498C6C0F}|SIT.DepartmentSystem.Web\\SIT.DepartmentSystem.Web.csproj|c:\\csit_system\\sit.departmentsystem.web\\components\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CC3D53BC-8129-557F-D9DB-1DA2498C6C0F}|SIT.DepartmentSystem.Web\\SIT.DepartmentSystem.Web.csproj|solutionrelative:sit.departmentsystem.web\\components\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC3D53BC-8129-557F-D9DB-1DA2498C6C0F}|SIT.DepartmentSystem.Web\\SIT.DepartmentSystem.Web.csproj|c:\\csit_system\\sit.departmentsystem.web\\components\\pages\\apparatusedit.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CC3D53BC-8129-557F-D9DB-1DA2498C6C0F}|SIT.DepartmentSystem.Web\\SIT.DepartmentSystem.Web.csproj|solutionrelative:sit.departmentsystem.web\\components\\pages\\apparatusedit.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC3D53BC-8129-557F-D9DB-1DA2498C6C0F}|SIT.DepartmentSystem.Web\\SIT.DepartmentSystem.Web.csproj|c:\\csit_system\\sit.departmentsystem.web\\components\\pages\\apparatuslist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CC3D53BC-8129-557F-D9DB-1DA2498C6C0F}|SIT.DepartmentSystem.Web\\SIT.DepartmentSystem.Web.csproj|solutionrelative:sit.departmentsystem.web\\components\\pages\\apparatuslist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC3D53BC-8129-557F-D9DB-1DA2498C6C0F}|SIT.DepartmentSystem.Web\\SIT.DepartmentSystem.Web.csproj|c:\\csit_system\\sit.departmentsystem.web\\components\\pages\\apparatusview.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CC3D53BC-8129-557F-D9DB-1DA2498C6C0F}|SIT.DepartmentSystem.Web\\SIT.DepartmentSystem.Web.csproj|solutionrelative:sit.departmentsystem.web\\components\\pages\\apparatusview.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC3D53BC-8129-557F-D9DB-1DA2498C6C0F}|SIT.DepartmentSystem.Web\\SIT.DepartmentSystem.Web.csproj|c:\\csit_system\\sit.departmentsystem.web\\services\\implementations\\menumanagementservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC3D53BC-8129-557F-D9DB-1DA2498C6C0F}|SIT.DepartmentSystem.Web\\SIT.DepartmentSystem.Web.csproj|solutionrelative:sit.departmentsystem.web\\services\\implementations\\menumanagementservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC3D53BC-8129-557F-D9DB-1DA2498C6C0F}|SIT.DepartmentSystem.Web\\SIT.DepartmentSystem.Web.csproj|c:\\csit_system\\sit.departmentsystem.web\\components\\pages\\system\\menumanagement.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CC3D53BC-8129-557F-D9DB-1DA2498C6C0F}|SIT.DepartmentSystem.Web\\SIT.DepartmentSystem.Web.csproj|solutionrelative:sit.departmentsystem.web\\components\\pages\\system\\menumanagement.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC3D53BC-8129-557F-D9DB-1DA2498C6C0F}|SIT.DepartmentSystem.Web\\SIT.DepartmentSystem.Web.csproj|c:\\csit_system\\sit.departmentsystem.web\\components\\pages\\modulerecordlist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CC3D53BC-8129-557F-D9DB-1DA2498C6C0F}|SIT.DepartmentSystem.Web\\SIT.DepartmentSystem.Web.csproj|solutionrelative:sit.departmentsystem.web\\components\\pages\\modulerecordlist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\CSIT_System\\SIT.DepartmentSystem.Web\\Program.cs",
+              "RelativeDocumentMoniker": "SIT.DepartmentSystem.Web\\Program.cs",
+              "ToolTip": "C:\\CSIT_System\\SIT.DepartmentSystem.Web\\Program.cs",
+              "RelativeToolTip": "SIT.DepartmentSystem.Web\\Program.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAxwC4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-11T08:43:20.052Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "NavMenu.razor",
+              "DocumentMoniker": "C:\\CSIT_System\\SIT.DepartmentSystem.Web\\Components\\Layout\\NavMenu.razor",
+              "RelativeDocumentMoniker": "SIT.DepartmentSystem.Web\\Components\\Layout\\NavMenu.razor",
+              "ToolTip": "C:\\CSIT_System\\SIT.DepartmentSystem.Web\\Components\\Layout\\NavMenu.razor",
+              "RelativeToolTip": "SIT.DepartmentSystem.Web\\Components\\Layout\\NavMenu.razor",
+              "ViewState": "AgIAACwAAAAAAAAAAAAmwDIAAABRAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-10T12:50:41.717Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ICaseFileService.cs",
+              "DocumentMoniker": "C:\\CSIT_System\\SIT.DepartmentSystem.Web\\Services\\Interfaces\\ICaseFileService.cs",
+              "RelativeDocumentMoniker": "SIT.DepartmentSystem.Web\\Services\\Interfaces\\ICaseFileService.cs",
+              "ToolTip": "C:\\CSIT_System\\SIT.DepartmentSystem.Web\\Services\\Interfaces\\ICaseFileService.cs",
+              "RelativeToolTip": "SIT.DepartmentSystem.Web\\Services\\Interfaces\\ICaseFileService.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAIwB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-10T06:35:58.881Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ModuleTaskFilesController.cs",
+              "DocumentMoniker": "C:\\CSIT_System\\SIT.DepartmentSystem.Web\\Controllers\\ModuleTaskFilesController.cs",
+              "RelativeDocumentMoniker": "SIT.DepartmentSystem.Web\\Controllers\\ModuleTaskFilesController.cs",
+              "ToolTip": "C:\\CSIT_System\\SIT.DepartmentSystem.Web\\Controllers\\ModuleTaskFilesController.cs",
+              "RelativeToolTip": "SIT.DepartmentSystem.Web\\Controllers\\ModuleTaskFilesController.cs",
+              "ViewState": "AgIAAGoAAAAAAAAAAAAQwHEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-10T06:22:33.021Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ModuleTaskEdit.razor",
+              "DocumentMoniker": "C:\\CSIT_System\\SIT.DepartmentSystem.Web\\Components\\Pages\\ModuleTaskEdit.razor",
+              "RelativeDocumentMoniker": "SIT.DepartmentSystem.Web\\Components\\Pages\\ModuleTaskEdit.razor",
+              "ToolTip": "C:\\CSIT_System\\SIT.DepartmentSystem.Web\\Components\\Pages\\ModuleTaskEdit.razor",
+              "RelativeToolTip": "SIT.DepartmentSystem.Web\\Components\\Pages\\ModuleTaskEdit.razor",
+              "ViewState": "AgIAAHQCAAAAAAAAAAAmwI4CAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-10T06:03:16.126Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CaseFileService.cs",
+              "DocumentMoniker": "C:\\CSIT_System\\SIT.DepartmentSystem.Web\\Services\\Implementations\\CaseFileService.cs",
+              "RelativeDocumentMoniker": "SIT.DepartmentSystem.Web\\Services\\Implementations\\CaseFileService.cs",
+              "ToolTip": "C:\\CSIT_System\\SIT.DepartmentSystem.Web\\Services\\Implementations\\CaseFileService.cs",
+              "RelativeToolTip": "SIT.DepartmentSystem.Web\\Services\\Implementations\\CaseFileService.cs",
+              "ViewState": "AgIAAKYCAAAAAAAAAAArwLYCAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-01T12:13:17.6Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RawDataExportService.cs",
+              "DocumentMoniker": "C:\\CSIT_System\\SIT.DepartmentSystem.Web\\Services\\Implementations\\RawDataExportService.cs",
+              "RelativeDocumentMoniker": "SIT.DepartmentSystem.Web\\Services\\Implementations\\RawDataExportService.cs",
+              "ToolTip": "C:\\CSIT_System\\SIT.DepartmentSystem.Web\\Services\\Implementations\\RawDataExportService.cs",
+              "RelativeToolTip": "SIT.DepartmentSystem.Web\\Services\\Implementations\\RawDataExportService.cs",
+              "ViewState": "AgIAAMgAAAAAAAAAAAAmwNEAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-09T13:09:19.988Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Login.razor",
+              "DocumentMoniker": "C:\\CSIT_System\\SIT.DepartmentSystem.Web\\Components\\Pages\\Login.razor",
+              "RelativeDocumentMoniker": "SIT.DepartmentSystem.Web\\Components\\Pages\\Login.razor",
+              "ToolTip": "C:\\CSIT_System\\SIT.DepartmentSystem.Web\\Components\\Pages\\Login.razor",
+              "RelativeToolTip": "SIT.DepartmentSystem.Web\\Components\\Pages\\Login.razor",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAABEAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-01T12:35:16.909Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "SystemOptions.razor",
+              "DocumentMoniker": "C:\\CSIT_System\\SIT.DepartmentSystem.Web\\Components\\Pages\\SystemOptions.razor",
+              "RelativeDocumentMoniker": "SIT.DepartmentSystem.Web\\Components\\Pages\\SystemOptions.razor",
+              "ToolTip": "C:\\CSIT_System\\SIT.DepartmentSystem.Web\\Components\\Pages\\SystemOptions.razor",
+              "RelativeToolTip": "SIT.DepartmentSystem.Web\\Components\\Pages\\SystemOptions.razor",
+              "ViewState": "AgIAAIABAAAANDMzMzMTwIYBAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-30T05:48:48.531Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RawDataExportModels.cs",
+              "DocumentMoniker": "C:\\CSIT_System\\SIT.DepartmentSystem.Web\\Models\\Api\\RawDataExportModels.cs",
+              "RelativeDocumentMoniker": "SIT.DepartmentSystem.Web\\Models\\Api\\RawDataExportModels.cs",
+              "ToolTip": "C:\\CSIT_System\\SIT.DepartmentSystem.Web\\Models\\Api\\RawDataExportModels.cs",
+              "RelativeToolTip": "SIT.DepartmentSystem.Web\\Models\\Api\\RawDataExportModels.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAADgvysAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-09T13:09:56.32Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IRawDataExportService.cs",
+              "DocumentMoniker": "C:\\CSIT_System\\SIT.DepartmentSystem.Web\\Services\\Interfaces\\IRawDataExportService.cs",
+              "RelativeDocumentMoniker": "SIT.DepartmentSystem.Web\\Services\\Interfaces\\IRawDataExportService.cs",
+              "ToolTip": "C:\\CSIT_System\\SIT.DepartmentSystem.Web\\Services\\Interfaces\\IRawDataExportService.cs",
+              "RelativeToolTip": "SIT.DepartmentSystem.Web\\Services\\Interfaces\\IRawDataExportService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-09T13:09:33.962Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ApparatusService.cs",
+              "DocumentMoniker": "C:\\CSIT_System\\SIT.DepartmentSystem.Web\\Services\\Implementations\\ApparatusService.cs",
+              "RelativeDocumentMoniker": "SIT.DepartmentSystem.Web\\Services\\Implementations\\ApparatusService.cs",
+              "ToolTip": "C:\\CSIT_System\\SIT.DepartmentSystem.Web\\Services\\Implementations\\ApparatusService.cs",
+              "RelativeToolTip": "SIT.DepartmentSystem.Web\\Services\\Implementations\\ApparatusService.cs",
+              "ViewState": "AgIAALwBAAAAAAAAAAAWwMYBAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-30T02:11:36.833Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\CSIT_System\\SIT.DepartmentSystem.Web\\appsettings.json",
+              "RelativeDocumentMoniker": "SIT.DepartmentSystem.Web\\appsettings.json",
+              "ToolTip": "C:\\CSIT_System\\SIT.DepartmentSystem.Web\\appsettings.json",
+              "RelativeToolTip": "SIT.DepartmentSystem.Web\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-05-08T05:58:20.858Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\CSIT_System\\SIT.DepartmentSystem.Web\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "SIT.DepartmentSystem.Web\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\CSIT_System\\SIT.DepartmentSystem.Web\\Properties\\launchSettings.json",
+              "RelativeToolTip": "SIT.DepartmentSystem.Web\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-05-05T07:42:19.956Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ApparatusEdit.razor",
+              "DocumentMoniker": "C:\\CSIT_System\\SIT.DepartmentSystem.Web\\Components\\Pages\\ApparatusEdit.razor",
+              "RelativeDocumentMoniker": "SIT.DepartmentSystem.Web\\Components\\Pages\\ApparatusEdit.razor",
+              "ToolTip": "C:\\CSIT_System\\SIT.DepartmentSystem.Web\\Components\\Pages\\ApparatusEdit.razor",
+              "RelativeToolTip": "SIT.DepartmentSystem.Web\\Components\\Pages\\ApparatusEdit.razor",
+              "ViewState": "AgIAAOkCAAAAAAAAAAAcwPECAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-30T01:54:53.097Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ApparatusList.razor",
+              "DocumentMoniker": "C:\\CSIT_System\\SIT.DepartmentSystem.Web\\Components\\Pages\\ApparatusList.razor",
+              "RelativeDocumentMoniker": "SIT.DepartmentSystem.Web\\Components\\Pages\\ApparatusList.razor",
+              "ToolTip": "C:\\CSIT_System\\SIT.DepartmentSystem.Web\\Components\\Pages\\ApparatusList.razor",
+              "RelativeToolTip": "SIT.DepartmentSystem.Web\\Components\\Pages\\ApparatusList.razor",
+              "ViewState": "AgIAAAoBAAAAAAAAAAAcwBQBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-30T01:54:41.133Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ApparatusView.razor",
+              "DocumentMoniker": "C:\\CSIT_System\\SIT.DepartmentSystem.Web\\Components\\Pages\\ApparatusView.razor",
+              "RelativeDocumentMoniker": "SIT.DepartmentSystem.Web\\Components\\Pages\\ApparatusView.razor",
+              "ToolTip": "C:\\CSIT_System\\SIT.DepartmentSystem.Web\\Components\\Pages\\ApparatusView.razor",
+              "RelativeToolTip": "SIT.DepartmentSystem.Web\\Components\\Pages\\ApparatusView.razor",
+              "ViewState": "AgIAALwAAAAAAAAAAAAcwMYAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-29T10:12:35.728Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "MenuManagementService.cs",
+              "DocumentMoniker": "C:\\CSIT_System\\SIT.DepartmentSystem.Web\\Services\\Implementations\\MenuManagementService.cs",
+              "RelativeDocumentMoniker": "SIT.DepartmentSystem.Web\\Services\\Implementations\\MenuManagementService.cs",
+              "ToolTip": "C:\\CSIT_System\\SIT.DepartmentSystem.Web\\Services\\Implementations\\MenuManagementService.cs",
+              "RelativeToolTip": "SIT.DepartmentSystem.Web\\Services\\Implementations\\MenuManagementService.cs",
+              "ViewState": "AgIAACYBAAAAAAAAAAAswCwBAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-29T10:06:57.896Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "MenuManagement.razor",
+              "DocumentMoniker": "C:\\CSIT_System\\SIT.DepartmentSystem.Web\\Components\\Pages\\System\\MenuManagement.razor",
+              "RelativeDocumentMoniker": "SIT.DepartmentSystem.Web\\Components\\Pages\\System\\MenuManagement.razor",
+              "ToolTip": "C:\\CSIT_System\\SIT.DepartmentSystem.Web\\Components\\Pages\\System\\MenuManagement.razor",
+              "RelativeToolTip": "SIT.DepartmentSystem.Web\\Components\\Pages\\System\\MenuManagement.razor",
+              "ViewState": "AgIAAJ0BAAAAAAAAAAAcwKsBAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-29T09:59:00.244Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ModuleRecordList.razor",
+              "DocumentMoniker": "C:\\CSIT_System\\SIT.DepartmentSystem.Web\\Components\\Pages\\ModuleRecordList.razor",
+              "RelativeDocumentMoniker": "SIT.DepartmentSystem.Web\\Components\\Pages\\ModuleRecordList.razor",
+              "ToolTip": "C:\\CSIT_System\\SIT.DepartmentSystem.Web\\Components\\Pages\\ModuleRecordList.razor",
+              "RelativeToolTip": "SIT.DepartmentSystem.Web\\Components\\Pages\\ModuleRecordList.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-29T09:23:06.016Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

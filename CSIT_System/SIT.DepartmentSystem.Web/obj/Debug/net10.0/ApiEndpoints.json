@@ -1,0 +1,1430 @@
+[
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.AuthController",
+    "Method": "Root",
+    "RelativePath": "",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.ApparatusController",
+    "Method": "GetLegacyList",
+    "RelativePath": "api/apparatus",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "keyword",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "kind",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.ApparatusController",
+    "Method": "LegacyCreate",
+    "RelativePath": "api/apparatus",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "SIT.DepartmentSystem.Web.Models.Api.ApparatusUpsertRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.ApparatusController",
+    "Method": "GetLegacyById",
+    "RelativePath": "api/apparatus/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.ApparatusController",
+    "Method": "LegacyUpdate",
+    "RelativePath": "api/apparatus/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "SIT.DepartmentSystem.Web.Models.Api.ApparatusUpsertRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.ApparatusController",
+    "Method": "LegacyDelete",
+    "RelativePath": "api/apparatus/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.ApparatusController",
+    "Method": "LegacyGetFiles",
+    "RelativePath": "api/apparatus/{id}/files",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.ApparatusController",
+    "Method": "LegacyUploadFiles",
+    "RelativePath": "api/apparatus/{id}/files",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.ApparatusController",
+    "Method": "DeleteFile",
+    "RelativePath": "api/apparatus/files/{fileId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "fileId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.ApparatusController",
+    "Method": "GetFileContent",
+    "RelativePath": "api/apparatus/files/{fileId}/content",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "fileId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.ApparatusController",
+    "Method": "GetNewId",
+    "RelativePath": "api/apparatus/new-id",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.ApparatusController",
+    "Method": "GetList",
+    "RelativePath": "api/assets/{moduleCode}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "moduleCode",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "keyword",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "kind",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.ApparatusController",
+    "Method": "Create",
+    "RelativePath": "api/assets/{moduleCode}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "moduleCode",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "SIT.DepartmentSystem.Web.Models.Api.ApparatusUpsertRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.ApparatusController",
+    "Method": "GetById",
+    "RelativePath": "api/assets/{moduleCode}/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "moduleCode",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.ApparatusController",
+    "Method": "Update",
+    "RelativePath": "api/assets/{moduleCode}/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "moduleCode",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "SIT.DepartmentSystem.Web.Models.Api.ApparatusUpsertRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.ApparatusController",
+    "Method": "Delete",
+    "RelativePath": "api/assets/{moduleCode}/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "moduleCode",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.ApparatusController",
+    "Method": "GetFiles",
+    "RelativePath": "api/assets/{moduleCode}/{id}/files",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "moduleCode",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.ApparatusController",
+    "Method": "UploadFiles",
+    "RelativePath": "api/assets/{moduleCode}/{id}/files",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "moduleCode",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.ApparatusController",
+    "Method": "GetNewId",
+    "RelativePath": "api/assets/{moduleCode}/new-id",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "moduleCode",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.ApparatusController",
+    "Method": "DeleteFile",
+    "RelativePath": "api/assets/files/{fileId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "fileId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.ApparatusController",
+    "Method": "GetFileContent",
+    "RelativePath": "api/assets/files/{fileId}/content",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "fileId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.CaseFilesController",
+    "Method": "GetFiles",
+    "RelativePath": "api/cases/{caseId}/files",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "caseId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[SIT.DepartmentSystem.Web.Models.Api.ModuleCaseFileDto, SIT.DepartmentSystem.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.CaseFilesController",
+    "Method": "Upload",
+    "RelativePath": "api/cases/{caseId}/files",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "caseId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.ModuleTasksController",
+    "Method": "GetList",
+    "RelativePath": "api/cases/{caseId}/tasks",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "caseId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "status",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SIT.DepartmentSystem.Web.Models.Api.ListResponseDto\u00601[[SIT.DepartmentSystem.Web.Models.Api.ModuleTaskListItemDto, SIT.DepartmentSystem.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.ModuleTasksController",
+    "Method": "Create",
+    "RelativePath": "api/cases/{caseId}/tasks",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "caseId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "SIT.DepartmentSystem.Web.Models.Api.ModuleTaskUpsertRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.ModuleTaskFilesController",
+    "Method": "GetTaskFilesByTaskNo",
+    "RelativePath": "api/cases/{caseId}/tasks/{taskNo}/files",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "caseId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "taskNo",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.ModuleTasksController",
+    "Method": "GetNewTaskNo",
+    "RelativePath": "api/cases/{caseId}/tasks/new-id",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "caseId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.ModuleTaskFilesController",
+    "Method": "UploadTaskFilesByTaskNo",
+    "RelativePath": "api/cases/{caseId}/tasks/upload/{taskNo}/files",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "caseId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "taskNo",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.ModuleTaskFilesController",
+    "Method": "UploadTaskReportsByTaskNo",
+    "RelativePath": "api/cases/{caseId}/tasks/upload/{taskNo}/test-reports",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "caseId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "taskNo",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.ModuleCasesController",
+    "Method": "GetById",
+    "RelativePath": "api/cases/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SIT.DepartmentSystem.Web.Models.Api.ModuleCaseDetailDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.ModuleCasesController",
+    "Method": "Update",
+    "RelativePath": "api/cases/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "SIT.DepartmentSystem.Web.Models.Api.ModuleCaseUpsertRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.ModuleCasesController",
+    "Method": "Delete",
+    "RelativePath": "api/cases/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.CaseFilesController",
+    "Method": "Delete",
+    "RelativePath": "api/files/{fileId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "fileId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.CaseFilesController",
+    "Method": "Download",
+    "RelativePath": "api/files/{fileId}/download",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "fileId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.MenuManagementController",
+    "Method": "GetItem",
+    "RelativePath": "api/menu-management/items/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SIT.DepartmentSystem.Web.Models.Api.MenuItemDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.MenuManagementController",
+    "Method": "UpdateItem",
+    "RelativePath": "api/menu-management/items/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "SIT.DepartmentSystem.Web.Models.Api.MenuItemUpsertRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.MenuManagementController",
+    "Method": "DeleteItem",
+    "RelativePath": "api/menu-management/items/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.MenuManagementController",
+    "Method": "GetSections",
+    "RelativePath": "api/menu-management/sections",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[SIT.DepartmentSystem.Web.Models.Api.MenuSectionDto, SIT.DepartmentSystem.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.MenuManagementController",
+    "Method": "GetItems",
+    "RelativePath": "api/menu-management/sections/{sectionId}/items",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sectionId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[SIT.DepartmentSystem.Web.Models.Api.MenuItemDto, SIT.DepartmentSystem.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.MenuManagementController",
+    "Method": "CreateItem",
+    "RelativePath": "api/menu-management/sections/{sectionId}/items",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sectionId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "SIT.DepartmentSystem.Web.Models.Api.MenuItemUpsertRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.ModuleRecordViewController",
+    "Method": "Get",
+    "RelativePath": "api/module-record-view",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "moduleCode",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "status",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "site",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "search",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SIT.DepartmentSystem.Web.Models.Api.ListResponseDto\u00601[[SIT.DepartmentSystem.Web.Models.Api.ModuleRecordListItemDto, SIT.DepartmentSystem.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.ModulesController",
+    "Method": "GetAll",
+    "RelativePath": "api/modules",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[SIT.DepartmentSystem.Web.Models.Api.ModuleListItemDto, SIT.DepartmentSystem.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.ModulesController",
+    "Method": "Create",
+    "RelativePath": "api/modules",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "SIT.DepartmentSystem.Web.Models.Api.ModuleUpsertRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.ModulesController",
+    "Method": "GetByCode",
+    "RelativePath": "api/modules/{code}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "code",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SIT.DepartmentSystem.Web.Models.Api.ModuleDetailDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.ModuleRecordsController",
+    "Method": "GetList",
+    "RelativePath": "api/modules/{moduleCode}/records",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "moduleCode",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "status",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SIT.DepartmentSystem.Web.Models.Api.ListResponseDto\u00601[[SIT.DepartmentSystem.Web.Models.Api.ModuleRecordListItemDto, SIT.DepartmentSystem.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.ModuleRecordsController",
+    "Method": "Create",
+    "RelativePath": "api/modules/{moduleCode}/records",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "moduleCode",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "SIT.DepartmentSystem.Web.Models.Api.ModuleRecordUpsertRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.ModulesController",
+    "Method": "GetEnabled",
+    "RelativePath": "api/modules/enabled",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[SIT.DepartmentSystem.Web.Models.Api.ModuleListItemDto, SIT.DepartmentSystem.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.ModuleRecordsController",
+    "Method": "GetById",
+    "RelativePath": "api/records/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SIT.DepartmentSystem.Web.Models.Api.ModuleRecordDetailDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.ModuleRecordsController",
+    "Method": "Update",
+    "RelativePath": "api/records/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "SIT.DepartmentSystem.Web.Models.Api.ModuleRecordUpsertRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.ModuleRecordsController",
+    "Method": "Delete",
+    "RelativePath": "api/records/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.ModuleCasesController",
+    "Method": "GetList",
+    "RelativePath": "api/records/{recordId}/cases",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "recordId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "status",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SIT.DepartmentSystem.Web.Models.Api.ListResponseDto\u00601[[SIT.DepartmentSystem.Web.Models.Api.ModuleCaseListItemDto, SIT.DepartmentSystem.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.ModuleCasesController",
+    "Method": "Create",
+    "RelativePath": "api/records/{recordId}/cases",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "recordId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "SIT.DepartmentSystem.Web.Models.Api.ModuleCaseUpsertRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.CaseFilesController",
+    "Method": "GetFilesByCaseNo",
+    "RelativePath": "api/records/{recordId}/cases/{caseNo}/attachments",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "recordId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "caseNo",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[SIT.DepartmentSystem.Web.Models.Api.ModuleCaseFileDto, SIT.DepartmentSystem.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.ModuleCasesController",
+    "Method": "GetNewCaseNo",
+    "RelativePath": "api/records/{recordId}/cases/new-id",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "recordId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SIT.DepartmentSystem.Web.Models.Api.NewCaseNoResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.CaseFilesController",
+    "Method": "UploadByCaseNo",
+    "RelativePath": "api/records/{recordId}/cases/upload/{caseNo}/attachments",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "recordId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "caseNo",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.SystemOptionsController",
+    "Method": "GetAll",
+    "RelativePath": "api/system-options",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "category",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.SystemOptionsController",
+    "Method": "Create",
+    "RelativePath": "api/system-options",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "SIT.DepartmentSystem.Web.Models.Api.SystemOptionUpsertRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.SystemOptionsController",
+    "Method": "Update",
+    "RelativePath": "api/system-options/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "SIT.DepartmentSystem.Web.Models.Api.SystemOptionUpsertRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.SystemOptionsController",
+    "Method": "Delete",
+    "RelativePath": "api/system-options/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.SystemOptionsController",
+    "Method": "GetByCategory",
+    "RelativePath": "api/system-options/category/{category}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "category",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.ModuleTasksController",
+    "Method": "GetById",
+    "RelativePath": "api/tasks/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SIT.DepartmentSystem.Web.Models.Api.ModuleTaskDetailDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.ModuleTasksController",
+    "Method": "Update",
+    "RelativePath": "api/tasks/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "SIT.DepartmentSystem.Web.Models.Api.ModuleTaskUpsertRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.ModuleTasksController",
+    "Method": "Delete",
+    "RelativePath": "api/tasks/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.ModuleTaskFilesController",
+    "Method": "UploadTaskFiles",
+    "RelativePath": "api/tasks/{taskId}/files",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "taskId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.ModuleTaskFilesController",
+    "Method": "GetTaskFiles",
+    "RelativePath": "api/tasks/{taskId}/files",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "taskId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.ModuleTaskFilesController",
+    "Method": "UploadTaskReports",
+    "RelativePath": "api/tasks/{taskId}/test-reports",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "taskId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.AuthController",
+    "Method": "Login",
+    "RelativePath": "auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "username",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "password",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.AuthController",
+    "Method": "Logout",
+    "RelativePath": "auth/logout",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SIT.DepartmentSystem.Web.Controllers.AuthController",
+    "Method": "LoginPage",
+    "RelativePath": "signin",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "error",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
