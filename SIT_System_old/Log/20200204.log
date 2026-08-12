@@ -1,0 +1,12 @@
+2020/2/4 上午 10:27:36：Web_UserView1：無效的資料行名稱 'Name_En'。
+2020/2/4 上午 10:27:44：Web_UserView1：無效的資料行名稱 'Name_En'。
+2020/2/4 上午 10:36:02：Web_InsertUploadFile：接近 's' 之處的語法不正確。
+遺漏字元字串 ')' 後面的引號。
+2020/2/4 上午 11:27:06：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2020/2/4 下午 02:30:44：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2020/2/4 下午 04:53:02：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2020/2/4 下午 04:53:02：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2020/2/4 下午 04:53:51：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2020/2/4 下午 04:53:51：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2020/2/4 下午 04:54:30：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2020/2/4 下午 04:54:30：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。

@@ -1,0 +1,19 @@
+2018/8/27 上午 08:24:43：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2018/8/27 上午 08:26:04：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2018/8/27 上午 08:26:04：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2018/8/27 上午 09:59:13：Web_ApparatusReservation：字串或二進位資料會被截斷。
+陳述式已經結束。
+2018/8/27 上午 09:59:43：Web_ApparatusReservation：字串或二進位資料會被截斷。
+陳述式已經結束。
+2018/8/27 上午 11:51:37：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2018/8/27 下午 03:37:56：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2018/8/27 下午 03:37:56：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2018/8/27 下午 04:24:22：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2018/8/27 下午 04:48:46：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2018/8/27 下午 04:49:32：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2018/8/27 下午 05:16:26：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2018/8/27 下午 05:22:44：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2018/8/27 下午 05:53:01：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2018/8/27 下午 07:04:09：Web_InsertProject：違反 PRIMARY KEY 條件約束 'PK_Project'。無法在物件 'dbo.Project' 中插入重複的索引鍵。
+陳述式已經結束。
+2018/8/27 下午 07:19:00：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。

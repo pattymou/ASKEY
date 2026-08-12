@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "SIT_System", ".", "{CCDF8E8E-9761-462A-9996-543A5C148190}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFramework = "3.5"
+		Debug.AspNetCompiler.VirtualPath = "/SIT_System_patty"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\..\..\..\..\inetpub\wwwroot\SIT_System_patty\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\SIT_System_patty\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/SIT_System_patty"
+		Release.AspNetCompiler.PhysicalPath = "..\..\..\..\..\..\inetpub\wwwroot\SIT_System_patty\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\SIT_System_patty\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "49632"
+	EndProjectSection
+EndProject
+Project("{2CFEAB61-6A3B-4EB8-B523-560B4BEEF521}") = "SIT_System_deploy", "..\..\..\Users\Administrator\Documents\Visual Studio 2008\Projects\SIT_System_deploy\SIT_System_deploy.wdproj", "{B2B7891F-34D0-4001-B397-6619B48B59A6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CCDF8E8E-9761-462A-9996-543A5C148190}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCDF8E8E-9761-462A-9996-543A5C148190}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCDF8E8E-9761-462A-9996-543A5C148190}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{CCDF8E8E-9761-462A-9996-543A5C148190}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{CCDF8E8E-9761-462A-9996-543A5C148190}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCDF8E8E-9761-462A-9996-543A5C148190}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{CCDF8E8E-9761-462A-9996-543A5C148190}.Release|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{CCDF8E8E-9761-462A-9996-543A5C148190}.Release|Mixed Platforms.Build.0 = Debug|Any CPU
+		{B2B7891F-34D0-4001-B397-6619B48B59A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2B7891F-34D0-4001-B397-6619B48B59A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2B7891F-34D0-4001-B397-6619B48B59A6}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{B2B7891F-34D0-4001-B397-6619B48B59A6}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{B2B7891F-34D0-4001-B397-6619B48B59A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2B7891F-34D0-4001-B397-6619B48B59A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2B7891F-34D0-4001-B397-6619B48B59A6}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{B2B7891F-34D0-4001-B397-6619B48B59A6}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

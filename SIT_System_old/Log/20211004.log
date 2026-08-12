@@ -1,0 +1,4 @@
+2021/10/4 下午 01:50:11：Web_ApparatusReservation：從字元字串轉換成日期及/或時間時，轉換失敗。
+2021/10/4 下午 01:50:48：Web_ApparatusReservation：從字元字串轉換成日期及/或時間時，轉換失敗。
+2021/10/4 下午 02:10:13：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2021/10/4 下午 02:10:13：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。

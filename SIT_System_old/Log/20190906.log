@@ -1,0 +1,13 @@
+2019/9/6 上午 09:39:03：Web_AddWeeklyReport：接近 's及PJM' 之處的語法不正確。
+遺漏字元字串 ')' 後面的引號。
+2019/9/6 上午 09:39:23：Web_AddWeeklyReport：接近 's及PJM' 之處的語法不正確。
+遺漏字元字串 ')' 後面的引號。
+2019/9/6 下午 02:18:47：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2019/9/6 下午 02:18:47：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2019/9/6 下午 05:26:07：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2019/9/6 下午 05:26:57：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2019/9/6 下午 05:43:41：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2019/9/6 下午 05:44:12：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2019/9/6 下午 05:58:28：Web_AddWeeklyReport：接近 's環境架設MA5800成功' 之處的語法不正確。
+遺漏字元字串 ')' 後面的引號。
+2019/9/6 下午 11:51:21：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。

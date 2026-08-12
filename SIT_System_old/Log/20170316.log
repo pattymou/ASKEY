@@ -1,0 +1,38 @@
+2017/3/16 上午 10:37:43：Web_UserView1：無效的資料行名稱 'Name_En'。
+2017/3/16 上午 10:39:12：Web_UserView1：無效的資料行名稱 'Name_En'。
+2017/3/16 上午 10:43:05：Web_UserView1：無效的資料行名稱 'Name_En'。
+2017/3/16 上午 10:44:25：Web_UserView1：無效的資料行名稱 'Name_En'。
+2017/3/16 上午 10:46:46：Web_UserView1：無效的資料行名稱 'Name_En'。
+2017/3/16 上午 11:20:10：Web_InsertUser：違反 PRIMARY KEY 條件約束 'PK_Employees'。無法在物件 'dbo.Employees' 中插入重複的索引鍵。
+陳述式已經結束。
+2017/3/16 上午 11:21:15：Web_UserView1：無效的資料行名稱 'Name_En'。
+2017/3/16 上午 11:21:17：Web_UserView1：無效的資料行名稱 'Name_En'。
+2017/3/16 上午 11:21:22：Web_UserView1：無效的資料行名稱 'Name_En'。
+2017/3/16 上午 11:21:26：Web_UserView1：無效的資料行名稱 'Name_En'。
+2017/3/16 上午 11:21:28：Web_UserView1：無效的資料行名稱 'Name_En'。
+2017/3/16 上午 11:21:31：Web_UserView1：無效的資料行名稱 'Name_En'。
+2017/3/16 上午 11:21:39：Web_UserView1：無效的資料行名稱 'Name_En'。
+2017/3/16 上午 11:21:41：Web_UserView1：無效的資料行名稱 'Name_En'。
+2017/3/16 上午 11:21:45：Web_UserView1：無效的資料行名稱 'Name_En'。
+2017/3/16 上午 11:21:46：Web_UserView1：無效的資料行名稱 'Name_En'。
+2017/3/16 上午 11:21:51：Web_UserView1：無效的資料行名稱 'Name_En'。
+2017/3/16 上午 11:21:55：Web_UserView1：無效的資料行名稱 'Name_En'。
+2017/3/16 上午 11:22:03：Web_UserView1：無效的資料行名稱 'Name_En'。
+2017/3/16 上午 11:22:07：Web_UserView1：無效的資料行名稱 'Name_En'。
+2017/3/16 上午 11:22:08：Web_UserView1：無效的資料行名稱 'Name_En'。
+2017/3/16 上午 11:22:10：Web_UserView1：無效的資料行名稱 'Name_En'。
+2017/3/16 下午 03:30:07：Web_UserView1：無效的資料行名稱 'Name_En'。
+2017/3/16 下午 03:46:13：Web_InsertUser：違反 PRIMARY KEY 條件約束 'PK_Employees'。無法在物件 'dbo.Employees' 中插入重複的索引鍵。
+陳述式已經結束。
+2017/3/16 下午 03:46:24：Web_UserView1：無效的資料行名稱 'Name_En'。
+2017/3/16 下午 03:46:49：Web_UserView1：無效的資料行名稱 'Name_En'。
+2017/3/16 下午 04:15:23：Web_ModifyApparatus：字串或二進位資料會被截斷。
+陳述式已經結束。
+2017/3/16 下午 04:15:32：Web_ModifyApparatus：字串或二進位資料會被截斷。
+陳述式已經結束。
+2017/3/16 下午 04:15:41：Web_ModifyApparatus：字串或二進位資料會被截斷。
+陳述式已經結束。
+2017/3/16 下午 04:16:27：Web_ModifyApparatus：字串或二進位資料會被截斷。
+陳述式已經結束。
+2017/3/16 下午 04:28:09：Web_ModifyApparatus：字串或二進位資料會被截斷。
+陳述式已經結束。

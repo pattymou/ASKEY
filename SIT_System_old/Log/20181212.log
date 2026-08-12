@@ -1,0 +1,21 @@
+2018/12/12 上午 09:37:03：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2018/12/12 下午 12:00:16：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2018/12/12 下午 02:32:21：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2018/12/12 下午 02:32:21：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2018/12/12 下午 02:33:48：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2018/12/12 下午 02:33:48：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2018/12/12 下午 03:17:53：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2018/12/12 下午 03:18:28：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2018/12/12 下午 04:29:39：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2018/12/12 下午 04:31:54：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2018/12/12 下午 04:32:23：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2018/12/12 下午 04:33:55：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2018/12/12 下午 06:24:38：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2018/12/12 下午 08:07:23：Web_InsertProject：違反 PRIMARY KEY 條件約束 'PK_Project'。無法在物件 'dbo.Project' 中插入重複的索引鍵。
+陳述式已經結束。
+2018/12/12 下午 08:07:58：Web_InsertProject：違反 PRIMARY KEY 條件約束 'PK_Project'。無法在物件 'dbo.Project' 中插入重複的索引鍵。
+陳述式已經結束。
+2018/12/12 下午 08:08:25：Web_InsertProject：違反 PRIMARY KEY 條件約束 'PK_Project'。無法在物件 'dbo.Project' 中插入重複的索引鍵。
+陳述式已經結束。
+2018/12/12 下午 08:09:16：Web_InsertProject：違反 PRIMARY KEY 條件約束 'PK_Project'。無法在物件 'dbo.Project' 中插入重複的索引鍵。
+陳述式已經結束。

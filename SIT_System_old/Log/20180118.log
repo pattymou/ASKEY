@@ -1,0 +1,5 @@
+2018/1/18 下午 03:04:35：Web_InfoData：將 varchar 值 'Project System帳密申請SOP' 轉換成資料類型 int 時，轉換失敗。
+2018/1/18 下午 03:11:17：Web_InfoData：將 varchar 值 'Project System帳密申請SOP' 轉換成資料類型 int 時，轉換失敗。
+2018/1/18 下午 03:11:40：Web_InfoData：將 varchar 值 'Project System帳密申請SOP' 轉換成資料類型 int 時，轉換失敗。
+2018/1/18 下午 06:34:27：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2018/1/18 下午 06:34:27：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。

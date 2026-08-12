@@ -1,0 +1,82 @@
+{
+"data":[
+[
+"DA40-WJ",
+"RTM4100AH",
+"NPI驗証",
+"D000(ASKEY)",
+"ES",
+"REV0",
+"V0.0.3",
+"allen02_chen",
+"Carl1 Chen",
+"Jack1 Lee",
+"20230926113852"
+],
+[
+"DA40-WJ",
+"RTM4100AH",
+"認証申請",
+"D000(ASKEY)",
+"EV",
+"REV1",
+"0.1.0",
+"Allen Chen",
+"Carl1 Chen",
+"Jack1 Lee",
+"20240318084457"
+],
+[
+"DA40-WJ",
+"RTM4100AH",
+"認証申請",
+"D000(ASKEY)",
+"EV",
+"REV1",
+"0.1.4",
+"Allen Chen",
+"Carl1 Chen",
+"Jack1 Lee",
+"20240424081818"
+],
+[
+"DA40-WJ",
+"RTM4100AH",
+"認証申請",
+"D000(ASKEY)",
+"EV",
+"REV1",
+"0.1.5",
+"Allen Chen",
+"Carl1 Chen",
+"Jack1 Lee",
+"20240527082854"
+],
+[
+"DA40-WJ",
+"RTM4100AH",
+"認証申請",
+"D000(ASKEY)",
+"EV",
+"REV1",
+"0.1.6",
+"Allen Chen",
+"Carl1 Chen",
+"Jack1 Lee",
+"20240606151812"
+],
+[
+"DA40-WJ",
+"RTM4100AH",
+"NPI驗証",
+"D000(ASKEY)",
+"EV",
+"REV1",
+"0.2.1",
+"Liuliu Chen",
+"Frank Chen",
+"May Chen",
+"20240726101515"
+]
+]
+}

@@ -1,0 +1,221 @@
+2021/4/7 下午 03:13:40：Web_AddAparatus：違反 PRIMARY KEY 條件約束 'PK_Apparatus'。無法在物件 'dbo.Apparatus' 中插入重複的索引鍵。
+陳述式已經結束。
+2021/4/7 下午 03:51:22：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 03:51:22：Web_ApparatusReservation：字串或二進位資料會被截斷。
+陳述式已經結束。
+2021/4/7 下午 03:51:22：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 03:51:22：Web_ApparatusReservation：字串或二進位資料會被截斷。
+陳述式已經結束。
+2021/4/7 下午 03:51:22：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 03:51:22：Web_ApparatusReservation：字串或二進位資料會被截斷。
+陳述式已經結束。
+2021/4/7 下午 03:51:22：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 03:51:22：Web_ApparatusReservation：字串或二進位資料會被截斷。
+陳述式已經結束。
+2021/4/7 下午 03:51:22：Web_ApparatusReservation：字串或二進位資料會被截斷。
+陳述式已經結束。
+2021/4/7 下午 03:51:22：Web_ApparatusReservation：字串或二進位資料會被截斷。
+陳述式已經結束。
+2021/4/7 下午 03:51:22：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 03:51:22：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 03:51:22：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 03:51:22：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 03:51:22：Web_ApparatusReservation：字串或二進位資料會被截斷。
+陳述式已經結束。
+2021/4/7 下午 03:51:22：Web_ApparatusReservation：字串或二進位資料會被截斷。
+陳述式已經結束。
+2021/4/7 下午 04:33:36：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2021/4/7 下午 04:33:36：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2021/4/7 下午 04:36:04：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 04:36:04：Web_ApparatusReservation：字串或二進位資料會被截斷。
+陳述式已經結束。
+2021/4/7 下午 04:36:04：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 04:36:04：Web_ApparatusReservation：字串或二進位資料會被截斷。
+陳述式已經結束。
+2021/4/7 下午 04:36:04：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 04:36:04：Web_ApparatusReservation：字串或二進位資料會被截斷。
+陳述式已經結束。
+2021/4/7 下午 04:36:04：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 04:36:04：Web_ApparatusReservation：字串或二進位資料會被截斷。
+陳述式已經結束。
+2021/4/7 下午 04:36:04：Web_ApparatusReservation：字串或二進位資料會被截斷。
+陳述式已經結束。
+2021/4/7 下午 04:36:04：Web_ApparatusReservation：字串或二進位資料會被截斷。
+陳述式已經結束。
+2021/4/7 下午 04:36:04：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 04:36:04：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 04:36:04：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 04:36:04：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 04:36:04：Web_ApparatusReservation：字串或二進位資料會被截斷。
+陳述式已經結束。
+2021/4/7 下午 04:36:04：Web_ApparatusReservation：字串或二進位資料會被截斷。
+陳述式已經結束。
+2021/4/7 下午 04:36:35：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2021/4/7 下午 04:37:42：Web_ApparatusReservation：從字元字串轉換成日期及/或時間時，轉換失敗。
+2021/4/7 下午 04:37:42：Web_ApparatusReservation：字串或二進位資料會被截斷。
+陳述式已經結束。
+2021/4/7 下午 04:37:42：Web_ApparatusReservation：從字元字串轉換成日期及/或時間時，轉換失敗。
+2021/4/7 下午 04:37:42：Web_ApparatusReservation：字串或二進位資料會被截斷。
+陳述式已經結束。
+2021/4/7 下午 04:37:42：Web_ApparatusReservation：從字元字串轉換成日期及/或時間時，轉換失敗。
+2021/4/7 下午 04:37:42：Web_ApparatusReservation：字串或二進位資料會被截斷。
+陳述式已經結束。
+2021/4/7 下午 04:37:42：Web_ApparatusReservation：從字元字串轉換成日期及/或時間時，轉換失敗。
+2021/4/7 下午 04:37:42：Web_ApparatusReservation：字串或二進位資料會被截斷。
+陳述式已經結束。
+2021/4/7 下午 04:37:42：Web_ApparatusReservation：字串或二進位資料會被截斷。
+陳述式已經結束。
+2021/4/7 下午 04:37:42：Web_ApparatusReservation：字串或二進位資料會被截斷。
+陳述式已經結束。
+2021/4/7 下午 04:37:42：Web_ApparatusReservation：從字元字串轉換成日期及/或時間時，轉換失敗。
+2021/4/7 下午 04:37:42：Web_ApparatusReservation：從字元字串轉換成日期及/或時間時，轉換失敗。
+2021/4/7 下午 04:37:42：Web_ApparatusReservation：從字元字串轉換成日期及/或時間時，轉換失敗。
+2021/4/7 下午 04:37:42：Web_ApparatusReservation：從字元字串轉換成日期及/或時間時，轉換失敗。
+2021/4/7 下午 04:37:42：Web_ApparatusReservation：字串或二進位資料會被截斷。
+陳述式已經結束。
+2021/4/7 下午 04:37:42：Web_ApparatusReservation：字串或二進位資料會被截斷。
+陳述式已經結束。
+2021/4/7 下午 04:38:44：Web_ApparatusReservation：字串或二進位資料會被截斷。
+陳述式已經結束。
+2021/4/7 下午 04:38:44：Web_ApparatusReservation：字串或二進位資料會被截斷。
+陳述式已經結束。
+2021/4/7 下午 04:38:44：Web_ApparatusReservation：字串或二進位資料會被截斷。
+陳述式已經結束。
+2021/4/7 下午 04:38:44：Web_ApparatusReservation：字串或二進位資料會被截斷。
+陳述式已經結束。
+2021/4/7 下午 04:38:44：Web_ApparatusReservation：字串或二進位資料會被截斷。
+陳述式已經結束。
+2021/4/7 下午 04:38:44：Web_ApparatusReservation：字串或二進位資料會被截斷。
+陳述式已經結束。
+2021/4/7 下午 04:38:44：Web_ApparatusReservation：字串或二進位資料會被截斷。
+陳述式已經結束。
+2021/4/7 下午 04:38:44：Web_ApparatusReservation：字串或二進位資料會被截斷。
+陳述式已經結束。
+2021/4/7 下午 04:51:15：Web_ApparatusReservation：字串或二進位資料會被截斷。
+陳述式已經結束。
+2021/4/7 下午 04:51:15：Web_ApparatusReservation：字串或二進位資料會被截斷。
+陳述式已經結束。
+2021/4/7 下午 04:51:15：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 04:51:15：Web_ApparatusReservation：字串或二進位資料會被截斷。
+陳述式已經結束。
+2021/4/7 下午 04:51:15：Web_ApparatusReservation：字串或二進位資料會被截斷。
+陳述式已經結束。
+2021/4/7 下午 04:51:15：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 04:51:15：Web_ApparatusReservation：字串或二進位資料會被截斷。
+陳述式已經結束。
+2021/4/7 下午 04:51:15：Web_ApparatusReservation：字串或二進位資料會被截斷。
+陳述式已經結束。
+2021/4/7 下午 04:51:15：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 04:51:15：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 04:51:15：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 04:51:15：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 04:51:15：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 04:51:15：Web_ApparatusReservation：字串或二進位資料會被截斷。
+陳述式已經結束。
+2021/4/7 下午 04:51:15：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 04:51:15：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 04:51:15：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 04:51:15：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 04:51:15：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 04:51:15：Web_ApparatusReservation：字串或二進位資料會被截斷。
+陳述式已經結束。
+2021/4/7 下午 05:00:03：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 05:00:03：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 05:00:03：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 05:00:03：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 05:00:04：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 05:00:04：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 05:00:04：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 05:00:04：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 05:00:04：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 05:00:04：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 05:00:04：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 05:00:04：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 05:03:18：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 05:03:18：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 05:03:18：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 05:03:18：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 05:03:18：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 05:03:18：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 05:03:18：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 05:03:18：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 05:03:18：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 05:03:18：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 05:03:18：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 05:03:18：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 05:06:00：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 05:06:00：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 05:06:00：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 05:06:00：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 05:06:00：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 05:06:00：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 05:06:00：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 05:06:00：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 05:06:00：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 05:06:00：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 05:06:00：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/4/7 下午 05:06:00：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。

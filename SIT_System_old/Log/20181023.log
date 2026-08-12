@@ -1,0 +1,6 @@
+2018/10/23 下午 01:36:40：Web_InsertProject：違反 PRIMARY KEY 條件約束 'PK_Project'。無法在物件 'dbo.Project' 中插入重複的索引鍵。
+陳述式已經結束。
+2018/10/23 下午 01:37:03：Web_InsertProject：違反 PRIMARY KEY 條件約束 'PK_Project'。無法在物件 'dbo.Project' 中插入重複的索引鍵。
+陳述式已經結束。
+2018/10/23 下午 01:38:01：Web_InsertProject：違反 PRIMARY KEY 條件約束 'PK_Project'。無法在物件 'dbo.Project' 中插入重複的索引鍵。
+陳述式已經結束。

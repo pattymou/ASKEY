@@ -1,0 +1,13 @@
+2018/12/25 上午 10:11:14：Web_InsertProject：違反 PRIMARY KEY 條件約束 'PK_Project'。無法在物件 'dbo.Project' 中插入重複的索引鍵。
+陳述式已經結束。
+2018/12/25 上午 10:21:24：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2018/12/25 上午 10:35:11：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2018/12/25 上午 11:02:39：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2018/12/25 下午 02:12:55：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2018/12/25 下午 02:12:55：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2018/12/25 下午 02:27:32：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2018/12/25 下午 03:59:14：Web_InsertProject：違反 PRIMARY KEY 條件約束 'PK_Project'。無法在物件 'dbo.Project' 中插入重複的索引鍵。
+陳述式已經結束。
+2018/12/25 下午 04:01:10：Web_InsertProject：違反 PRIMARY KEY 條件約束 'PK_Project'。無法在物件 'dbo.Project' 中插入重複的索引鍵。
+陳述式已經結束。
+2018/12/25 下午 06:23:22：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。

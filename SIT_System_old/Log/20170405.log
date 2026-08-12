@@ -1,0 +1,4 @@
+2017/4/5 下午 02:12:44：Web_AddGoods：位於資料表 'dbo.Goods' 的識別欄位其外顯值只有當使用了資料行清單且 IDENTITY_INSERT 為 ON 時才能指定。
+2017/4/5 下午 02:15:24：Web_AddGoods：位於資料表 'dbo.Goods' 的識別欄位其外顯值只有當使用了資料行清單且 IDENTITY_INSERT 為 ON 時才能指定。
+2017/4/5 下午 02:16:43：Web_AddGoods：位於資料表 'dbo.Goods' 的識別欄位其外顯值只有當使用了資料行清單且 IDENTITY_INSERT 為 ON 時才能指定。
+2017/4/5 下午 02:25:58：Web_AddGoods：位於資料表 'dbo.Goods' 的識別欄位其外顯值只有當使用了資料行清單且 IDENTITY_INSERT 為 ON 時才能指定。

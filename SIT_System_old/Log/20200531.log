@@ -1,0 +1,10 @@
+2020/5/31 下午 04:50:56：Web_Application_N：無效的物件名稱 'dbo.Application_TestCase_Temporarily'。
+2020/5/31 下午 04:51:59：Web_Application_N：無效的物件名稱 'dbo.Application_TestCase_Temporarily'。
+2020/5/31 下午 04:53:51：Web_ModifyApplication：無效的物件名稱 'dbo.Application_TestCase_Temporarily'。
+2020/5/31 下午 05:03:44：Web_InsertProject：違反 PRIMARY KEY 條件約束 'PK_Project'。無法在物件 'dbo.Project' 中插入重複的索引鍵。
+陳述式已經結束。
+2020/5/31 下午 08:00:07：Web_InsertProject：違反 PRIMARY KEY 條件約束 'PK_Project'。無法在物件 'dbo.Project' 中插入重複的索引鍵。
+陳述式已經結束。
+2020/5/31 下午 08:10:23：Web_InsertProject：違反 PRIMARY KEY 條件約束 'PK_Project'。無法在物件 'dbo.Project' 中插入重複的索引鍵。
+陳述式已經結束。
+2020/5/31 下午 08:28:17：Web_ModifyApplication：無效的物件名稱 'dbo.Application_TestCase_Temporarily'。

@@ -1,0 +1,2 @@
+2017/10/26 上午 09:37:47：Web_ApparatusReservation：位於資料表 'dbo.GoodsReservation' 的識別欄位其外顯值只有當使用了資料行清單且 IDENTITY_INSERT 為 ON 時才能指定。
+2017/10/26 上午 09:45:53：Web_ApparatusReservation：位於資料表 'dbo.GoodsReservation' 的識別欄位其外顯值只有當使用了資料行清單且 IDENTITY_INSERT 為 ON 時才能指定。

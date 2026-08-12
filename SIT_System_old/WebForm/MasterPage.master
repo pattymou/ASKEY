@@ -1,0 +1,218 @@
+﻿
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="WebForm_MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>SIT System</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="stylesheet" type="text/css" href="../css/base.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/text.css" />
+
+<style >
+
+
+.DynamicMenuStyle /*動態菜單矩形區域樣式*/
+{
+	width: 140px;
+    background-color: white;
+    border: solid 1px #ACC3DF;
+    padding: 1px 1px 1px 1px;
+    text-align: left;
+}
+
+.DynamicHoverStyle /*動態菜單項:鼠標懸停時的樣式*/
+{
+    background-color: #F7DFA5; /*#7C6F57;*/
+    color: #333333;
+}
+
+.DynamicSelectedStyle /*動態菜單項:選擇時的樣式*/
+{
+    /*background-color:Gainsboro;*/
+    color: red;
+}
+
+.DynamicMenuItemStyle /*動態菜單項樣式*/
+{
+    padding: 2px 5px 2px 5px;
+    color: #333333;
+    width: 140px;
+}
+
+
+.StaticSelectedStyle /*靜態菜單項:選擇時的樣式*/
+{
+    /*background-color:Gainsboro;*/
+    color: red;
+    
+}
+
+.StaticMenuItemStyle /*靜態菜單項樣式*/
+{
+	    width: 140px;
+        background-color: Transparent;
+        color: #000;
+        text-align: center;
+        height: 30px;
+        line-height: 30px;
+        margin-right: 5px;
+        border: solid 1px #ACC3DF;
+
+}
+
+.StaticHoverStyle /*靜態菜單選項:鼠標懸停時的樣式*/
+{
+    background-color: #84BCCD; /*#7C6F57;*/
+    cursor: hand;
+    color: #333333;
+}
+
+
+</style>
+    
+    </head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server" />   
+    <%--<div id="wrapper">--%>  
+        <div id="header">
+            <div id="headerInner">
+                <div id="headerBody">
+                    <div id="site_title">
+                        <table >
+                            <tr>
+                                <td rowspan=2>
+                                    <asp:Image ID="Image1" runat="server" Height="100px" 
+                                        ImageUrl="~/images/sitlogo.png" Width="100px" />
+                                </td>  
+                                
+                                <td >
+                                    <asp:Menu ID="mnuTopMenu" runat="server" DynamicEnableDefaultPopOutImage="False"
+                                        DynamicHorizontalOffset="-1" Font-Bold="True" Orientation="Horizontal" StaticEnableDefaultPopOutImage="False"
+                                        StaticSubMenuIndent="10px" DisappearAfter="600" 
+                                        StaticSelectedStyle-CssClass="StaticSelectedStyle"
+                                        StaticMenuItemStyle-CssClass="StaticMenuItemStyle"
+                                        StaticHoverStyle-CssClass="StaticHoverStyle"
+                                        DynamicMenuStyle-CssClass="DynamicMenuStyle"
+                                        DynamicSelectedStyle-CssClass="DynamicSelectedStyle"
+                                        DynamicMenuItemStyle-CssClass="DynamicMenuItemStyle"
+                                        DynamicHoverStyle-CssClass="DynamicHoverStyle" Font-Names="微軟正黑體" Font-Size="12pt"
+                                          >
+                                        <Items></Items>
+                                        <StaticSelectedStyle CssClass="StaticSelectedStyle"></StaticSelectedStyle>
+
+                                        <StaticMenuItemStyle CssClass="StaticMenuItemStyle"></StaticMenuItemStyle>
+
+                                        <DynamicHoverStyle CssClass="DynamicHoverStyle"></DynamicHoverStyle>
+
+                                        <DynamicMenuStyle CssClass="DynamicMenuStyle"></DynamicMenuStyle>
+
+                                        <DynamicSelectedStyle CssClass="DynamicSelectedStyle"></DynamicSelectedStyle>
+
+                                        <DynamicMenuItemStyle CssClass="DynamicMenuItemStyle"></DynamicMenuItemStyle>
+
+                                        <StaticHoverStyle CssClass="StaticHoverStyle"></StaticHoverStyle>
+                                    </asp:Menu>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td >
+                                    <asp:Menu ID="mnuTopMenu1" runat="server" DynamicEnableDefaultPopOutImage="False"
+                                        DynamicHorizontalOffset="-1" Font-Bold="True" Orientation="Horizontal" StaticEnableDefaultPopOutImage="False"
+                                        StaticSubMenuIndent="10px" DisappearAfter="600" 
+                                        StaticSelectedStyle-CssClass="StaticSelectedStyle"
+                                        StaticMenuItemStyle-CssClass="StaticMenuItemStyle"
+                                        StaticHoverStyle-CssClass="StaticHoverStyle"
+                                        DynamicMenuStyle-CssClass="DynamicMenuStyle"
+                                        DynamicSelectedStyle-CssClass="DynamicSelectedStyle"
+                                        DynamicMenuItemStyle-CssClass="DynamicMenuItemStyle"
+                                        DynamicHoverStyle-CssClass="DynamicHoverStyle" Font-Names="微軟正黑體" Font-Size="12pt"
+                                          >
+                                        <Items></Items>
+                                        <StaticSelectedStyle CssClass="StaticSelectedStyle"></StaticSelectedStyle>
+                                        
+
+                                        <StaticMenuItemStyle CssClass="StaticMenuItemStyle"></StaticMenuItemStyle>
+
+                                        <DynamicHoverStyle CssClass="DynamicHoverStyle"></DynamicHoverStyle>
+
+                                        <DynamicMenuStyle CssClass="DynamicMenuStyle"></DynamicMenuStyle>
+
+                                        <DynamicSelectedStyle CssClass="DynamicSelectedStyle"></DynamicSelectedStyle>
+
+                                        <DynamicMenuItemStyle CssClass="DynamicMenuItemStyle"></DynamicMenuItemStyle>
+
+                                        <StaticHoverStyle CssClass="StaticHoverStyle"></StaticHoverStyle>
+                                    </asp:Menu>
+                                </td>
+                                
+                            </tr>
+                        </table>
+                        
+                    </div>
+                </div>
+                <table style="text-align :right" width =100%>
+                        <tr>
+                            <%--<td >
+                                <asp:LinkButton ID="LinkButton2" runat="server" onclick="linkHomePage_Click" 
+                                    ForeColor="Black" Font-Size="Medium">[回首頁] </asp:LinkButton>
+                            </td>--%>
+                            <td >
+                                <asp:LinkButton ID="LinkButton3" runat="server" onclick="linkHomePage_Click" 
+                                    ForeColor="Black" Font-Size="Medium">[最新公告] </asp:LinkButton>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <asp:LinkButton ID="LinkButton1" runat="server" onclick="linkLogout_Click" 
+                                    ForeColor="Black" Font-Size="Medium">[登出] </asp:LinkButton>
+                            </td>
+                        </tr>
+                </table>
+            </div>
+        </div>
+        <!-- header end -->
+        <!-- main start -->
+        <div id="body1" >
+            <div >
+                <div>
+                    <table style="width:100%; height:100%">
+                        <tr>
+                            <td style="width:100%; height:700px"  align="left" valign="top" clear="both">
+                            
+                                <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">  
+                                </asp:ContentPlaceHolder>                   
+                            </td>
+                        </tr>
+                    </table>
+                    <%--<table style="width:100%; height:700px" align="left" >
+                        <tr valign="top">
+                            <td >
+                            
+                                <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">  
+                                </asp:ContentPlaceHolder>                   
+                            </td>
+                        </tr>
+                    </table>--%>
+                </div>
+                                
+            </div>
+        </div>
+
+        <!-- main end -->
+        <!-- footer start -->   
+        
+        
+        
+        <div id="footer">
+            <div id="footerInner">
+                <address>Copyright (C) 2014 SIT All Rights Reserved.</address>
+                
+            </div>
+        </div>
+        <!-- footer end -->
+    <%--</div>--%>
+    </form>
+</body>
+</html>

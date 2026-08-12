@@ -1,0 +1,2 @@
+2022/3/3 下午 04:06:12：Web_InsertProject：違反 PRIMARY KEY 條件約束 'PK_Project_Temporarily'。無法在物件 'dbo.Project_Temporarily' 中插入重複的索引鍵。
+陳述式已經結束。

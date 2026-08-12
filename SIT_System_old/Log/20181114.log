@@ -1,0 +1,5 @@
+2018/11/14 下午 01:40:08：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2018/11/14 下午 04:14:47：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2018/11/14 下午 05:52:42：Web_AddAparatus：違反 PRIMARY KEY 條件約束 'PK_Apparatus'。無法在物件 'dbo.Apparatus' 中插入重複的索引鍵。
+陳述式已經結束。
+2018/11/14 下午 06:51:05：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。

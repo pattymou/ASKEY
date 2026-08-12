@@ -1,0 +1,5 @@
+2018/7/12 下午 02:00:52：Web_InsertProject：違反 PRIMARY KEY 條件約束 'PK_Project'。無法在物件 'dbo.Project' 中插入重複的索引鍵。
+陳述式已經結束。
+2018/7/12 下午 03:26:09：Web_ProjectTask：將 varchar 值 'yj35' 轉換成資料類型 int 時，轉換失敗。
+2018/7/12 下午 03:26:09：Web_ProjectTask：將 varchar 值 'yj35' 轉換成資料類型 int 時，轉換失敗。
+2018/7/12 下午 03:26:09：Web_ProjectTask：將 varchar 值 'yj35' 轉換成資料類型 int 時，轉換失敗。

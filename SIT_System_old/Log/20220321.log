@@ -1,0 +1,4 @@
+2022/3/21 下午 03:36:25：Web_AddAparatus：違反 PRIMARY KEY 條件約束 'PK_Apparatus'。無法在物件 'dbo.Apparatus' 中插入重複的索引鍵。
+陳述式已經結束。
+2022/3/21 下午 04:42:32：Web_AddAparatus：違反 PRIMARY KEY 條件約束 'PK_Apparatus'。無法在物件 'dbo.Apparatus' 中插入重複的索引鍵。
+陳述式已經結束。

@@ -1,0 +1,12 @@
+2021/3/24 上午 10:47:14：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2021/3/24 上午 11:01:17：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2021/3/24 下午 04:52:59：Web_AddAparatus：違反 PRIMARY KEY 條件約束 'PK_Apparatus'。無法在物件 'dbo.Apparatus' 中插入重複的索引鍵。
+陳述式已經結束。
+2021/3/24 下午 04:53:56：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/3/24 下午 04:53:56：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/3/24 下午 06:36:44：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。
+2021/3/24 下午 06:36:44：Web_ApparatusReservation：將 varchar 資料類型轉換成 datetime 資料類型時，產生超出範圍的值。
+陳述式已經結束。

@@ -1,0 +1,4 @@
+2020/5/20 上午 08:32:02：Web_ModifyApplication：無效的物件名稱 'dbo.Application_TestCase_Temporarily'。
+2020/5/20 上午 08:51:20：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2020/5/20 上午 08:51:20：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2020/5/20 下午 04:34:12：Web_ModifyApplication：無效的物件名稱 'dbo.Application_TestCase_Temporarily'。

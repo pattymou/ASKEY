@@ -1,0 +1,13 @@
+2022/6/2 上午 09:38:31：Web_InsertProject：違反 PRIMARY KEY 條件約束 'PK_Project_Temporarily'。無法在物件 'dbo.Project_Temporarily' 中插入重複的索引鍵。
+陳述式已經結束。
+2022/6/2 上午 09:38:32：Web_InsertProject：違反 PRIMARY KEY 條件約束 'PK_Project_Temporarily'。無法在物件 'dbo.Project_Temporarily' 中插入重複的索引鍵。
+陳述式已經結束。
+2022/6/2 上午 09:38:33：Web_InsertProject：違反 PRIMARY KEY 條件約束 'PK_Project_Temporarily'。無法在物件 'dbo.Project_Temporarily' 中插入重複的索引鍵。
+陳述式已經結束。
+2022/6/2 上午 09:41:26：Web_InsertProject：違反 PRIMARY KEY 條件約束 'PK_Project_Temporarily'。無法在物件 'dbo.Project_Temporarily' 中插入重複的索引鍵。
+陳述式已經結束。
+2022/6/2 上午 10:54:39：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2022/6/2 下午 10:51:51：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2022/6/2 下午 10:51:51：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2022/6/2 下午 10:52:32：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2022/6/2 下午 10:52:32：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。

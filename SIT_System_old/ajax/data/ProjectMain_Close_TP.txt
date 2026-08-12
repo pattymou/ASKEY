@@ -1,0 +1,385 @@
+{
+"data":[
+[
+"AP5001W"
+],
+[
+"AP5010W/B"
+],
+[
+"AP5100W"
+],
+[
+"AP5640W"
+],
+[
+"CAM3103BETWLP"
+],
+[
+"CAM3105AWP"
+],
+[
+"Charter - Test plan / Report template (2rd PRD)"
+],
+[
+"Charter-11ax(未開案)"
+],
+[
+"CHE1314D"
+],
+[
+"DES Low Cost CPE sample"
+],
+[
+"DHC0100 (DS) wireless performance"
+],
+[
+"DPI1011R"
+],
+[
+"Fastweb"
+],
+[
+"N55C1_D1/N66U WAN connect test"
+],
+[
+"PCA5900"
+],
+[
+"PKE1320SW"
+],
+[
+"PKE1334D"
+],
+[
+"PKE1346SW"
+],
+[
+"PKE1845SG"
+],
+[
+"RAC2V1K"
+],
+[
+"RG1000"
+],
+[
+"RG1000W"
+],
+[
+"RG1006"
+],
+[
+"RG3000W"
+],
+[
+"RG3000W function test plan"
+],
+[
+"RG8000 test plan update"
+],
+[
+"RG8000W (FW.1.6.21)"
+],
+[
+"RG8000W (FW.1.7.0)"
+],
+[
+"RG8000W (FW1.8.8) RC2 system verification"
+],
+[
+"RG8000W Askey version APP verification"
+],
+[
+"RG8000W RC3 sytem verification"
+],
+[
+"RG8000W RC4 system verification"
+],
+[
+"RG8000W RC5 basic function system verification"
+],
+[
+"RT2105VW"
+],
+[
+"RT2380W"
+],
+[
+"RT2381W"
+],
+[
+"RT4230"
+],
+[
+"RT4230W"
+],
+[
+"RT4230W phase1 SIT verification"
+],
+[
+"RT5100W"
+],
+[
+"RTA4320"
+],
+[
+"RTA7405W"
+],
+[
+"RTA9225W"
+],
+[
+"RTA9227W"
+],
+[
+"RTF3505VW"
+],
+[
+"RTF8105VW"
+],
+[
+"RTF8115VW"
+],
+[
+"RTF9011VW"
+],
+[
+"RTL0010 samples release test for Middle East"
+],
+[
+"RTL0010 samples release test for South Africa"
+],
+[
+"RTL0010VW"
+],
+[
+"RTL0010VW Sample Release test"
+],
+[
+"RTL0010VW Sample release test_Afrimax_Ike"
+],
+[
+"RTL0010VW Sample release test_France_Vincent"
+],
+[
+"RTL0010VW Sample release test_Indonesia_Ike"
+],
+[
+"RTL0010VW Sample release test_Iran_Amelia"
+],
+[
+"RTL0010VW Sample release test_Japan_Irene"
+],
+[
+"RTL0010VW Sample release test_Norway_Peter"
+],
+[
+"RTL0010VW Sample release test_Philippine_Ike"
+],
+[
+"RTL0010VW Sample release test_Russia_Bato"
+],
+[
+"RTL0010VW Sample release test_South Africa~"
+],
+[
+"RTL0010VW samples release test for HK"
+],
+[
+"RTL0010VW Smaple release"
+],
+[
+"RTL0010VW Tele2 sample release test"
+],
+[
+"RTL0010VW Zyxel sample release test"
+],
+[
+"RTL0011VW"
+],
+[
+"RTL0012W"
+],
+[
+"RTL0020/0021"
+],
+[
+"RTL0020VW"
+],
+[
+"RTL0021"
+],
+[
+"RTL0030 for Tiger"
+],
+[
+"RTL0030VW"
+],
+[
+"RTL0030VW sample release test"
+],
+[
+"RTL0030VW sample test"
+],
+[
+"RTL0030VW V0.0.2 Function Test"
+],
+[
+"RTL0030W ES version test"
+],
+[
+"RTL0040W"
+],
+[
+"RTL0080VW"
+],
+[
+"RTV1515VW"
+],
+[
+"RTV1808VW"
+],
+[
+"RTV1900VW"
+],
+[
+"RTV1900VW wireless performance test (DV)"
+],
+[
+"RTV1900W"
+],
+[
+"RTV1905VW"
+],
+[
+"RTV1905VW (ES) RF test"
+],
+[
+"RTV1905VW (ES) wireless performance"
+],
+[
+"RTV1905VW (ES) wireless performance (Airgain)"
+],
+[
+"RTV1907VW"
+],
+[
+"RTV1908VW"
+],
+[
+"RTV1909VW"
+],
+[
+"RTV1915VW"
+],
+[
+"RTV1916VW"
+],
+[
+"RTV1916W"
+],
+[
+"RTV1918VW"
+],
+[
+"RTV1926W"
+],
+[
+"RTV7505W"
+],
+[
+"RTV7705VW"
+],
+[
+"RTV7705VW throughput test (Telefonica request)"
+],
+[
+"RTV7805VW"
+],
+[
+"RTV7905VW"
+],
+[
+"RTV9015VW"
+],
+[
+"RTV9015W WLAN throughput for sample release"
+],
+[
+"RTV9025VW"
+],
+[
+"SEI for KDDI"
+],
+[
+"SHG0001W"
+],
+[
+"StarGate V2 LOS benchmark"
+],
+[
+"STC2100"
+],
+[
+"STI3040"
+],
+[
+"WWDC020"
+],
+[
+"WWRC050"
+],
+[
+"WWRC050 cat 6 MiFi SIT verfication"
+],
+[
+"WWRC050 Sample release test for Final Elisa"
+],
+[
+"WWRC051 Sample release for Indonesia XL_Ike"
+],
+[
+"WWRC051 Sample release for Japan_Lance"
+],
+[
+"WWRC051(RoHS) Sample release for DES"
+],
+[
+"WWRC051(RoHS) Sample release for GP"
+],
+[
+"WWRC051(RoHS) Sample release for some customers"
+],
+[
+"WWRC051Sample release for some customers"
+],
+[
+"WWRC052"
+],
+[
+"WWRC060"
+],
+[
+"WWRC060 sample release test"
+],
+[
+"WWRC060 samples release test for Iran"
+],
+[
+"WWRC060 Samples release test_Brazil"
+],
+[
+"WWRC060 Samples release test_Chile"
+],
+[
+"WWRC060 Samples release test_South Africa"
+],
+[
+"WWRS010 SIT test (DV)"
+],
+[
+"台北RTL0010VW bolt sample release test"
+]
+]
+}

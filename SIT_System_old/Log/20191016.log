@@ -1,0 +1,3 @@
+2019/10/16 下午 12:00:28：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2019/10/16 下午 01:58:43：Web_AddWeeklyReport：接近 's外測需求完成' 之處的語法不正確。
+遺漏字元字串 ')' 後面的引號。

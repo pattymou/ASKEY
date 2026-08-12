@@ -1,0 +1,8 @@
+2018/6/28 上午 09:52:18：Web_InsertProject：違反 PRIMARY KEY 條件約束 'PK_Project'。無法在物件 'dbo.Project' 中插入重複的索引鍵。
+陳述式已經結束。
+2018/6/28 上午 09:55:05：Web_InsertProject：違反 PRIMARY KEY 條件約束 'PK_Project'。無法在物件 'dbo.Project' 中插入重複的索引鍵。
+陳述式已經結束。
+2018/6/28 上午 11:09:58：Web_UserView1：無效的資料行名稱 'Name_En'。
+2018/6/28 上午 11:11:16：Web_UserView1：無效的資料行名稱 'Name_En'。
+2018/6/28 下午 06:23:35：Web_AddGoods：字串或二進位資料會被截斷。
+陳述式已經結束。

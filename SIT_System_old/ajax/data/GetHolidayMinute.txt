@@ -1,0 +1,36 @@
+USE [SIT]
+GO
+/****** Object:  UserDefinedFunction [dbo].[GetWorkMinute]    Script Date: 07/01/2015 16:11:37 ******/
+IF OBJECT_ID (N'dbo.[GetHolidayMinute]', N'FN') IS NOT NULL  
+    DROP FUNCTION dbo.[GetHolidayMinute];  
+GO  
+CREATE     FUNCTION [GetHolidayMinute]  
+(  
+     @startDate DATETIME ,  
+     @endDate DATETIME  
+)  
+RETURNS int 
+AS  
+--程式開始的區塊，類似C、php的大括號  
+Begin  
+    --定義變數的保留字declare  
+    declare @i int,@x DATETIME,@resultMin int  
+     --值帶給變數的時候前面要加set  
+ 
+    declare @weekdays int  
+    set @i = 0  
+    if @startDate is not null and @endDate is not null  
+        set @weekdays = 0         
+ 
+        --取申請日期和建置日期中有幾個假日  
+        while  @i<=DateDiff(day,@startDate,@endDate)  
+            begin     
+                set @x=DateAdd(day,@i,@startDate)     
+                if DatePart(weekday,@x)=1 or DatePart(weekday,@x)=7               
+                    set @weekdays=@weekdays+1         
+                    set @i=@i+1               
+            end  
+
+set @resultMin=@weekdays*24*60
+return @resultMin  
+END 

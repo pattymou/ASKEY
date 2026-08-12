@@ -1,0 +1,17 @@
+{
+"data":[
+[
+"",
+"NCQ2101B2",
+"NPI驗証",
+"D156(T-Mobile)",
+"EV",
+"IPQ (EV) => V03  SDX62 (EV1) => REV3",
+"V0.00.01.6  2_Module_STD_V1.4.0.0_210827.1_m",
+"Luke Wu",
+"Denny Hsieh",
+"Jerry6 Hu/ YRuby Hsu",
+"20211001094826"
+]
+]
+}

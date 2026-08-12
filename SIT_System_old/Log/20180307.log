@@ -1,0 +1,4 @@
+2018/3/7 下午 03:38:25：Web_AddTestCase：違反 PRIMARY KEY 條件約束 'PK_Customer_TestCase'。無法在物件 'dbo.Customer_TestCase' 中插入重複的索引鍵。
+陳述式已經結束。
+2018/3/7 下午 03:44:06：Web_AddTestCase：違反 PRIMARY KEY 條件約束 'PK_Customer_TestCase'。無法在物件 'dbo.Customer_TestCase' 中插入重複的索引鍵。
+陳述式已經結束。

@@ -1,0 +1,91 @@
+2020/12/28 上午 08:29:42：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。
+2020/12/28 上午 09:03:09：Web_ProjectTask：無效的資料行名稱 'Pass'。
+2020/12/28 上午 09:03:09：Web_ProjectTask：無效的資料行名稱 'Pass'。
+2020/12/28 上午 09:03:09：Web_ProjectTask：無效的資料行名稱 'Pass'。
+2020/12/28 上午 09:03:09：Web_ProjectTask：無效的資料行名稱 'Pass'。
+2020/12/28 上午 09:03:09：Web_ProjectTask：無效的資料行名稱 'Pass'。
+2020/12/28 上午 09:03:09：Web_ProjectTask：無效的資料行名稱 'Pass'。
+2020/12/28 上午 09:03:09：Web_ProjectTask：無效的資料行名稱 'Pass'。
+2020/12/28 上午 09:03:09：Web_ProjectTask：無效的資料行名稱 'Pass'。
+2020/12/28 上午 09:03:09：Web_ProjectTask：無效的資料行名稱 'Pass'。
+2020/12/28 上午 09:03:09：Web_ProjectTask：無效的資料行名稱 'Pass'。
+2020/12/28 上午 09:03:09：Web_ProjectTask：無效的資料行名稱 'Pass'。
+2020/12/28 上午 09:03:09：Web_ProjectTask：無效的資料行名稱 'Pass'。
+2020/12/28 上午 09:03:09：Web_ProjectTask：無效的資料行名稱 'Pass'。
+2020/12/28 上午 09:03:09：Web_ProjectTask：無效的資料行名稱 'Pass'。
+2020/12/28 上午 09:03:09：Web_ProjectTask：無效的資料行名稱 'Pass'。
+2020/12/28 上午 09:03:09：Web_ProjectTask：無效的資料行名稱 'Pass'。
+2020/12/28 上午 09:03:09：Web_ProjectTask：無效的資料行名稱 'Pass'。
+2020/12/28 上午 09:03:09：Web_ProjectTask：無效的資料行名稱 'Pass'。
+2020/12/28 上午 09:03:09：Web_ProjectTask：無效的資料行名稱 'Pass'。
+2020/12/28 上午 09:03:09：Web_ProjectTask：無效的資料行名稱 'Pass'。
+2020/12/28 上午 09:03:09：Web_ProjectTask：無效的資料行名稱 'Pass'。
+2020/12/28 上午 09:03:09：Web_ProjectTask：無效的資料行名稱 'Pass'。
+2020/12/28 上午 09:03:09：Web_ProjectTask：無效的資料行名稱 'Pass'。
+2020/12/28 上午 09:03:09：Web_ProjectTask：無效的資料行名稱 'Pass'。
+2020/12/28 上午 09:03:09：Web_ProjectTask：無效的資料行名稱 'Pass'。
+2020/12/28 上午 09:03:09：Web_ProjectTask：無效的資料行名稱 'Pass'。
+2020/12/28 上午 09:03:09：Web_ProjectTask：無效的資料行名稱 'Pass'。
+2020/12/28 上午 09:03:09：Web_ProjectTask：無效的資料行名稱 'Pass'。
+2020/12/28 上午 09:03:09：Web_ProjectTask：無效的資料行名稱 'Pass'。
+2020/12/28 上午 09:03:09：Web_ProjectTask：無效的資料行名稱 'Pass'。
+2020/12/28 上午 09:03:09：Web_ProjectTask：無效的資料行名稱 'Pass'。
+2020/12/28 上午 09:03:09：Web_ProjectTask：無效的資料行名稱 'Pass'。
+2020/12/28 上午 09:03:09：Web_ProjectTask：無效的資料行名稱 'Pass'。
+2020/12/28 上午 09:03:09：Web_ProjectTask：無效的資料行名稱 'Pass'。
+2020/12/28 上午 09:03:09：Web_ProjectTask：無效的資料行名稱 'Pass'。
+2020/12/28 上午 09:03:09：Web_ProjectTask：無效的資料行名稱 'Pass'。
+2020/12/28 上午 09:03:09：Web_ProjectTask：無效的資料行名稱 'Pass'。
+2020/12/28 上午 09:03:09：Web_ProjectTask：無效的資料行名稱 'Pass'。
+2020/12/28 上午 11:00:31：Web_AddAparatus：違反 PRIMARY KEY 條件約束 'PK_Apparatus'。無法在物件 'dbo.Apparatus' 中插入重複的索引鍵。
+陳述式已經結束。
+2020/12/28 上午 11:59:58：Web_AddAparatus：字串或二進位資料會被截斷。
+陳述式已經結束。
+2020/12/28 下午 12:00:41：Web_AddAparatus：字串或二進位資料會被截斷。
+陳述式已經結束。
+2020/12/28 下午 12:01:15：Web_AddAparatus：字串或二進位資料會被截斷。
+陳述式已經結束。
+2020/12/28 下午 12:01:35：Web_AddAparatus：字串或二進位資料會被截斷。
+陳述式已經結束。
+2020/12/28 下午 12:01:58：Web_AddAparatus：字串或二進位資料會被截斷。
+陳述式已經結束。
+2020/12/28 下午 01:50:03：Web_AddAparatus：字串或二進位資料會被截斷。
+陳述式已經結束。
+2020/12/28 下午 01:50:48：Web_AddAparatus：字串或二進位資料會被截斷。
+陳述式已經結束。
+2020/12/28 下午 01:51:56：Web_AddAparatus：字串或二進位資料會被截斷。
+陳述式已經結束。
+2020/12/28 下午 01:53:13：Web_AddAparatus：字串或二進位資料會被截斷。
+陳述式已經結束。
+2020/12/28 下午 01:53:50：Web_AddAparatus：字串或二進位資料會被截斷。
+陳述式已經結束。
+2020/12/28 下午 01:54:18：Web_AddAparatus：字串或二進位資料會被截斷。
+陳述式已經結束。
+2020/12/28 下午 01:57:21：Web_AddAparatus：字串或二進位資料會被截斷。
+陳述式已經結束。
+2020/12/28 下午 02:00:24：Web_AddAparatus：字串或二進位資料會被截斷。
+陳述式已經結束。
+2020/12/28 下午 02:01:22：Web_AddAparatus：字串或二進位資料會被截斷。
+陳述式已經結束。
+2020/12/28 下午 02:03:19：Web_AddAparatus：字串或二進位資料會被截斷。
+陳述式已經結束。
+2020/12/28 下午 02:03:42：Web_AddAparatus：字串或二進位資料會被截斷。
+陳述式已經結束。
+2020/12/28 下午 02:07:04：Web_AddAparatus：字串或二進位資料會被截斷。
+陳述式已經結束。
+2020/12/28 下午 02:07:17：Web_AddAparatus：字串或二進位資料會被截斷。
+陳述式已經結束。
+2020/12/28 下午 02:16:12：Web_AddAparatus：字串或二進位資料會被截斷。
+陳述式已經結束。
+2020/12/28 下午 02:16:34：Web_AddAparatus：字串或二進位資料會被截斷。
+陳述式已經結束。
+2020/12/28 下午 02:17:58：Web_AddAparatus：字串或二進位資料會被截斷。
+陳述式已經結束。
+2020/12/28 下午 02:18:33：Web_AddAparatus：字串或二進位資料會被截斷。
+陳述式已經結束。
+2020/12/28 下午 02:26:02：Web_AddAparatus：字串或二進位資料會被截斷。
+陳述式已經結束。
+2020/12/28 下午 02:38:28：Web_AddAparatus：字串或二進位資料會被截斷。
+陳述式已經結束。
+2020/12/28 下午 02:42:15：Web_ApparatusReservation：字串或二進位資料會被截斷。
+陳述式已經結束。

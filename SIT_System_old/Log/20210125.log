@@ -1,0 +1,5 @@
+2021/1/25 上午 08:52:40：Web_InsertInfoData：資料行名稱或提供的數值數量與資料表定義不相符。
+2021/1/25 上午 09:25:31：Web_InsertInfoData：資料行名稱或提供的數值數量與資料表定義不相符。
+2021/1/25 上午 09:26:02：Web_InsertInfoData：資料行名稱或提供的數值數量與資料表定義不相符。
+2021/1/25 上午 09:27:13：Web_InsertInfoData：資料行名稱或提供的數值數量與資料表定義不相符。
+2021/1/25 上午 09:36:35：Web_SendMail：至少必須指定下列其中一個參數。"@recipients, @copy_recipients, @blind_copy_recipients"。

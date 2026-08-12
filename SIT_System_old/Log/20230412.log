@@ -1,0 +1,8 @@
+2023/4/12 上午 09:02:53：Web_InsertProject：違反 PRIMARY KEY 條件約束 'PK_Project_Temporarily'。無法在物件 'dbo.Project_Temporarily' 中插入重複的索引鍵。
+陳述式已經結束。
+2023/4/12 上午 09:02:55：Web_InsertProject：違反 PRIMARY KEY 條件約束 'PK_Project_Temporarily'。無法在物件 'dbo.Project_Temporarily' 中插入重複的索引鍵。
+陳述式已經結束。
+2023/4/12 上午 09:03:32：Web_InsertProject：違反 PRIMARY KEY 條件約束 'PK_Project_Temporarily'。無法在物件 'dbo.Project_Temporarily' 中插入重複的索引鍵。
+陳述式已經結束。
+2023/4/12 上午 09:03:47：Web_InsertProject：違反 PRIMARY KEY 條件約束 'PK_Project_Temporarily'。無法在物件 'dbo.Project_Temporarily' 中插入重複的索引鍵。
+陳述式已經結束。

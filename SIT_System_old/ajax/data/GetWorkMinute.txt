@@ -1,0 +1,73 @@
+USE [SIT]
+GO
+/****** Object:  UserDefinedFunction [dbo].[GetWorkMinute]    Script Date: 07/01/2015 16:11:37 ******/
+IF OBJECT_ID (N'dbo.GetWorkMinute', N'FN') IS NOT NULL  
+    DROP FUNCTION dbo.GetWorkMinute;  
+GO  
+CREATE     FUNCTION GetWorkMinute  
+(  
+     @startDate DATETIME ,  
+     @endDate DATETIME  
+)  
+RETURNS int 
+AS  
+--程式開始的區塊，類似C、php的大括號  
+Begin  
+    --定義變數的保留字declare  
+    declare @DayMinute int,@s_Minute int,@s_Minute2 int,@i int,@x DATETIME,@resultMin int  
+     --值帶給變數的時候前面要加set  
+  set @DayMinute = 8*60    --1天上班小時  
+    set @s_Minute = 9*60     --早上點上班  
+    set @s_Minute2 = 18.5*60   --下午點下班     
+    declare @weekdays int,@totalDay int,@bgMin int,@endMin int  
+    set @i = 0  
+    if @startDate is not null and @endDate is not null  
+        set @weekdays = 0         
+        --計算申請日期和建置完成日期差幾天  
+        set @totalDay=DateDiff(day,@startDate,@endDate)   
+        --開始時間換算為分鐘  
+        set @bgMin=(DatePart(hour,@startDate)*60+DatePart(minute,@startDate))  
+        --建置完成時間換算成分鐘  
+        set @endMin=(DatePart(hour,@endDate)*60+DatePart(minute,@endDate))  
+        --取申請日期和建置日期中有幾個假日  
+        while  @i<=DateDiff(day,@startDate,@endDate)  
+            begin     
+                set @x=DateAdd(day,@i,@startDate)     
+                if DatePart(weekday,@x)=1 or DatePart(weekday,@x)=7               
+                    set @weekdays=@weekdays+1         
+                    set @i=@i+1               
+            end  
+--計算總花費時間  
+--若申請時間、建置時間相隔超過一天  
+--    (公司下班時間- 申請時間) + (建置完成時間- 公司上班時間) + 中間相隔天數*8 *60 -日期區間中的六、日  
+--否則  
+--     建置時間- 開始時間  
+if @totalDay>=1  
+    --跨天  
+    begin         
+        set @resultMin= abs(@s_Minute2-@bgMin)+abs(@endMin-@s_Minute)+((@totalDay-1)*@DayMinute)-(@weekdays*@DayMinute)  
+    end   
+else  
+    --同一天  
+    begin  
+        set @resultMin=abs(@endMin-@bgMin)  
+    end  
+
+--判斷有沒有經過中午，有的話扣掉中午休息時間  
+if @totalDay>=1   
+    --跨天  
+    begin  
+        if  DatePart(hour,@startDate) <12   
+            set @resultMin=@resultMin-90  
+        if  DatePart(hour,@endDate) >12   
+            set @resultMin=@resultMin-90  
+    end       
+else  
+    begin  
+        --同一天  
+        if   DatePart(hour,@startDate) <12 and  DatePart(hour,@endDate) >12  
+            set @resultMin=@resultMin-90  
+    end  
+
+return @resultMin  
+END 

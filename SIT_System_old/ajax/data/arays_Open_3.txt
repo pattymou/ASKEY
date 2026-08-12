@@ -1,0 +1,17 @@
+{
+"data":[
+[
+"",
+"NCQ2101B2",
+"NPI驗証",
+"D156(T-Mobile)",
+"EV",
+"Modem REV5",
+"v0.00.01.1",
+"Kenny3 Chen",
+"Isaac1 Chen",
+"Ruby Hsu",
+"20220524095937"
+]
+]
+}
